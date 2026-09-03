@@ -88,9 +88,9 @@ class Parser {
                 break;
             // Ontology IRI (con o senza versione).
             case Constants.FRAME_ONTOLOGY_IRI:
-            case Constants.FRAME_ONTOLOGY_IRI_VERSIONED:
-                parseOntologyIRI(stream, utility, ontology);
-                break;
+            // case Constants.FRAME_ONTOLOGY_IRI_VERSIONED:
+            //     parseOntologyIRI(stream, utility, ontology);
+            //     break;
             case Constants.FRAME_CLASS_DECL:
             case Constants.FRAME_DATATYPE_DECL:
             case Constants.FRAME_OBJ_PROP_DECL:

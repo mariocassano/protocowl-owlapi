@@ -19,8 +19,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ProtocOWLTest {
-    private static final String FUNC_ONTOLOGY = "src/test/resources/test.owl";
-    private static final String OPRT_ONTOLOGY = "src/test/resources/test.oprt";
+    private static final String FUNC_ONTOLOGY = "src/test/resources/home.owl";
+    private static final String OPRT_ONTOLOGY = "src/test/resources/home.oprt";
     private static final String OUTPUT_FILE = "build/out.oprt";
 
     private void assertEquals(OWLOntology in, OWLOntology out) {
