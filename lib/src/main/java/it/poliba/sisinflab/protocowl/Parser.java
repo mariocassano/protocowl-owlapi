@@ -38,6 +38,9 @@ class Parser {
             int type = header & 0x3F;
             int utility = header >> 6;
 
+            // Se il frame e di controllo END, interrompe la lettura.
+            if (type == Constants.FRAME_END) break;
+
             // Instrada il frame al parser specializzato.
             parseFrame(type, utility, stream, ontology, format);
         }
@@ -78,6 +81,11 @@ class Parser {
      */
     private void parseFrame(int type, int utility, InputStream stream, OWLOntology ontology, ProtocOWLDocumentFormat format) throws IOException {
         switch (type) {
+            case Constants.FRAME_END:
+            // Il frame END segnala la fine dello stream. 
+            // Non dobbiamo leggere altri dati, il ciclo while nel metodo parse() 
+            // dovrebbe idealmente fermarsi. Per ora possiamo fare un return.
+                return;
             // Namespace declaration.
             case Constants.FRAME_NAMESPACE_DECL:
                 parseNamespaceDeclaration(stream, utility, format);
@@ -88,9 +96,8 @@ class Parser {
                 break;
             // Ontology IRI (con o senza versione).
             case Constants.FRAME_ONTOLOGY_IRI:
-            // case Constants.FRAME_ONTOLOGY_IRI_VERSIONED:
-            //     parseOntologyIRI(stream, utility, ontology);
-            //     break;
+                parseOntologyIRI(stream, utility, ontology);
+                break;
             case Constants.FRAME_CLASS_DECL:
             case Constants.FRAME_DATATYPE_DECL:
             case Constants.FRAME_OBJ_PROP_DECL:
@@ -117,7 +124,9 @@ class Parser {
                 parseDataPropertyAssertion(stream, ontology);
                 break;
             default:
-                // I frame non supportati o di controllo vengono ignorati.
+                // I frame non supportati o di controllo generano un'eccezione.
+                throw new OWLParserException("Unsupported or unrecognized frame type: " + type);
+        }
                 break;
         }
     }
