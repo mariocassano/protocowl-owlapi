@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="it.poliba.sisinflab.protocowl.ProtocOWLTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-03T15:14:06.554Z" hostname="MacBook-Pro-di-Beatrice.local" time="0.141">
-  <properties/>
-  <testcase name="parserTest" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.122"/>
-  <testcase name="rendererTest" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.017"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
