@@ -323,6 +323,19 @@ class Renderer {
                 Set<OWLClassExpression> operands = intersection.getOperands();
                 writeVarInt(stream, operands.size());
                 for (OWLClassExpression op : operands) writeClassExpression(stream, op);
+            } else if (ce instanceof OWLObjectUnionOf union) {
+                writeVarInt(stream, Constants.CLASS_EXPR_UNION);
+                Set<OWLClassExpression> operands = union.getOperands();
+                writeVarInt(stream, operands.size());
+                for (OWLClassExpression op : operands) writeClassExpression(stream, op);
+            } else if (ce instanceof OWLObjectComplementOf complement) {
+                writeVarInt(stream, Constants.CLASS_EXPR_COMPLEMENT);
+                writeClassExpression(stream, complement.getOperand());
+            } else if (ce instanceof OWLObjectOneOf oneOf) {
+                writeVarInt(stream, Constants.CLASS_EXPR_ONE_OF);
+                Set<OWLIndividual> individuals = oneOf.getIndividuals();
+                writeVarInt(stream, individuals.size());
+                for (OWLIndividual ind : individuals) writeIndividual(stream, ind);
             } else if (ce instanceof OWLObjectSomeValuesFrom some) {
                 writeVarInt(stream, Constants.CLASS_EXPR_SOME_VALUES);
                 writeObjectPropertyExpression(stream, some.getProperty());
@@ -331,6 +344,26 @@ class Renderer {
                 writeVarInt(stream, Constants.CLASS_EXPR_ALL_VALUES);
                 writeObjectPropertyExpression(stream, all.getProperty());
                 writeClassExpression(stream, all.getFiller());
+            } else if (ce instanceof OWLObjectHasValue hasValue) {
+                writeVarInt(stream, Constants.CLASS_EXPR_HAS_VALUE);
+                writeObjectPropertyExpression(stream, hasValue.getProperty());
+                writeIndividual(stream, hasValue.getFiller());
+            } else if (ce instanceof OWLObjectHasSelf hasSelf) {
+                writeVarInt(stream, Constants.CLASS_EXPR_HAS_SELF);
+                writeObjectPropertyExpression(stream, hasSelf.getProperty());
+            } else if (ce instanceof OWLObjectMinCardinality minCard) {
+                writeVarInt(stream, Constants.CLASS_EXPR_MIN_CARD);
+                int cardinality = minCard.getCardinality();
+                OWLClassExpression filler = minCard.getFiller();
+                // controlliamo se il filler è owl:Thing
+                boolean isThing = filler.isOWLThing();
+                // costruiamo il campo: spostiamo la cardinalià di 1 bit a sinistra
+                // se non è owl:Thing, accendiamo il bit di destra a +1 o |1
+                int cardField = (cardinality << 1) | (isThing ? 0 : 1);
+                writeVarInt(stream, cardField);
+                writeObjectPropertyExpression(stream, minCard.getProperty());
+                //scriviamo il filler solo se non è owl:Thing
+                if (!isThing) writeClassExpression(stream, filler);
             } else {
                 throw new IOException("Espressione non supportata: " + ce);
             }

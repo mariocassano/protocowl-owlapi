@@ -78,6 +78,11 @@ final class Constants {
     static final int CLASS_EXPR_ONE_OF                 = 0x03;
     static final int CLASS_EXPR_SOME_VALUES            = 0x04; 
     static final int CLASS_EXPR_ALL_VALUES             = 0x05; 
+    static final int CLASS_EXPR_HAS_VALUE              = 0x06;
+    static final int CLASS_EXPR_HAS_SELF               = 0x07;  
+    static final int CLASS_EXPR_MIN_CARD               = 0x08;
+    static final int CLASS_EXPR_MAX_CARD               = 0x09;
+    static final int CLASS_EXPR_EXACT_CARD             = 0x0A;
 
     // --- Tipi di Letterali (Type Bits) ---
     static final int LITERAL_PLAIN                     = 0x00;

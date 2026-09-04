@@ -335,6 +335,19 @@ class Parser {
                     List<OWLClassExpression> operands = new ArrayList<>();
                     for(int i=0; i<count; i++) operands.add(parseClassExpression(stream));
                     return dataFactory.getOWLObjectIntersectionOf(operands);
+                case Constants.CLASS_EXPR_UNION:
+                    int countUnion = readVarInt(stream);
+                    List<OWLClassExpression> operandsUnion = new ArrayList<>();
+                    for(int i=0; i<countUnion; i++) operandsUnion.add(parseClassExpression(stream));
+                    return dataFactory.getOWLObjectUnionOf(operandsUnion);
+                case Constants.CLASS_EXPR_COMPLEMENT:
+                    OWLClassExpression operand = parseClassExpression(stream);
+                    return dataFactory.getOWLObjectComplementOf(operand);
+                case Constants.CLASS_EXPR_ONE_OF:
+                    int countOneOf = readVarInt(stream);
+                    List<OWLIndividual> individuals = new ArrayList<>();
+                    for(int i=0; i<countOneOf; i++) individuals.add(parseIndividual(stream));
+                    return dataFactory.getOWLObjectOneOf(individuals);
                 case Constants.CLASS_EXPR_SOME_VALUES:
                     OWLObjectPropertyExpression propSome = parseObjectPropertyExpression(stream);
                     OWLClassExpression fillerSome = parseClassExpression(stream);
@@ -343,6 +356,25 @@ class Parser {
                     OWLObjectPropertyExpression propAll = parseObjectPropertyExpression(stream);
                     OWLClassExpression fillerAll = parseClassExpression(stream);
                     return dataFactory.getOWLObjectAllValuesFrom(propAll, fillerAll);
+                case Constants.CLASS_EXPR_HAS_VALUE:
+                    OWLObjectPropertyExpression propHasValue = parseObjectPropertyExpression(stream);
+                    OWLIndividual value = parseIndividual(stream);
+                    return dataFactory.getOWLObjectHasValue(propHasValue, value);
+                case Constants.CLASS_EXPR_HAS_SELF:
+                    OWLObjectPropertyExpression propHasSelf = parseObjectPropertyExpression(stream);
+                    return dataFactory.getOWLObjectHasSelf(propHasSelf);
+                case Constants.CLASS_EXPR_MIN_CARD:
+                    int cardField = readVarInt(stream);
+                    boolean hasFiller = (cardField & 1) != 0; // Bit 0 indica se c'è un filler
+                    int cardinality = cardField >> 1; // Bit 1-31 rappresentano la cardinalità
+                    OWLObjectPropertyExpression propMin = parseObjectPropertyExpression(stream);
+                    OWLClassExpression fillerMin;
+                    if (hasFiller) {
+                        fillerMin = parseClassExpression(stream);
+                    } else {
+                        fillerMin = dataFactory.getOWLThing(); // Default filler se non presente
+                    }
+                    return dataFactory.getOWLObjectMinCardinality(cardinality, propMin, fillerMin);
                 default:
                     throw new OWLParserException("Unsupported ClassExpression type: " + header);
             }
