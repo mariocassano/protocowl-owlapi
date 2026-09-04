@@ -73,6 +73,9 @@ final class Constants {
     // --- Complex Types Header Values ---
     static final int TMAX_CLASS_EXPRESSION             = 17;
     static final int CLASS_EXPR_INTERSECTION           = 0x00;
+    static final int CLASS_EXPR_UNION                  = 0x01; 
+    static final int CLASS_EXPR_COMPLEMENT             = 0x02;
+    static final int CLASS_EXPR_ONE_OF                 = 0x03;
     static final int CLASS_EXPR_SOME_VALUES            = 0x04; 
     static final int CLASS_EXPR_ALL_VALUES             = 0x05; 
 
