@@ -87,6 +87,12 @@ class Parser {
             // dovrebbe idealmente fermarsi. Per ora possiamo fare un return.
                 return;
             // Namespace declaration.
+            case Constants.FRAME_IMPORTS:
+                parseImports(stream, ontology);
+                break;
+            case Constants.FRAME_ANNOTATIONS:
+                parseAnnotations(stream, ontology);
+                break;
             case Constants.FRAME_NAMESPACE_DECL:
                 parseNamespaceDeclaration(stream, utility, format);
                 break;
@@ -126,8 +132,6 @@ class Parser {
             default:
                 // I frame non supportati o di controllo generano un'eccezione.
                 throw new OWLParserException("Unsupported or unrecognized frame type: " + type);
-        }
-                break;
         }
     }
 
@@ -177,17 +181,78 @@ class Parser {
     private void parseOntologyIRI(InputStream stream, int utility, OWLOntology ontology) throws IOException {
         int iriId = readVarInt(stream);
         IRI ontologyIRI = (IRI) getIdentifier(iriId);
+        IRI versionIRI = null;
+
+        // Utility bit 1: se presente la versione, il parser legge l'IRI della versione.
+        if ((utility & 0x01) != 0) {
+            int versionId = readVarInt(stream);
+            versionIRI = (IRI) getIdentifier(versionId);
+        }
+
+        // Aggiorna l'ontology ID con l'IRI e la versione (se presente).
+        OWLOntologyID ontId;
+        if (versionIRI != null) {
+            ontId = new OWLOntologyID(ontologyIRI, versionIRI);
+        } else {
+            ontId = new OWLOntologyID(ontologyIRI);
+        }
 
         // Aggiorna l'OntologyID per mantenere coerenti API e test basati su isNamed().
         if (ontology.getOWLOntologyManager() != null) {
-            ontology.getOWLOntologyManager().applyChange(new SetOntologyID(ontology, ontologyIRI));
-        }
-
-        // Utility bit 0: se presente la versione, il parser consuma il relativo ID.
-        if ((utility & 0x01) != 0) {
-            readVarInt(stream);
+            ontology.getOWLOntologyManager().applyChange(new SetOntologyID(ontology, ontId));
         }
     }
+
+
+    private void parseImports(InputStream stream, OWLOntology ontology) throws IOException {
+        int count = readVarInt(stream);
+        for (int i = 0; i < count; i++) {
+            int id = readVarInt(stream);
+            IRI importIri = (IRI) getIdentifier(id);
+            OWLImportsDeclaration importDecl = dataFactory.getOWLImportsDeclaration(importIri);
+            ontology.applyChange(new AddImport(ontology, importDecl));
+        }
+    }
+
+    private void parseAnnotations(InputStream stream, OWLOntology ontology) throws IOException {
+        int count = readVarInt(stream);
+        for (int i = 0; i < count; i++) {
+            OWLAnnotation annotation = parseAnnotation(stream);
+            ontology.applyChange(new AddOntologyAnnotation(ontology, annotation));
+        }
+    }
+
+     // Metodo helper per leggere una singola annotazione (Sezione 4.6 del PDF)
+    private OWLAnnotation parseAnnotation(InputStream stream) throws IOException {
+        int header = readVarInt(stream);
+        List<OWLAnnotation> annotations = new ArrayList<>();
+        
+        // Se header == 0, l'annotazione è a sua volta annotata
+        if (header == 0) {
+            int count = readVarInt(stream);
+            for (int i = 0; i < count; i++) {
+                annotations.add(parseAnnotation(stream));
+            }
+            header = readVarInt(stream); // Leggiamo l'header vero e proprio
+        }
+        
+        OWLAnnotationProperty ap = dataFactory.getOWLAnnotationProperty((IRI) getIdentifier(header - 1));
+        OWLAnnotationValue value = parseAnnotationValue(stream);
+        return dataFactory.getOWLAnnotation(ap, value, annotations.stream());
+    }
+
+    // Metodo helper per leggere il valore di un'annotazione
+    private OWLAnnotationValue parseAnnotationValue(InputStream stream) throws IOException {
+        int header = readVarInt(stream);
+        if (header > 0) {
+            OWLObject obj = getIdentifier(header - 1);
+            if (obj instanceof IRI) return (IRI) obj;
+            if (obj instanceof OWLAnonymousIndividual) return (OWLAnonymousIndividual) obj;
+            throw new OWLParserException("Valore annotazione non valido");
+        } else {
+            return parseLiteral(stream);
+        }
+    }   
 
     private void parseEntityDeclaration(int type, InputStream stream, OWLOntology ontology) throws IOException {
         int id = readVarInt(stream);

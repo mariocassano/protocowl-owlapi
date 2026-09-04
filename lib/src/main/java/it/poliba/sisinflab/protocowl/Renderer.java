@@ -35,9 +35,39 @@ class Renderer {
         writeIdentifierDeclarations(stream);
 
         // 5. Scrive le meta-informazioni dell'ontologia
-        var ontIRI = ontology.getOntologyID().getOntologyIRI();
-        if (ontIRI.isPresent()) {
-            writeOntologyIRI(stream, ontIRI.get());
+        var ontId = ontology.getOntologyID();
+        if (ontId.getOntologyIRI().isPresent()) {
+            int utility = 0;
+            if (ontId.getVersionIRI().isPresent()) {
+                utility = 1; // Utility bit a 1 se c'è la versione
+            }
+            
+            stream.write(Constants.FRAME_ONTOLOGY_IRI | (utility << 6));
+            writeVarInt(stream, getIdentifierId(ontId.getOntologyIRI().get()));
+            
+            if (utility == 1) {
+                writeVarInt(stream, getIdentifierId(ontId.getVersionIRI().get()));
+            }
+        }
+
+        // Scrive gli Imports
+        var imports = ontology.importsDeclarations().toList();
+        if (!imports.isEmpty()) {
+            stream.write(Constants.FRAME_IMPORTS);
+            writeVarInt(stream, imports.size());
+            for (OWLImportsDeclaration decl : imports) {
+                writeVarInt(stream, getIdentifierId(decl.getIRI()));
+            }
+        }
+
+        // Scrive le Annotazioni dell'Ontologia
+        var annotations = ontology.annotations().toList();
+        if (!annotations.isEmpty()) {
+            stream.write(Constants.FRAME_ANNOTATIONS);
+            writeVarInt(stream, annotations.size());
+            for (OWLAnnotation ann : annotations) {
+                writeAnnotation(stream, ann);
+            }
         }
 
         // 6. Traduce gli assiomi in stream binario
@@ -65,19 +95,38 @@ class Renderer {
      * generare un identificativo univoco (un indice numerico) per ciascuno.
      */
     private void collectEntities(OWLOntology ontology) {
-        // Registra preventivamente l'IRI dell'ontologia (evita bug di collisione con l'ID 0 di TMAX)
-        var ontIRI = ontology.getOntologyID().getOntologyIRI();
-        if (ontIRI.isPresent()) {
-            registerIRI(ontIRI.get());
+        // Registra Ontology IRI e Version IRI
+        var ontId = ontology.getOntologyID();
+        if (ontId.getOntologyIRI().isPresent()) {
+            registerIRI(ontId.getOntologyIRI().get());
+        }
+        if (ontId.getVersionIRI().isPresent()) {
+            registerIRI(ontId.getVersionIRI().get());
         }
 
-        // Recupera e mappa le entità sfruttando il getIRI comune
+        // Registra gli IRI degli Imports
+        ontology.importsDeclarations().forEach(decl -> registerIRI(decl.getIRI()));
+
+        // Recupera e mappa le entità della firma dell'ontologia 
         ontology.getSignature(Imports.INCLUDED).stream()
                 .map(OWLEntity::getIRI)
                 .forEach(this::registerIRI);
 
         ontology.getReferencedAnonymousIndividuals(Imports.INCLUDED)
                 .forEach(this::registerAnon);
+
+        // Registra gli IRI usati nelle annotazioni dell'ontologia
+        ontology.annotations().forEach(this::collectAnnotationEntities);
+    }
+
+    // Metodo helper per estrarre gli IRI dalle annotazioni
+    private void collectAnnotationEntities(OWLAnnotation annotation) {
+        registerIRI(annotation.getProperty().getIRI());
+        if (annotation.getValue() instanceof IRI) {
+            registerIRI((IRI) annotation.getValue());
+        }
+        // Se l'annotazione ha sotto-annotazioni, esplorale ricorsivamente
+        annotation.annotations().forEach(this::collectAnnotationEntities);
     }
 
     private void registerIRI(IRI iri) {
@@ -135,8 +184,13 @@ class Renderer {
             stream.write(header);
             writeVarInt(stream, prefixedGroup.size());
             for (String ns : prefixedGroup) {
-                writeString(stream, reversePrefixMap.get(ns)); // Prefisso
-                writeString(stream, ns); // Namespace
+                String prefix = reversePrefixMap.get(ns);
+                // Rimuove i due punti finali come richiesto dalla specifica ProtocOWL
+                if (prefix.endsWith(":")) {
+                    prefix = prefix.substring(0, prefix.length() - 1);
+                }
+                writeString(stream, prefix);
+                writeString(stream, ns);
             }
         }
     }
@@ -360,5 +414,31 @@ class Renderer {
         byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
         writeVarInt(stream, bytes.length);
         stream.write(bytes);
+    }
+    private void writeAnnotation(OutputStream stream, OWLAnnotation annotation) throws IOException {
+        var subAnnotations = annotation.annotations().toList();
+        
+        if (!subAnnotations.isEmpty()) {
+            writeVarInt(stream, 0); // Header = 0 indica che è annotata
+            writeVarInt(stream, subAnnotations.size());
+            for (OWLAnnotation subAnn : subAnnotations) {
+                writeAnnotation(stream, subAnn);
+            }
+        }
+        
+        // Scrive la property (Header = Id + 1)
+        writeVarInt(stream, getIdentifierId(annotation.getProperty().getIRI()) + 1);
+        writeAnnotationValue(stream, annotation.getValue());
+    }
+
+    private void writeAnnotationValue(OutputStream stream, OWLAnnotationValue value) throws IOException {
+        if (value instanceof IRI || value instanceof OWLAnonymousIndividual) {
+            writeVarInt(stream, getIdentifierId((OWLObject) value) + 1);
+        } else if (value instanceof OWLLiteral) {
+            writeVarInt(stream, 0);
+            writeLiteral(stream, (OWLLiteral) value);
+        } else {
+            throw new IOException("Tipo di AnnotationValue non supportato");
+        }
     }
 }
