@@ -386,23 +386,51 @@ class Parser {
     /**
      * Decodifica i literal in base al tag di tipo (plain, lang, typed).
      */
-    private OWLLiteral parseLiteral(InputStream stream) throws IOException {
-        int type = stream.read();
-        String value = readString(stream);
+private OWLLiteral parseLiteral(InputStream stream) throws IOException {
+        int header = stream.read();
+        if (header == -1) throw new IOException("Fine inaspettata dello stream leggendo un Literal");
 
-        // Lo switch rende esplicita la corrispondenza tra type tag e payload atteso.
+        // Estraiamo Type (2 bit a destra) e Format (6 bit a sinistra)
+        int type = header & 0x03;
+        int format = (header >> 2) & 0x3F;
+
+        String valueStr;
+
+        // 1. Leggiamo il VALORE in base al FORMATO
+        switch (format) {
+            case Constants.LITERAL_FMT_STRING:
+                valueStr = readString(stream);
+                break;
+            case Constants.LITERAL_FMT_BOOLEAN:
+                int b = stream.read();
+                valueStr = (b == 1) ? "true" : "false";
+                break;
+            case Constants.LITERAL_FMT_SIGNED_INT:
+                int sVal = readSVarInt(stream);
+                valueStr = String.valueOf(sVal);
+                break;
+            case Constants.LITERAL_FMT_UNSIGNED_INT:
+                int uVal = readVarInt(stream);
+                valueStr = String.valueOf(uVal);
+                break;
+            default:
+                throw new OWLParserException("Formato Literal non supportato: " + format);
+        }
+
+        // 2. Creiamo il Literal in base al TYPE
         switch (type) {
             case Constants.LITERAL_PLAIN:
-                return dataFactory.getOWLLiteral(value);
+                return dataFactory.getOWLLiteral(valueStr);
             case Constants.LITERAL_LANG:
                 String lang = readString(stream);
-                return dataFactory.getOWLLiteral(value, lang);
+                return dataFactory.getOWLLiteral(valueStr, lang);
             case Constants.LITERAL_TYPED:
+                // Il datatype c'è sempre se il type è 2, anche per i formati compatti
                 int datatypeId = readVarInt(stream);
                 OWLDatatype datatype = dataFactory.getOWLDatatype((IRI) getIdentifier(datatypeId));
-                return dataFactory.getOWLLiteral(value, datatype);
+                return dataFactory.getOWLLiteral(valueStr, datatype);
             default:
-                throw new OWLParserException("Unknown literal type: " + type);
+                throw new OWLParserException("Tipo Literal sconosciuto: " + type);
         }
     }
 
@@ -430,6 +458,19 @@ class Parser {
             shift += 7;
         } while ((b & 0x80) != 0); // Continua finché il bit di continuazione (MSB) e impostato.
         return value;
+    }
+
+    /**
+     * Decodifica un intero con segno usando la mappatura Zig-Zag.
+     */
+    private int readSVarInt(InputStream stream) throws IOException {
+        int raw = readVarInt(stream);
+        // Se è pari, il numero originale era positivo. Se dispari, era negativo.
+        if ((raw & 1) == 0) {
+            return raw / 2;
+        } else {
+            return -(raw + 1) / 2;
+        }
     }
 
     /**

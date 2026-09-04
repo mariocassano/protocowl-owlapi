@@ -359,18 +359,41 @@ class Renderer {
     }
 
     private void writeLiteral(OutputStream stream, OWLLiteral lit) throws IOException {
-        if (lit.isRDFPlainLiteral()) {
-            if (lit.hasLang()) {
-                stream.write(Constants.LITERAL_LANG);
-                writeString(stream, lit.getLiteral());
-                writeString(stream, lit.getLang());
-            } else {
-                stream.write(Constants.LITERAL_PLAIN);
-                writeString(stream, lit.getLiteral());
-            }
+        int type;
+        int format = Constants.LITERAL_FMT_STRING;
+
+        // Se è plain o se il datatype è xsd:string, forziamo Type 0 (Plain)
+        if (lit.isRDFPlainLiteral() || lit.getDatatype().isString()) {
+            type = lit.hasLang() ? Constants.LITERAL_LANG : Constants.LITERAL_PLAIN;
         } else {
-            stream.write(Constants.LITERAL_TYPED);
+            type = Constants.LITERAL_TYPED;
+            
+            // Controlliamo se possiamo usare un formato compatto
+            if (lit.getDatatype().isBoolean()) {
+                format = Constants.LITERAL_FMT_BOOLEAN;
+            } else if (lit.getDatatype().isInteger()) {
+                format = Constants.LITERAL_FMT_SIGNED_INT;
+            }
+        }
+
+        // Costruiamo l'header: Type nei 2 bit a destra, Format nei 6 bit a sinistra
+        int header = type | (format << 2);
+        stream.write(header);
+
+        // 1. Scriviamo il VALORE in base al formato
+        if (format == Constants.LITERAL_FMT_STRING) {
             writeString(stream, lit.getLiteral());
+        } else if (format == Constants.LITERAL_FMT_BOOLEAN) {
+            stream.write(lit.parseBoolean() ? 1 : 0);
+        } else if (format == Constants.LITERAL_FMT_SIGNED_INT) {
+            writeSVarInt(stream, Integer.parseInt(lit.getLiteral()));
+        }
+
+        // 2. Scriviamo i campi extra in base al TYPE
+        if (type == Constants.LITERAL_LANG) {
+            writeString(stream, lit.getLang());
+        } else if (type == Constants.LITERAL_TYPED) {
+            // Scriviamo sempre l'ID del datatype se il type è 2
             writeVarInt(stream, getIdentifierId(lit.getDatatype().getIRI()));
         }
     }
@@ -405,6 +428,15 @@ class Renderer {
                 stream.write(bits | 0x80);
             }
         }
+    }
+
+    /**
+     * Codifica un intero con segno usando la mappatura Zig-Zag (Sezione 3 del PDF).
+     */
+    private void writeSVarInt(OutputStream stream, int value) throws IOException {
+        // Formula: 2n se n >= 0, altrimenti -2n - 1
+        int zigzag = (value >= 0) ? (value * 2) : (-value * 2 - 1);
+        writeVarInt(stream, zigzag);
     }
 
     /**
