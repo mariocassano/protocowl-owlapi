@@ -109,7 +109,7 @@ public class ProtocOWLTest {
     // TEST NEGATIVI
     // ========================================================================
 
-    @Test(expectedExceptions = OWLParserException.class)
+    @Test(expectedExceptions = OWLOntologyCreationException.class)
     public void testUnsupportedVersion() throws Exception {
         File badFile = File.createTempFile("bad_version", ".oprt");
         try (FileOutputStream fos = new FileOutputStream(badFile)) {
@@ -119,7 +119,7 @@ public class ProtocOWLTest {
         loadOntology(badFile.getAbsolutePath(), new ProtocOWLParserFactory());
     }
 
-    @Test(expectedExceptions = OWLParserException.class)
+    @Test(expectedExceptions = OWLOntologyCreationException.class)
     public void testTruncatedInput() throws Exception {
         File badFile = File.createTempFile("truncated", ".oprt");
         try (FileOutputStream fos = new FileOutputStream(badFile)) {
