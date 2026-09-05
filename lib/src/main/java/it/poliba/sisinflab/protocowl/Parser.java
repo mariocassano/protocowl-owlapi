@@ -120,6 +120,9 @@ class Parser {
             case Constants.FRAME_EQUIVALENT_CLASSES:
                 parseEquivalentClasses(stream, ontology);
                 break;
+            case Constants.FRAME_DISJOINT_CLASSES:
+                parseDisjointClasses(stream, ontology);
+                break;
             case Constants.FRAME_CLASS_ASSERTION:
                 parseClassAssertion(stream, ontology);
                 break;
@@ -292,6 +295,16 @@ class Parser {
         ontology.add(dataFactory.getOWLEquivalentClassesAxiom(operands));
     }
 
+    private void parseDisjointClasses(InputStream stream, OWLOntology ontology) throws IOException {
+        int count = readVarInt(stream);
+        List<OWLClassExpression> operands = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            operands.add(parseClassExpression(stream));
+        }
+        // Mantiene l'ordine di lettura e delega all'OWLAPI la normalizzazione interna.
+        ontology.add(dataFactory.getOWLDisjointClassesAxiom(operands));
+    }
+    
     private void parseClassAssertion(InputStream stream, OWLOntology ontology) throws IOException {
         OWLClassExpression ce = parseClassExpression(stream);
         OWLIndividual ind = parseIndividual(stream);

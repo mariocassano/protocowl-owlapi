@@ -264,6 +264,12 @@ class Renderer {
                 writeSubClassOf(stream, subClassAx);
             } else if (ax instanceof OWLEquivalentClassesAxiom equivAx) {
                 writeEquivalentClasses(stream, equivAx);
+            } else if (ax instanceof OWLDisjointClassesAxiom disjointAx) {
+                stream.write(Constants.FRAME_DISJOINT_CLASSES);
+                writeVarInt(stream, disjointAx.classExpressions().count());
+                for (OWLClassExpression ce : disjointAx.getClassExpressions()) {
+                    writeClassExpression(stream, ce);
+                }   
             } else if (ax instanceof OWLClassAssertionAxiom clsAssAx) {
                 writeClassAssertion(stream, clsAssAx);
             } else if (ax instanceof OWLObjectPropertyAssertionAxiom objPropAx) {
