@@ -207,12 +207,32 @@ class Parser {
                 String prefix = readString(stream);
                 String namespace = readString(stream);
                 namespaces.add(namespace);
-                format.setPrefix(prefix.isEmpty() ? ":" : prefix, namespace);
+                String normalizedPrefix = prefix.isEmpty() ? ":" : prefix;
+                format.setPrefix(normalizedPrefix, namespace);
+                addConventionalAlias(format, normalizedPrefix, namespace);
             } else {
                 String namespace = readString(stream);
                 namespaces.add(namespace);
             }
         }
+    }
+
+    private void addConventionalAlias(ProtocOWLDocumentFormat format, String prefix, String namespace) {
+        if (!prefix.equals(":")) return;
+
+        String path = namespace.endsWith("#") ? namespace.substring(0, namespace.length() - 1) : namespace;
+        int lastSlash = path.lastIndexOf('/');
+        if (lastSlash < 1) return;
+
+        String fileName = path.substring(lastSlash + 1);
+        if (!fileName.endsWith(".owl")) return;
+
+        String alias = fileName.substring(0, fileName.length() - 4);
+        String parent = path.substring(0, lastSlash);
+        int parentSlash = parent.lastIndexOf('/');
+        if (parentSlash < 0 || !parent.substring(parentSlash + 1).equals(alias)) return;
+
+        format.setPrefix(alias + ":", namespace);
     }
 
     private void parseIdentifierDeclaration(InputStream stream, int utility) throws IOException {
