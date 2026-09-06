@@ -37,9 +37,7 @@ public class ProtocOWLTest {
         // 2. Controlla se i prefissi sono uguali 
         var inFormat = in.getNonnullFormat().asPrefixOWLDocumentFormat();
         var outFormat = out.getNonnullFormat().asPrefixOWLDocumentFormat();
-        Assert.assertEquals(
-            Set.copyOf(inFormat.getPrefixName2PrefixMap().values()),
-            Set.copyOf(outFormat.getPrefixName2PrefixMap().values()));
+        Assert.assertEquals(inFormat.getPrefixName2PrefixMap(), outFormat.getPrefixName2PrefixMap());
 
         // 3. Controllo delle Annotazioni dell'Ontologia 
         var annA = in.annotations().collect(Collectors.toSet());

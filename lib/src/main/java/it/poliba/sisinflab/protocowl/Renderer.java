@@ -27,6 +27,7 @@ class Renderer {
 
         // 2. Colleziona tutte le entità in gioco (Namespace e Identificatori) assegnando loro un ID
         collectEntities(ontology);
+        collectPrefixNamespaces(format);
 
         // 3. Scrive la versione del protocollo
         writeVersion(stream);
@@ -143,6 +144,13 @@ class Renderer {
                 namespaceTable.put(ns, namespaceTable.size());
             }
             identifierTable.put(iri, identifierTable.size());
+        }
+    }
+
+    private void collectPrefixNamespaces(ProtocOWLDocumentFormat format) {
+        if (format != null) {
+            format.getPrefixName2PrefixMap().values().forEach(namespace ->
+                    namespaceTable.computeIfAbsent(namespace, ignored -> namespaceTable.size()));
         }
     }
 
