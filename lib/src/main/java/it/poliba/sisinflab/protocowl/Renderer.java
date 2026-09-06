@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.semanticweb.owlapi.model.parameters.Imports;
 
 class Renderer {
@@ -117,6 +118,12 @@ class Renderer {
 
         // Registra gli IRI usati nelle annotazioni dell'ontologia
         ontology.annotations().forEach(this::collectAnnotationEntities);
+        ontology.getAxioms(AxiomType.ANNOTATION_ASSERTION).forEach(axiom -> {
+            OWLAnnotationSubject subject = axiom.getSubject();
+            if (subject instanceof IRI iri) registerIRI(iri);
+            else if (subject instanceof OWLAnonymousIndividual anon) registerAnon(anon);
+            collectAnnotationEntities(axiom.getAnnotation());
+        });
     }
 
     // Metodo helper per estrarre gli IRI dalle annotazioni
@@ -154,45 +161,53 @@ class Renderer {
      * namespace non riservati (ovvero quelli con ID >= 5).
      */
     private void writeNamespaceDeclarations(OutputStream stream, ProtocOWLDocumentFormat format) throws IOException {
-        List<String> prefixedGroup = new ArrayList<>();
-        List<String> plainGroup = new ArrayList<>();
-        Map<String, String> reversePrefixMap = new HashMap<>();
-
+        Map<String, List<String>> prefixesByNamespace = new HashMap<>();
         if (format != null) {
-            format.getPrefixName2PrefixMap().forEach((p, ns) -> reversePrefixMap.put(ns, p));
-        }
-
-        // Filtra ed estrapola solo i namespace personalizzati
-        for (Map.Entry<String, Integer> entry : namespaceTable.entrySet()) {
-            if (entry.getValue() < 5) continue; // Salta i primi 5 riservati
-
-            String ns = entry.getKey();
-            if (reversePrefixMap.containsKey(ns)) prefixedGroup.add(ns);
-            else plainGroup.add(ns);
-        }
-
-        // Scrittura dei namespace senza prefisso
-        if (!plainGroup.isEmpty()) {
-            stream.write(Constants.FRAME_NAMESPACE_DECL); // Header pulito
-            writeVarInt(stream, plainGroup.size());
-            for (String ns : plainGroup) writeString(stream, ns);
-        }
-
-        // Scrittura dei namespace prefissati
-        if (!prefixedGroup.isEmpty()) {
-            int header = Constants.FRAME_NAMESPACE_DECL | (1 << 6); // Set Utility Bit 0
-            stream.write(header);
-            writeVarInt(stream, prefixedGroup.size());
-            for (String ns : prefixedGroup) {
-                String prefix = reversePrefixMap.get(ns);
-                // Rimuove i due punti finali come richiesto dalla specifica ProtocOWL
-                if (prefix.endsWith(":")) {
-                    prefix = prefix.substring(0, prefix.length() - 1);
+            format.getPrefixName2PrefixMap().forEach((prefix, namespace) -> {
+                if (namespaceTable.getOrDefault(namespace, -1) >= 5) {
+                    prefixesByNamespace.computeIfAbsent(namespace, ignored -> new ArrayList<>()).add(prefix);
                 }
-                writeString(stream, prefix);
-                writeString(stream, ns);
+            });
+        }
+
+        // Gli identificatori usano gli indici assegnati in namespaceTable: l'ordine
+        // delle dichiarazioni deve quindi restare identico a quello della tabella.
+        List<Map.Entry<String, String>> aliases = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : namespaceTable.entrySet()) {
+            if (entry.getValue() < 5) continue;
+
+            String namespace = entry.getKey();
+            List<String> prefixes = prefixesByNamespace.get(namespace);
+            if (prefixes == null || prefixes.isEmpty()) {
+                writeNamespaceDeclaration(stream, namespace, null);
+            } else {
+                writeNamespaceDeclaration(stream, namespace, prefixes.get(0));
+                for (int i = 1; i < prefixes.size(); i++) {
+                    aliases.add(Map.entry(prefixes.get(i), namespace));
+                }
             }
         }
+
+        // Gli alias aggiuntivi non devono inserirsi prima degli indici degli IRI.
+        for (Map.Entry<String, String> alias : aliases) {
+            writeNamespaceDeclaration(stream, alias.getValue(), alias.getKey());
+        }
+    }
+
+    private void writeNamespaceDeclaration(OutputStream stream, String namespace, String prefix)
+            throws IOException {
+        if (prefix == null) {
+            stream.write(Constants.FRAME_NAMESPACE_DECL);
+            writeVarInt(stream, 1);
+            writeString(stream, namespace);
+            return;
+        }
+
+        stream.write(Constants.FRAME_NAMESPACE_DECL | (1 << 6));
+        writeVarInt(stream, 1);
+        if (prefix.endsWith(":")) prefix = prefix.substring(0, prefix.length() - 1);
+        writeString(stream, prefix);
+        writeString(stream, namespace);
     }
 
     /**
@@ -262,6 +277,53 @@ class Renderer {
         for (OWLAxiom ax : ontology.getLogicalAxioms()) {
             if (ax instanceof OWLSubClassOfAxiom subClassAx) {
                 writeSubClassOf(stream, subClassAx);
+            } else if (ax instanceof OWLSubObjectPropertyOfAxiom subObjectPropertyAx) {
+                writeSubObjectPropertyOf(stream, subObjectPropertyAx);
+            } else if (ax instanceof OWLEquivalentObjectPropertiesAxiom equivalentObjectPropertiesAx) {
+                writeObjectPropertySetAxiom(stream, Constants.FRAME_EQUIVALENT_OBJ_PROPS,
+                        equivalentObjectPropertiesAx.getProperties());
+            } else if (ax instanceof OWLDisjointObjectPropertiesAxiom disjointObjectPropertiesAx) {
+                writeObjectPropertySetAxiom(stream, Constants.FRAME_DISJOINT_OBJ_PROPS,
+                        disjointObjectPropertiesAx.getProperties());
+            } else if (ax instanceof OWLInverseObjectPropertiesAxiom inverseObjectPropertiesAx) {
+                stream.write(Constants.FRAME_INVERSE_OBJ_PROP);
+                writeObjectPropertyExpression(stream, inverseObjectPropertiesAx.getFirstProperty());
+                writeObjectPropertyExpression(stream, inverseObjectPropertiesAx.getSecondProperty());
+            } else if (ax instanceof OWLObjectPropertyDomainAxiom domainAx) {
+                stream.write(Constants.FRAME_OBJ_PROP_DOMAIN);
+                writeObjectPropertyExpression(stream, domainAx.getProperty());
+                writeClassExpression(stream, domainAx.getDomain());
+            } else if (ax instanceof OWLObjectPropertyRangeAxiom rangeAx) {
+                stream.write(Constants.FRAME_OBJ_PROP_RANGE);
+                writeObjectPropertyExpression(stream, rangeAx.getProperty());
+                writeClassExpression(stream, rangeAx.getRange());
+            } else if (ax instanceof OWLFunctionalObjectPropertyAxiom functionalAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_FUNCTIONAL_OBJ_PROP,
+                        functionalAx.getProperty());
+            } else if (ax instanceof OWLInverseFunctionalObjectPropertyAxiom inverseFunctionalAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_INVERSE_FUNCTIONAL_OBJ_PROP,
+                        inverseFunctionalAx.getProperty());
+            } else if (ax instanceof OWLReflexiveObjectPropertyAxiom reflexiveAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_REFLEXIVE_OBJ_PROP,
+                        reflexiveAx.getProperty());
+            } else if (ax instanceof OWLIrreflexiveObjectPropertyAxiom irreflexiveAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_IRREFLEXIVE_OBJ_PROP,
+                        irreflexiveAx.getProperty());
+            } else if (ax instanceof OWLSymmetricObjectPropertyAxiom symmetricAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_SYMMETRIC_OBJ_PROP,
+                        symmetricAx.getProperty());
+            } else if (ax instanceof OWLAsymmetricObjectPropertyAxiom asymmetricAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_ASYMMETRIC_OBJ_PROP,
+                        asymmetricAx.getProperty());
+            } else if (ax instanceof OWLTransitiveObjectPropertyAxiom transitiveAx) {
+                writeObjectPropertyCharacteristic(stream, Constants.FRAME_TRANSITIVE_OBJ_PROP,
+                        transitiveAx.getProperty());
+            } else if (ax instanceof OWLSameIndividualAxiom sameIndividualAx) {
+                writeIndividualSetAxiom(stream, Constants.FRAME_SAME_INDIVIDUAL,
+                        sameIndividualAx.getIndividuals());
+            } else if (ax instanceof OWLDifferentIndividualsAxiom differentIndividualsAx) {
+                writeIndividualSetAxiom(stream, Constants.FRAME_DIFFERENT_INDIVIDUALS,
+                        differentIndividualsAx.getIndividuals());
             } else if (ax instanceof OWLEquivalentClassesAxiom equivAx) {
                 writeEquivalentClasses(stream, equivAx);
             } else if (ax instanceof OWLDisjointClassesAxiom disjointAx) {
@@ -278,12 +340,50 @@ class Renderer {
                 writeDataPropertyAssertion(stream, dataPropAx);
             }
         }
+
+        for (OWLAnnotationAssertionAxiom ax : ontology.getAxioms(AxiomType.ANNOTATION_ASSERTION)) {
+            stream.write(Constants.FRAME_ANNOTATION_ASSERTION);
+            writeVarInt(stream, getIdentifierId(ax.getAnnotation().getProperty().getIRI()));
+            writeVarInt(stream, getIdentifierId((OWLObject) ax.getSubject()));
+            writeAnnotationValue(stream, ax.getAnnotation().getValue());
+        }
     }
 
     private void writeSubClassOf(OutputStream stream, OWLSubClassOfAxiom ax) throws IOException {
         stream.write(Constants.FRAME_SUBCLASS_OF);
         writeClassExpression(stream, ax.getSubClass());
         writeClassExpression(stream, ax.getSuperClass());
+    }
+
+    private void writeSubObjectPropertyOf(OutputStream stream, OWLSubObjectPropertyOfAxiom ax)
+            throws IOException {
+        stream.write(Constants.FRAME_SUB_OBJ_PROP);
+        writeObjectPropertyExpression(stream, ax.getSubProperty());
+        writeObjectPropertyExpression(stream, ax.getSuperProperty());
+    }
+
+    private void writeObjectPropertySetAxiom(OutputStream stream, int type,
+            Collection<OWLObjectPropertyExpression> properties) throws IOException {
+        stream.write(type);
+        writeVarInt(stream, properties.size());
+        for (OWLObjectPropertyExpression property : properties) {
+            writeObjectPropertyExpression(stream, property);
+        }
+    }
+
+    private void writeObjectPropertyCharacteristic(OutputStream stream, int type,
+            OWLObjectPropertyExpression property) throws IOException {
+        stream.write(type);
+        writeObjectPropertyExpression(stream, property);
+    }
+
+    private void writeIndividualSetAxiom(OutputStream stream, int type,
+            Collection<OWLIndividual> individuals) throws IOException {
+        stream.write(type);
+        writeVarInt(stream, individuals.size());
+        for (OWLIndividual individual : individuals) {
+            writeIndividual(stream, individual);
+        }
     }
 
     private void writeEquivalentClasses(OutputStream stream, OWLEquivalentClassesAxiom ax) throws IOException {
@@ -361,19 +461,30 @@ class Renderer {
                 writeVarInt(stream, Constants.CLASS_EXPR_MIN_CARD);
                 int cardinality = minCard.getCardinality();
                 OWLClassExpression filler = minCard.getFiller();
-                // controlliamo se il filler è owl:Thing
                 boolean isThing = filler.isOWLThing();
-                // costruiamo il campo: spostiamo la cardinalià di 1 bit a sinistra
-                // se non è owl:Thing, accendiamo il bit di destra a +1 o |1
                 int cardField = (cardinality << 1) | (isThing ? 0 : 1);
                 writeVarInt(stream, cardField);
                 writeObjectPropertyExpression(stream, minCard.getProperty());
-                //scriviamo il filler solo se non è owl:Thing
                 if (!isThing) writeClassExpression(stream, filler);
+            } else if (ce instanceof OWLObjectMaxCardinality maxCard) {
+                writeCardinalityExpression(stream, Constants.CLASS_EXPR_MAX_CARD,
+                        maxCard.getCardinality(), maxCard.getProperty(), maxCard.getFiller());
+            } else if (ce instanceof OWLObjectExactCardinality exactCard) {
+                writeCardinalityExpression(stream, Constants.CLASS_EXPR_EXACT_CARD,
+                        exactCard.getCardinality(), exactCard.getProperty(), exactCard.getFiller());
             } else {
                 throw new IOException("Espressione non supportata: " + ce);
             }
         }
+    }
+
+    private void writeCardinalityExpression(OutputStream stream, int type, int cardinality,
+            OWLObjectPropertyExpression property, OWLClassExpression filler) throws IOException {
+        writeVarInt(stream, type);
+        boolean isThing = filler.isOWLThing();
+        writeVarInt(stream, (cardinality << 1) | (isThing ? 0 : 1));
+        writeObjectPropertyExpression(stream, property);
+        if (!isThing) writeClassExpression(stream, filler);
     }
 
     private void writeObjectPropertyExpression(OutputStream stream, OWLObjectPropertyExpression ope) throws IOException {
@@ -402,14 +513,18 @@ class Renderer {
         int format = Constants.LITERAL_FMT_STRING;
 
         // Se è plain o se il datatype è xsd:string, forziamo Type 0 (Plain)
-        if (lit.isRDFPlainLiteral() || lit.getDatatype().isString()) {
-            type = lit.hasLang() ? Constants.LITERAL_LANG : Constants.LITERAL_PLAIN;
+        if (lit.hasLang()) {
+            type = Constants.LITERAL_LANG;
+        } else if (lit.isRDFPlainLiteral() || lit.getDatatype().isString()) {
+            type = Constants.LITERAL_PLAIN;
         } else {
             type = Constants.LITERAL_TYPED;
             
             // Controlliamo se possiamo usare un formato compatto
             if (lit.getDatatype().isBoolean()) {
                 format = Constants.LITERAL_FMT_BOOLEAN;
+            } else if (isUnsignedInteger(lit.getDatatype())) {
+                format = Constants.LITERAL_FMT_UNSIGNED_INT;
             } else if (lit.getDatatype().isInteger()) {
                 format = Constants.LITERAL_FMT_SIGNED_INT;
             }
@@ -426,6 +541,8 @@ class Renderer {
             stream.write(lit.parseBoolean() ? 1 : 0);
         } else if (format == Constants.LITERAL_FMT_SIGNED_INT) {
             writeSVarInt(stream, Integer.parseInt(lit.getLiteral()));
+        } else if (format == Constants.LITERAL_FMT_UNSIGNED_INT) {
+            writeVarInt(stream, Long.parseLong(lit.getLiteral()));
         }
 
         // 2. Scriviamo i campi extra in base al TYPE
@@ -476,6 +593,14 @@ class Renderer {
         // Formula: 2n se n >= 0, altrimenti -2n - 1
         int zigzag = (value >= 0) ? (value * 2) : (-value * 2 - 1);
         writeVarInt(stream, zigzag);
+    }
+
+    private boolean isUnsignedInteger(OWLDatatype datatype) {
+        IRI iri = datatype.getIRI();
+        return iri.equals(OWL2Datatype.XSD_NON_NEGATIVE_INTEGER.getIRI())
+                || iri.equals(OWL2Datatype.XSD_POSITIVE_INTEGER.getIRI())
+                || iri.equals(OWL2Datatype.XSD_UNSIGNED_INT.getIRI())
+                || iri.equals(OWL2Datatype.XSD_UNSIGNED_LONG.getIRI());
     }
 
     /**
