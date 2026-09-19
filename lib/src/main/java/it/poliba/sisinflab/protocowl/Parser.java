@@ -96,6 +96,9 @@ class Parser {
             case Constants.FRAME_NAMESPACE_DECL:
                 parseNamespaceDeclaration(stream, utility, format);
                 break;
+            case Constants.FRAME_RESET:
+                parseReset(utility, format);
+                break;
             // Identifier declaration.
             case Constants.FRAME_IDENTIFIER_DECL:
                 parseIdentifierDeclaration(stream, utility);
@@ -196,6 +199,23 @@ class Parser {
     // ========================================================================
     // PARSING DEI FRAME BASE
     // ========================================================================
+
+    private void parseReset(int utility, ProtocOWLDocumentFormat format) {
+        boolean resetNamespaces = (utility & 0x01) != 0;
+        boolean resetIdentifiers = (utility & 0x02) != 0;
+
+        if (resetNamespaces) {
+            while (namespaces.size() > 5) {
+                namespaces.remove(namespaces.size() - 1);
+            }
+            format.clear();
+            initReservedNamespaces(format);
+        }
+
+        if (resetIdentifiers) {
+            identifiers.clear();
+        }
+    }
 
     private void parseNamespaceDeclaration(InputStream stream, int utility, ProtocOWLDocumentFormat format) throws IOException {
         int count = readVarInt(stream);
@@ -651,7 +671,9 @@ private OWLLiteral parseLiteral(InputStream stream) throws IOException {
     // ========================================================================
 
     private OWLObject getIdentifier(int id) {
-        if (id < 0 || id >= identifiers.size()) throw new OWLRuntimeException("Identifier index out of bounds: " + id);
+        if (id < 0 || id >= identifiers.size()) {
+            throw new OWLParserException("Identifier index out of bounds: " + id);
+        }
         return identifiers.get(id);
     }
 

@@ -6,11 +6,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParserFactory;
+import org.semanticweb.owlapi.io.OWLParserException;
 import org.semanticweb.owlapi.io.OWLParserFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -107,6 +110,47 @@ public class ProtocOWLTest {
     // ========================================================================
     // TEST NEGATIVI
     // ========================================================================
+
+    private static void writeVarInt(OutputStream out, int value) throws IOException {
+        do {
+            int b = value & 0x7F;
+            value >>>= 7;
+            if (value != 0) {
+                b |= 0x80;
+            }
+            out.write(b);
+        } while (value != 0);
+    }
+
+    private static void writeString(OutputStream out, String value) throws IOException {
+        byte[] bytes = value.getBytes(StandardCharsets.UTF_8);
+        writeVarInt(out, bytes.length);
+        out.write(bytes);
+    }
+
+    @Test(expectedExceptions = OWLOntologyCreationException.class)
+    public void testResetClearsNamespacesAndIdentifiers() throws Exception {
+        File resetFile = File.createTempFile("reset_mappings", ".oprt");
+        try (FileOutputStream fos = new FileOutputStream(resetFile)) {
+            fos.write(Constants.PROTOCOWL_VERSION);
+
+            fos.write(Constants.FRAME_NAMESPACE_DECL);
+            writeVarInt(fos, 1);
+            writeString(fos, "http://example.org/");
+
+            fos.write(Constants.FRAME_IDENTIFIER_DECL | (1 << 6));
+            writeVarInt(fos, 1);
+            writeVarInt(fos, 5);
+            writeString(fos, "ontology");
+
+            fos.write(Constants.FRAME_RESET | (3 << 6));
+
+            fos.write(Constants.FRAME_ONTOLOGY_IRI);
+            writeVarInt(fos, 0);
+        }
+
+        loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+    }
 
     @Test(expectedExceptions = OWLOntologyCreationException.class)
     public void testUnsupportedVersion() throws Exception {
