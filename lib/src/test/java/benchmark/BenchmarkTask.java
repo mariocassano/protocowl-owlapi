@@ -17,13 +17,17 @@ public class BenchmarkTask {
     public static void main(String[] args) {
         // Contratto CLI: tipo di task, formato target e file da elaborare.
         if (args.length < 3) {
-            System.err.println("Uso: java BenchmarkTask <parse|render> <FormatName> <InputFile>");
+            System.err.println("Uso: java BenchmarkTask <parse|render> <Functional|ProtocOWL|ProtocOWL_128> <InputFile>");
             System.exit(1);
         }
 
         String task = args[0];
         String formatName = args[1];
         File inputFile = new File(args[2]);
+
+        if ("render".equals(task) && "ProtocOWL_128".equals(formatName)) {
+            fail("Il render di ProtocOWL_128 non è supportato: questa variante è solo in lettura");
+        }
 
         // Il manager viene inizializzato una sola volta per il task corrente.
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
@@ -43,7 +47,7 @@ public class BenchmarkTask {
 
                 // Output CSV: Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes.
                 // Nel parse non esiste output serializzato, quindi OutputSizeBytes = 0.
-                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractBaseName(inputFile.getName()), timeMs, inputSize, NO_OUTPUT_SIZE);
+                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, NO_OUTPUT_SIZE);
 
             } else if ("render".equals(task)) {
                 // La preparazione non rientra nella misura: include caricamento ontologia e scelta formato.
@@ -70,9 +74,11 @@ public class BenchmarkTask {
                 long outputSize = dummyOut.length();
 
                 // Output CSV: Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes.
-                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractBaseName(inputFile.getName()), timeMs, inputSize, outputSize);
+                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, outputSize);
 
-                dummyOut.delete(); // Rimuove il file temporaneo creato per la misurazione.
+                if (!dummyOut.delete()) {
+                    dummyOut.deleteOnExit();
+                }
             } else {
                 // Interrompe il task in caso di valore non previsto per il primo argomento.
                 throw new IllegalArgumentException("Task non riconosciuto: " + task);
@@ -88,18 +94,22 @@ public class BenchmarkTask {
         // Mappa un nome simbolico CLI alla relativa implementazione OWLAPI del formato.
         return switch (name) {
             case "Functional" -> new FunctionalSyntaxDocumentFormat();
-            case "Manchester" -> new ManchesterSyntaxDocumentFormat();
-            case "OWLXML" -> new OWLXMLDocumentFormat();
-            case "RDFXML" -> new RDFXMLDocumentFormat();
-            case "Turtle" -> new TurtleDocumentFormat();
             case "ProtocOWL" -> new ProtocOWLDocumentFormat();
             default -> throw new IllegalArgumentException("Formato non riconosciuto: " + name);
         };
     }
 
-    private static String extractBaseName(String filename) {
-        // Restituisce il nome ontologia senza estensione per uniformare l'identificativo nel CSV.
-        int dotIndex = filename.lastIndexOf('.');
-        return dotIndex == -1 ? filename : filename.substring(0, dotIndex);
+    private static String extractOntologyName(String filename) {
+        if (filename.endsWith("_functional.owl")) {
+            return filename.substring(0, filename.length() - "_functional.owl".length());
+        }
+        if (filename.endsWith("_protocowl.owl")) {
+            return filename.substring(0, filename.length() - "_protocowl.owl".length());
+        }
+        return filename;
+    }
+
+    private static void fail(String message) {
+        throw new IllegalArgumentException(message);
     }
 }
