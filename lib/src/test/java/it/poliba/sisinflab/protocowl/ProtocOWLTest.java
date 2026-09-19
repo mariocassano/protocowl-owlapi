@@ -8,12 +8,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParserFactory;
 import org.semanticweb.owlapi.io.OWLParserFactory;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
@@ -28,28 +30,57 @@ public class ProtocOWLTest {
     private String getOutputPath(String name) { return "build/out_" + name + ".oprt"; }
 
     static void assertEquals(OWLOntology in, OWLOntology out) {
+        var axiomsA = in.axioms().collect(Collectors.toSet());
+        var axiomsB = out.axioms().collect(Collectors.toSet());
+        String diagnostic = comparisonDiagnostic(in, out, axiomsA, axiomsB);
+
         // 1. Controlla se gli ID delle ontologie sono uguali (incluso il Version IRI)
-        Assert.assertEquals(in.isNamed(), out.isNamed());
+        Assert.assertEquals(in.isNamed(), out.isNamed(), diagnostic);
         if (in.isNamed()) {
-            Assert.assertEquals(in.getOntologyID().getOntologyIRI(), out.getOntologyID().getOntologyIRI());
+            Assert.assertEquals(in.getOntologyID().getOntologyIRI(), out.getOntologyID().getOntologyIRI(), diagnostic);
             // RAFFORZAMENTO: Controllo del Version IRI 
-            Assert.assertEquals(in.getOntologyID().getVersionIRI(), out.getOntologyID().getVersionIRI());
+            Assert.assertEquals(in.getOntologyID().getVersionIRI(), out.getOntologyID().getVersionIRI(), diagnostic);
         }
 
         // 2. Controlla se i prefissi sono uguali 
         var inFormat = in.getNonnullFormat().asPrefixOWLDocumentFormat();
         var outFormat = out.getNonnullFormat().asPrefixOWLDocumentFormat();
-        Assert.assertEquals(inFormat.getPrefixName2PrefixMap(), outFormat.getPrefixName2PrefixMap());
+        Assert.assertEquals(inFormat.getPrefixName2PrefixMap(), outFormat.getPrefixName2PrefixMap(), diagnostic);
 
         // 3. Controllo delle Annotazioni dell'Ontologia 
         var annA = in.annotations().collect(Collectors.toSet());
         var annB = out.annotations().collect(Collectors.toSet());
-        Assert.assertEquals(annA, annB, "Le annotazioni dell'ontologia non coincidono!");
+        Assert.assertEquals(annA, annB, "Le annotazioni dell'ontologia non coincidono!\n" + diagnostic);
 
         // 4. Controlla se gli assiomi sono uguali (senza considerare l'ordine)
-        var axiomsA = in.axioms().collect(Collectors.toSet());
-        var axiomsB = out.axioms().collect(Collectors.toSet());
-        Assert.assertEquals(axiomsA, axiomsB, "Gli assiomi non coincidono!");
+        Assert.assertEquals(axiomsA, axiomsB, "Gli assiomi non coincidono!\n" + diagnostic);
+    }
+
+    private static String comparisonDiagnostic(OWLOntology in, OWLOntology out,
+                                               Set<OWLAxiom> axiomsA, Set<OWLAxiom> axiomsB) {
+        Set<OWLAxiom> onlyInOriginal = new LinkedHashSet<>(axiomsA);
+        onlyInOriginal.removeAll(axiomsB);
+
+        Set<OWLAxiom> onlyInReloaded = new LinkedHashSet<>(axiomsB);
+        onlyInReloaded.removeAll(axiomsA);
+
+        return "Differenza semantica:" + System.lineSeparator()
+                + "  Assiomi solo nell'originale (" + onlyInOriginal.size() + "):"
+                + formatAxioms(onlyInOriginal)
+                + "  Assiomi solo nella versione riletta (" + onlyInReloaded.size() + "):"
+                + formatAxioms(onlyInReloaded)
+                + "  Ontology ID originale: " + in.getOntologyID() + System.lineSeparator()
+                + "  Ontology ID riletta: " + out.getOntologyID();
+    }
+
+    private static String formatAxioms(Set<OWLAxiom> axioms) {
+        if (axioms.isEmpty()) {
+            return " nessuno" + System.lineSeparator();
+        }
+        return System.lineSeparator() + axioms.stream()
+                .map(axiom -> "    " + axiom)
+                .sorted()
+                .collect(Collectors.joining(System.lineSeparator(), "", System.lineSeparator()));
     }
 
     static OWLOntology loadOntology(String filePath, OWLParserFactory parser) throws OWLOntologyCreationException {
