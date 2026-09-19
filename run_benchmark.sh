@@ -66,6 +66,7 @@ if ! "$TIME_CMD" -v true >/dev/null 2>&1; then
 fi
 
 declare -A SEEN_RESULTS=()
+declare -a FAILED_COMBINATIONS=()
 
 read -r -a JVM_OPTS <<< "$BENCH_JAVA_OPTS"
 
@@ -121,15 +122,98 @@ run_task() {
   else
     echo "ERROR: benchmark fallito per $task $format $ontology" >&2
     printf '%s\n' "$cmd_output" >&2
-    return 1
+    FAILED_COMBINATIONS+=("$task,$format,$ontology")
+    return 0
   fi
+}
+
+validate_results() {
+  local validation_errors=0
+  local actual_rows
+
+  actual_rows=$(($(wc -l < "$OUTPUT_CSV") - 1))
+  if [ "$actual_rows" -ne 500 ]; then
+    echo "ERROR: attese 500 righe dati, trovate $actual_rows" >&2
+    validation_errors=1
+  fi
+
+  while IFS= read -r missing; do
+    [ -n "$missing" ] || continue
+    echo "MISSING: $missing" >&2
+    validation_errors=1
+  done < <(
+    for ontology in "${ONTOLOGIES[@]}"; do
+      printf '%s\n' \
+        "parse,Functional,$ontology" \
+        "render,Functional,$ontology" \
+        "parse,ProtocOWL,$ontology" \
+        "render,ProtocOWL,$ontology" \
+        "parse,ProtocOWL_128,$ontology"
+    done | awk -F, 'NR == FNR { expected[$0] = 1; next } NR > 1 { actual[$1 "," $2 "," $3] = 1 } END { for (key in expected) if (!(key in actual)) print key }' - <(tail -n +2 "$OUTPUT_CSV") | sort
+  )
+
+  while IFS=, read -r task format ontology time_ms input_size output_size mrss ratio saving; do
+    [ -n "$ontology" ] || continue
+    local expected_input expected_protoc
+    case "$format" in
+      Functional) expected_input=$(stat_size "$DATASET_DIR/functional/${ontology}_functional.owl") ;;
+      ProtocOWL) expected_input=$(stat_size "$DATASET_DIR/protocowl/std/${ontology}_protocowl.owl") ;;
+      ProtocOWL_128) expected_input=$(stat_size "$DATASET_DIR/protocowl/MIS_128/${ontology}_protocowl.owl") ;;
+      *) echo "ERROR: formato non valido nel CSV: $format" >&2; validation_errors=1; continue ;;
+    esac
+    expected_protoc=$(stat_size "$DATASET_DIR/protocowl/std/${ontology}_protocowl.owl")
+
+    if [ "$task" != "parse" ] && [ "$task" != "render" ]; then
+      echo "ERROR: task non valido nel CSV: $task,$format,$ontology" >&2
+      validation_errors=1
+    fi
+    if [ "$format" = "ProtocOWL_128" ] && [ "$task" = "render" ]; then
+      echo "ERROR: render presente per ProtocOWL_128: $task,$format,$ontology" >&2
+      validation_errors=1
+    fi
+    if [ "$input_size" -ne "$expected_input" ]; then
+      echo "ERROR: InputSizeBytes errato per $task,$format,$ontology: $input_size != $expected_input" >&2
+      validation_errors=1
+    fi
+    if [ "$task" = "parse" ] && [ "$output_size" -ne 0 ]; then
+      echo "ERROR: OutputSizeBytes del parse diverso da 0: $task,$format,$ontology" >&2
+      validation_errors=1
+    fi
+    if [ "$task" = "render" ] && [ "$format" = "ProtocOWL" ] && [ "$output_size" -ne "$expected_protoc" ]; then
+      echo "ERROR: output ProtocOWL incoerente per $ontology: $output_size != $expected_protoc" >&2
+      validation_errors=1
+    fi
+    if ! [[ "$time_ms" =~ ^[0-9]+([.][0-9]+)?$ && "$mrss" =~ ^[0-9]+$ ]]; then
+      echo "ERROR: metriche non numeriche per $task,$format,$ontology" >&2
+      validation_errors=1
+    fi
+  done < <(tail -n +2 "$OUTPUT_CSV")
+
+  duplicate_keys=$(tail -n +2 "$OUTPUT_CSV" | cut -d, -f1-3 | sort | uniq -d)
+  if [ -n "$duplicate_keys" ]; then
+    echo "ERROR: combinazioni duplicate:" >&2
+    printf '%s\n' "$duplicate_keys" >&2
+    validation_errors=1
+  fi
+
+  return "$validation_errors"
+}
+
+stat_size() {
+  stat -c%s "$1" 2>/dev/null || stat -f%z "$1"
 }
 
 echo "Inizio il benchmark su dataset esistente. I risultati verranno salvati in $OUTPUT_CSV"
 echo "Ambiente annotato in $ENVIRONMENT_REPORT"
 
-while IFS= read -r ontology; do
-  [ -n "$ontology" ] || continue
+mapfile -t ONTOLOGIES < <(metadata_bases)
+ontology_count="${#ONTOLOGIES[@]}"
+if [ "$ontology_count" -ne 100 ]; then
+  echo "ERROR: metadata.csv deve contenere esattamente 100 ontologie complete, trovate $ontology_count" >&2
+  exit 1
+fi
+
+for ontology in "${ONTOLOGIES[@]}"; do
   functional_file="$DATASET_DIR/functional/${ontology}_functional.owl"
   protocowl_file="$DATASET_DIR/protocowl/std/${ontology}_protocowl.owl"
   protocowl_128_file="$DATASET_DIR/protocowl/MIS_128/${ontology}_protocowl.owl"
@@ -141,9 +225,9 @@ while IFS= read -r ontology; do
     fi
   done
 
-  protoc_size=$(stat -c%s "$protocowl_file" 2>/dev/null || stat -f%z "$protocowl_file")
-  functional_size=$(stat -c%s "$functional_file" 2>/dev/null || stat -f%z "$functional_file")
-  protocowl_128_size=$(stat -c%s "$protocowl_128_file" 2>/dev/null || stat -f%z "$protocowl_128_file")
+  protoc_size=$(stat_size "$protocowl_file")
+  functional_size=$(stat_size "$functional_file")
+  protocowl_128_size=$(stat_size "$protocowl_128_file")
 
   run_task parse Functional "$functional_file" "$ontology" "$functional_size" "$protoc_size"
   run_task render Functional "$functional_file" "$ontology" "$functional_size" "$protoc_size"
@@ -152,17 +236,14 @@ while IFS= read -r ontology; do
   run_task parse ProtocOWL_128 "$protocowl_128_file" "$ontology" "$protocowl_128_size" "$protoc_size"
 done
 
-ontology_count=$(metadata_bases | awk 'NF {count++} END {print count + 0}')
-if [ "$ontology_count" -ne 100 ]; then
-  echo "ERROR: metadata.csv deve contenere esattamente 100 ontologie, trovate $ontology_count" >&2
+if [ "${#FAILED_COMBINATIONS[@]}" -gt 0 ]; then
+  echo "ERROR: combinazioni fallite durante l'esecuzione:" >&2
+  printf '  %s\n' "${FAILED_COMBINATIONS[@]}" >&2
+fi
+
+if ! validate_results; then
+  echo "ERROR: controlli 6.4 falliti." >&2
   exit 1
 fi
 
-expected_rows=500
-actual_rows=$(($(wc -l < "$OUTPUT_CSV") - 1))
-if [ "$actual_rows" -ne "$expected_rows" ]; then
-  echo "ERROR: attese $expected_rows righe dati, trovate $actual_rows" >&2
-  exit 1
-fi
-
-echo "Benchmark completato con successo: $actual_rows righe dati."
+echo "Benchmark completato con successo: 500 righe dati, nessun duplicato e metriche coerenti."
