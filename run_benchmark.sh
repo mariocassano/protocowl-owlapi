@@ -2,12 +2,13 @@
 
 set -euo pipefail
 
-DATASET_DIR="${DATASET_DIR:-../FLC step 2/dataset_onto}"
+DATASET_DIR="${DATASET_DIR:-../../FLC step 2/dataset_onto}"
 METADATA_FILE="${METADATA_FILE:-$DATASET_DIR/metadata.csv}"
 OUTPUT_CSV="benchmark_results.csv"
 ENVIRONMENT_REPORT="${ENVIRONMENT_REPORT:-benchmark_environment.txt}"
 TIME_CMD="${TIME_CMD:-/usr/bin/time}"
 BENCH_JAVA_OPTS="${BENCH_JAVA_OPTS:-}"
+CSV_HEADER="Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes,MRSS_KB,CompressionRatioVsProtocOWL,SpaceSavingVsProtocOWL"
 
 # --- RILEVAMENTO CLASSPATH ---
 # Su Windows (Git Bash in IntelliJ) Java richiede il punto e virgola ';'
@@ -49,6 +50,9 @@ write_environment_report() {
 
 write_environment_report
 
+# Il file dei risultati viene sempre ricreato, anche se un prerequisito fallisce.
+printf '%s\n' "$CSV_HEADER" > "$OUTPUT_CSV"
+
 if [ ! -f "$METADATA_FILE" ]; then
   echo "ERROR: metadata.csv non trovato: $METADATA_FILE" >&2
   echo "Impostare METADATA_FILE oppure aggiungere metadata.csv alla radice del dataset." >&2
@@ -60,8 +64,6 @@ if ! "$TIME_CMD" -v true >/dev/null 2>&1; then
   echo "Su macOS installare GNU time e impostare TIME_CMD, ad esempio TIME_CMD=gtime." >&2
   exit 1
 fi
-
-echo "Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes,MRSS_KB,CompressionRatioVsProtocOWL,SpaceSavingVsProtocOWL" > "$OUTPUT_CSV"
 
 declare -A SEEN_RESULTS=()
 
@@ -76,21 +78,21 @@ normalize_base_name() {
 }
 
 metadata_bases() {
-  local first_line=true
-  while IFS=, read -r first_column _; do
-    first_column="${first_column%$'\r'}"
-    first_column="${first_column#\"}"
-    first_column="${first_column%\"}"
-    if $first_line; then
-      first_line=false
-      case "${first_column,,}" in
-        ontology|ontologyname|filename|file|name|id) continue ;;
-      esac
-    fi
-    [ -n "$first_column" ] || continue
-    normalize_base_name "$first_column"
-    printf '\n'
-  done < "$METADATA_FILE"
+  local filename_column
+  filename_column=$(awk -F, 'NR == 1 { for (i = 1; i <= NF; i++) if ($i == "filename") { print i; exit } }' "$METADATA_FILE")
+  if [ -z "$filename_column" ]; then
+    echo "ERROR: metadata.csv non contiene la colonna filename" >&2
+    return 1
+  fi
+
+  awk -F, -v column="$filename_column" 'NR > 1 && $column != "" { gsub(/^"|"$|\r/, "", $column); print $column }' "$METADATA_FILE" |
+    while IFS= read -r filename; do
+      ontology=$(normalize_base_name "$filename")
+      [ -f "$DATASET_DIR/functional/${ontology}_functional.owl" ] || continue
+      [ -f "$DATASET_DIR/protocowl/std/${ontology}_protocowl.owl" ] || continue
+      [ -f "$DATASET_DIR/protocowl/MIS_128/${ontology}_protocowl.owl" ] || continue
+      printf '%s\n' "$ontology"
+    done | sort -u
 }
 
 run_task() {
@@ -150,7 +152,13 @@ while IFS= read -r ontology; do
   run_task parse ProtocOWL_128 "$protocowl_128_file" "$ontology" "$protocowl_128_size" "$protoc_size"
 done
 
-expected_rows=$(metadata_bases | awk 'NF {count++} END {print count * 5}')
+ontology_count=$(metadata_bases | awk 'NF {count++} END {print count + 0}')
+if [ "$ontology_count" -ne 100 ]; then
+  echo "ERROR: metadata.csv deve contenere esattamente 100 ontologie, trovate $ontology_count" >&2
+  exit 1
+fi
+
+expected_rows=500
 actual_rows=$(($(wc -l < "$OUTPUT_CSV") - 1))
 if [ "$actual_rows" -ne "$expected_rows" ]; then
   echo "ERROR: attese $expected_rows righe dati, trovate $actual_rows" >&2
