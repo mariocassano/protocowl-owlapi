@@ -12,7 +12,9 @@ import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DatasetPreparer {
     private static final int TARGET_COUNT = 140; // Definisce il numero massimo di ontologie valide da esportare nel dataset filtrato
@@ -185,25 +187,101 @@ public class DatasetPreparer {
         manager.getOntologyStorers().add(new ProtocOWLStorerFactory());
         return manager;
     }
-    // Crea e configura un OWLOntologyManager con parser e storer ProtocOWL registrati.
+    // Verifica che il rendering ProtocOWL e il successivo parse preservino il contenuto semantico
+    // dell'ontologia originale, non solo che il file serializzato sia leggibile.
     private static boolean isRoundTripSafe(OWLOntology ontology) {
-        File tmp = null;
+        File protocowlTmp = null;
+        File functionalTmp = null;
+        File functionalFromProtocowlTmp = null;
+
         try {
             OWLOntologyManager manager = ontology.getOWLOntologyManager();
-            tmp = File.createTempFile("protoc_test", ".oprt");
-            try (FileOutputStream fos = new FileOutputStream(tmp)) {
+
+            // 1) ProtocOWL -> file -> parse di nuovo, verificando uguaglianza semantica con l'originale.
+            protocowlTmp = File.createTempFile("protoc_test", ".oprt");
+            try (FileOutputStream fos = new FileOutputStream(protocowlTmp)) {
                 manager.saveOntology(ontology, new ProtocOWLDocumentFormat(), fos);
             }
-            OWLOntologyManager verifier = buildManager();
-            verifier.loadOntologyFromOntologyDocument(tmp);
-            return true;
+            OWLOntologyManager protocowlVerifier = buildManager();
+            OWLOntology reparsedProtocowl = protocowlVerifier.loadOntologyFromOntologyDocument(protocowlTmp);
+            if (!semanticEquivalent(ontology, reparsedProtocowl)) {
+                return false;
+            }
+
+            // 2) Functional -> file -> parse di nuovo, per verificare che la serializzazione in OWLAPI
+            //    non perda informazioni semantiche.
+            functionalTmp = File.createTempFile("functional_roundtrip", ".owl");
+            try (FileOutputStream fos = new FileOutputStream(functionalTmp)) {
+                manager.saveOntology(ontology, new FunctionalSyntaxDocumentFormat(), fos);
+            }
+            OWLOntologyManager functionalVerifier = OWLManager.createOWLOntologyManager();
+            OWLOntology reparsedFunctional = functionalVerifier.loadOntologyFromOntologyDocument(functionalTmp);
+            if (!semanticEquivalent(ontology, reparsedFunctional)) {
+                return false;
+            }
+
+            // 3) Functional -> ProtocOWL -> parse di nuovo -> verifica che il nostro renderer/parser
+            //    preservi ontology IRI, version IRI, imports, prefissi, annotazioni ed assiomi.
+            functionalFromProtocowlTmp = File.createTempFile("functional_from_protocowl", ".oprt");
+            try (FileOutputStream fos = new FileOutputStream(functionalFromProtocowlTmp)) {
+                manager.saveOntology(reparsedFunctional, new ProtocOWLDocumentFormat(), fos);
+            }
+            OWLOntologyManager roundtripVerifier = buildManager();
+            OWLOntology protocowlRoundtrip = roundtripVerifier.loadOntologyFromOntologyDocument(functionalFromProtocowlTmp);
+
+            return semanticEquivalent(ontology, protocowlRoundtrip);
         } catch (Throwable e) {
             return false;
         } finally {
-            if (tmp != null && tmp.exists()) {
-                tmp.delete();
+            if (protocowlTmp != null && protocowlTmp.exists()) {
+                protocowlTmp.delete();
+            }
+            if (functionalTmp != null && functionalTmp.exists()) {
+                functionalTmp.delete();
+            }
+            if (functionalFromProtocowlTmp != null && functionalFromProtocowlTmp.exists()) {
+                functionalFromProtocowlTmp.delete();
             }
         }
+    }
+
+    private static boolean semanticEquivalent(OWLOntology expected, OWLOntology actual) {
+        if (expected.isNamed() != actual.isNamed()) {
+            return false;
+        }
+
+        if (expected.isNamed()) {
+            if (!Objects.equals(expected.getOntologyID().getOntologyIRI(), actual.getOntologyID().getOntologyIRI())) {
+                return false;
+            }
+            if (!Objects.equals(expected.getOntologyID().getVersionIRI(), actual.getOntologyID().getVersionIRI())) {
+                return false;
+            }
+        }
+
+        if (!expected.getImportsDeclarations().equals(actual.getImportsDeclarations())) {
+            return false;
+        }
+
+        OWLDocumentFormat expectedFormat = expected.getFormat();
+        OWLDocumentFormat actualFormat = actual.getFormat();
+        if (expectedFormat != null && expectedFormat.isPrefixOWLDocumentFormat() &&
+                actualFormat != null && actualFormat.isPrefixOWLDocumentFormat()) {
+            if (!expectedFormat.asPrefixOWLDocumentFormat().getPrefixName2PrefixMap()
+                    .equals(actualFormat.asPrefixOWLDocumentFormat().getPrefixName2PrefixMap())) {
+                return false;
+            }
+        }
+
+        if (!expected.annotations().collect(Collectors.toSet()).equals(actual.annotations().collect(Collectors.toSet()))) {
+            return false;
+        }
+
+        if (!expected.axioms().collect(Collectors.toSet()).equals(actual.axioms().collect(Collectors.toSet()))) {
+            return false;
+        }
+
+        return true;
     }
     // Crea e configura un OWLOntologyManager con parser e storer ProtocOWL registrati.
     private static boolean areAxiomOperandsSupported(OWLAxiom axiom) {
