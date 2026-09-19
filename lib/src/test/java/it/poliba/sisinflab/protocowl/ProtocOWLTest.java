@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParserFactory;
-import org.semanticweb.owlapi.io.OWLParserException;
 import org.semanticweb.owlapi.io.OWLParserFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -28,7 +27,7 @@ public class ProtocOWLTest {
     private String getOprtPath(String name) { return "src/test/resources/" + name + ".oprt"; }
     private String getOutputPath(String name) { return "build/out_" + name + ".oprt"; }
 
-    private void assertEquals(OWLOntology in, OWLOntology out) {
+    static void assertEquals(OWLOntology in, OWLOntology out) {
         // 1. Controlla se gli ID delle ontologie sono uguali (incluso il Version IRI)
         Assert.assertEquals(in.isNamed(), out.isNamed());
         if (in.isNamed()) {
@@ -53,7 +52,7 @@ public class ProtocOWLTest {
         Assert.assertEquals(axiomsA, axiomsB, "Gli assiomi non coincidono!");
     }
 
-    private OWLOntology loadOntology(String filePath, OWLParserFactory parser) throws OWLOntologyCreationException {
+    static OWLOntology loadOntology(String filePath, OWLParserFactory parser) throws OWLOntologyCreationException {
         var manager = OWLManager.createOWLOntologyManager();
         manager.setOntologyParsers(Set.of(parser));
         try (var stream = new BufferedInputStream(new FileInputStream(filePath))) {
