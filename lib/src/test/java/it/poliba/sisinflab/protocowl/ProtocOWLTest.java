@@ -158,8 +158,68 @@ public class ProtocOWLTest {
         out.write(bytes);
     }
 
+    @Test
+    public void testResetNamespacesOnlyKeepsIdentifiersAndRestartsNamespaceIndexes() throws Exception {
+        File resetFile = createResetFile(1, true, true, true);
+        try {
+            OWLOntology ontology = loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+            Assert.assertEquals(
+                    ontology.getOntologyID().getOntologyIRI().orElseThrow().toString(),
+                    "http://example.org/new/new");
+        } finally {
+            resetFile.delete();
+        }
+    }
+
+    @Test
+    public void testResetIdentifiersOnlyRestartsIdentifierIndexes() throws Exception {
+        File resetFile = createResetFile(2, false, true, true);
+        try {
+            OWLOntology ontology = loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+            Assert.assertEquals(
+                    ontology.getOntologyID().getOntologyIRI().orElseThrow().toString(),
+                    "http://example.org/new");
+        } finally {
+            resetFile.delete();
+        }
+    }
+
+    @Test
+    public void testResetNamespacesAndIdentifiersRestartsBothIndexes() throws Exception {
+        File resetFile = createResetFile(3, true, true, true);
+        try {
+            OWLOntology ontology = loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+            Assert.assertEquals(
+                    ontology.getOntologyID().getOntologyIRI().orElseThrow().toString(),
+                    "http://example.org/new/new");
+        } finally {
+            resetFile.delete();
+        }
+    }
+
     @Test(expectedExceptions = OWLOntologyCreationException.class)
-    public void testResetClearsNamespacesAndIdentifiers() throws Exception {
+    public void testResetRejectsUndeclaredNamespaceReference() throws Exception {
+        File resetFile = createResetFile(1, false, true, true);
+        try {
+            loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+        } finally {
+            resetFile.delete();
+        }
+    }
+
+    @Test(expectedExceptions = OWLOntologyCreationException.class)
+    public void testResetRejectsUndeclaredIdentifierReference() throws Exception {
+        File resetFile = createResetFile(2, false, false, false);
+        try {
+            loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+        } finally {
+            resetFile.delete();
+        }
+    }
+
+    private static File createResetFile(int utility, boolean redeclareNamespace,
+                                         boolean redeclareIdentifier, boolean useNewIdentifier)
+            throws IOException {
         File resetFile = File.createTempFile("reset_mappings", ".oprt");
         try (FileOutputStream fos = new FileOutputStream(resetFile)) {
             fos.write(Constants.PROTOCOWL_VERSION);
@@ -171,15 +231,34 @@ public class ProtocOWLTest {
             fos.write(Constants.FRAME_IDENTIFIER_DECL | (1 << 6));
             writeVarInt(fos, 1);
             writeVarInt(fos, 5);
-            writeString(fos, "ontology");
+            writeString(fos, "old");
 
-            fos.write(Constants.FRAME_RESET | (3 << 6));
+            fos.write(Constants.FRAME_RESET | (utility << 6));
+
+            if ((utility & 1) != 0 && redeclareNamespace) {
+                fos.write(Constants.FRAME_NAMESPACE_DECL);
+                writeVarInt(fos, 1);
+                writeString(fos, "http://example.org/new/");
+            }
+
+            if ((utility & 1) != 0 && !redeclareNamespace && !redeclareIdentifier) {
+                fos.write(Constants.FRAME_IDENTIFIER_DECL | (1 << 6));
+                writeVarInt(fos, 1);
+                writeVarInt(fos, 5);
+                writeString(fos, "invalid");
+            }
+
+            if (redeclareIdentifier) {
+                fos.write(Constants.FRAME_IDENTIFIER_DECL | (1 << 6));
+                writeVarInt(fos, 1);
+                writeVarInt(fos, 5);
+                writeString(fos, useNewIdentifier ? "new" : "invalid");
+            }
 
             fos.write(Constants.FRAME_ONTOLOGY_IRI);
-            writeVarInt(fos, 0);
+            writeVarInt(fos, (utility & 2) != 0 ? 0 : 1);
         }
-
-        loadOntology(resetFile.getAbsolutePath(), new ProtocOWLParserFactory());
+        return resetFile;
     }
 
     @Test(expectedExceptions = OWLOntologyCreationException.class)

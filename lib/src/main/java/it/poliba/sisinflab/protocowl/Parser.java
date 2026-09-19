@@ -59,6 +59,10 @@ class Parser {
         namespaces.add("http://www.w3.org/XML/1998/namespace");        // ID 4
 
         // Registra i prefissi noti per preservare una serializzazione coerente in output.
+        initReservedPrefixes(format);
+    }
+
+    private void initReservedPrefixes(ProtocOWLDocumentFormat format) {
         format.setPrefix("rdf:", namespaces.get(0));
         format.setPrefix("rdfs:", namespaces.get(1));
         format.setPrefix("xsd:", namespaces.get(2));
@@ -209,7 +213,7 @@ class Parser {
                 namespaces.remove(namespaces.size() - 1);
             }
             format.clear();
-            initReservedNamespaces(format);
+            initReservedPrefixes(format);
         }
 
         if (resetIdentifiers) {
