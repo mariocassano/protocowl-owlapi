@@ -5,6 +5,9 @@ set -euo pipefail
 DATASET_DIR="${DATASET_DIR:-../FLC step 2/dataset_onto}"
 METADATA_FILE="${METADATA_FILE:-$DATASET_DIR/metadata.csv}"
 OUTPUT_CSV="benchmark_results.csv"
+ENVIRONMENT_REPORT="${ENVIRONMENT_REPORT:-benchmark_environment.txt}"
+TIME_CMD="${TIME_CMD:-/usr/bin/time}"
+BENCH_JAVA_OPTS="${BENCH_JAVA_OPTS:-}"
 
 # --- RILEVAMENTO CLASSPATH ---
 # Su Windows (Git Bash in IntelliJ) Java richiede il punto e virgola ';'
@@ -18,13 +21,40 @@ fi
 echo "Compilazione del progetto con Gradle in corso..."
 bash ./gradlew --no-daemon :lib:classes :lib:testClasses :lib:copyDependencies
 
+write_environment_report() {
+  {
+    echo "Benchmark environment"
+    echo "TimestampUTC: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+    echo "Host: $(hostname)"
+    echo "OperatingSystem: $(uname -a)"
+    if command -v sysctl >/dev/null 2>&1; then
+      echo "HardwareModel: $(sysctl -n hw.model 2>/dev/null || true)"
+      echo "CPUCount: $(sysctl -n hw.ncpu 2>/dev/null || true)"
+      echo "MemoryBytes: $(sysctl -n hw.memsize 2>/dev/null || true)"
+    elif command -v lscpu >/dev/null 2>&1; then
+      echo "Hardware:"
+      lscpu
+    else
+      echo "Hardware: unavailable"
+    fi
+    echo "JavaVersion:"
+    java -version 2>&1
+    echo "BENCH_JAVA_OPTS: ${BENCH_JAVA_OPTS:-<empty>}"
+    echo "TIME_CMD: $TIME_CMD"
+    echo "Dataset: $DATASET_DIR"
+    echo "Metadata: $METADATA_FILE"
+    echo "Command: bash ./run_benchmark.sh"
+  } > "$ENVIRONMENT_REPORT"
+}
+
+write_environment_report
+
 if [ ! -f "$METADATA_FILE" ]; then
   echo "ERROR: metadata.csv non trovato: $METADATA_FILE" >&2
   echo "Impostare METADATA_FILE oppure aggiungere metadata.csv alla radice del dataset." >&2
   exit 1
 fi
 
-TIME_CMD="${TIME_CMD:-/usr/bin/time}"
 if ! "$TIME_CMD" -v true >/dev/null 2>&1; then
   echo "ERROR: serve GNU time con supporto a '-v' per misurare MRSS_KB." >&2
   echo "Su macOS installare GNU time e impostare TIME_CMD, ad esempio TIME_CMD=gtime." >&2
@@ -34,7 +64,6 @@ fi
 echo "Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes,MRSS_KB,CompressionRatioVsProtocOWL,SpaceSavingVsProtocOWL" > "$OUTPUT_CSV"
 
 declare -A SEEN_RESULTS=()
-BENCH_JAVA_OPTS="${BENCH_JAVA_OPTS:-}"
 
 read -r -a JVM_OPTS <<< "$BENCH_JAVA_OPTS"
 
@@ -95,6 +124,7 @@ run_task() {
 }
 
 echo "Inizio il benchmark su dataset esistente. I risultati verranno salvati in $OUTPUT_CSV"
+echo "Ambiente annotato in $ENVIRONMENT_REPORT"
 
 while IFS= read -r ontology; do
   [ -n "$ontology" ] || continue
