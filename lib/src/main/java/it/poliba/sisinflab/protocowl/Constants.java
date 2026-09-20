@@ -83,6 +83,20 @@ final class Constants {
     static final int CLASS_EXPR_MIN_CARD               = 0x08;
     static final int CLASS_EXPR_MAX_CARD               = 0x09;
     static final int CLASS_EXPR_EXACT_CARD             = 0x0A;
+    static final int CLASS_EXPR_DATA_SOME_VALUES       = 0x0B;
+    static final int CLASS_EXPR_DATA_ALL_VALUES        = 0x0C;
+    static final int CLASS_EXPR_DATA_HAS_VALUE         = 0x0D;
+    static final int CLASS_EXPR_DATA_MIN_CARD          = 0x0E;
+    static final int CLASS_EXPR_DATA_MAX_CARD          = 0x0F;
+    static final int CLASS_EXPR_DATA_EXACT_CARD        = 0x10;
+
+    // --- Data Range Types & Header Values ---
+    static final int TMAX_DATA_RANGE                   = 5;
+    static final int DATA_RANGE_INTERSECTION           = 0x00;
+    static final int DATA_RANGE_UNION                  = 0x01;
+    static final int DATA_RANGE_COMPLEMENT             = 0x02;
+    static final int DATA_RANGE_ONE_OF                 = 0x03;
+    static final int DATA_RANGE_RESTRICTION            = 0x04;
 
     // --- Tipi di Letterali (Type Bits) ---
     static final int LITERAL_PLAIN                     = 0x00;
@@ -94,4 +108,6 @@ final class Constants {
     static final int LITERAL_FMT_BOOLEAN               = 0x02;
     static final int LITERAL_FMT_SIGNED_INT            = 0x03;
     static final int LITERAL_FMT_UNSIGNED_INT          = 0x04;
+    static final int LITERAL_FMT_FLOAT                 = 0x05;
+    static final int LITERAL_FMT_DOUBLE                = 0x06;
 }

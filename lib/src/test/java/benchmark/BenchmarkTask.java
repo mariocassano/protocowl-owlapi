@@ -47,7 +47,7 @@ public class BenchmarkTask {
 
                 // Output CSV: Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes.
                 // Nel parse non esiste output serializzato, quindi OutputSizeBytes = 0.
-                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, NO_OUTPUT_SIZE);
+                System.out.printf(java.util.Locale.ROOT, "%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, NO_OUTPUT_SIZE);
 
             } else if ("render".equals(task)) {
                 // La preparazione non rientra nella misura: include caricamento ontologia e scelta formato.
@@ -74,7 +74,7 @@ public class BenchmarkTask {
                 long outputSize = dummyOut.length();
 
                 // Output CSV: Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes.
-                System.out.printf("%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, outputSize);
+                System.out.printf(java.util.Locale.ROOT, "%s,%s,%s,%.4f,%d,%d%n", task, formatName, extractOntologyName(inputFile.getName()), timeMs, inputSize, outputSize);
 
                 if (!dummyOut.delete()) {
                     dummyOut.deleteOnExit();

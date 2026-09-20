@@ -136,7 +136,16 @@ public class CoverageAnalyzer {
         }
     }
 
+    private static Throwable getRootCause(Throwable throwable) {
+        Throwable current = throwable;
+        while (current.getCause() != null && current.getCause() != current) {
+            current = current.getCause();
+        }
+        return current;
+    }
+
     private static String inferConstruct(Throwable throwable) {
+        throwable = getRootCause(throwable);
         if (throwable == null) {
             return "unknown";
         }
@@ -147,7 +156,7 @@ public class CoverageAnalyzer {
         }
 
         String message = msg.toLowerCase();
-        if (message.contains("class expression") || message.contains("unsupported class") || message.contains("class expression type")) {
+        if (message.contains("classexpression") || message.contains("class expression") || message.contains("unsupported class") || message.contains("class expression type")) {
             return "ClassExpression";
         }
         if (message.contains("frame type") || message.contains("unrecognized frame") || message.contains("reset")) {
@@ -175,14 +184,15 @@ public class CoverageAnalyzer {
     }
 
     private static String normalizeMessage(Throwable throwable) {
+        throwable = getRootCause(throwable);
         if (throwable == null) {
             return "";
         }
-        String message = throwable.getMessage();
-        if (message == null || message.isBlank()) {
-            message = throwable.toString();
+        String msg = throwable.getMessage();
+        if (msg == null || msg.isBlank()) {
+            msg = throwable.toString();
         }
-        return message.replaceAll("\\r?\\n", " ").trim();
+        return msg.replace("\r", " ").replace("\n", " ").replace(",", ";").trim();
     }
 
     private static String stripSuffix(String name, String suffix) {

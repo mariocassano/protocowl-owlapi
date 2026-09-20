@@ -1,0 +1,16 @@
+Benchmark environment
+TimestampUTC: 2026-09-20T13:10:27Z
+Host: Air-di-Mario.homenet.telecomitalia.it
+OperatingSystem: Darwin Air-di-Mario.homenet.telecomitalia.it 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:59 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8142 arm64
+HardwareModel: Mac17,3
+CPUCount: 10
+MemoryBytes: 17179869184
+JavaVersion:
+java version "26.0.2.1" 2026-08-18
+Java(TM) SE Runtime Environment (build 26.0.2.1+1-7)
+Java HotSpot(TM) 64-Bit Server VM (build 26.0.2.1+1-7, mixed mode, sharing)
+BENCH_JAVA_OPTS: <empty>
+TIME_CMD: gtime
+Dataset: ../../FLC step 2/dataset_onto
+Metadata: ../../FLC step 2/dataset_onto/metadata.csv
+Command: bash ./run_benchmark.sh

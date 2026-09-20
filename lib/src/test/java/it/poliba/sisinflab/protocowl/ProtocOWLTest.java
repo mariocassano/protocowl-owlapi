@@ -29,7 +29,7 @@ public class ProtocOWLTest {
     private String getOprtPath(String name) { return "src/test/resources/" + name + ".oprt"; }
     private String getOutputPath(String name) { return "build/out_" + name + ".oprt"; }
 
-    static void assertEquals(OWLOntology in, OWLOntology out) {
+    public static void assertEquals(OWLOntology in, OWLOntology out) {
         var axiomsA = in.axioms().collect(Collectors.toSet());
         var axiomsB = out.axioms().collect(Collectors.toSet());
         String diagnostic = comparisonDiagnostic(in, out, axiomsA, axiomsB);
@@ -42,10 +42,21 @@ public class ProtocOWLTest {
             Assert.assertEquals(in.getOntologyID().getVersionIRI(), out.getOntologyID().getVersionIRI(), diagnostic);
         }
 
-        // 2. Controlla se i prefissi sono uguali 
+        // 2. Controlla se i prefissi sono uguali (normalizzando il prefisso di default se derivato dall'Ontology IRI)
         var inFormat = in.getNonnullFormat().asPrefixOWLDocumentFormat();
         var outFormat = out.getNonnullFormat().asPrefixOWLDocumentFormat();
-        Assert.assertEquals(inFormat.getPrefixName2PrefixMap(), outFormat.getPrefixName2PrefixMap(), diagnostic);
+        var inMap = new java.util.HashMap<>(inFormat.getPrefixName2PrefixMap());
+        var outMap = new java.util.HashMap<>(outFormat.getPrefixName2PrefixMap());
+        if (in.isNamed() && in.getOntologyID().getOntologyIRI().isPresent()) {
+            String defaultNs = in.getOntologyID().getOntologyIRI().get() + "#";
+            if (defaultNs.equals(outMap.get(":")) && !inMap.containsKey(":")) {
+                inMap.put(":", defaultNs);
+            }
+            if (defaultNs.equals(inMap.get(":")) && !outMap.containsKey(":")) {
+                outMap.put(":", defaultNs);
+            }
+        }
+        Assert.assertEquals(inMap, outMap, diagnostic);
 
         // 3. Controllo delle Annotazioni dell'Ontologia 
         var annA = in.annotations().collect(Collectors.toSet());

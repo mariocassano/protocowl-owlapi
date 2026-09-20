@@ -11,10 +11,12 @@ import org.semanticweb.owlapi.model.parameters.Imports;
 
 class Renderer {
 
-    // Utilizzando LinkedHashMap si mantiene l'ordine di inserimento e
-    // si riducono le strutture dati necessarie
+    // Utilizzando LinkedHashMap e LinkedHashSet si mantiene l'ordine di inserimento e
+    // si garantisce la perfetta corrispondenza biunivoca degli indici tra Renderer e Parser.
     private final Map<String, Integer> namespaceTable = new LinkedHashMap<>();
     private final Map<OWLObject, Integer> identifierTable = new LinkedHashMap<>();
+    private final Set<IRI> collectedIRIs = new LinkedHashSet<>();
+    private final Set<OWLAnonymousIndividual> collectedAnons = new LinkedHashSet<>();
 
     /**
      * Entry point della fase di codifica dell'ontologia.
@@ -25,9 +27,17 @@ class Renderer {
         // 1. Inserisce i namespace riservati nella mappa per pre-occupare gli ID 0-4
         initReservedNamespaces();
 
-        // 2. Colleziona tutte le entità in gioco (Namespace e Identificatori) assegnando loro un ID
+        // 2. Colleziona tutte le entità in gioco (Namespace e Identificatori)
         collectEntities(ontology);
         collectPrefixNamespaces(format);
+
+        // Popola la tabella degli identificatori in ordine rigoroso: prima tutti gli IRI, poi tutti gli anonimi
+        for (IRI iri : collectedIRIs) {
+            identifierTable.put(iri, identifierTable.size());
+        }
+        for (OWLAnonymousIndividual anon : collectedAnons) {
+            identifierTable.put(anon, identifierTable.size());
+        }
 
         // 3. Scrive la versione del protocollo
         writeVersion(stream);
@@ -125,26 +135,67 @@ class Renderer {
             else if (subject instanceof OWLAnonymousIndividual anon) registerAnon(anon);
             collectAnnotationEntities(axiom.getAnnotation());
         });
+
+        // Raccoglie datatypes e facet utilizzati nelle espressioni di classe o letterali degli assiomi
+        for (OWLAxiom ax : ontology.getAxioms()) {
+            ax.datatypesInSignature().forEach(dt -> registerIRI(dt.getIRI()));
+            ax.nestedClassExpressions().forEach(this::collectClassExpressionEntities);
+        }
+    }
+
+    private void collectClassExpressionEntities(OWLClassExpression ce) {
+        if (ce instanceof OWLDataHasValue hasValue) {
+            registerIRI(hasValue.getFiller().getDatatype().getIRI());
+        } else if (ce instanceof OWLDataSomeValuesFrom someData) {
+            collectDataRangeEntities(someData.getFiller());
+        } else if (ce instanceof OWLDataAllValuesFrom allData) {
+            collectDataRangeEntities(allData.getFiller());
+        } else if (ce instanceof OWLDataMinCardinality minCard) {
+            collectDataRangeEntities(minCard.getFiller());
+        } else if (ce instanceof OWLDataMaxCardinality maxCard) {
+            collectDataRangeEntities(maxCard.getFiller());
+        } else if (ce instanceof OWLDataExactCardinality exactCard) {
+            collectDataRangeEntities(exactCard.getFiller());
+        }
+    }
+
+    private void collectDataRangeEntities(OWLDataRange dr) {
+        if (!dr.isAnonymous()) {
+            registerIRI(dr.asOWLDatatype().getIRI());
+        } else if (dr instanceof OWLDatatypeRestriction restriction) {
+            registerIRI(restriction.getDatatype().getIRI());
+            for (OWLFacetRestriction fr : restriction.getFacetRestrictions()) {
+                registerIRI(fr.getFacet().getIRI());
+                registerIRI(fr.getFacetValue().getDatatype().getIRI());
+            }
+        } else if (dr instanceof OWLDataOneOf oneOf) {
+            for (OWLLiteral lit : oneOf.getValues()) {
+                registerIRI(lit.getDatatype().getIRI());
+            }
+        }
     }
 
     // Metodo helper per estrarre gli IRI dalle annotazioni
     private void collectAnnotationEntities(OWLAnnotation annotation) {
         registerIRI(annotation.getProperty().getIRI());
-        if (annotation.getValue() instanceof IRI) {
-            registerIRI((IRI) annotation.getValue());
+        if (annotation.getValue() instanceof IRI iri) {
+            registerIRI(iri);
+        } else if (annotation.getValue() instanceof OWLLiteral lit) {
+            registerIRI(lit.getDatatype().getIRI());
+        } else if (annotation.getValue() instanceof OWLAnonymousIndividual anon) {
+            registerAnon(anon);
         }
         // Se l'annotazione ha sotto-annotazioni, esplorale ricorsivamente
         annotation.annotations().forEach(this::collectAnnotationEntities);
     }
 
     private void registerIRI(IRI iri) {
-        if (!identifierTable.containsKey(iri)) {
-            String ns = iri.getNamespace();
-            if (!namespaceTable.containsKey(ns)) {
-                namespaceTable.put(ns, namespaceTable.size());
-            }
-            identifierTable.put(iri, identifierTable.size());
+        if (iri == null) return;
+        String ns = iri.getNamespace();
+        if (!namespaceTable.containsKey(ns)) {
+            namespaceTable.put(ns, namespaceTable.size());
         }
+        collectedIRIs.add(iri);
     }
 
     private void collectPrefixNamespaces(ProtocOWLDocumentFormat format) {
@@ -155,8 +206,8 @@ class Renderer {
     }
 
     private void registerAnon(OWLAnonymousIndividual anon) {
-        if (!identifierTable.containsKey(anon)) {
-            identifierTable.put(anon, identifierTable.size());
+        if (anon != null) {
+            collectedAnons.add(anon);
         }
     }
 
@@ -219,33 +270,17 @@ class Renderer {
     }
 
     /**
-     * Invece di liste di supporto aggiuntive (come da feedback ing. Di Ceglie), itera
-     * direttamente sulla Map e smista gli identificatori basati sul runtime type.
+     * Scrive le dichiarazioni degli identificatori: prima tutti gli IRI (utility bit 0 a 1)
+     * e successivamente tutti gli individui anonimi (utility bit 0 a 0), garantendo
+     * che gli indici corrispondano esattamente a quelli generati in fase di parsing.
      */
     private void writeIdentifierDeclarations(OutputStream stream) throws IOException {
-        List<OWLAnonymousIndividual> anons = new ArrayList<>();
-        List<IRI> iris = new ArrayList<>();
-
-        for (OWLObject obj : identifierTable.keySet()) {
-            if (obj instanceof OWLAnonymousIndividual anon) anons.add(anon);
-            else if (obj instanceof IRI iri) iris.add(iri);
-        }
-
-        // Scrittura degli individui anonimi
-        if (!anons.isEmpty()) {
-            stream.write(Constants.FRAME_IDENTIFIER_DECL);
-            writeVarInt(stream, anons.size());
-            for (OWLAnonymousIndividual anon : anons) {
-                writeString(stream, anon.getID().toString());
-            }
-        }
-
-        // Scrittura degli IRI
-        if (!iris.isEmpty()) {
+        // Scrittura degli IRI (utility bit = 1)
+        if (!collectedIRIs.isEmpty()) {
             int header = Constants.FRAME_IDENTIFIER_DECL | (1 << 6); // Set Utility Bit 0
             stream.write(header);
-            writeVarInt(stream, iris.size());
-            for (IRI iri : iris) {
+            writeVarInt(stream, collectedIRIs.size());
+            for (IRI iri : collectedIRIs) {
                 String ns = iri.getNamespace();
                 String remainder = iri.getRemainder().orElse("");
                 Integer nsIdx = namespaceTable.get(ns);
@@ -253,6 +288,15 @@ class Renderer {
 
                 writeVarInt(stream, nsIdx);
                 writeString(stream, remainder);
+            }
+        }
+
+        // Scrittura degli individui anonimi (utility bit = 0)
+        if (!collectedAnons.isEmpty()) {
+            stream.write(Constants.FRAME_IDENTIFIER_DECL);
+            writeVarInt(stream, collectedAnons.size());
+            for (OWLAnonymousIndividual anon : collectedAnons) {
+                writeString(stream, anon.getID().toString());
             }
         }
     }
@@ -480,8 +524,89 @@ class Renderer {
             } else if (ce instanceof OWLObjectExactCardinality exactCard) {
                 writeCardinalityExpression(stream, Constants.CLASS_EXPR_EXACT_CARD,
                         exactCard.getCardinality(), exactCard.getProperty(), exactCard.getFiller());
+            } else if (ce instanceof OWLDataSomeValuesFrom someData) {
+                // Restrizione esistenziale su Data Property (0x0B).
+                writeVarInt(stream, Constants.CLASS_EXPR_DATA_SOME_VALUES);
+                writeDataPropertyExpression(stream, someData.getProperty());
+                writeDataRange(stream, someData.getFiller());
+            } else if (ce instanceof OWLDataAllValuesFrom allData) {
+                // Restrizione universale su Data Property (0x0C).
+                writeVarInt(stream, Constants.CLASS_EXPR_DATA_ALL_VALUES);
+                writeDataPropertyExpression(stream, allData.getProperty());
+                writeDataRange(stream, allData.getFiller());
+            } else if (ce instanceof OWLDataHasValue hasValueData) {
+                // Restrizione di valore letterale su Data Property (0x0D).
+                writeVarInt(stream, Constants.CLASS_EXPR_DATA_HAS_VALUE);
+                writeDataPropertyExpression(stream, hasValueData.getProperty());
+                writeLiteral(stream, hasValueData.getFiller());
+            } else if (ce instanceof OWLDataMinCardinality minCardData) {
+                // Cardinalità minima su Data Property (0x0E).
+                writeDataCardinalityExpression(stream, Constants.CLASS_EXPR_DATA_MIN_CARD,
+                        minCardData.getCardinality(), minCardData.getProperty(), minCardData.getFiller());
+            } else if (ce instanceof OWLDataMaxCardinality maxCardData) {
+                // Cardinalità massima su Data Property (0x0F).
+                writeDataCardinalityExpression(stream, Constants.CLASS_EXPR_DATA_MAX_CARD,
+                        maxCardData.getCardinality(), maxCardData.getProperty(), maxCardData.getFiller());
+            } else if (ce instanceof OWLDataExactCardinality exactCardData) {
+                // Cardinalità esatta su Data Property (0x10).
+                writeDataCardinalityExpression(stream, Constants.CLASS_EXPR_DATA_EXACT_CARD,
+                        exactCardData.getCardinality(), exactCardData.getProperty(), exactCardData.getFiller());
             } else {
-                throw new IOException("Espressione non supportata: " + ce);
+                throw new IOException("Espressione di classe non supportata: " + ce);
+            }
+        }
+    }
+
+    /**
+     * Serializza cardinalità su Data Property, omettendo il filler se corrisponde a rdfs:Literal implicito.
+     */
+    private void writeDataCardinalityExpression(OutputStream stream, int type, int cardinality,
+            OWLDataPropertyExpression property, OWLDataRange filler) throws IOException {
+        writeVarInt(stream, type);
+        boolean isTop = filler.isTopDatatype() || (filler.isOWLDatatype() && filler.asOWLDatatype().isRDFPlainLiteral());
+        writeVarInt(stream, (cardinality << 1) | (isTop ? 0 : 1));
+        writeDataPropertyExpression(stream, property);
+        if (!isTop) writeDataRange(stream, filler);
+    }
+
+    /**
+     * Serializza i Data Ranges (Named Datatypes o Data Ranges complessi con TLV).
+     */
+    private void writeDataRange(OutputStream stream, OWLDataRange dr) throws IOException {
+        if (!dr.isAnonymous()) {
+            OWLDatatype datatype = dr.asOWLDatatype();
+            int id = getIdentifierId(datatype);
+            writeVarInt(stream, id + Constants.TMAX_DATA_RANGE);
+        } else {
+            if (dr instanceof OWLDataIntersectionOf intersection) {
+                writeVarInt(stream, Constants.DATA_RANGE_INTERSECTION);
+                Set<OWLDataRange> operands = intersection.getOperands();
+                writeVarInt(stream, operands.size());
+                for (OWLDataRange op : operands) writeDataRange(stream, op);
+            } else if (dr instanceof OWLDataUnionOf union) {
+                writeVarInt(stream, Constants.DATA_RANGE_UNION);
+                Set<OWLDataRange> operands = union.getOperands();
+                writeVarInt(stream, operands.size());
+                for (OWLDataRange op : operands) writeDataRange(stream, op);
+            } else if (dr instanceof OWLDataComplementOf complement) {
+                writeVarInt(stream, Constants.DATA_RANGE_COMPLEMENT);
+                writeDataRange(stream, complement.getDataRange());
+            } else if (dr instanceof OWLDataOneOf oneOf) {
+                writeVarInt(stream, Constants.DATA_RANGE_ONE_OF);
+                Set<OWLLiteral> values = oneOf.getValues();
+                writeVarInt(stream, values.size());
+                for (OWLLiteral val : values) writeLiteral(stream, val);
+            } else if (dr instanceof OWLDatatypeRestriction restriction) {
+                writeVarInt(stream, Constants.DATA_RANGE_RESTRICTION);
+                writeDataRange(stream, restriction.getDatatype());
+                Set<OWLFacetRestriction> facetRestrictions = restriction.getFacetRestrictions();
+                writeVarInt(stream, facetRestrictions.size());
+                for (OWLFacetRestriction fr : facetRestrictions) {
+                    writeVarInt(stream, getIdentifierId(fr.getFacet().getIRI()));
+                    writeLiteral(stream, fr.getFacetValue());
+                }
+            } else {
+                throw new IOException("DataRange non supportato: " + dr);
             }
         }
     }
@@ -531,9 +656,9 @@ class Renderer {
             // Controlliamo se possiamo usare un formato compatto
             if (lit.getDatatype().isBoolean()) {
                 format = Constants.LITERAL_FMT_BOOLEAN;
-            } else if (isUnsignedInteger(lit.getDatatype())) {
+            } else if (isUnsignedInteger(lit.getDatatype()) && isParsableUnsigned(lit.getLiteral())) {
                 format = Constants.LITERAL_FMT_UNSIGNED_INT;
-            } else if (lit.getDatatype().isInteger()) {
+            } else if (lit.getDatatype().isInteger() && isParsableSigned(lit.getLiteral())) {
                 format = Constants.LITERAL_FMT_SIGNED_INT;
             }
         }
@@ -609,6 +734,26 @@ class Renderer {
                 || iri.equals(OWL2Datatype.XSD_POSITIVE_INTEGER.getIRI())
                 || iri.equals(OWL2Datatype.XSD_UNSIGNED_INT.getIRI())
                 || iri.equals(OWL2Datatype.XSD_UNSIGNED_LONG.getIRI());
+    }
+
+    private boolean isParsableSigned(String val) {
+        if (val == null || val.isBlank()) return false;
+        try {
+            Integer.parseInt(val.trim());
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private boolean isParsableUnsigned(String val) {
+        if (val == null || val.isBlank()) return false;
+        try {
+            long l = Long.parseLong(val.trim());
+            return l >= 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     /**
