@@ -347,4 +347,51 @@ public class ProtocOWLTest {
         }
         loadOntology(badFile.getAbsolutePath(), new ProtocOWLParserFactory());
     }
+
+    /**
+     * Verifica che la presenza di un frame FRAME_END moderno interrompa correttamente la lettura
+     * anche quando lo stream sottostante contiene ulteriori byte bufferizzati/residui.
+     */
+    @Test
+    public void testModernFrameEndFollowedByTrailingBytes() throws Exception {
+        File testFile = File.createTempFile("frame_end_trailing", ".oprt");
+        try {
+            try (FileOutputStream fos = new FileOutputStream(testFile)) {
+                fos.write(Constants.PROTOCOWL_VERSION);
+                // Dichiara un namespace
+                fos.write(Constants.FRAME_NAMESPACE_DECL);
+                writeVarInt(fos, 1);
+                writeString(fos, "http://example.org/test/");
+                // Frame END
+                fos.write(Constants.FRAME_END);
+                // Byte residui / padding nello stream (che non devono essere parsati come frame legacy)
+                fos.write(new byte[]{0x01, 0x02, 0x03, 0x04, 0x05});
+            }
+            OWLOntology ont = loadOntology(testFile.getAbsolutePath(), new ProtocOWLParserFactory());
+            Assert.assertNotNull(ont);
+        } finally {
+            testFile.delete();
+        }
+    }
+
+    /**
+     * Verifica che un file moderno che inizia direttamente con un frame di controllo (es. FRAME_END)
+     * non attivi erroneamente il dialetto legacy.
+     */
+    @Test
+    public void testModernControlFrameAsFirstFrame() throws Exception {
+        File testFile = File.createTempFile("first_control_frame", ".oprt");
+        try {
+            try (FileOutputStream fos = new FileOutputStream(testFile)) {
+                fos.write(Constants.PROTOCOWL_VERSION);
+                // Il primo frame del payload e direttamente FRAME_END
+                fos.write(Constants.FRAME_END);
+                fos.write(new byte[]{0x00, 0x00}); // Byte extra
+            }
+            OWLOntology ont = loadOntology(testFile.getAbsolutePath(), new ProtocOWLParserFactory());
+            Assert.assertNotNull(ont);
+        } finally {
+            testFile.delete();
+        }
+    }
 }

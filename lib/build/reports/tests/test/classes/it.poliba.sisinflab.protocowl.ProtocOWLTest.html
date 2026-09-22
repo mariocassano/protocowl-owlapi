@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">11</div>
+<div class="counter">13</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.039s</div>
+<div class="counter">0.037s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,22 @@
 </thead>
 <tr>
 <td class="success">testHomeOntology</td>
-<td class="success">0.010s</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testModernControlFrameAsFirstFrame</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testModernFrameEndFollowedByTrailingBytes</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testNestedDataRangeWithFacetRestrictionInComplement</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -109,7 +119,7 @@
 </tr>
 <tr>
 <td class="success">testResetRejectsUndeclaredIdentifierReference</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -119,7 +129,7 @@
 </tr>
 <tr>
 <td class="success">testTruncatedInput</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -129,7 +139,7 @@
 </tr>
 <tr>
 <td class="success">testUnsupportedVersion</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -159,11 +169,11 @@
   FRAME: isLegacy=false, type=0x02 (2), utility=2, avail=2
   FRAME: isLegacy=false, type=0x06 (6), utility=0, avail=1
 === LAST 5 AXIOMS BEFORE ERROR ===
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Food&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping&gt;))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#NamedPizza&gt;)
   SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
 === LAST 20 FRAMES BEFORE ERROR ===
   FRAME: isLegacy=false, type=0x04 (4), utility=0, avail=64
   FRAME: isLegacy=false, type=0x05 (5), utility=1, avail=42
@@ -186,11 +196,11 @@
   FRAME: isLegacy=false, type=0x02 (2), utility=1, avail=9
   FRAME: isLegacy=false, type=0x05 (5), utility=1, avail=8
 === LAST 5 AXIOMS BEFORE ERROR ===
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Food&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping&gt;))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#NamedPizza&gt;)
   SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
 === LAST 20 FRAMES BEFORE ERROR ===
   FRAME: isLegacy=false, type=0x05 (5), utility=1, avail=42
   FRAME: isLegacy=false, type=0x02 (2), utility=3, avail=35
@@ -213,11 +223,11 @@
   FRAME: isLegacy=false, type=0x05 (5), utility=1, avail=8
   FRAME: isLegacy=false, type=0x04 (4), utility=0, avail=1
 === LAST 5 AXIOMS BEFORE ERROR ===
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Food&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping&gt;))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#NamedPizza&gt;)
   SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
 TRACE: FRAME at pos 1 (avail 0): 0x3F (type=63, util=0)
 TRACE: MODERN/FALLBACK FRAME: 0x3F (63), utility=0, avail=0, axioms=0
 === LAST 20 FRAMES BEFORE ERROR ===
@@ -242,11 +252,11 @@ TRACE: MODERN/FALLBACK FRAME: 0x3F (63), utility=0, avail=0, axioms=0
   FRAME: isLegacy=false, type=0x04 (4), utility=0, avail=1
   FRAME: isLegacy=false, type=0x3F (63), utility=0, avail=0
 === LAST 5 AXIOMS BEFORE ERROR ===
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Food&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping&gt;))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#NamedPizza&gt;)
   SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping&gt; ObjectSomeValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild&gt;))
-  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping&gt;)
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
+  SubClassOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana&gt; ObjectAllValuesFrom(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping&gt; ObjectUnionOf(&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping&gt; &lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping&gt;)))
 </pre>
 </span>
 </div>
@@ -258,7 +268,7 @@ TRACE: MODERN/FALLBACK FRAME: 0x3F (63), utility=0, avail=0, axioms=0
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 22 set 2026, 14:38:29</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 22 set 2026, 14:43:06</p>
 </div>
 </div>
 </body>

@@ -75,12 +75,17 @@ class Parser {
 
             if (firstFrame) {
                 firstFrame = false;
-                if (type == 0x2A || type == 0x2B || type == 0x2C || type <= 0x03) {
+                // Il dialetto legacy si riconosce dalla presenza degli opcodes 0x2A (namespace),
+                // 0x2B (identificatori) o 0x2C (ontology IRI) in testa al payload.
+                // I codici 0x00..0x03 non devono mai attivare la modalita legacy poiche rappresentano
+                // i frame di controllo standard della specifica moderna (ADD, REMOVE, RESET, END).
+                if (type == 0x2A || type == 0x2B || type == 0x2C) {
                     isLegacyDialect = true;
                 }
             }
 
-            // Se il frame e di controllo END, interrompe la lettura.
+            // Gestione della terminazione dello stream:
+            // Nel formato moderno, il frame FRAME_END (0x03) indica incondizionatamente la fine del flusso/documento.
             if (!isLegacyDialect && type == Constants.FRAME_END) break;
             if (isLegacyDialect && type == 0x03 && utility == 0 && stream.available() == 0) break;
 
