@@ -1,0 +1,38 @@
+# Gradle
+.gradle/
+build/
+**/build/
+lib/build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE & Editor
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.classpath
+.project
+.settings/
+.vscode/
+.nb-gradle/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.bin
+*.lock
+*.probe
