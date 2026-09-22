@@ -1,0 +1,1906 @@
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=34 (0x22), avail=5
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=20 (0x14), avail=25
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=771 (0x303), avail=76
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=72
+  parseClassExpr: header=18225 (0x4731), avail=66
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=24964 (0x6184), avail=162
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=159
+  parseClassExpr: header=25306 (0x62DA), avail=153
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1778 (0x6F2), avail=787
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=783
+  parseClassExpr: header=5006 (0x138E), avail=779
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=775
+  parseClassExpr: header=5013 (0x1395), avail=771
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=767
+  parseClassExpr: header=1631 (0x65F), avail=763
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=759
+  parseClassExpr: header=4913 (0x1331), avail=755
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=751
+  parseClassExpr: header=5008 (0x1390), avail=747
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=743
+  parseClassExpr: header=2961 (0xB91), avail=739
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=735
+  parseClassExpr: header=5014 (0x1396), avail=731
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=727
+  parseClassExpr: header=2960 (0xB90), avail=723
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3836 (0xEFC), avail=430
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=427
+  parseClassExpr: header=468 (0x1D4), avail=423
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=420
+  parseClassExpr: header=473 (0x1D9), avail=416
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=413
+  parseClassExpr: header=2160 (0x870), avail=409
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=406
+  parseClassExpr: header=4142 (0x102E), avail=402
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=399
+  parseClassExpr: header=4173 (0x104D), avail=395
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=392
+  parseClassExpr: header=6716 (0x1A3C), avail=388
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=385
+  parseClassExpr: header=465 (0x1D1), avail=381
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=378
+  parseClassExpr: header=6718 (0x1A3E), avail=374
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1549 (0x60D), avail=806
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=802
+  parseClassExpr: header=859 (0x35B), avail=798
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=794
+  parseClassExpr: header=889 (0x379), avail=790
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=786
+  parseClassExpr: header=5844 (0x16D4), avail=782
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=778
+  parseClassExpr: header=3222 (0xC96), avail=774
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=770
+  parseClassExpr: header=881 (0x371), avail=766
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=53
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=50
+  parseClassExpr: header=444 (0x1BC), avail=46
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=43
+  parseClassExpr: header=449 (0x1C1), avail=39
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=36
+  parseClassExpr: header=3864 (0xF18), avail=32
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=29
+  parseClassExpr: header=6114 (0x17E2), avail=25
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=22
+  parseClassExpr: header=441 (0x1B9), avail=18
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4219 (0x107B), avail=770
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=766
+  parseClassExpr: header=572 (0x23C), avail=762
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=758
+  parseClassExpr: header=635 (0x27B), avail=754
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=750
+  parseClassExpr: header=3678 (0xE5E), avail=746
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=742
+  parseClassExpr: header=669 (0x29D), avail=738
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=734
+  parseClassExpr: header=528 (0x210), avail=730
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3611 (0xE1B), avail=94
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=91
+  parseClassExpr: header=449 (0x1C1), avail=87
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=84
+  parseClassExpr: header=454 (0x1C6), avail=80
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=77
+  parseClassExpr: header=3900 (0xF3C), avail=73
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=70
+  parseClassExpr: header=6170 (0x181A), avail=66
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=63
+  parseClassExpr: header=446 (0x1BE), avail=59
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3459 (0xD83), avail=113
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=531
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1307 (0x51B), avail=164
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=277
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=91
+  parseClassExpr: header=0 (0x00), avail=89
+  parseClassExpr: header=4 (0x04), avail=87
+  parseClassExpr: header=5834 (0x16CA), avail=83
+  parseClassExpr: header=4 (0x04), avail=82
+  parseClassExpr: header=5830 (0x16C6), avail=78
+  parseClassExpr: header=4 (0x04), avail=77
+  parseClassExpr: header=368 (0x170), avail=73
+  parseClassExpr: header=4 (0x04), avail=72
+  parseClassExpr: header=2952 (0xB88), avail=68
+  parseClassExpr: header=4 (0x04), avail=67
+  parseClassExpr: header=4782 (0x12AE), avail=63
+  parseClassExpr: header=4 (0x04), avail=62
+  parseClassExpr: header=5838 (0x16CE), avail=58
+  parseClassExpr: header=4 (0x04), avail=57
+  parseClassExpr: header=4796 (0x12BC), avail=53
+  parseClassExpr: header=2173 (0x87D), avail=51
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=102
+  parseClassExpr: header=0 (0x00), avail=100
+  parseClassExpr: header=4 (0x04), avail=98
+  parseClassExpr: header=444 (0x1BC), avail=94
+  parseClassExpr: header=4 (0x04), avail=93
+  parseClassExpr: header=449 (0x1C1), avail=89
+  parseClassExpr: header=4 (0x04), avail=88
+  parseClassExpr: header=1963 (0x7AB), avail=84
+  parseClassExpr: header=4 (0x04), avail=83
+  parseClassExpr: header=3864 (0xF18), avail=79
+  parseClassExpr: header=4 (0x04), avail=78
+  parseClassExpr: header=6115 (0x17E3), avail=74
+  parseClassExpr: header=4 (0x04), avail=73
+  parseClassExpr: header=441 (0x1B9), avail=69
+  parseClassExpr: header=4 (0x04), avail=68
+  parseClassExpr: header=6117 (0x17E5), avail=64
+  parseClassExpr: header=3577 (0xDF9), avail=62
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=207
+  parseClassExpr: header=0 (0x00), avail=205
+  parseClassExpr: header=4 (0x04), avail=203
+  parseClassExpr: header=263 (0x107), avail=199
+  parseClassExpr: header=4 (0x04), avail=198
+  parseClassExpr: header=280 (0x118), avail=194
+  parseClassExpr: header=4 (0x04), avail=193
+  parseClassExpr: header=5165 (0x142D), avail=189
+  parseClassExpr: header=4 (0x04), avail=188
+  parseClassExpr: header=166 (0xA6), avail=184
+  parseClassExpr: header=4 (0x04), avail=183
+  parseClassExpr: header=5639 (0x1607), avail=179
+  parseClassExpr: header=4 (0x04), avail=178
+  parseClassExpr: header=198 (0xC6), avail=174
+  parseClassExpr: header=4 (0x04), avail=173
+  parseClassExpr: header=5607 (0x15E7), avail=169
+  parseClassExpr: header=5806 (0x16AE), avail=167
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=222
+  parseClassExpr: header=0 (0x00), avail=220
+  parseClassExpr: header=4 (0x04), avail=218
+  parseClassExpr: header=453 (0x1C5), avail=214
+  parseClassExpr: header=4 (0x04), avail=213
+  parseClassExpr: header=458 (0x1CA), avail=209
+  parseClassExpr: header=4 (0x04), avail=208
+  parseClassExpr: header=1981 (0x7BD), avail=204
+  parseClassExpr: header=4 (0x04), avail=203
+  parseClassExpr: header=3907 (0xF43), avail=199
+  parseClassExpr: header=4 (0x04), avail=198
+  parseClassExpr: header=6169 (0x1819), avail=194
+  parseClassExpr: header=4 (0x04), avail=193
+  parseClassExpr: header=450 (0x1C2), avail=189
+  parseClassExpr: header=4 (0x04), avail=188
+  parseClassExpr: header=6171 (0x181B), avail=184
+  parseClassExpr: header=3615 (0xE1F), avail=182
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=776
+  parseClassExpr: header=0 (0x00), avail=774
+  parseClassExpr: header=4 (0x04), avail=772
+  parseClassExpr: header=2463 (0x99F), avail=768
+  parseClassExpr: header=4 (0x04), avail=767
+  parseClassExpr: header=2417 (0x971), avail=763
+  parseClassExpr: header=4 (0x04), avail=762
+  parseClassExpr: header=0 (0x00), avail=759
+  parseClassExpr: header=0 (0x00), avail=757
+  parseClassExpr: header=13 (0x0D), avail=755
+    parseLiteral: header=0x16, type=2, format=5, avail=752
+  parseClassExpr: header=6 (0x06), avail=747
+  parseClassExpr: header=2183 (0x887), avail=741
+  parseClassExpr: header=4 (0x04), avail=740
+  parseClassExpr: header=3756 (0xEAC), avail=736
+  parseClassExpr: header=4 (0x04), avail=735
+  parseClassExpr: header=4848 (0x12F0), avail=731
+  parseClassExpr: header=4 (0x04), avail=730
+  parseClassExpr: header=2446 (0x98E), avail=726
+  parseClassExpr: header=4 (0x04), avail=725
+  parseClassExpr: header=4845 (0x12ED), avail=721
+  parseClassExpr: header=2291 (0x8F3), avail=719
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=111
+  parseClassExpr: header=0 (0x00), avail=109
+  parseClassExpr: header=4 (0x04), avail=107
+  parseClassExpr: header=444 (0x1BC), avail=103
+  parseClassExpr: header=4 (0x04), avail=102
+  parseClassExpr: header=449 (0x1C1), avail=98
+  parseClassExpr: header=4 (0x04), avail=97
+  parseClassExpr: header=0 (0x00), avail=94
+  parseClassExpr: header=0 (0x00), avail=92
+  parseClassExpr: header=13 (0x0D), avail=90
+    parseLiteral: header=0x16, type=2, format=5, avail=87
+  parseClassExpr: header=6 (0x06), avail=82
+  parseClassExpr: header=1963 (0x7AB), avail=76
+  parseClassExpr: header=4 (0x04), avail=75
+  parseClassExpr: header=3864 (0xF18), avail=71
+  parseClassExpr: header=4 (0x04), avail=70
+  parseClassExpr: header=6115 (0x17E3), avail=66
+  parseClassExpr: header=4 (0x04), avail=65
+  parseClassExpr: header=441 (0x1B9), avail=61
+  parseClassExpr: header=4 (0x04), avail=60
+  parseClassExpr: header=6117 (0x17E5), avail=56
+  parseClassExpr: header=3577 (0xDF9), avail=54
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=80
+  parseClassExpr: header=0 (0x00), avail=78
+  parseClassExpr: header=4 (0x04), avail=76
+  parseClassExpr: header=923 (0x39B), avail=72
+  parseClassExpr: header=4 (0x04), avail=71
+  parseClassExpr: header=931 (0x3A3), avail=67
+  parseClassExpr: header=4 (0x04), avail=66
+  parseClassExpr: header=0 (0x00), avail=63
+  parseClassExpr: header=0 (0x00), avail=61
+  parseClassExpr: header=13 (0x0D), avail=59
+    parseLiteral: header=0x16, type=2, format=5, avail=56
+  parseClassExpr: header=6 (0x06), avail=51
+  parseClassExpr: header=3157 (0xC55), avail=45
+  parseClassExpr: header=4 (0x04), avail=44
+  parseClassExpr: header=3046 (0xBE6), avail=40
+  parseClassExpr: header=4 (0x04), avail=39
+  parseClassExpr: header=2715 (0xA9B), avail=35
+  parseClassExpr: header=4 (0x04), avail=34
+  parseClassExpr: header=938 (0x3AA), avail=30
+  parseClassExpr: header=4 (0x04), avail=29
+  parseClassExpr: header=0 (0x00), avail=26
+  parseClassExpr: header=0 (0x00), avail=24
+  parseClassExpr: header=13 (0x0D), avail=22
+    parseLiteral: header=0x16, type=2, format=5, avail=19
+  parseClassExpr: header=6 (0x06), avail=14
+  parseClassExpr: header=2702 (0xA8E), avail=8
+  parseClassExpr: header=5272 (0x1498), avail=6
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=36
+  parseClassExpr: header=0 (0x00), avail=34
+  parseClassExpr: header=4 (0x04), avail=32
+  parseClassExpr: header=444 (0x1BC), avail=28
+  parseClassExpr: header=4 (0x04), avail=27
+  parseClassExpr: header=449 (0x1C1), avail=23
+  parseClassExpr: header=4 (0x04), avail=22
+  parseClassExpr: header=0 (0x00), avail=19
+  parseClassExpr: header=0 (0x00), avail=17
+  parseClassExpr: header=13 (0x0D), avail=15
+    parseLiteral: header=0x16, type=2, format=5, avail=12
+  parseClassExpr: header=6 (0x06), avail=7
+  parseClassExpr: header=1963 (0x7AB), avail=1
+  parseClassExpr: header=4 (0x04), avail=846
+  parseClassExpr: header=3864 (0xF18), avail=842
+  parseClassExpr: header=4 (0x04), avail=841
+  parseClassExpr: header=6115 (0x17E3), avail=837
+  parseClassExpr: header=4 (0x04), avail=836
+  parseClassExpr: header=441 (0x1B9), avail=832
+  parseClassExpr: header=4 (0x04), avail=831
+  parseClassExpr: header=0 (0x00), avail=828
+  parseClassExpr: header=0 (0x00), avail=826
+  parseClassExpr: header=13 (0x0D), avail=824
+    parseLiteral: header=0x16, type=2, format=5, avail=821
+  parseClassExpr: header=6 (0x06), avail=816
+  parseClassExpr: header=6117 (0x17E5), avail=810
+  parseClassExpr: header=3577 (0xDF9), avail=808
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=504
+  parseClassExpr: header=0 (0x00), avail=502
+  parseClassExpr: header=4 (0x04), avail=500
+  parseClassExpr: header=3547 (0xDDB), avail=496
+  parseClassExpr: header=4 (0x04), avail=495
+  parseClassExpr: header=3543 (0xDD7), avail=491
+  parseClassExpr: header=4 (0x04), avail=490
+  parseClassExpr: header=0 (0x00), avail=487
+  parseClassExpr: header=0 (0x00), avail=485
+  parseClassExpr: header=13 (0x0D), avail=483
+    parseLiteral: header=0x16, type=2, format=5, avail=480
+  parseClassExpr: header=6 (0x06), avail=475
+  parseClassExpr: header=2482 (0x9B2), avail=469
+  parseClassExpr: header=4 (0x04), avail=468
+  parseClassExpr: header=5024 (0x13A0), avail=464
+  parseClassExpr: header=4 (0x04), avail=463
+  parseClassExpr: header=3760 (0xEB0), avail=459
+  parseClassExpr: header=4 (0x04), avail=458
+  parseClassExpr: header=3479 (0xD97), avail=454
+  parseClassExpr: header=4 (0x04), avail=453
+  parseClassExpr: header=0 (0x00), avail=450
+  parseClassExpr: header=0 (0x00), avail=448
+  parseClassExpr: header=13 (0x0D), avail=446
+    parseLiteral: header=0x16, type=2, format=5, avail=443
+  parseClassExpr: header=6 (0x06), avail=438
+  parseClassExpr: header=3801 (0xED9), avail=432
+  parseClassExpr: header=4644 (0x1224), avail=430
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=362
+  parseClassExpr: header=0 (0x00), avail=360
+  parseClassExpr: header=4 (0x04), avail=358
+  parseClassExpr: header=453 (0x1C5), avail=354
+  parseClassExpr: header=4 (0x04), avail=353
+  parseClassExpr: header=458 (0x1CA), avail=349
+  parseClassExpr: header=4 (0x04), avail=348
+  parseClassExpr: header=0 (0x00), avail=345
+  parseClassExpr: header=0 (0x00), avail=343
+  parseClassExpr: header=13 (0x0D), avail=341
+    parseLiteral: header=0x16, type=2, format=5, avail=338
+  parseClassExpr: header=6 (0x06), avail=333
+  parseClassExpr: header=1981 (0x7BD), avail=327
+  parseClassExpr: header=4 (0x04), avail=326
+  parseClassExpr: header=3907 (0xF43), avail=322
+  parseClassExpr: header=4 (0x04), avail=321
+  parseClassExpr: header=6169 (0x1819), avail=317
+  parseClassExpr: header=4 (0x04), avail=316
+  parseClassExpr: header=450 (0x1C2), avail=312
+  parseClassExpr: header=4 (0x04), avail=311
+  parseClassExpr: header=0 (0x00), avail=308
+  parseClassExpr: header=0 (0x00), avail=306
+  parseClassExpr: header=13 (0x0D), avail=304
+    parseLiteral: header=0x16, type=2, format=5, avail=301
+  parseClassExpr: header=6 (0x06), avail=296
+  parseClassExpr: header=6171 (0x181B), avail=290
+  parseClassExpr: header=3615 (0xE1F), avail=288
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=839
+  parseClassExpr: header=0 (0x00), avail=837
+  parseClassExpr: header=4 (0x04), avail=835
+  parseClassExpr: header=4507 (0x119B), avail=831
+  parseClassExpr: header=4 (0x04), avail=830
+  parseClassExpr: header=4496 (0x1190), avail=826
+  parseClassExpr: header=4 (0x04), avail=825
+  parseClassExpr: header=0 (0x00), avail=822
+  parseClassExpr: header=0 (0x00), avail=820
+  parseClassExpr: header=13 (0x0D), avail=818
+    parseLiteral: header=0x16, type=2, format=5, avail=815
+  parseClassExpr: header=6 (0x06), avail=810
+  parseClassExpr: header=223 (0xDF), avail=804
+  parseClassExpr: header=4 (0x04), avail=803
+  parseClassExpr: header=2439 (0x987), avail=799
+  parseClassExpr: header=4 (0x04), avail=798
+  parseClassExpr: header=4899 (0x1323), avail=794
+  parseClassExpr: header=4 (0x04), avail=793
+  parseClassExpr: header=0 (0x00), avail=790
+  parseClassExpr: header=0 (0x00), avail=788
+  parseClassExpr: header=13 (0x0D), avail=786
+    parseLiteral: header=0x16, type=2, format=5, avail=783
+  parseClassExpr: header=6 (0x06), avail=777
+  parseClassExpr: header=4504 (0x1198), avail=771
+  parseClassExpr: header=4 (0x04), avail=770
+  parseClassExpr: header=0 (0x00), avail=767
+  parseClassExpr: header=0 (0x00), avail=765
+  parseClassExpr: header=13 (0x0D), avail=763
+    parseLiteral: header=0x16, type=2, format=5, avail=760
+  parseClassExpr: header=6 (0x06), avail=755
+  parseClassExpr: header=4865 (0x1301), avail=749
+  parseClassExpr: header=304 (0x130), avail=747
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=785
+  parseClassExpr: header=0 (0x00), avail=783
+  parseClassExpr: header=4 (0x04), avail=781
+  parseClassExpr: header=444 (0x1BC), avail=777
+  parseClassExpr: header=4 (0x04), avail=776
+  parseClassExpr: header=449 (0x1C1), avail=772
+  parseClassExpr: header=4 (0x04), avail=771
+  parseClassExpr: header=0 (0x00), avail=768
+  parseClassExpr: header=0 (0x00), avail=766
+  parseClassExpr: header=13 (0x0D), avail=764
+    parseLiteral: header=0x16, type=2, format=5, avail=761
+  parseClassExpr: header=6 (0x06), avail=756
+  parseClassExpr: header=1963 (0x7AB), avail=750
+  parseClassExpr: header=4 (0x04), avail=749
+  parseClassExpr: header=3864 (0xF18), avail=745
+  parseClassExpr: header=4 (0x04), avail=744
+  parseClassExpr: header=6115 (0x17E3), avail=740
+  parseClassExpr: header=4 (0x04), avail=739
+  parseClassExpr: header=0 (0x00), avail=736
+  parseClassExpr: header=0 (0x00), avail=734
+  parseClassExpr: header=13 (0x0D), avail=732
+    parseLiteral: header=0x16, type=2, format=5, avail=729
+  parseClassExpr: header=6 (0x06), avail=723
+  parseClassExpr: header=441 (0x1B9), avail=717
+  parseClassExpr: header=4 (0x04), avail=716
+  parseClassExpr: header=0 (0x00), avail=713
+  parseClassExpr: header=0 (0x00), avail=711
+  parseClassExpr: header=13 (0x0D), avail=709
+    parseLiteral: header=0x16, type=2, format=5, avail=706
+  parseClassExpr: header=6 (0x06), avail=701
+  parseClassExpr: header=6117 (0x17E5), avail=695
+  parseClassExpr: header=3577 (0xDF9), avail=693
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=361
+  parseClassExpr: header=0 (0x00), avail=359
+  parseClassExpr: header=4 (0x04), avail=357
+  parseClassExpr: header=288 (0x120), avail=353
+  parseClassExpr: header=4 (0x04), avail=352
+  parseClassExpr: header=253 (0xFD), avail=348
+  parseClassExpr: header=4 (0x04), avail=347
+  parseClassExpr: header=0 (0x00), avail=344
+  parseClassExpr: header=0 (0x00), avail=342
+  parseClassExpr: header=13 (0x0D), avail=340
+    parseLiteral: header=0x16, type=2, format=5, avail=337
+  parseClassExpr: header=6 (0x06), avail=332
+  parseClassExpr: header=440 (0x1B8), avail=326
+  parseClassExpr: header=4 (0x04), avail=325
+  parseClassExpr: header=2777 (0xAD9), avail=321
+  parseClassExpr: header=4 (0x04), avail=320
+  parseClassExpr: header=90 (0x5A), avail=317
+  parseClassExpr: header=4 (0x04), avail=316
+  parseClassExpr: header=0 (0x00), avail=313
+  parseClassExpr: header=0 (0x00), avail=311
+  parseClassExpr: header=13 (0x0D), avail=309
+    parseLiteral: header=0x16, type=2, format=5, avail=306
+  parseClassExpr: header=6 (0x06), avail=300
+  parseClassExpr: header=240 (0xF0), avail=294
+  parseClassExpr: header=4 (0x04), avail=293
+  parseClassExpr: header=0 (0x00), avail=290
+  parseClassExpr: header=0 (0x00), avail=288
+  parseClassExpr: header=13 (0x0D), avail=286
+    parseLiteral: header=0x16, type=2, format=5, avail=283
+  parseClassExpr: header=6 (0x06), avail=278
+  parseClassExpr: header=122 (0x7A), avail=273
+  parseClassExpr: header=1155 (0x483), avail=271
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=376
+  parseClassExpr: header=0 (0x00), avail=374
+  parseClassExpr: header=4 (0x04), avail=372
+  parseClassExpr: header=453 (0x1C5), avail=368
+  parseClassExpr: header=4 (0x04), avail=367
+  parseClassExpr: header=458 (0x1CA), avail=363
+  parseClassExpr: header=4 (0x04), avail=362
+  parseClassExpr: header=0 (0x00), avail=359
+  parseClassExpr: header=0 (0x00), avail=357
+  parseClassExpr: header=13 (0x0D), avail=355
+    parseLiteral: header=0x16, type=2, format=5, avail=352
+  parseClassExpr: header=6 (0x06), avail=347
+  parseClassExpr: header=1981 (0x7BD), avail=341
+  parseClassExpr: header=4 (0x04), avail=340
+  parseClassExpr: header=3908 (0xF44), avail=336
+  parseClassExpr: header=4 (0x04), avail=335
+  parseClassExpr: header=6170 (0x181A), avail=331
+  parseClassExpr: header=4 (0x04), avail=330
+  parseClassExpr: header=0 (0x00), avail=327
+  parseClassExpr: header=0 (0x00), avail=325
+  parseClassExpr: header=13 (0x0D), avail=323
+    parseLiteral: header=0x16, type=2, format=5, avail=320
+  parseClassExpr: header=6 (0x06), avail=314
+  parseClassExpr: header=450 (0x1C2), avail=308
+  parseClassExpr: header=4 (0x04), avail=307
+  parseClassExpr: header=0 (0x00), avail=304
+  parseClassExpr: header=0 (0x00), avail=302
+  parseClassExpr: header=13 (0x0D), avail=300
+    parseLiteral: header=0x16, type=2, format=5, avail=297
+  parseClassExpr: header=6 (0x06), avail=292
+  parseClassExpr: header=6172 (0x181C), avail=286
+  parseClassExpr: header=3616 (0xE20), avail=284
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=34 (0x22), avail=5
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=20 (0x14), avail=308
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=20 (0x14), avail=25
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=20 (0x14), avail=148
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://reliant.teknowledge.com/DAML/SUMO.owl#ElementalSubstance>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=771 (0x303), avail=76
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=72
+  parseClassExpr: header=18225 (0x4731), avail=66
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=24964 (0x6184), avail=51
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=227
+  parseClassExpr: header=25306 (0x62DA), avail=221
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=24964 (0x6184), avail=162
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=159
+  parseClassExpr: header=25306 (0x62DA), avail=153
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=24964 (0x6184), avail=71
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=133
+  parseClassExpr: header=25306 (0x62DA), avail=127
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1778 (0x6F2), avail=787
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=783
+  parseClassExpr: header=5006 (0x138E), avail=779
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=775
+  parseClassExpr: header=5013 (0x1395), avail=771
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=767
+  parseClassExpr: header=1631 (0x65F), avail=763
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=759
+  parseClassExpr: header=4913 (0x1331), avail=755
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=751
+  parseClassExpr: header=5008 (0x1390), avail=747
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=743
+  parseClassExpr: header=2961 (0xB91), avail=739
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=735
+  parseClassExpr: header=5014 (0x1396), avail=731
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=727
+  parseClassExpr: header=2960 (0xB90), avail=723
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=509
+  parseClassExpr: header=465 (0x1D1), avail=505
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=46
+  parseClassExpr: header=4142 (0x102E), avail=42
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=223
+  parseClassExpr: header=6716 (0x1A3C), avail=219
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=732
+  parseClassExpr: header=6718 (0x1A3E), avail=728
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=355
+  parseClassExpr: header=473 (0x1D9), avail=351
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=390
+  parseClassExpr: header=4173 (0x104D), avail=386
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3836 (0xEFC), avail=51
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=711
+  parseClassExpr: header=2160 (0x870), avail=707
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=443
+  parseClassExpr: header=468 (0x1D4), avail=439
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3836 (0xEFC), avail=430
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=427
+  parseClassExpr: header=468 (0x1D4), avail=423
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=420
+  parseClassExpr: header=473 (0x1D9), avail=416
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=413
+  parseClassExpr: header=2160 (0x870), avail=409
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=406
+  parseClassExpr: header=4142 (0x102E), avail=402
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=399
+  parseClassExpr: header=4173 (0x104D), avail=395
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=392
+  parseClassExpr: header=6716 (0x1A3C), avail=388
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=385
+  parseClassExpr: header=465 (0x1D1), avail=381
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=378
+  parseClassExpr: header=6718 (0x1A3E), avail=374
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=510
+  parseClassExpr: header=4142 (0x102E), avail=506
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=463
+  parseClassExpr: header=6718 (0x1A3E), avail=459
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=706
+  parseClassExpr: header=468 (0x1D4), avail=702
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=139
+  parseClassExpr: header=4173 (0x104D), avail=135
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#NeutronRELAPPROXQ138>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=29
+  parseClassExpr: header=473 (0x1D9), avail=25
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=332
+  parseClassExpr: header=6716 (0x1A3C), avail=328
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3836 (0xEFC), avail=85
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=250
+  parseClassExpr: header=465 (0x1D1), avail=246
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=610
+  parseClassExpr: header=2160 (0x870), avail=606
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1549 (0x60D), avail=806
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=802
+  parseClassExpr: header=859 (0x35B), avail=798
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=794
+  parseClassExpr: header=889 (0x379), avail=790
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=786
+  parseClassExpr: header=5844 (0x16D4), avail=782
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=778
+  parseClassExpr: header=3222 (0xC96), avail=774
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=770
+  parseClassExpr: header=881 (0x371), avail=766
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=125
+  parseClassExpr: header=441 (0x1B9), avail=121
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=226
+  parseClassExpr: header=6114 (0x17E2), avail=222
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=386
+  parseClassExpr: header=444 (0x1BC), avail=382
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=602
+  parseClassExpr: header=3864 (0xF18), avail=598
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=177
+  parseClassExpr: header=449 (0x1C1), avail=173
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=360
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=53
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=50
+  parseClassExpr: header=444 (0x1BC), avail=46
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=43
+  parseClassExpr: header=449 (0x1C1), avail=39
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=36
+  parseClassExpr: header=3864 (0xF18), avail=32
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=29
+  parseClassExpr: header=6114 (0x17E2), avail=25
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=22
+  parseClassExpr: header=441 (0x1B9), avail=18
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=607
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=183
+  parseClassExpr: header=441 (0x1B9), avail=179
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=443
+  parseClassExpr: header=3864 (0xF18), avail=439
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=690
+  parseClassExpr: header=449 (0x1C1), avail=686
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=679
+  parseClassExpr: header=444 (0x1BC), avail=675
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=71
+  parseClassExpr: header=6114 (0x17E2), avail=67
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4219 (0x107B), avail=770
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=766
+  parseClassExpr: header=572 (0x23C), avail=762
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=758
+  parseClassExpr: header=635 (0x27B), avail=754
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=750
+  parseClassExpr: header=3678 (0xE5E), avail=746
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=742
+  parseClassExpr: header=669 (0x29D), avail=738
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=734
+  parseClassExpr: header=528 (0x210), avail=730
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=360
+  parseClassExpr: header=449 (0x1C1), avail=356
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=124
+  parseClassExpr: header=6170 (0x181A), avail=120
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=123
+  parseClassExpr: header=454 (0x1C6), avail=119
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=717
+  parseClassExpr: header=446 (0x1BE), avail=713
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3611 (0xE1B), avail=120
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=533
+  parseClassExpr: header=3900 (0xF3C), avail=529
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3611 (0xE1B), avail=94
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=91
+  parseClassExpr: header=449 (0x1C1), avail=87
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=84
+  parseClassExpr: header=454 (0x1C6), avail=80
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=77
+  parseClassExpr: header=3900 (0xF3C), avail=73
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=70
+  parseClassExpr: header=6170 (0x181A), avail=66
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=63
+  parseClassExpr: header=446 (0x1BE), avail=59
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3611 (0xE1B), avail=162
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=362
+  parseClassExpr: header=454 (0x1C6), avail=358
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=191
+  parseClassExpr: header=449 (0x1C1), avail=187
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=762
+  parseClassExpr: header=6170 (0x181A), avail=758
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=439
+  parseClassExpr: header=446 (0x1BE), avail=435
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=4 (0x04), avail=675
+  parseClassExpr: header=3900 (0xF3C), avail=671
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>)
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3459 (0xD83), avail=113
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=20
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=531
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=119
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=1307 (0x51B), avail=164
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=640
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=277
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=3577 (0xDF9), avail=493
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: <http://www.projecthalo.com/aura#Metal-Atom>
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=91
+  parseClassExpr: header=0 (0x00), avail=89
+  parseClassExpr: header=4 (0x04), avail=87
+  parseClassExpr: header=5834 (0x16CA), avail=83
+  parseClassExpr: header=4 (0x04), avail=82
+  parseClassExpr: header=5830 (0x16C6), avail=78
+  parseClassExpr: header=4 (0x04), avail=77
+  parseClassExpr: header=368 (0x170), avail=73
+  parseClassExpr: header=4 (0x04), avail=72
+  parseClassExpr: header=2952 (0xB88), avail=68
+  parseClassExpr: header=4 (0x04), avail=67
+  parseClassExpr: header=4782 (0x12AE), avail=63
+  parseClassExpr: header=4 (0x04), avail=62
+  parseClassExpr: header=5838 (0x16CE), avail=58
+  parseClassExpr: header=4 (0x04), avail=57
+  parseClassExpr: header=4796 (0x12BC), avail=53
+  parseClassExpr: header=2173 (0x87D), avail=51
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=456
+  parseClassExpr: header=3577 (0xDF9), avail=453
+  parseClassExpr: header=0 (0x00), avail=452
+  parseClassExpr: header=4 (0x04), avail=450
+  parseClassExpr: header=444 (0x1BC), avail=446
+  parseClassExpr: header=4 (0x04), avail=445
+  parseClassExpr: header=449 (0x1C1), avail=441
+  parseClassExpr: header=4 (0x04), avail=440
+  parseClassExpr: header=1963 (0x7AB), avail=436
+  parseClassExpr: header=4 (0x04), avail=435
+  parseClassExpr: header=3864 (0xF18), avail=431
+  parseClassExpr: header=4 (0x04), avail=430
+  parseClassExpr: header=6115 (0x17E3), avail=426
+  parseClassExpr: header=4 (0x04), avail=425
+  parseClassExpr: header=441 (0x1B9), avail=421
+  parseClassExpr: header=4 (0x04), avail=420
+  parseClassExpr: header=6117 (0x17E5), avail=416
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=102
+  parseClassExpr: header=0 (0x00), avail=100
+  parseClassExpr: header=4 (0x04), avail=98
+  parseClassExpr: header=444 (0x1BC), avail=94
+  parseClassExpr: header=4 (0x04), avail=93
+  parseClassExpr: header=449 (0x1C1), avail=89
+  parseClassExpr: header=4 (0x04), avail=88
+  parseClassExpr: header=1963 (0x7AB), avail=84
+  parseClassExpr: header=4 (0x04), avail=83
+  parseClassExpr: header=3864 (0xF18), avail=79
+  parseClassExpr: header=4 (0x04), avail=78
+  parseClassExpr: header=6115 (0x17E3), avail=74
+  parseClassExpr: header=4 (0x04), avail=73
+  parseClassExpr: header=441 (0x1B9), avail=69
+  parseClassExpr: header=4 (0x04), avail=68
+  parseClassExpr: header=6117 (0x17E5), avail=64
+  parseClassExpr: header=3577 (0xDF9), avail=62
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=484
+  parseClassExpr: header=3577 (0xDF9), avail=481
+  parseClassExpr: header=0 (0x00), avail=480
+  parseClassExpr: header=4 (0x04), avail=478
+  parseClassExpr: header=444 (0x1BC), avail=474
+  parseClassExpr: header=4 (0x04), avail=473
+  parseClassExpr: header=449 (0x1C1), avail=469
+  parseClassExpr: header=4 (0x04), avail=468
+  parseClassExpr: header=1963 (0x7AB), avail=464
+  parseClassExpr: header=4 (0x04), avail=463
+  parseClassExpr: header=3864 (0xF18), avail=459
+  parseClassExpr: header=4 (0x04), avail=458
+  parseClassExpr: header=6115 (0x17E3), avail=454
+  parseClassExpr: header=4 (0x04), avail=453
+  parseClassExpr: header=441 (0x1B9), avail=449
+  parseClassExpr: header=4 (0x04), avail=448
+  parseClassExpr: header=6117 (0x17E5), avail=444
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=207
+  parseClassExpr: header=0 (0x00), avail=205
+  parseClassExpr: header=4 (0x04), avail=203
+  parseClassExpr: header=263 (0x107), avail=199
+  parseClassExpr: header=4 (0x04), avail=198
+  parseClassExpr: header=280 (0x118), avail=194
+  parseClassExpr: header=4 (0x04), avail=193
+  parseClassExpr: header=5165 (0x142D), avail=189
+  parseClassExpr: header=4 (0x04), avail=188
+  parseClassExpr: header=166 (0xA6), avail=184
+  parseClassExpr: header=4 (0x04), avail=183
+  parseClassExpr: header=5639 (0x1607), avail=179
+  parseClassExpr: header=4 (0x04), avail=178
+  parseClassExpr: header=198 (0xC6), avail=174
+  parseClassExpr: header=4 (0x04), avail=173
+  parseClassExpr: header=5607 (0x15E7), avail=169
+  parseClassExpr: header=5806 (0x16AE), avail=167
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=367
+  parseClassExpr: header=3615 (0xE1F), avail=364
+  parseClassExpr: header=0 (0x00), avail=363
+  parseClassExpr: header=4 (0x04), avail=361
+  parseClassExpr: header=453 (0x1C5), avail=357
+  parseClassExpr: header=4 (0x04), avail=356
+  parseClassExpr: header=458 (0x1CA), avail=352
+  parseClassExpr: header=4 (0x04), avail=351
+  parseClassExpr: header=1981 (0x7BD), avail=347
+  parseClassExpr: header=4 (0x04), avail=346
+  parseClassExpr: header=3907 (0xF43), avail=342
+  parseClassExpr: header=4 (0x04), avail=341
+  parseClassExpr: header=6169 (0x1819), avail=337
+  parseClassExpr: header=4 (0x04), avail=336
+  parseClassExpr: header=450 (0x1C2), avail=332
+  parseClassExpr: header=4 (0x04), avail=331
+  parseClassExpr: header=6171 (0x181B), avail=327
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=222
+  parseClassExpr: header=0 (0x00), avail=220
+  parseClassExpr: header=4 (0x04), avail=218
+  parseClassExpr: header=453 (0x1C5), avail=214
+  parseClassExpr: header=4 (0x04), avail=213
+  parseClassExpr: header=458 (0x1CA), avail=209
+  parseClassExpr: header=4 (0x04), avail=208
+  parseClassExpr: header=1981 (0x7BD), avail=204
+  parseClassExpr: header=4 (0x04), avail=203
+  parseClassExpr: header=3907 (0xF43), avail=199
+  parseClassExpr: header=4 (0x04), avail=198
+  parseClassExpr: header=6169 (0x1819), avail=194
+  parseClassExpr: header=4 (0x04), avail=193
+  parseClassExpr: header=450 (0x1C2), avail=189
+  parseClassExpr: header=4 (0x04), avail=188
+  parseClassExpr: header=6171 (0x181B), avail=184
+  parseClassExpr: header=3615 (0xE1F), avail=182
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=629
+  parseClassExpr: header=3615 (0xE1F), avail=626
+  parseClassExpr: header=0 (0x00), avail=625
+  parseClassExpr: header=4 (0x04), avail=623
+  parseClassExpr: header=453 (0x1C5), avail=619
+  parseClassExpr: header=4 (0x04), avail=618
+  parseClassExpr: header=458 (0x1CA), avail=614
+  parseClassExpr: header=4 (0x04), avail=613
+  parseClassExpr: header=1981 (0x7BD), avail=609
+  parseClassExpr: header=4 (0x04), avail=608
+  parseClassExpr: header=3907 (0xF43), avail=604
+  parseClassExpr: header=4 (0x04), avail=603
+  parseClassExpr: header=6169 (0x1819), avail=599
+  parseClassExpr: header=4 (0x04), avail=598
+  parseClassExpr: header=450 (0x1C2), avail=594
+  parseClassExpr: header=4 (0x04), avail=593
+  parseClassExpr: header=6171 (0x181B), avail=589
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> <http://www.projecthalo.com/aura#Electronegativity-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=776
+  parseClassExpr: header=0 (0x00), avail=774
+  parseClassExpr: header=4 (0x04), avail=772
+  parseClassExpr: header=2463 (0x99F), avail=768
+  parseClassExpr: header=4 (0x04), avail=767
+  parseClassExpr: header=2417 (0x971), avail=763
+  parseClassExpr: header=4 (0x04), avail=762
+  parseClassExpr: header=0 (0x00), avail=759
+  parseClassExpr: header=0 (0x00), avail=757
+  parseClassExpr: header=13 (0x0D), avail=755
+    parseLiteral: header=0x16, type=2, format=5, avail=752
+  parseClassExpr: header=6 (0x06), avail=747
+  parseClassExpr: header=2183 (0x887), avail=741
+  parseClassExpr: header=4 (0x04), avail=740
+  parseClassExpr: header=3756 (0xEAC), avail=736
+  parseClassExpr: header=4 (0x04), avail=735
+  parseClassExpr: header=4848 (0x12F0), avail=731
+  parseClassExpr: header=4 (0x04), avail=730
+  parseClassExpr: header=2446 (0x98E), avail=726
+  parseClassExpr: header=4 (0x04), avail=725
+  parseClassExpr: header=4845 (0x12ED), avail=721
+  parseClassExpr: header=2291 (0x8F3), avail=719
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=172
+  parseClassExpr: header=3577 (0xDF9), avail=169
+  parseClassExpr: header=0 (0x00), avail=168
+  parseClassExpr: header=4 (0x04), avail=166
+  parseClassExpr: header=444 (0x1BC), avail=162
+  parseClassExpr: header=4 (0x04), avail=161
+  parseClassExpr: header=449 (0x1C1), avail=157
+  parseClassExpr: header=4 (0x04), avail=156
+  parseClassExpr: header=0 (0x00), avail=153
+  parseClassExpr: header=1963 (0x7AB), avail=150
+  parseClassExpr: header=0 (0x00), avail=149
+  parseClassExpr: header=6 (0x06), avail=147
+  parseClassExpr: header=13 (0x0D), avail=142
+    parseLiteral: header=0x02, type=2, format=0, avail=139
+  parseClassExpr: header=4 (0x04), avail=132
+  parseClassExpr: header=3864 (0xF18), avail=128
+  parseClassExpr: header=4 (0x04), avail=127
+  parseClassExpr: header=6115 (0x17E3), avail=123
+  parseClassExpr: header=4 (0x04), avail=122
+  parseClassExpr: header=441 (0x1B9), avail=118
+  parseClassExpr: header=4 (0x04), avail=117
+  parseClassExpr: header=6117 (0x17E5), avail=113
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=111
+  parseClassExpr: header=0 (0x00), avail=109
+  parseClassExpr: header=4 (0x04), avail=107
+  parseClassExpr: header=444 (0x1BC), avail=103
+  parseClassExpr: header=4 (0x04), avail=102
+  parseClassExpr: header=449 (0x1C1), avail=98
+  parseClassExpr: header=4 (0x04), avail=97
+  parseClassExpr: header=0 (0x00), avail=94
+  parseClassExpr: header=0 (0x00), avail=92
+  parseClassExpr: header=13 (0x0D), avail=90
+    parseLiteral: header=0x16, type=2, format=5, avail=87
+  parseClassExpr: header=6 (0x06), avail=82
+  parseClassExpr: header=1963 (0x7AB), avail=76
+  parseClassExpr: header=4 (0x04), avail=75
+  parseClassExpr: header=3864 (0xF18), avail=71
+  parseClassExpr: header=4 (0x04), avail=70
+  parseClassExpr: header=6115 (0x17E3), avail=66
+  parseClassExpr: header=4 (0x04), avail=65
+  parseClassExpr: header=441 (0x1B9), avail=61
+  parseClassExpr: header=4 (0x04), avail=60
+  parseClassExpr: header=6117 (0x17E5), avail=56
+  parseClassExpr: header=3577 (0xDF9), avail=54
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=1090
+  parseClassExpr: header=3577 (0xDF9), avail=1087
+  parseClassExpr: header=0 (0x00), avail=1086
+  parseClassExpr: header=4 (0x04), avail=1084
+  parseClassExpr: header=444 (0x1BC), avail=1080
+  parseClassExpr: header=4 (0x04), avail=1079
+  parseClassExpr: header=449 (0x1C1), avail=1075
+  parseClassExpr: header=4 (0x04), avail=1074
+  parseClassExpr: header=0 (0x00), avail=1071
+  parseClassExpr: header=1963 (0x7AB), avail=1068
+  parseClassExpr: header=0 (0x00), avail=1067
+  parseClassExpr: header=6 (0x06), avail=1065
+  parseClassExpr: header=13 (0x0D), avail=1060
+    parseLiteral: header=0x02, type=2, format=0, avail=1057
+  parseClassExpr: header=4 (0x04), avail=1050
+  parseClassExpr: header=3864 (0xF18), avail=1046
+  parseClassExpr: header=4 (0x04), avail=1045
+  parseClassExpr: header=6115 (0x17E3), avail=1041
+  parseClassExpr: header=4 (0x04), avail=1040
+  parseClassExpr: header=441 (0x1B9), avail=1036
+  parseClassExpr: header=4 (0x04), avail=1035
+  parseClassExpr: header=6117 (0x17E5), avail=1031
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> <http://www.projecthalo.com/aura#Valence-Value>)))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=80
+  parseClassExpr: header=0 (0x00), avail=78
+  parseClassExpr: header=4 (0x04), avail=76
+  parseClassExpr: header=923 (0x39B), avail=72
+  parseClassExpr: header=4 (0x04), avail=71
+  parseClassExpr: header=931 (0x3A3), avail=67
+  parseClassExpr: header=4 (0x04), avail=66
+  parseClassExpr: header=0 (0x00), avail=63
+  parseClassExpr: header=0 (0x00), avail=61
+  parseClassExpr: header=13 (0x0D), avail=59
+    parseLiteral: header=0x16, type=2, format=5, avail=56
+  parseClassExpr: header=6 (0x06), avail=51
+  parseClassExpr: header=3157 (0xC55), avail=45
+  parseClassExpr: header=4 (0x04), avail=44
+  parseClassExpr: header=3046 (0xBE6), avail=40
+  parseClassExpr: header=4 (0x04), avail=39
+  parseClassExpr: header=2715 (0xA9B), avail=35
+  parseClassExpr: header=4 (0x04), avail=34
+  parseClassExpr: header=938 (0x3AA), avail=30
+  parseClassExpr: header=4 (0x04), avail=29
+  parseClassExpr: header=0 (0x00), avail=26
+  parseClassExpr: header=0 (0x00), avail=24
+  parseClassExpr: header=13 (0x0D), avail=22
+    parseLiteral: header=0x16, type=2, format=5, avail=19
+  parseClassExpr: header=6 (0x06), avail=14
+  parseClassExpr: header=2702 (0xA8E), avail=8
+  parseClassExpr: header=5272 (0x1498), avail=6
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=309
+  parseClassExpr: header=3577 (0xDF9), avail=306
+  parseClassExpr: header=0 (0x00), avail=305
+  parseClassExpr: header=4 (0x04), avail=303
+  parseClassExpr: header=444 (0x1BC), avail=299
+  parseClassExpr: header=4 (0x04), avail=298
+  parseClassExpr: header=449 (0x1C1), avail=294
+  parseClassExpr: header=4 (0x04), avail=293
+  parseClassExpr: header=0 (0x00), avail=290
+  parseClassExpr: header=1963 (0x7AB), avail=287
+  parseClassExpr: header=0 (0x00), avail=286
+  parseClassExpr: header=6 (0x06), avail=284
+  parseClassExpr: header=13 (0x0D), avail=279
+    parseLiteral: header=0x02, type=2, format=0, avail=276
+  parseClassExpr: header=4 (0x04), avail=269
+  parseClassExpr: header=3864 (0xF18), avail=265
+  parseClassExpr: header=4 (0x04), avail=264
+  parseClassExpr: header=6115 (0x17E3), avail=260
+  parseClassExpr: header=4 (0x04), avail=259
+  parseClassExpr: header=441 (0x1B9), avail=255
+  parseClassExpr: header=4 (0x04), avail=254
+  parseClassExpr: header=0 (0x00), avail=251
+  parseClassExpr: header=6117 (0x17E5), avail=248
+  parseClassExpr: header=0 (0x00), avail=247
+  parseClassExpr: header=6 (0x06), avail=245
+  parseClassExpr: header=13 (0x0D), avail=240
+    parseLiteral: header=0x02, type=2, format=0, avail=237
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=36
+  parseClassExpr: header=0 (0x00), avail=34
+  parseClassExpr: header=4 (0x04), avail=32
+  parseClassExpr: header=444 (0x1BC), avail=28
+  parseClassExpr: header=4 (0x04), avail=27
+  parseClassExpr: header=449 (0x1C1), avail=23
+  parseClassExpr: header=4 (0x04), avail=22
+  parseClassExpr: header=0 (0x00), avail=19
+  parseClassExpr: header=0 (0x00), avail=17
+  parseClassExpr: header=13 (0x0D), avail=15
+    parseLiteral: header=0x16, type=2, format=5, avail=12
+  parseClassExpr: header=6 (0x06), avail=7
+  parseClassExpr: header=1963 (0x7AB), avail=1
+  parseClassExpr: header=4 (0x04), avail=846
+  parseClassExpr: header=3864 (0xF18), avail=842
+  parseClassExpr: header=4 (0x04), avail=841
+  parseClassExpr: header=6115 (0x17E3), avail=837
+  parseClassExpr: header=4 (0x04), avail=836
+  parseClassExpr: header=441 (0x1B9), avail=832
+  parseClassExpr: header=4 (0x04), avail=831
+  parseClassExpr: header=0 (0x00), avail=828
+  parseClassExpr: header=0 (0x00), avail=826
+  parseClassExpr: header=13 (0x0D), avail=824
+    parseLiteral: header=0x16, type=2, format=5, avail=821
+  parseClassExpr: header=6 (0x06), avail=816
+  parseClassExpr: header=6117 (0x17E5), avail=810
+  parseClassExpr: header=3577 (0xDF9), avail=808
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=556
+  parseClassExpr: header=3577 (0xDF9), avail=553
+  parseClassExpr: header=0 (0x00), avail=552
+  parseClassExpr: header=4 (0x04), avail=550
+  parseClassExpr: header=444 (0x1BC), avail=546
+  parseClassExpr: header=4 (0x04), avail=545
+  parseClassExpr: header=449 (0x1C1), avail=541
+  parseClassExpr: header=4 (0x04), avail=540
+  parseClassExpr: header=0 (0x00), avail=537
+  parseClassExpr: header=1963 (0x7AB), avail=534
+  parseClassExpr: header=0 (0x00), avail=533
+  parseClassExpr: header=6 (0x06), avail=531
+  parseClassExpr: header=13 (0x0D), avail=526
+    parseLiteral: header=0x02, type=2, format=0, avail=523
+  parseClassExpr: header=4 (0x04), avail=516
+  parseClassExpr: header=3864 (0xF18), avail=512
+  parseClassExpr: header=4 (0x04), avail=511
+  parseClassExpr: header=6115 (0x17E3), avail=507
+  parseClassExpr: header=4 (0x04), avail=506
+  parseClassExpr: header=441 (0x1B9), avail=502
+  parseClassExpr: header=4 (0x04), avail=501
+  parseClassExpr: header=0 (0x00), avail=498
+  parseClassExpr: header=6117 (0x17E5), avail=495
+  parseClassExpr: header=0 (0x00), avail=494
+  parseClassExpr: header=6 (0x06), avail=492
+  parseClassExpr: header=13 (0x0D), avail=487
+    parseLiteral: header=0x02, type=2, format=0, avail=484
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=504
+  parseClassExpr: header=0 (0x00), avail=502
+  parseClassExpr: header=4 (0x04), avail=500
+  parseClassExpr: header=3547 (0xDDB), avail=496
+  parseClassExpr: header=4 (0x04), avail=495
+  parseClassExpr: header=3543 (0xDD7), avail=491
+  parseClassExpr: header=4 (0x04), avail=490
+  parseClassExpr: header=0 (0x00), avail=487
+  parseClassExpr: header=0 (0x00), avail=485
+  parseClassExpr: header=13 (0x0D), avail=483
+    parseLiteral: header=0x16, type=2, format=5, avail=480
+  parseClassExpr: header=6 (0x06), avail=475
+  parseClassExpr: header=2482 (0x9B2), avail=469
+  parseClassExpr: header=4 (0x04), avail=468
+  parseClassExpr: header=5024 (0x13A0), avail=464
+  parseClassExpr: header=4 (0x04), avail=463
+  parseClassExpr: header=3760 (0xEB0), avail=459
+  parseClassExpr: header=4 (0x04), avail=458
+  parseClassExpr: header=3479 (0xD97), avail=454
+  parseClassExpr: header=4 (0x04), avail=453
+  parseClassExpr: header=0 (0x00), avail=450
+  parseClassExpr: header=0 (0x00), avail=448
+  parseClassExpr: header=13 (0x0D), avail=446
+    parseLiteral: header=0x16, type=2, format=5, avail=443
+  parseClassExpr: header=6 (0x06), avail=438
+  parseClassExpr: header=3801 (0xED9), avail=432
+  parseClassExpr: header=4644 (0x1224), avail=430
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=956
+  parseClassExpr: header=3615 (0xE1F), avail=953
+  parseClassExpr: header=0 (0x00), avail=952
+  parseClassExpr: header=4 (0x04), avail=950
+  parseClassExpr: header=453 (0x1C5), avail=946
+  parseClassExpr: header=4 (0x04), avail=945
+  parseClassExpr: header=458 (0x1CA), avail=941
+  parseClassExpr: header=4 (0x04), avail=940
+  parseClassExpr: header=0 (0x00), avail=937
+  parseClassExpr: header=1981 (0x7BD), avail=934
+  parseClassExpr: header=0 (0x00), avail=933
+  parseClassExpr: header=6 (0x06), avail=931
+  parseClassExpr: header=13 (0x0D), avail=926
+    parseLiteral: header=0x02, type=2, format=0, avail=923
+  parseClassExpr: header=4 (0x04), avail=916
+  parseClassExpr: header=3907 (0xF43), avail=912
+  parseClassExpr: header=4 (0x04), avail=911
+  parseClassExpr: header=6169 (0x1819), avail=907
+  parseClassExpr: header=4 (0x04), avail=906
+  parseClassExpr: header=450 (0x1C2), avail=902
+  parseClassExpr: header=4 (0x04), avail=901
+  parseClassExpr: header=0 (0x00), avail=898
+  parseClassExpr: header=6171 (0x181B), avail=895
+  parseClassExpr: header=0 (0x00), avail=894
+  parseClassExpr: header=6 (0x06), avail=892
+  parseClassExpr: header=13 (0x0D), avail=887
+    parseLiteral: header=0x02, type=2, format=0, avail=884
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=362
+  parseClassExpr: header=0 (0x00), avail=360
+  parseClassExpr: header=4 (0x04), avail=358
+  parseClassExpr: header=453 (0x1C5), avail=354
+  parseClassExpr: header=4 (0x04), avail=353
+  parseClassExpr: header=458 (0x1CA), avail=349
+  parseClassExpr: header=4 (0x04), avail=348
+  parseClassExpr: header=0 (0x00), avail=345
+  parseClassExpr: header=0 (0x00), avail=343
+  parseClassExpr: header=13 (0x0D), avail=341
+    parseLiteral: header=0x16, type=2, format=5, avail=338
+  parseClassExpr: header=6 (0x06), avail=333
+  parseClassExpr: header=1981 (0x7BD), avail=327
+  parseClassExpr: header=4 (0x04), avail=326
+  parseClassExpr: header=3907 (0xF43), avail=322
+  parseClassExpr: header=4 (0x04), avail=321
+  parseClassExpr: header=6169 (0x1819), avail=317
+  parseClassExpr: header=4 (0x04), avail=316
+  parseClassExpr: header=450 (0x1C2), avail=312
+  parseClassExpr: header=4 (0x04), avail=311
+  parseClassExpr: header=0 (0x00), avail=308
+  parseClassExpr: header=0 (0x00), avail=306
+  parseClassExpr: header=13 (0x0D), avail=304
+    parseLiteral: header=0x16, type=2, format=5, avail=301
+  parseClassExpr: header=6 (0x06), avail=296
+  parseClassExpr: header=6171 (0x181B), avail=290
+  parseClassExpr: header=3615 (0xE1F), avail=288
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=508
+  parseClassExpr: header=3615 (0xE1F), avail=505
+  parseClassExpr: header=0 (0x00), avail=504
+  parseClassExpr: header=4 (0x04), avail=502
+  parseClassExpr: header=453 (0x1C5), avail=498
+  parseClassExpr: header=4 (0x04), avail=497
+  parseClassExpr: header=458 (0x1CA), avail=493
+  parseClassExpr: header=4 (0x04), avail=492
+  parseClassExpr: header=0 (0x00), avail=489
+  parseClassExpr: header=1981 (0x7BD), avail=486
+  parseClassExpr: header=0 (0x00), avail=485
+  parseClassExpr: header=6 (0x06), avail=483
+  parseClassExpr: header=13 (0x0D), avail=478
+    parseLiteral: header=0x02, type=2, format=0, avail=475
+  parseClassExpr: header=4 (0x04), avail=468
+  parseClassExpr: header=3907 (0xF43), avail=464
+  parseClassExpr: header=4 (0x04), avail=463
+  parseClassExpr: header=6169 (0x1819), avail=459
+  parseClassExpr: header=4 (0x04), avail=458
+  parseClassExpr: header=450 (0x1C2), avail=454
+  parseClassExpr: header=4 (0x04), avail=453
+  parseClassExpr: header=0 (0x00), avail=450
+  parseClassExpr: header=6171 (0x181B), avail=447
+  parseClassExpr: header=0 (0x00), avail=446
+  parseClassExpr: header=6 (0x06), avail=444
+  parseClassExpr: header=13 (0x0D), avail=439
+    parseLiteral: header=0x02, type=2, format=0, avail=436
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> <http://www.projecthalo.com/aura#Atomic-Mass-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=839
+  parseClassExpr: header=0 (0x00), avail=837
+  parseClassExpr: header=4 (0x04), avail=835
+  parseClassExpr: header=4507 (0x119B), avail=831
+  parseClassExpr: header=4 (0x04), avail=830
+  parseClassExpr: header=4496 (0x1190), avail=826
+  parseClassExpr: header=4 (0x04), avail=825
+  parseClassExpr: header=0 (0x00), avail=822
+  parseClassExpr: header=0 (0x00), avail=820
+  parseClassExpr: header=13 (0x0D), avail=818
+    parseLiteral: header=0x16, type=2, format=5, avail=815
+  parseClassExpr: header=6 (0x06), avail=810
+  parseClassExpr: header=223 (0xDF), avail=804
+  parseClassExpr: header=4 (0x04), avail=803
+  parseClassExpr: header=2439 (0x987), avail=799
+  parseClassExpr: header=4 (0x04), avail=798
+  parseClassExpr: header=4899 (0x1323), avail=794
+  parseClassExpr: header=4 (0x04), avail=793
+  parseClassExpr: header=0 (0x00), avail=790
+  parseClassExpr: header=0 (0x00), avail=788
+  parseClassExpr: header=13 (0x0D), avail=786
+    parseLiteral: header=0x16, type=2, format=5, avail=783
+  parseClassExpr: header=6 (0x06), avail=777
+  parseClassExpr: header=4504 (0x1198), avail=771
+  parseClassExpr: header=4 (0x04), avail=770
+  parseClassExpr: header=0 (0x00), avail=767
+  parseClassExpr: header=0 (0x00), avail=765
+  parseClassExpr: header=13 (0x0D), avail=763
+    parseLiteral: header=0x16, type=2, format=5, avail=760
+  parseClassExpr: header=6 (0x06), avail=755
+  parseClassExpr: header=4865 (0x1301), avail=749
+  parseClassExpr: header=304 (0x130), avail=747
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=630
+  parseClassExpr: header=3577 (0xDF9), avail=627
+  parseClassExpr: header=0 (0x00), avail=626
+  parseClassExpr: header=4 (0x04), avail=624
+  parseClassExpr: header=444 (0x1BC), avail=620
+  parseClassExpr: header=4 (0x04), avail=619
+  parseClassExpr: header=449 (0x1C1), avail=615
+  parseClassExpr: header=4 (0x04), avail=614
+  parseClassExpr: header=0 (0x00), avail=611
+  parseClassExpr: header=1963 (0x7AB), avail=608
+  parseClassExpr: header=0 (0x00), avail=607
+  parseClassExpr: header=6 (0x06), avail=605
+  parseClassExpr: header=13 (0x0D), avail=600
+    parseLiteral: header=0x02, type=2, format=0, avail=597
+  parseClassExpr: header=4 (0x04), avail=590
+  parseClassExpr: header=3864 (0xF18), avail=586
+  parseClassExpr: header=4 (0x04), avail=585
+  parseClassExpr: header=6115 (0x17E3), avail=581
+  parseClassExpr: header=4 (0x04), avail=580
+  parseClassExpr: header=0 (0x00), avail=577
+  parseClassExpr: header=441 (0x1B9), avail=574
+  parseClassExpr: header=0 (0x00), avail=573
+  parseClassExpr: header=6 (0x06), avail=571
+  parseClassExpr: header=13 (0x0D), avail=566
+    parseLiteral: header=0x02, type=2, format=0, avail=563
+  parseClassExpr: header=4 (0x04), avail=554
+  parseClassExpr: header=0 (0x00), avail=551
+  parseClassExpr: header=6117 (0x17E5), avail=548
+  parseClassExpr: header=0 (0x00), avail=547
+  parseClassExpr: header=6 (0x06), avail=545
+  parseClassExpr: header=13 (0x0D), avail=540
+    parseLiteral: header=0x02, type=2, format=0, avail=537
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=785
+  parseClassExpr: header=0 (0x00), avail=783
+  parseClassExpr: header=4 (0x04), avail=781
+  parseClassExpr: header=444 (0x1BC), avail=777
+  parseClassExpr: header=4 (0x04), avail=776
+  parseClassExpr: header=449 (0x1C1), avail=772
+  parseClassExpr: header=4 (0x04), avail=771
+  parseClassExpr: header=0 (0x00), avail=768
+  parseClassExpr: header=0 (0x00), avail=766
+  parseClassExpr: header=13 (0x0D), avail=764
+    parseLiteral: header=0x16, type=2, format=5, avail=761
+  parseClassExpr: header=6 (0x06), avail=756
+  parseClassExpr: header=1963 (0x7AB), avail=750
+  parseClassExpr: header=4 (0x04), avail=749
+  parseClassExpr: header=3864 (0xF18), avail=745
+  parseClassExpr: header=4 (0x04), avail=744
+  parseClassExpr: header=6115 (0x17E3), avail=740
+  parseClassExpr: header=4 (0x04), avail=739
+  parseClassExpr: header=0 (0x00), avail=736
+  parseClassExpr: header=0 (0x00), avail=734
+  parseClassExpr: header=13 (0x0D), avail=732
+    parseLiteral: header=0x16, type=2, format=5, avail=729
+  parseClassExpr: header=6 (0x06), avail=723
+  parseClassExpr: header=441 (0x1B9), avail=717
+  parseClassExpr: header=4 (0x04), avail=716
+  parseClassExpr: header=0 (0x00), avail=713
+  parseClassExpr: header=0 (0x00), avail=711
+  parseClassExpr: header=13 (0x0D), avail=709
+    parseLiteral: header=0x16, type=2, format=5, avail=706
+  parseClassExpr: header=6 (0x06), avail=701
+  parseClassExpr: header=6117 (0x17E5), avail=695
+  parseClassExpr: header=3577 (0xDF9), avail=693
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=549
+  parseClassExpr: header=3577 (0xDF9), avail=546
+  parseClassExpr: header=0 (0x00), avail=545
+  parseClassExpr: header=4 (0x04), avail=543
+  parseClassExpr: header=444 (0x1BC), avail=539
+  parseClassExpr: header=4 (0x04), avail=538
+  parseClassExpr: header=449 (0x1C1), avail=534
+  parseClassExpr: header=4 (0x04), avail=533
+  parseClassExpr: header=0 (0x00), avail=530
+  parseClassExpr: header=1963 (0x7AB), avail=527
+  parseClassExpr: header=0 (0x00), avail=526
+  parseClassExpr: header=6 (0x06), avail=524
+  parseClassExpr: header=13 (0x0D), avail=519
+    parseLiteral: header=0x02, type=2, format=0, avail=516
+  parseClassExpr: header=4 (0x04), avail=509
+  parseClassExpr: header=3864 (0xF18), avail=505
+  parseClassExpr: header=4 (0x04), avail=504
+  parseClassExpr: header=6115 (0x17E3), avail=500
+  parseClassExpr: header=4 (0x04), avail=499
+  parseClassExpr: header=0 (0x00), avail=496
+  parseClassExpr: header=441 (0x1B9), avail=493
+  parseClassExpr: header=0 (0x00), avail=492
+  parseClassExpr: header=6 (0x06), avail=490
+  parseClassExpr: header=13 (0x0D), avail=485
+    parseLiteral: header=0x02, type=2, format=0, avail=482
+  parseClassExpr: header=4 (0x04), avail=473
+  parseClassExpr: header=0 (0x00), avail=470
+  parseClassExpr: header=6117 (0x17E5), avail=467
+  parseClassExpr: header=0 (0x00), avail=466
+  parseClassExpr: header=6 (0x06), avail=464
+  parseClassExpr: header=13 (0x0D), avail=459
+    parseLiteral: header=0x02, type=2, format=0, avail=456
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=361
+  parseClassExpr: header=0 (0x00), avail=359
+  parseClassExpr: header=4 (0x04), avail=357
+  parseClassExpr: header=288 (0x120), avail=353
+  parseClassExpr: header=4 (0x04), avail=352
+  parseClassExpr: header=253 (0xFD), avail=348
+  parseClassExpr: header=4 (0x04), avail=347
+  parseClassExpr: header=0 (0x00), avail=344
+  parseClassExpr: header=0 (0x00), avail=342
+  parseClassExpr: header=13 (0x0D), avail=340
+    parseLiteral: header=0x16, type=2, format=5, avail=337
+  parseClassExpr: header=6 (0x06), avail=332
+  parseClassExpr: header=440 (0x1B8), avail=326
+  parseClassExpr: header=4 (0x04), avail=325
+  parseClassExpr: header=2777 (0xAD9), avail=321
+  parseClassExpr: header=4 (0x04), avail=320
+  parseClassExpr: header=90 (0x5A), avail=317
+  parseClassExpr: header=4 (0x04), avail=316
+  parseClassExpr: header=0 (0x00), avail=313
+  parseClassExpr: header=0 (0x00), avail=311
+  parseClassExpr: header=13 (0x0D), avail=309
+    parseLiteral: header=0x16, type=2, format=5, avail=306
+  parseClassExpr: header=6 (0x06), avail=300
+  parseClassExpr: header=240 (0xF0), avail=294
+  parseClassExpr: header=4 (0x04), avail=293
+  parseClassExpr: header=0 (0x00), avail=290
+  parseClassExpr: header=0 (0x00), avail=288
+  parseClassExpr: header=13 (0x0D), avail=286
+    parseLiteral: header=0x16, type=2, format=5, avail=283
+  parseClassExpr: header=6 (0x06), avail=278
+  parseClassExpr: header=122 (0x7A), avail=273
+  parseClassExpr: header=1155 (0x483), avail=271
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=71
+  parseClassExpr: header=3616 (0xE20), avail=68
+  parseClassExpr: header=0 (0x00), avail=67
+  parseClassExpr: header=4 (0x04), avail=65
+  parseClassExpr: header=453 (0x1C5), avail=61
+  parseClassExpr: header=4 (0x04), avail=60
+  parseClassExpr: header=458 (0x1CA), avail=56
+  parseClassExpr: header=4 (0x04), avail=55
+  parseClassExpr: header=0 (0x00), avail=52
+  parseClassExpr: header=1981 (0x7BD), avail=49
+  parseClassExpr: header=0 (0x00), avail=48
+  parseClassExpr: header=6 (0x06), avail=46
+  parseClassExpr: header=13 (0x0D), avail=41
+    parseLiteral: header=0x02, type=2, format=0, avail=38
+  parseClassExpr: header=4 (0x04), avail=31
+  parseClassExpr: header=3908 (0xF44), avail=27
+  parseClassExpr: header=4 (0x04), avail=26
+  parseClassExpr: header=6170 (0x181A), avail=22
+  parseClassExpr: header=4 (0x04), avail=21
+  parseClassExpr: header=0 (0x00), avail=18
+  parseClassExpr: header=450 (0x1C2), avail=15
+  parseClassExpr: header=0 (0x00), avail=14
+  parseClassExpr: header=6 (0x06), avail=12
+  parseClassExpr: header=13 (0x0D), avail=7
+    parseLiteral: header=0x02, type=2, format=0, avail=4
+  parseClassExpr: header=4 (0x04), avail=1055
+  parseClassExpr: header=0 (0x00), avail=1052
+  parseClassExpr: header=6172 (0x181C), avail=1049
+  parseClassExpr: header=0 (0x00), avail=1048
+  parseClassExpr: header=6 (0x06), avail=1046
+  parseClassExpr: header=13 (0x0D), avail=1041
+    parseLiteral: header=0x02, type=2, format=0, avail=1038
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=376
+  parseClassExpr: header=0 (0x00), avail=374
+  parseClassExpr: header=4 (0x04), avail=372
+  parseClassExpr: header=453 (0x1C5), avail=368
+  parseClassExpr: header=4 (0x04), avail=367
+  parseClassExpr: header=458 (0x1CA), avail=363
+  parseClassExpr: header=4 (0x04), avail=362
+  parseClassExpr: header=0 (0x00), avail=359
+  parseClassExpr: header=0 (0x00), avail=357
+  parseClassExpr: header=13 (0x0D), avail=355
+    parseLiteral: header=0x16, type=2, format=5, avail=352
+  parseClassExpr: header=6 (0x06), avail=347
+  parseClassExpr: header=1981 (0x7BD), avail=341
+  parseClassExpr: header=4 (0x04), avail=340
+  parseClassExpr: header=3908 (0xF44), avail=336
+  parseClassExpr: header=4 (0x04), avail=335
+  parseClassExpr: header=6170 (0x181A), avail=331
+  parseClassExpr: header=4 (0x04), avail=330
+  parseClassExpr: header=0 (0x00), avail=327
+  parseClassExpr: header=0 (0x00), avail=325
+  parseClassExpr: header=13 (0x0D), avail=323
+    parseLiteral: header=0x16, type=2, format=5, avail=320
+  parseClassExpr: header=6 (0x06), avail=314
+  parseClassExpr: header=450 (0x1C2), avail=308
+  parseClassExpr: header=4 (0x04), avail=307
+  parseClassExpr: header=0 (0x00), avail=304
+  parseClassExpr: header=0 (0x00), avail=302
+  parseClassExpr: header=13 (0x0D), avail=300
+    parseLiteral: header=0x16, type=2, format=5, avail=297
+  parseClassExpr: header=6 (0x06), avail=292
+  parseClassExpr: header=6172 (0x181C), avail=286
+  parseClassExpr: header=3616 (0xE20), avail=284
+=== FINISHED PARSING SUPERCLASS OF ACTINIUM ===
+RESULT: ObjectIntersectionOf(<http://www.projecthalo.com/aura#Metal-Atom> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-number> <http://www.projecthalo.com/aura#Atomic-Number-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#atomic-weight> <http://www.projecthalo.com/aura#Atomic-Weight-Value>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#electronegativity> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Electronegativity-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "1.1"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Neutron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#has-part> <http://www.projecthalo.com/aura#Valence-Electron>) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#mass-number> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Atomic-Mass-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "227.0"^^xsd:float)))) ObjectSomeValuesFrom(<http://www.projecthalo.com/aura#valence> ObjectIntersectionOf(<http://www.projecthalo.com/aura#Valence-Value> ObjectIntersectionOf(ObjectHasValue(<http://www.projecthalo.com/aura#cardinal-unit-class> <http://www.projecthalo.com/aura#unity>) DataHasValue(<http://www.projecthalo.com/aura#the-cardinal-value> "3.0"^^xsd:float))))))
+=== START PARSING SUPERCLASS OF ACTINIUM ===
+  parseClassExpr: header=0 (0x00), avail=314
+  parseClassExpr: header=3616 (0xE20), avail=311
+  parseClassExpr: header=0 (0x00), avail=310
+  parseClassExpr: header=4 (0x04), avail=308
+  parseClassExpr: header=453 (0x1C5), avail=304
+  parseClassExpr: header=4 (0x04), avail=303
+  parseClassExpr: header=458 (0x1CA), avail=299
+  parseClassExpr: header=4 (0x04), avail=298
+  parseClassExpr: header=0 (0x00), avail=295
+  parseClassExpr: header=1981 (0x7BD), avail=292
+  parseClassExpr: header=0 (0x00), avail=291
+  parseClassExpr: header=6 (0x06), avail=289
+  parseClassExpr: header=13 (0x0D), avail=284
+    parseLiteral: header=0x02, type=2, format=0, avail=281
+  parseClassExpr: header=4 (0x04), avail=274
+  parseClassExpr: header=3908 (0xF44), avail=270
+  parseClassExpr: header=4 (0x04), avail=269
+  parseClassExpr: header=6170 (0x181A), avail=265
+  parseClassExpr: header=4 (0x04), avail=264
+  parseClassExpr: header=0 (0x00), avail=261
+  parseClassExpr: header=450 (0x1C2), avail=258
+  parseClassExpr: header=0 (0x00), avail=257
+  parseClassExpr: header=6 (0x06), avail=255
+  parseClassExpr: header=13 (0x0D), avail=250
+    parseLiteral: header=0x02, type=2, format=0, avail=247
+  parseClassExpr: header=4 (0x04), avail=238
+  parseClassExpr: header=0 (0x00), avail=235
+  parseClassExpr: header=6172 (0x181C), avail=232
+  parseClassExpr: header=0 (0x00), avail=231
+  parseClassExpr: header=6 (0x06), avail=229
+  parseClassExpr: header=13 (0x0D), avail=224
+    parseLiteral: header=0x02, type=2, format=0, avail=221

@@ -15,10 +15,7 @@ import java.util.stream.Collectors;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParserFactory;
 import org.semanticweb.owlapi.io.OWLParserFactory;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -146,6 +143,53 @@ public class ProtocOWLTest {
     @Test
     public void testPizzaOntology() throws Exception {
         executeRoundTripTest("pizza");
+    }
+
+    /**
+     * Valida la serializzazione e il round-trip di espressioni di dati complesse in cui una
+     * restrizione con facet (es. minInclusive) e annidata all'interno di un complemento di data range.
+     * Questo test assicura che Renderer registri ricorsivamente tutti i facet e datatype interni.
+     */
+    @Test
+    public void testNestedDataRangeWithFacetRestrictionInComplement() throws Exception {
+        var manager = OWLManager.createOWLOntologyManager();
+        var df = manager.getOWLDataFactory();
+
+        IRI ontIRI = IRI.create("http://example.org/nested-datarange");
+        OWLOntology ontology = manager.createOntology(ontIRI);
+
+        var format = new org.semanticweb.owlapi.formats.PrefixDocumentFormatImpl();
+        format.setDefaultPrefix("http://example.org/nested-datarange#");
+        format.setPrefix("xsd:", "http://www.w3.org/2001/XMLSchema#");
+        manager.setOntologyFormat(ontology, format);
+
+        OWLClass cls = df.getOWLClass(IRI.create("http://example.org/nested-datarange#Item"));
+        OWLDataProperty prop = df.getOWLDataProperty(IRI.create("http://example.org/nested-datarange#hasValue"));
+
+        // Datatype restriction: xsd:integer con minInclusive 5
+        OWLFacetRestriction facet = df.getOWLFacetRestriction(
+                org.semanticweb.owlapi.vocab.OWLFacet.MIN_INCLUSIVE,
+                df.getOWLLiteral(5)
+        );
+        OWLDataRange restriction = df.getOWLDatatypeRestriction(df.getIntegerOWLDatatype(), facet);
+
+        // DataComplementOf(DatatypeRestriction(xsd:integer, minInclusive 5))
+        OWLDataRange complement = df.getOWLDataComplementOf(restriction);
+
+        // Assioma: SubClassOf(Item, DataSomeValuesFrom(hasValue, complement))
+        OWLClassExpression someValues = df.getOWLDataSomeValuesFrom(prop, complement);
+        OWLAxiom axiom = df.getOWLSubClassOfAxiom(cls, someValues);
+        manager.addAxiom(ontology, axiom);
+
+        // Verifica che la serializzazione e il reload non lancino eccezioni e preservino l'assioma
+        File tempOprt = File.createTempFile("nested_datarange", ".oprt");
+        try {
+            writeOntology(ontology, tempOprt.getAbsolutePath());
+            OWLOntology reloaded = loadOntology(tempOprt.getAbsolutePath(), new ProtocOWLParserFactory());
+            assertEquals(ontology, reloaded);
+        } finally {
+            tempOprt.delete();
+        }
     }
 
     // ========================================================================

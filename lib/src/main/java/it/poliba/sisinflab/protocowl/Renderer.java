@@ -136,13 +136,26 @@ class Renderer {
             collectAnnotationEntities(axiom.getAnnotation());
         });
 
-        // Raccoglie datatypes e facet utilizzati nelle espressioni di classe o letterali degli assiomi
+        // Raccoglie datatypes, facet e data ranges complessi utilizzati negli assiomi
         for (OWLAxiom ax : ontology.getAxioms()) {
+            // Registrazione standard delle entita di tipo Datatype presenti nella firma
             ax.datatypesInSignature().forEach(dt -> registerIRI(dt.getIRI()));
+            // Esplorazione ricorsiva delle espressioni di classe annidate (che possono contenere data restrictions)
             ax.nestedClassExpressions().forEach(this::collectClassExpressionEntities);
+            
+            // Gestione esplicita per assiomi che contengono DataRange senza passare da ClassExpression
+            if (ax instanceof OWLDataPropertyRangeAxiom dpRange) {
+                collectDataRangeEntities(dpRange.getRange());
+            } else if (ax instanceof OWLDatatypeDefinitionAxiom dtDef) {
+                collectDataRangeEntities(dtDef.getDataRange());
+            }
         }
     }
 
+    /**
+     * Ispeziona le espressioni di classe per estrarre data ranges e valori letterali
+     * associati a restrizioni sui dati.
+     */
     private void collectClassExpressionEntities(OWLClassExpression ce) {
         if (ce instanceof OWLDataHasValue hasValue) {
             registerIRI(hasValue.getFiller().getDatatype().getIRI());
@@ -159,19 +172,38 @@ class Renderer {
         }
     }
 
+    /**
+     * Attraversa ricorsivamente la gerarchia dei DataRange (composti o atomici) per
+     * pre-registrare tutti gli IRI dei datatype e dei facet coinvolti nella symbol table.
+     * Questo previene errori di tipo "Identifier not registered" durante la fase di scrittura.
+     */
     private void collectDataRangeEntities(OWLDataRange dr) {
+        if (dr == null) return;
+        
         if (!dr.isAnonymous()) {
+            // Data range nominale (Datatype con IRI)
             registerIRI(dr.asOWLDatatype().getIRI());
         } else if (dr instanceof OWLDatatypeRestriction restriction) {
-            registerIRI(restriction.getDatatype().getIRI());
+            // Restrizione con facet: registriamo il tipo di base e tutti i facet con i loro tipi letterali
+            collectDataRangeEntities(restriction.getDatatype());
             for (OWLFacetRestriction fr : restriction.getFacetRestrictions()) {
                 registerIRI(fr.getFacet().getIRI());
                 registerIRI(fr.getFacetValue().getDatatype().getIRI());
             }
         } else if (dr instanceof OWLDataOneOf oneOf) {
+            // Enumerazione esplicita di letterali
             for (OWLLiteral lit : oneOf.getValues()) {
                 registerIRI(lit.getDatatype().getIRI());
             }
+        } else if (dr instanceof OWLDataComplementOf complement) {
+            // Complemento: esplora ricorsivamente il data range interno negato
+            collectDataRangeEntities(complement.getDataRange());
+        } else if (dr instanceof OWLDataIntersectionOf intersection) {
+            // Intersezione: esplora ricorsivamente tutti gli operandi del connettivo
+            intersection.getOperands().forEach(this::collectDataRangeEntities);
+        } else if (dr instanceof OWLDataUnionOf union) {
+            // Unione: esplora ricorsivamente tutti gli operandi del connettivo
+            union.getOperands().forEach(this::collectDataRangeEntities);
         }
     }
 
