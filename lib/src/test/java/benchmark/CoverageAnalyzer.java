@@ -32,7 +32,11 @@ public class CoverageAnalyzer {
 
     @Test
     public void generateCoverageReport() throws Exception {
-        Path datasetRoot = resolveDatasetRoot();
+        var optRoot = resolveDatasetRootOptional();
+        if (optRoot.isEmpty()) {
+            throw new org.testng.SkipException("Dataset dataset_onto non trovato: generazione coverage report saltata.");
+        }
+        Path datasetRoot = optRoot.get();
         Path outputCsv = Paths.get(System.getProperty("user.dir"), "coverage_report.csv").normalize();
         List<CoverageRow> rows = collectCoverageRows(datasetRoot);
         writeCsv(outputCsv, rows);
@@ -40,30 +44,33 @@ public class CoverageAnalyzer {
     }
 
     public static void main(String[] args) throws Exception {
-        Path datasetRoot = args.length > 0 ? Paths.get(args[0]) : resolveDatasetRoot();
+        Path datasetRoot = args.length > 0 ? Paths.get(args[0]) : resolveDatasetRootOptional()
+                .orElseThrow(() -> new IllegalStateException("Dataset non trovato. Specificare il path come argomento."));
         Path outputCsv = args.length > 1 ? Paths.get(args[1]) : Paths.get(System.getProperty("user.dir"), "coverage_report.csv").normalize();
         List<CoverageRow> rows = collectCoverageRows(datasetRoot);
         writeCsv(outputCsv, rows);
         System.out.printf("Wrote %d coverage rows to %s%n", rows.size(), outputCsv.toAbsolutePath());
     }
 
-    private static Path resolveDatasetRoot() {
-        List<Path> candidates = List.of(
-                Paths.get(System.getProperty("user.dir"), "..", "dataset_onto").normalize(),
-                Paths.get(System.getProperty("user.dir"), "..", "FLC step 2", "dataset_onto").normalize(),
-                Paths.get(System.getProperty("user.dir"), "..", "..", "FLC step 2", "dataset_onto").normalize(),
-                Paths.get("/Users/mariocassano/Desktop/POLIBA/FLC/FLC step 2/dataset_onto").normalize(),
-                Paths.get("/Users/mariocassano/Desktop/POLIBA/FLC Project/dataset_onto").normalize(),
-                Paths.get("/Users/mariocassano/Desktop/POLIBA/FLC", "FLC step 2", "dataset_onto").normalize()
-        );
+    private static java.util.Optional<Path> resolveDatasetRootOptional() {
+        String sysProp = System.getProperty("dataset.dir");
+        List<Path> candidates = new ArrayList<>();
+        if (sysProp != null && !sysProp.isBlank()) {
+            candidates.add(Paths.get(sysProp));
+        }
+        candidates.add(Paths.get("dataset_onto"));
+        candidates.add(Paths.get(System.getProperty("user.dir"), "dataset_onto"));
+        candidates.add(Paths.get(System.getProperty("user.dir"), "..", "dataset_onto"));
+        candidates.add(Paths.get(System.getProperty("user.dir"), "..", "..", "dataset_onto"));
 
         for (Path candidate : candidates) {
-            if (Files.isDirectory(candidate.resolve("functional")) && Files.isDirectory(candidate.resolve("protocowl"))) {
-                return candidate.toAbsolutePath().normalize();
+            Path norm = candidate.toAbsolutePath().normalize();
+            if (Files.isDirectory(norm.resolve("functional")) && Files.isDirectory(norm.resolve("protocowl"))) {
+                return java.util.Optional.of(norm);
             }
         }
 
-        throw new IllegalStateException("Dataset non trovato. Controllare il path del dataset_onto.");
+        return java.util.Optional.empty();
     }
 
     private static List<CoverageRow> collectCoverageRows(Path datasetRoot) throws Exception {
