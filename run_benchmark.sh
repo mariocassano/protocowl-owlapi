@@ -2,7 +2,15 @@
 
 set -euo pipefail
 
-DATASET_DIR="${DATASET_DIR:-../../FLC step 2/dataset_onto}"
+if [ -z "${DATASET_DIR:-}" ]; then
+  if [ -d "./dataset_onto" ]; then
+    DATASET_DIR="./dataset_onto"
+  elif [ -d "../dataset_onto" ]; then
+    DATASET_DIR="../dataset_onto"
+  else
+    DATASET_DIR="../../FLC step 2/dataset_onto"
+  fi
+fi
 METADATA_FILE="${METADATA_FILE:-$DATASET_DIR/metadata.csv}"
 OUTPUT_CSV="benchmark_results.csv"
 ENVIRONMENT_REPORT="${ENVIRONMENT_REPORT:-benchmark_environment.txt}"
