@@ -68,6 +68,9 @@ final class Constants {
     static final int FRAME_ANNOTATION_ASSERTION        = 0x2F;
     static final int FRAME_SUB_ANNOTATION_PROP         = 0x30;
 
+    static final int FRAME_ANNOTATION_PROP_DOMAIN       = 0x31;
+    static final int FRAME_ANNOTATION_PROP_RANGE        = 0x32;
+
     // COMPLEX TYPES & LITERALS
 
     // --- Complex Types Header Values ---

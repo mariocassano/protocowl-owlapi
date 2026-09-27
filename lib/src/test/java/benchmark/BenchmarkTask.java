@@ -23,6 +23,9 @@ public class BenchmarkTask {
 
         String task = args[0];
         String formatName = args[1];
+        if (!java.util.Set.of("Functional", "ProtocOWL", "ProtocOWL_128").contains(formatName)) {
+            fail("Formato non riconosciuto: " + formatName);
+        }
         File inputFile = new File(args[2]);
 
         if ("render".equals(task) && "ProtocOWL_128".equals(formatName)) {
@@ -31,6 +34,7 @@ public class BenchmarkTask {
 
         // Il manager viene inizializzato una sola volta per il task corrente.
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        manager.getOntologyConfigurator().withRemapAllAnonymousIndividualsIds(false);
         // Registra esplicitamente parser e storer ProtocOWL per evitare dipendenze dal classpath runtime.
         manager.getOntologyParsers().add(new ProtocOWLParserFactory());
         manager.getOntologyStorers().add(new ProtocOWLStorerFactory());
@@ -100,13 +104,7 @@ public class BenchmarkTask {
     }
 
     private static String extractOntologyName(String filename) {
-        if (filename.endsWith("_functional.owl")) {
-            return filename.substring(0, filename.length() - "_functional.owl".length());
-        }
-        if (filename.endsWith("_protocowl.owl")) {
-            return filename.substring(0, filename.length() - "_protocowl.owl".length());
-        }
-        return filename;
+        return DatasetFiles.baseName(filename);
     }
 
     private static void fail(String message) {

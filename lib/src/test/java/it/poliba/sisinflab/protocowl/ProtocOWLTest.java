@@ -29,7 +29,9 @@ public class ProtocOWLTest {
     public static void assertEquals(OWLOntology in, OWLOntology out) {
         var axiomsA = in.axioms().collect(Collectors.toSet());
         var axiomsB = out.axioms().collect(Collectors.toSet());
-        String diagnostic = comparisonDiagnostic(in, out, axiomsA, axiomsB);
+        // Avoid building a potentially enormous diff on successful comparisons.
+        String diagnostic = axiomsA.equals(axiomsB) ? "Axioms match"
+                : comparisonDiagnostic(in, out, axiomsA, axiomsB);
 
         // 1. Controlla se gli ID delle ontologie sono uguali (incluso il Version IRI)
         Assert.assertEquals(in.isNamed(), out.isNamed(), diagnostic);
@@ -39,21 +41,12 @@ public class ProtocOWLTest {
             Assert.assertEquals(in.getOntologyID().getVersionIRI(), out.getOntologyID().getVersionIRI(), diagnostic);
         }
 
-        // 2. Controlla se i prefissi sono uguali (normalizzando il prefisso di default se derivato dall'Ontology IRI)
-        var inFormat = in.getNonnullFormat().asPrefixOWLDocumentFormat();
-        var outFormat = out.getNonnullFormat().asPrefixOWLDocumentFormat();
-        var inMap = new java.util.HashMap<>(inFormat.getPrefixName2PrefixMap());
-        var outMap = new java.util.HashMap<>(outFormat.getPrefixName2PrefixMap());
-        if (in.isNamed() && in.getOntologyID().getOntologyIRI().isPresent()) {
-            String defaultNs = in.getOntologyID().getOntologyIRI().get() + "#";
-            if (defaultNs.equals(outMap.get(":")) && !inMap.containsKey(":")) {
-                inMap.put(":", defaultNs);
-            }
-            if (defaultNs.equals(inMap.get(":")) && !outMap.containsKey(":")) {
-                outMap.put(":", defaultNs);
-            }
-        }
-        Assert.assertEquals(inMap, outMap, diagnostic);
+        Assert.assertEquals(in.getImportsDeclarations(), out.getImportsDeclarations(), "Imports differ: " + diagnostic);
+
+        // 2. Compare the actual prefix bindings; missing/default/alias entries are data.
+        var inMap = in.getNonnullFormat().asPrefixOWLDocumentFormat().getPrefixName2PrefixMap();
+        var outMap = out.getNonnullFormat().asPrefixOWLDocumentFormat().getPrefixName2PrefixMap();
+        Assert.assertEquals(outMap, inMap, "Prefix maps differ (actual vs original): " + diagnostic);
 
         // 3. Controllo delle Annotazioni dell'Ontologia 
         var annA = in.annotations().collect(Collectors.toSet());
@@ -93,6 +86,7 @@ public class ProtocOWLTest {
 
     static OWLOntology loadOntology(String filePath, OWLParserFactory parser) throws OWLOntologyCreationException {
         var manager = OWLManager.createOWLOntologyManager();
+        manager.getOntologyConfigurator().withRemapAllAnonymousIndividualsIds(false);
         manager.setOntologyParsers(Set.of(parser));
         try (var stream = new BufferedInputStream(new FileInputStream(filePath))) {
             return manager.loadOntologyFromOntologyDocument(stream);
@@ -126,13 +120,14 @@ public class ProtocOWLTest {
         // 1. Parser Test (Confronta .owl con .oprt di riferimento)
         var func = loadOntology(getOwlPath(ontologyName), new OWLFunctionalSyntaxOWLParserFactory());
         var oprt = loadOntology(getOprtPath(ontologyName), new ProtocOWLParserFactory());
-        assertEquals(func, oprt);
+        // Check our renderer even if the supplied binary has inconsistent metadata.
 
         // 2. Renderer Test (Scrive in .oprt e rilegge)
         String outPath = getOutputPath(ontologyName);
         writeOntology(func, outPath);
         var reloadedOprt = loadOntology(outPath, new ProtocOWLParserFactory());
         assertEquals(func, reloadedOprt);
+        assertEquals(func, oprt);
     }
 
     @Test

@@ -3,6 +3,7 @@ package benchmark;
 import it.poliba.sisinflab.protocowl.ProtocOWLDocumentFormat;
 import it.poliba.sisinflab.protocowl.ProtocOWLParserFactory;
 import it.poliba.sisinflab.protocowl.ProtocOWLStorerFactory;
+import it.poliba.sisinflab.protocowl.ProtocOWLTest;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.functional.parser.OWLFunctionalSyntaxOWLParserFactory;
 import org.semanticweb.owlapi.io.OWLParserException;
@@ -30,7 +31,7 @@ public class CoverageAnalyzer {
 
     private static final String[] INPUT_VARIANTS = {"std", "MIS_128"};
 
-    @Test
+    @Test(groups = "coverage")
     public void generateCoverageReport() throws Exception {
         var optRoot = resolveDatasetRootOptional();
         if (optRoot.isEmpty()) {
@@ -40,7 +41,8 @@ public class CoverageAnalyzer {
         Path outputCsv = Paths.get(System.getProperty("user.dir"), "coverage_report.csv").normalize();
         List<CoverageRow> rows = collectCoverageRows(datasetRoot);
         writeCsv(outputCsv, rows);
-        Assert.assertTrue(Files.exists(outputCsv), "coverage_report.csv non generato");
+        Assert.assertEquals(rows.size(), 300);
+        assertSuccess(rows);
     }
 
     public static void main(String[] args) throws Exception {
@@ -50,50 +52,28 @@ public class CoverageAnalyzer {
         List<CoverageRow> rows = collectCoverageRows(datasetRoot);
         writeCsv(outputCsv, rows);
         System.out.printf("Wrote %d coverage rows to %s%n", rows.size(), outputCsv.toAbsolutePath());
+        assertSuccess(rows);
     }
 
-    private static java.util.Optional<Path> resolveDatasetRootOptional() {
-        String sysProp = System.getProperty("dataset.dir");
-        List<Path> candidates = new ArrayList<>();
-        if (sysProp != null && !sysProp.isBlank()) {
-            candidates.add(Paths.get(sysProp));
-        }
-        candidates.add(Paths.get("dataset_onto"));
-        candidates.add(Paths.get(System.getProperty("user.dir"), "dataset_onto"));
-        candidates.add(Paths.get(System.getProperty("user.dir"), "..", "dataset_onto"));
-        candidates.add(Paths.get(System.getProperty("user.dir"), "..", "..", "dataset_onto"));
+    private static void assertSuccess(List<CoverageRow> rows) {
+        var failures = rows.stream().filter(row -> row.esito().equals("FAIL")).toList();
+        failures.stream().collect(java.util.stream.Collectors.groupingBy(CoverageRow::costrutto,
+                java.util.TreeMap::new, java.util.stream.Collectors.counting()))
+                .forEach((construct, count) -> System.err.println(construct + ": " + count));
+        Assert.assertTrue(failures.isEmpty(), "Coverage failures: " + failures);
+    }
 
-        for (Path candidate : candidates) {
-            Path norm = candidate.toAbsolutePath().normalize();
-            if (Files.isDirectory(norm.resolve("functional")) && Files.isDirectory(norm.resolve("protocowl"))) {
-                return java.util.Optional.of(norm);
-            }
-        }
-
-        return java.util.Optional.empty();
+    private static Path resolveDatasetRoot() {
+        return DatasetFiles.datasetRoot();
     }
 
     private static List<CoverageRow> collectCoverageRows(Path datasetRoot) throws Exception {
         List<CoverageRow> rows = new ArrayList<>();
 
-        try (Stream<Path> files = Files.list(datasetRoot.resolve("functional"))) {
-            List<Path> functionalFiles = files
-                    .filter(path -> path.getFileName().toString().endsWith("_functional.owl"))
-                    .sorted(Comparator.comparing(path -> path.getFileName().toString()))
-                    .toList();
-
-            for (Path functionalFile : functionalFiles) {
-                String baseName = stripSuffix(functionalFile.getFileName().toString(), "_functional.owl");
-
-                for (String variant : INPUT_VARIANTS) {
-                    Path inputFile = datasetRoot.resolve("protocowl").resolve(variant).resolve(baseName + "_protocowl.owl");
-                    if (Files.exists(inputFile)) {
-                        rows.add(runParseCheck(baseName, variant, inputFile));
-                    }
-                }
-
-                rows.add(runRenderCheck(baseName, functionalFile));
-            }
+        for (DatasetFiles.Entry entry : DatasetFiles.entries(datasetRoot)) {
+            rows.add(runParseCheck(entry.name(), "standard", entry.standard()));
+            rows.add(runParseCheck(entry.name(), "MIS_128", entry.mis128()));
+            rows.add(runRenderCheck(entry.name(), entry.functional()));
         }
 
         rows.sort(Comparator.comparing(CoverageRow::ontology)
@@ -106,7 +86,7 @@ public class CoverageAnalyzer {
         try {
             loadOntology(inputFile, new ProtocOWLParserFactory());
             return new CoverageRow(ontology, inputVariant, "parse", "OK", "", "");
-        } catch (Exception e) {
+        } catch (Exception | AssertionError e) {
             return new CoverageRow(ontology, inputVariant, "parse", "FAIL", inferConstruct(e), normalizeMessage(e));
         }
     }
@@ -123,20 +103,25 @@ public class CoverageAnalyzer {
             }
 
             Path tmp = Files.createTempFile("coverage_render_", ".oprt");
-            try (OutputStream out = Files.newOutputStream(tmp)) {
-                manager.saveOntology(owl, format, out);
+            try {
+                try (OutputStream out = Files.newOutputStream(tmp)) {
+                    manager.saveOntology(owl, format, out);
+                }
+                // Also verify our writer independently of the supplied binary inputs.
+                ProtocOWLTest.assertEquals(owl, loadOntology(tmp, new ProtocOWLParserFactory()));
             } finally {
                 Files.deleteIfExists(tmp);
             }
 
             return new CoverageRow(ontology, "functional", "render", "OK", "", "");
-        } catch (Exception e) {
+        } catch (Exception | AssertionError e) {
             return new CoverageRow(ontology, "functional", "render", "FAIL", inferConstruct(e), normalizeMessage(e));
         }
     }
 
     private static OWLOntology loadOntology(Path file, OWLParserFactory parserFactory) throws Exception {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        manager.getOntologyConfigurator().withRemapAllAnonymousIndividualsIds(false);
         manager.setOntologyParsers(Set.of(parserFactory));
         try (InputStream in = Files.newInputStream(file)) {
             return manager.loadOntologyFromOntologyDocument(in);

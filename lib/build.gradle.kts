@@ -13,13 +13,42 @@ dependencies {
     testImplementation("org.testng:testng:7.11.0")
 }
 
+tasks.withType<JavaCompile>().configureEach {
+    options.release.set(21)
+}
+
+tasks.withType<Test>().configureEach {
+    maxHeapSize = "4g"
+    providers.gradleProperty("datasetDir").orElse(providers.environmentVariable("DATASET_DIR")).orNull?.let {
+        systemProperty("dataset.dir", rootProject.file(it).absolutePath)
+    }
+    providers.gradleProperty("metadataFile").orElse(providers.environmentVariable("METADATA_FILE")).orNull?.let {
+        systemProperty("metadata.file", rootProject.file(it).absolutePath)
+    }
+    testLogging { events("failed", "skipped") }
+}
+
 tasks.test {
-    useTestNG {
-        preserveOrder = true
-    }
-    testLogging {
-        showStandardStreams = true
-    }
+    useTestNG { excludeGroups("dataset", "coverage") }
+}
+
+tasks.register<Test>("coverageTest") {
+    description = "Verify every dataset input and standard rendering; write coverage_report.csv."
+    group = "verification"
+    testClassesDirs = sourceSets.test.get().output.classesDirs
+    classpath = sourceSets.test.get().runtimeClasspath
+    useTestNG { includeGroups("coverage") }
+    outputs.upToDateWhen { false }
+}
+
+tasks.register<Test>("datasetTest") {
+    description = "Verify all 200 dataset round trips (phases a, b and c)."
+    group = "verification"
+    testClassesDirs = sourceSets.test.get().output.classesDirs
+    classpath = sourceSets.test.get().runtimeClasspath
+    useTestNG { includeGroups("dataset") }
+    mustRunAfter("coverageTest")
+    outputs.upToDateWhen { false }
 }
 
 // Workaround for: https://github.com/redhat-developer/vscode-java/issues/1615

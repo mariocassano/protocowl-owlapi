@@ -29,6 +29,7 @@ class Renderer {
 
         // 2. Colleziona tutte le entità in gioco (Namespace e Identificatori)
         collectEntities(ontology);
+        validatePrefixes(format);
         collectPrefixNamespaces(format);
 
         // Popola la tabella degli identificatori in ordine rigoroso: prima tutti gli IRI, poi tutti gli anonimi
@@ -84,6 +85,7 @@ class Renderer {
 
         // 6. Traduce gli assiomi in stream binario
         writeAxioms(stream, ontology);
+        stream.write(Constants.FRAME_END);
     }
 
     /**
@@ -120,11 +122,11 @@ class Renderer {
         ontology.importsDeclarations().forEach(decl -> registerIRI(decl.getIRI()));
 
         // Recupera e mappa le entità della firma dell'ontologia 
-        ontology.getSignature(Imports.INCLUDED).stream()
+        ontology.getSignature(Imports.EXCLUDED).stream().sorted()
                 .map(OWLEntity::getIRI)
                 .forEach(this::registerIRI);
 
-        ontology.getReferencedAnonymousIndividuals(Imports.INCLUDED)
+        ontology.getReferencedAnonymousIndividuals(Imports.EXCLUDED).stream().sorted()
                 .forEach(this::registerAnon);
 
         // Registra gli IRI usati nelle annotazioni dell'ontologia
@@ -136,9 +138,13 @@ class Renderer {
             collectAnnotationEntities(axiom.getAnnotation());
         });
 
-        // Raccoglie datatypes, facet e data ranges complessi utilizzati negli assiomi
-        for (OWLAxiom ax : ontology.getAxioms()) {
-            // Registrazione standard delle entita di tipo Datatype presenti nella firma
+        // Raccoglie datatypes e facet utilizzati nelle espressioni di classe o letterali degli assiomi
+        for (OWLAxiom ax : ontology.axioms().sorted().toList()) {
+            ax.annotations().forEach(this::collectAnnotationEntities);
+            if (ax instanceof OWLDatatypeDefinitionAxiom definition) collectDataRangeEntities(definition.getDataRange());
+            if (ax instanceof OWLDataPropertyRangeAxiom range) collectDataRangeEntities(range.getRange());
+            if (ax instanceof OWLAnnotationPropertyDomainAxiom domain) registerIRI(domain.getDomain());
+            if (ax instanceof OWLAnnotationPropertyRangeAxiom range) registerIRI(range.getRange());
             ax.datatypesInSignature().forEach(dt -> registerIRI(dt.getIRI()));
             // Esplorazione ricorsiva delle espressioni di classe annidate (che possono contenere data restrictions)
             ax.nestedClassExpressions().forEach(this::collectClassExpressionEntities);
@@ -190,6 +196,12 @@ class Renderer {
                 registerIRI(fr.getFacet().getIRI());
                 registerIRI(fr.getFacetValue().getDatatype().getIRI());
             }
+        } else if (dr instanceof OWLDataIntersectionOf intersection) {
+            intersection.operands().forEach(this::collectDataRangeEntities);
+        } else if (dr instanceof OWLDataUnionOf union) {
+            union.operands().forEach(this::collectDataRangeEntities);
+        } else if (dr instanceof OWLDataComplementOf complement) {
+            collectDataRangeEntities(complement.getDataRange());
         } else if (dr instanceof OWLDataOneOf oneOf) {
             // Enumerazione esplicita di letterali
             for (OWLLiteral lit : oneOf.getValues()) {
@@ -228,6 +240,25 @@ class Renderer {
             namespaceTable.put(ns, namespaceTable.size());
         }
         collectedIRIs.add(iri);
+    }
+
+    /** v1 implies the five reserved bindings and cannot encode extra aliases for them. */
+    private void validatePrefixes(ProtocOWLDocumentFormat format) throws IOException {
+        if (format == null) return;
+        Map<String, String> prefixes = format.getPrefixName2PrefixMap();
+        List<String> reservedNames = List.of("rdf:", "rdfs:", "xsd:", "owl:", "xml:");
+        for (String prefix : reservedNames) {
+            if (!prefixes.containsKey(prefix)) {
+                throw new IOException("ProtocOWL v1 cannot omit implicit reserved prefix: " + prefix);
+            }
+        }
+        for (var entry : prefixes.entrySet()) {
+            Integer index = namespaceTable.get(entry.getValue());
+            if (index != null && index < reservedNames.size() && !entry.getKey().equals(reservedNames.get(index))) {
+                throw new IOException("ProtocOWL v1 cannot preserve alias '" + entry.getKey()
+                        + "' for reserved namespace " + entry.getValue());
+            }
+        }
     }
 
     private void collectPrefixNamespaces(ProtocOWLDocumentFormat format) {
@@ -339,168 +370,223 @@ class Renderer {
     }
 
     private void writeAxioms(OutputStream stream, OWLOntology ontology) throws IOException {
-        // Scrittura dei Frame Entità
-        for (OWLDeclarationAxiom ax : ontology.getAxioms(AxiomType.DECLARATION)) {
-            OWLEntity entity = ax.getEntity();
-            int type = -1;
+        for (OWLAxiom ax : ontology.axioms().sorted().toList()) writeAxiom(stream, ax);
+    }
 
-            if (entity.isOWLClass()) type = Constants.FRAME_CLASS_DECL;
-            else if (entity.isOWLDatatype()) type = Constants.FRAME_DATATYPE_DECL;
-            else if (entity.isOWLObjectProperty()) type = Constants.FRAME_OBJ_PROP_DECL;
-            else if (entity.isOWLDataProperty()) type = Constants.FRAME_DATA_PROP_DECL;
-            else if (entity.isOWLAnnotationProperty()) type = Constants.FRAME_ANNOTATION_PROP_DECL;
-            else if (entity.isOWLNamedIndividual()) type = Constants.FRAME_NAMED_IND_DECL;
+    private void writeAxiomHeader(OutputStream stream, int type, int utility, OWLAxiom ax) throws IOException {
+        if (ax.isAnnotated()) utility |= 1;
+        stream.write(type | (utility << 6));
+        if (ax.isAnnotated()) {
+            writeVarInt(stream, ax.getAnnotations().size());
+            for (OWLAnnotation annotation : ax.annotations().sorted().toList()) writeAnnotation(stream, annotation);
+        }
+    }
 
-            if (type != -1) {
-                stream.write(type);
+    private void writeAxiom(OutputStream stream, OWLAxiom axiom) throws IOException {
+        switch (axiom) {
+            case OWLDeclarationAxiom ax -> {
+                OWLEntity entity = ax.getEntity();
+                int type;
+                if (entity.isOWLClass()) type = Constants.FRAME_CLASS_DECL;
+                else if (entity.isOWLDatatype()) type = Constants.FRAME_DATATYPE_DECL;
+                else if (entity.isOWLObjectProperty()) type = Constants.FRAME_OBJ_PROP_DECL;
+                else if (entity.isOWLDataProperty()) type = Constants.FRAME_DATA_PROP_DECL;
+                else if (entity.isOWLAnnotationProperty()) type = Constants.FRAME_ANNOTATION_PROP_DECL;
+                else if (entity.isOWLNamedIndividual()) type = Constants.FRAME_NAMED_IND_DECL;
+                else throw new IOException("Unsupported declaration: " + entity);
+                writeAxiomHeader(stream, type, 0, ax);
                 writeVarInt(stream, getIdentifierId(entity));
             }
-        }
-
-        // Scrittura degli Assiomi Logici
-        for (OWLAxiom ax : ontology.getLogicalAxioms()) {
-            if (ax instanceof OWLSubClassOfAxiom subClassAx) {
-                writeSubClassOf(stream, subClassAx);
-            } else if (ax instanceof OWLSubObjectPropertyOfAxiom subObjectPropertyAx) {
-                writeSubObjectPropertyOf(stream, subObjectPropertyAx);
-            } else if (ax instanceof OWLEquivalentObjectPropertiesAxiom equivalentObjectPropertiesAx) {
-                writeObjectPropertySetAxiom(stream, Constants.FRAME_EQUIVALENT_OBJ_PROPS,
-                        equivalentObjectPropertiesAx.getProperties());
-            } else if (ax instanceof OWLDisjointObjectPropertiesAxiom disjointObjectPropertiesAx) {
-                writeObjectPropertySetAxiom(stream, Constants.FRAME_DISJOINT_OBJ_PROPS,
-                        disjointObjectPropertiesAx.getProperties());
-            } else if (ax instanceof OWLInverseObjectPropertiesAxiom inverseObjectPropertiesAx) {
-                stream.write(Constants.FRAME_INVERSE_OBJ_PROP);
-                writeObjectPropertyExpression(stream, inverseObjectPropertiesAx.getFirstProperty());
-                writeObjectPropertyExpression(stream, inverseObjectPropertiesAx.getSecondProperty());
-            } else if (ax instanceof OWLObjectPropertyDomainAxiom domainAx) {
-                stream.write(Constants.FRAME_OBJ_PROP_DOMAIN);
-                writeObjectPropertyExpression(stream, domainAx.getProperty());
-                writeClassExpression(stream, domainAx.getDomain());
-            } else if (ax instanceof OWLObjectPropertyRangeAxiom rangeAx) {
-                stream.write(Constants.FRAME_OBJ_PROP_RANGE);
-                writeObjectPropertyExpression(stream, rangeAx.getProperty());
-                writeClassExpression(stream, rangeAx.getRange());
-            } else if (ax instanceof OWLFunctionalObjectPropertyAxiom functionalAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_FUNCTIONAL_OBJ_PROP,
-                        functionalAx.getProperty());
-            } else if (ax instanceof OWLInverseFunctionalObjectPropertyAxiom inverseFunctionalAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_INVERSE_FUNCTIONAL_OBJ_PROP,
-                        inverseFunctionalAx.getProperty());
-            } else if (ax instanceof OWLReflexiveObjectPropertyAxiom reflexiveAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_REFLEXIVE_OBJ_PROP,
-                        reflexiveAx.getProperty());
-            } else if (ax instanceof OWLIrreflexiveObjectPropertyAxiom irreflexiveAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_IRREFLEXIVE_OBJ_PROP,
-                        irreflexiveAx.getProperty());
-            } else if (ax instanceof OWLSymmetricObjectPropertyAxiom symmetricAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_SYMMETRIC_OBJ_PROP,
-                        symmetricAx.getProperty());
-            } else if (ax instanceof OWLAsymmetricObjectPropertyAxiom asymmetricAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_ASYMMETRIC_OBJ_PROP,
-                        asymmetricAx.getProperty());
-            } else if (ax instanceof OWLTransitiveObjectPropertyAxiom transitiveAx) {
-                writeObjectPropertyCharacteristic(stream, Constants.FRAME_TRANSITIVE_OBJ_PROP,
-                        transitiveAx.getProperty());
-            } else if (ax instanceof OWLSameIndividualAxiom sameIndividualAx) {
-                writeIndividualSetAxiom(stream, Constants.FRAME_SAME_INDIVIDUAL,
-                        sameIndividualAx.getIndividuals());
-            } else if (ax instanceof OWLDifferentIndividualsAxiom differentIndividualsAx) {
-                writeIndividualSetAxiom(stream, Constants.FRAME_DIFFERENT_INDIVIDUALS,
-                        differentIndividualsAx.getIndividuals());
-            } else if (ax instanceof OWLEquivalentClassesAxiom equivAx) {
-                writeEquivalentClasses(stream, equivAx);
-            } else if (ax instanceof OWLDisjointClassesAxiom disjointAx) {
-                stream.write(Constants.FRAME_DISJOINT_CLASSES);
-                writeVarInt(stream, disjointAx.classExpressions().count());
-                for (OWLClassExpression ce : disjointAx.getClassExpressions()) {
-                    writeClassExpression(stream, ce);
-                }   
-            } else if (ax instanceof OWLClassAssertionAxiom clsAssAx) {
-                writeClassAssertion(stream, clsAssAx);
-            } else if (ax instanceof OWLObjectPropertyAssertionAxiom objPropAx) {
-                writeObjectPropertyAssertion(stream, objPropAx);
-            } else if (ax instanceof OWLDataPropertyAssertionAxiom dataPropAx) {
-                writeDataPropertyAssertion(stream, dataPropAx);
+            case OWLSubClassOfAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SUBCLASS_OF, 0, ax);
+                writeClassExpression(stream, ax.getSubClass());
+                writeClassExpression(stream, ax.getSuperClass());
             }
+            case OWLEquivalentClassesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_EQUIVALENT_CLASSES, 0, ax);
+                writeVarInt(stream, ax.getClassExpressions().size());
+                for (OWLClassExpression ce : ax.getClassExpressions()) writeClassExpression(stream, ce);
+            }
+            case OWLDisjointClassesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DISJOINT_CLASSES, 0, ax);
+                writeVarInt(stream, ax.getClassExpressions().size());
+                for (OWLClassExpression ce : ax.getClassExpressions()) writeClassExpression(stream, ce);
+            }
+            case OWLDisjointUnionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DISJOINT_UNION, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getOWLClass()));
+                writeVarInt(stream, ax.getClassExpressions().size());
+                for (OWLClassExpression ce : ax.getClassExpressions()) writeClassExpression(stream, ce);
+            }
+            case OWLSubPropertyChainOfAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SUB_OBJ_PROP, 2, ax);
+                writeVarInt(stream, ax.getPropertyChain().size());
+                for (OWLObjectPropertyExpression p : ax.getPropertyChain()) writeObjectPropertyExpression(stream, p);
+                writeObjectPropertyExpression(stream, ax.getSuperProperty());
+            }
+            case OWLSubObjectPropertyOfAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SUB_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getSubProperty());
+                writeObjectPropertyExpression(stream, ax.getSuperProperty());
+            }
+            case OWLSubDataPropertyOfAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SUB_DATA_PROP, 0, ax);
+                writeDataPropertyExpression(stream, ax.getSubProperty());
+                writeDataPropertyExpression(stream, ax.getSuperProperty());
+            }
+            case OWLEquivalentObjectPropertiesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_EQUIVALENT_OBJ_PROPS, 0, ax);
+                writeVarInt(stream, ax.getProperties().size());
+                for (OWLObjectPropertyExpression p : ax.getProperties()) writeObjectPropertyExpression(stream, p);
+            }
+            case OWLDisjointObjectPropertiesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DISJOINT_OBJ_PROPS, 0, ax);
+                writeVarInt(stream, ax.getProperties().size());
+                for (OWLObjectPropertyExpression p : ax.getProperties()) writeObjectPropertyExpression(stream, p);
+            }
+            case OWLObjectPropertyDomainAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_OBJ_PROP_DOMAIN, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+                writeClassExpression(stream, ax.getDomain());
+            }
+            case OWLObjectPropertyRangeAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_OBJ_PROP_RANGE, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+                writeClassExpression(stream, ax.getRange());
+            }
+            case OWLFunctionalObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_FUNCTIONAL_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLInverseFunctionalObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_INVERSE_FUNCTIONAL_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLReflexiveObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_REFLEXIVE_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLIrreflexiveObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_IRREFLEXIVE_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLSymmetricObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SYMMETRIC_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLAsymmetricObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_ASYMMETRIC_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLTransitiveObjectPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_TRANSITIVE_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLObjectPropertyAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_OBJ_PROP_ASSERTION, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+                writeIndividual(stream, ax.getSubject());
+                writeIndividual(stream, ax.getObject());
+            }
+            case OWLNegativeObjectPropertyAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_NEG_OBJ_PROP_ASSERTION, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getProperty());
+                writeIndividual(stream, ax.getSubject());
+                writeIndividual(stream, ax.getObject());
+            }
+            case OWLEquivalentDataPropertiesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_EQUIVALENT_DATA_PROPS, 0, ax);
+                writeVarInt(stream, ax.getProperties().size());
+                for (OWLDataPropertyExpression p : ax.getProperties()) writeDataPropertyExpression(stream, p);
+            }
+            case OWLDisjointDataPropertiesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DISJOINT_DATA_PROPS, 0, ax);
+                writeVarInt(stream, ax.getProperties().size());
+                for (OWLDataPropertyExpression p : ax.getProperties()) writeDataPropertyExpression(stream, p);
+            }
+            case OWLDataPropertyDomainAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DATA_PROP_DOMAIN, 0, ax);
+                writeDataPropertyExpression(stream, ax.getProperty());
+                writeClassExpression(stream, ax.getDomain());
+            }
+            case OWLDataPropertyRangeAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DATA_PROP_RANGE, 0, ax);
+                writeDataPropertyExpression(stream, ax.getProperty());
+                writeDataRange(stream, ax.getRange());
+            }
+            case OWLFunctionalDataPropertyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_FUNCTIONAL_DATA_PROP, 0, ax);
+                writeDataPropertyExpression(stream, ax.getProperty());
+            }
+            case OWLDataPropertyAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DATA_PROP_ASSERTION, 0, ax);
+                writeDataPropertyExpression(stream, ax.getProperty());
+                writeIndividual(stream, ax.getSubject());
+                writeLiteral(stream, ax.getObject());
+            }
+            case OWLNegativeDataPropertyAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_NEG_DATA_PROP_ASSERTION, 0, ax);
+                writeDataPropertyExpression(stream, ax.getProperty());
+                writeIndividual(stream, ax.getSubject());
+                writeLiteral(stream, ax.getObject());
+            }
+            case OWLInverseObjectPropertiesAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_INVERSE_OBJ_PROP, 0, ax);
+                writeObjectPropertyExpression(stream, ax.getFirstProperty());
+                writeObjectPropertyExpression(stream, ax.getSecondProperty());
+            }
+            case OWLDatatypeDefinitionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DATA_TYPE_DEFINITION, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getDatatype()));
+                writeDataRange(stream, ax.getDataRange());
+            }
+            case OWLHasKeyAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_HAS_KEY, 0, ax);
+                writeClassExpression(stream, ax.getClassExpression());
+                writeVarInt(stream, ax.getObjectPropertyExpressions().size());
+                for (OWLObjectPropertyExpression p : ax.getObjectPropertyExpressions()) writeObjectPropertyExpression(stream, p);
+                writeVarInt(stream, ax.getDataPropertyExpressions().size());
+                for (OWLDataPropertyExpression p : ax.getDataPropertyExpressions()) writeDataPropertyExpression(stream, p);
+            }
+            case OWLSameIndividualAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SAME_INDIVIDUAL, 0, ax);
+                writeVarInt(stream, ax.getIndividuals().size());
+                for (OWLIndividual i : ax.getIndividuals()) writeIndividual(stream, i);
+            }
+            case OWLDifferentIndividualsAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_DIFFERENT_INDIVIDUALS, 0, ax);
+                writeVarInt(stream, ax.getIndividuals().size());
+                for (OWLIndividual i : ax.getIndividuals()) writeIndividual(stream, i);
+            }
+            case OWLClassAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_CLASS_ASSERTION, 0, ax);
+                writeClassExpression(stream, ax.getClassExpression());
+                writeIndividual(stream, ax.getIndividual());
+            }
+            case OWLAnnotationAssertionAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_ANNOTATION_ASSERTION, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getProperty()));
+                writeVarInt(stream, getIdentifierId((OWLObject) ax.getSubject()));
+                writeAnnotationValue(stream, ax.getValue());
+            }
+            case OWLSubAnnotationPropertyOfAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_SUB_ANNOTATION_PROP, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getSubProperty()));
+                writeVarInt(stream, getIdentifierId(ax.getSuperProperty()));
+            }
+            case OWLAnnotationPropertyDomainAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_ANNOTATION_PROP_DOMAIN, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getProperty()));
+                writeVarInt(stream, getIdentifierId(ax.getDomain()));
+            }
+            case OWLAnnotationPropertyRangeAxiom ax -> {
+                writeAxiomHeader(stream, Constants.FRAME_ANNOTATION_PROP_RANGE, 0, ax);
+                writeVarInt(stream, getIdentifierId(ax.getProperty()));
+                writeVarInt(stream, getIdentifierId(ax.getRange()));
+            }
+            default -> throw new IOException("Unsupported axiom: " + axiom.getAxiomType() + ": " + axiom);
         }
-
-        for (OWLAnnotationAssertionAxiom ax : ontology.getAxioms(AxiomType.ANNOTATION_ASSERTION)) {
-            stream.write(Constants.FRAME_ANNOTATION_ASSERTION);
-            writeVarInt(stream, getIdentifierId(ax.getAnnotation().getProperty().getIRI()));
-            writeVarInt(stream, getIdentifierId((OWLObject) ax.getSubject()));
-            writeAnnotationValue(stream, ax.getAnnotation().getValue());
-        }
     }
-
-    private void writeSubClassOf(OutputStream stream, OWLSubClassOfAxiom ax) throws IOException {
-        stream.write(Constants.FRAME_SUBCLASS_OF);
-        writeClassExpression(stream, ax.getSubClass());
-        writeClassExpression(stream, ax.getSuperClass());
-    }
-
-    private void writeSubObjectPropertyOf(OutputStream stream, OWLSubObjectPropertyOfAxiom ax)
-            throws IOException {
-        stream.write(Constants.FRAME_SUB_OBJ_PROP);
-        writeObjectPropertyExpression(stream, ax.getSubProperty());
-        writeObjectPropertyExpression(stream, ax.getSuperProperty());
-    }
-
-    private void writeObjectPropertySetAxiom(OutputStream stream, int type,
-            Collection<OWLObjectPropertyExpression> properties) throws IOException {
-        stream.write(type);
-        writeVarInt(stream, properties.size());
-        for (OWLObjectPropertyExpression property : properties) {
-            writeObjectPropertyExpression(stream, property);
-        }
-    }
-
-    private void writeObjectPropertyCharacteristic(OutputStream stream, int type,
-            OWLObjectPropertyExpression property) throws IOException {
-        stream.write(type);
-        writeObjectPropertyExpression(stream, property);
-    }
-
-    private void writeIndividualSetAxiom(OutputStream stream, int type,
-            Collection<OWLIndividual> individuals) throws IOException {
-        stream.write(type);
-        writeVarInt(stream, individuals.size());
-        for (OWLIndividual individual : individuals) {
-            writeIndividual(stream, individual);
-        }
-    }
-
-    private void writeEquivalentClasses(OutputStream stream, OWLEquivalentClassesAxiom ax) throws IOException {
-        stream.write(Constants.FRAME_EQUIVALENT_CLASSES);
-        writeVarInt(stream, ax.classExpressions().count());
-        for (OWLClassExpression ce : ax.getClassExpressions()) {
-            writeClassExpression(stream, ce);
-        }
-    }
-
-    private void writeClassAssertion(OutputStream stream, OWLClassAssertionAxiom ax) throws IOException {
-        stream.write(Constants.FRAME_CLASS_ASSERTION);
-        writeClassExpression(stream, ax.getClassExpression());
-        writeIndividual(stream, ax.getIndividual());
-    }
-
-    private void writeObjectPropertyAssertion(OutputStream stream, OWLObjectPropertyAssertionAxiom ax) throws IOException {
-        stream.write(Constants.FRAME_OBJ_PROP_ASSERTION);
-        writeObjectPropertyExpression(stream, ax.getProperty());
-        writeIndividual(stream, ax.getSubject());
-        writeIndividual(stream, ax.getObject());
-    }
-
-    private void writeDataPropertyAssertion(OutputStream stream, OWLDataPropertyAssertionAxiom ax) throws IOException {
-        stream.write(Constants.FRAME_DATA_PROP_ASSERTION);
-        writeDataPropertyExpression(stream, ax.getProperty());
-        writeIndividual(stream, ax.getSubject());
-        writeLiteral(stream, ax.getObject());
-    }
-
-    // ========================================================================
-    // SERIALIZZAZIONE TIPI COMPLESSI
-    // ========================================================================
 
     private void writeClassExpression(OutputStream stream, OWLClassExpression ce) throws IOException {
         if (!ce.isAnonymous()) {
@@ -546,7 +632,7 @@ class Renderer {
                 int cardinality = minCard.getCardinality();
                 OWLClassExpression filler = minCard.getFiller();
                 boolean isThing = filler.isOWLThing();
-                int cardField = (cardinality << 1) | (isThing ? 0 : 1);
+                long cardField = ((long) cardinality << 1) | (isThing ? 0 : 1);
                 writeVarInt(stream, cardField);
                 writeObjectPropertyExpression(stream, minCard.getProperty());
                 if (!isThing) writeClassExpression(stream, filler);
@@ -595,8 +681,8 @@ class Renderer {
     private void writeDataCardinalityExpression(OutputStream stream, int type, int cardinality,
             OWLDataPropertyExpression property, OWLDataRange filler) throws IOException {
         writeVarInt(stream, type);
-        boolean isTop = filler.isTopDatatype() || (filler.isOWLDatatype() && filler.asOWLDatatype().isRDFPlainLiteral());
-        writeVarInt(stream, (cardinality << 1) | (isTop ? 0 : 1));
+        boolean isTop = filler.isTopDatatype();
+        writeVarInt(stream, ((long) cardinality << 1) | (isTop ? 0 : 1));
         writeDataPropertyExpression(stream, property);
         if (!isTop) writeDataRange(stream, filler);
     }
@@ -647,7 +733,7 @@ class Renderer {
             OWLObjectPropertyExpression property, OWLClassExpression filler) throws IOException {
         writeVarInt(stream, type);
         boolean isThing = filler.isOWLThing();
-        writeVarInt(stream, (cardinality << 1) | (isThing ? 0 : 1));
+        writeVarInt(stream, ((long) cardinality << 1) | (isThing ? 0 : 1));
         writeObjectPropertyExpression(stream, property);
         if (!isThing) writeClassExpression(stream, filler);
     }
@@ -686,11 +772,11 @@ class Renderer {
             type = Constants.LITERAL_TYPED;
             
             // Controlliamo se possiamo usare un formato compatto
-            if (lit.getDatatype().isBoolean()) {
+            if (lit.getDatatype().isBoolean() && (lit.getLiteral().equals("true") || lit.getLiteral().equals("false"))) {
                 format = Constants.LITERAL_FMT_BOOLEAN;
-            } else if (isUnsignedInteger(lit.getDatatype()) && isParsableUnsigned(lit.getLiteral())) {
+            } else if (isUnsignedInteger(lit.getDatatype()) && isParsableUnsigned(lit.getLiteral()) && Long.toString(Long.parseLong(lit.getLiteral())).equals(lit.getLiteral())) {
                 format = Constants.LITERAL_FMT_UNSIGNED_INT;
-            } else if (lit.getDatatype().isInteger() && isParsableSigned(lit.getLiteral())) {
+            } else if (lit.getDatatype().isInteger() && isParsableSigned(lit.getLiteral()) && Integer.toString(Integer.parseInt(lit.getLiteral())).equals(lit.getLiteral())) {
                 format = Constants.LITERAL_FMT_SIGNED_INT;
             }
         }
@@ -756,7 +842,7 @@ class Renderer {
      */
     private void writeSVarInt(OutputStream stream, int value) throws IOException {
         // Formula: 2n se n >= 0, altrimenti -2n - 1
-        int zigzag = (value >= 0) ? (value * 2) : (-value * 2 - 1);
+        long zigzag = ((long) value << 1) ^ (value >> 31);
         writeVarInt(stream, zigzag);
     }
 
@@ -771,7 +857,7 @@ class Renderer {
     private boolean isParsableSigned(String val) {
         if (val == null || val.isBlank()) return false;
         try {
-            Integer.parseInt(val.trim());
+            Integer.parseInt(val);
             return true;
         } catch (NumberFormatException e) {
             return false;
@@ -781,7 +867,7 @@ class Renderer {
     private boolean isParsableUnsigned(String val) {
         if (val == null || val.isBlank()) return false;
         try {
-            long l = Long.parseLong(val.trim());
+            long l = Long.parseLong(val);
             return l >= 0;
         } catch (NumberFormatException e) {
             return false;
@@ -808,7 +894,7 @@ class Renderer {
         }
         
         // Scrive la property (Header = Id + 1)
-        writeVarInt(stream, getIdentifierId(annotation.getProperty().getIRI()) + 1);
+        writeVarInt(stream, getIdentifierId(annotation.getProperty().getIRI()) + (subAnnotations.isEmpty() ? 1 : 0));
         writeAnnotationValue(stream, annotation.getValue());
     }
 
