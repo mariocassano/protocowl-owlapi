@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "lib/coverage_report.csv",
+      "sha256": "9659cd334fe0f1d03b1d2779a2063d216261b756116624731c4f96b539182647"
+    },
+    {
+      "path": "roundtrip_sizes.csv",
+      "sha256": "f5021d7fc2c5da6ca1e38374fc5bb06a0e5657aab4b66a2967fa7546929d3753"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/coverageTest/TEST-benchmark.CoverageAnalyzer.xml",
+      "sha256": "81d20d104218e6fdf04ab8269d509b7bc9c946a9146a399f4d5621426e6ac535"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/datasetTest/TEST-it.poliba.sisinflab.protocowl.DatasetRoundTripTest.xml",
+      "sha256": "a2334594f52d47f6f134c01462045bb791d3c82773ec0df047cedfd0e2099921"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/test/TEST-benchmark.BenchmarkResultsTest.xml",
+      "sha256": "65d257d5f1e2ffd09be0232403fa834e7790714f1725ca3cbae1a1c3dc986b0e"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/test/TEST-it.poliba.sisinflab.protocowl.BenchmarkComplianceTest.xml",
+      "sha256": "cc378e733a6d5e6d16f6cd1ae9a09d5659e3d54d71b4b1459de32f5abc7e941a"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/test/TEST-it.poliba.sisinflab.protocowl.CodecRobustnessTest.xml",
+      "sha256": "49162f938b9249954735ec28ae4963a4328c7fe54b40de2a1906b70d3ce90c19"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/test/TEST-it.poliba.sisinflab.protocowl.IntegerEncodingTest.xml",
+      "sha256": "10aba2feeda07ed5892d1a7ba6073304780832f285647d4ffde1647f413fbead"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/test-results/test/TEST-it.poliba.sisinflab.protocowl.ProtocOWLTest.xml",
+      "sha256": "7ca0dc1841d47331f66316b0e683effe5427936803a7eef0db62547bb7b5ec60"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/script_tests.txt",
+      "sha256": "a2b2b07f3c75c1304f29a0bbb1535c7b0ed6a2942c8913df9bfca17a77378ab9"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/byte_findings.json",
+      "sha256": "8a80114245ee0a20f24baa9c30b3743f3d8f7fa5da034971956b9d3126b45426"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30/dataset_failures.json",
+      "sha256": "84eee1019597af16d8dbaecef043fb72809b0361dde0ce2b092035e592263877"
+    }
+  ]
+}

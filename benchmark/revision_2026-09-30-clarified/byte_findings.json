@@ -1,0 +1,62 @@
+[
+  {
+    "variant": "std",
+    "subject": "Benzoate",
+    "functional_line": 8760,
+    "expected": "-1.0",
+    "offset_zero_based": 154180,
+    "hex": "16 03 00",
+    "decoded_with_clarification": "-1.0",
+    "matches": true
+  },
+  {
+    "variant": "std",
+    "subject": "Azide",
+    "functional_line": 8527,
+    "expected": "-3.0",
+    "offset_zero_based": 152037,
+    "hex": "16 07 00",
+    "decoded_with_clarification": "-3.0",
+    "matches": true
+  },
+  {
+    "variant": "std",
+    "subject": "Boron",
+    "functional_line": 9144,
+    "expected": "2.04",
+    "offset_zero_based": 157598,
+    "hex": "16 04 28",
+    "decoded_with_clarification": "2.04",
+    "matches": true
+  },
+  {
+    "variant": "MIS_128",
+    "subject": "Benzoate",
+    "functional_line": 8760,
+    "expected": "-1.0",
+    "offset_zero_based": 181863,
+    "hex": "16 03 00",
+    "decoded_with_clarification": "-1.0",
+    "matches": true
+  },
+  {
+    "variant": "MIS_128",
+    "subject": "Azide",
+    "functional_line": 8527,
+    "expected": "-3.0",
+    "offset_zero_based": 175010,
+    "hex": "16 07 00",
+    "decoded_with_clarification": "-3.0",
+    "matches": true
+  },
+  {
+    "variant": "MIS_128",
+    "subject": "Boron",
+    "functional_line": 9144,
+    "expected": "2.04",
+    "offset_zero_based": 195800,
+    "hex": "16 04 28",
+    "decoded_with_clarification": "2.04",
+    "matches": true
+  }
+]

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.poliba.sisinflab.protocowl.ProtocOWLTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-30T13:15:56.379Z" hostname="MacBook-Pro-di-Beatrice.local" time="0.088">
+  <properties/>
+  <testcase name="testHomeOntology" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.021"/>
+  <testcase name="testPizzaOntology" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.058"/>
+  <testcase name="testResetIdentifiersOnlyRestartsIdentifierIndexes" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.002"/>
+  <testcase name="testResetNamespacesAndIdentifiersRestartsBothIndexes" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testResetNamespacesOnlyKeepsIdentifiersAndRestartsNamespaceIndexes" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testResetRejectsUndeclaredIdentifierReference" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testResetRejectsUndeclaredNamespaceReference" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testTruncatedInput" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testUnsupportedFrame" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <testcase name="testUnsupportedVersion" classname="it.poliba.sisinflab.protocowl.ProtocOWLTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

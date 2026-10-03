@@ -1,0 +1,62 @@
+STORICO — INTERPRETAZIONE SUPERATA DAL CHIARIMENTO DEL DOCENTE.
+Le differenze sui fixed point negativi descritte sotto non sono errori del dataset:
+mancava nel decoder la compensazione della parte intera negativa (value - 1).
+Vedere ../revision_2026-09-30-clarified/ e il BENCHMARK.md corrente.
+
+VERIFICA DEI DECIMALI NEL DATASET AGGIORNATO
+
+Dopo aver adeguato i tag degli interi alla nuova specifica, i test sul dataset
+rilevano ancora differenze in cinque ontologie, in entrambe le varianti standard
+e MIS_128. Le precedenti differenze sulle frazioni come 2.04 risultano risolte;
+le nuove differenze riguardano la parte intera negativa dei literal fixed point.
+
+Esempio minimo verificabile
+File base:
+kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn
+
+Nel file functional/<nome>_functional.owl, alla riga 8760, l'assioma relativo a
+Benzoate contiene "-1.0"^^xsd:float per the-cardinal-value.
+
+Nel corrispondente protocowl/std/<nome>_protocowl.owl, all'offset 154180
+(contato da zero), il literal inizia con i byte esadecimali:
+16 03 00
+
+- 16: literal tipizzato, formato fixed point 5.
+- 03: payload della parte intera SVarInt.
+- 00: parte frazionaria zero.
+
+La sezione 3 della specifica aggiornata definisce la mappatura Zig-Zag
+zigzag(n) = -2n - 1 per n < 0, riportando esplicitamente -1 -> 1 e -2 -> 3.
+La sezione 3.1 mantiene SVarInt per la parte intera del formato 5.
+Secondo queste regole, 03 rappresenta -2 e i byte indicano -2.0, mentre il
+Functional contiene -1.0. Per -1.0 ci aspetteremmo 16 01 00.
+
+La stessa sequenza 16 03 00 si trova nel binario MIS_128 all'offset 181863.
+Un altro esempio è Azide: il Functional contiene -3.0, ma lo standard ha
+16 07 00 all'offset 152037 e MIS_128 all'offset 175010, che indicano -4.0.
+
+Per confronto, Boron è ora corretto: il Functional contiene 2.04 e i nuovi
+binari hanno 16 04 28, con frazione invertita 40 (0x28), agli offset 157598
+nello standard e 195800 nel MIS_128.
+
+SHA-256 dei file binari del primo esempio:
+standard: fbc3c4d569e9df12a615cbb85d4761dca2e61812978bac1c957d791f4fca0fd4
+MIS_128: 926758a281e6475048df3b1546d98bd260fdc9ef29ae658215d397cd02b3fb65
+
+La nuova regola del modulo unsigned per gli interi con tag 4 è stata applicata.
+Il dubbio residuo riguarda invece SVarInt nei decimali con formato 5: occorre
+verificare se i nuovi binari richiedano un'ulteriore correzione o se sia prevista
+una diversa formula da riportare nella specifica.
+
+Risultati completi: 69 test rapidi e 300 operazioni di copertura superati;
+190 round-trip su 200 superati, dieci fallimenti in fase a, nessuno skip.
+I confronti del dataset conservano tutti i prefissi, gli assiomi e le annotazioni.
+Il chiarimento su pizza è stato recepito separatamente per quel riferimento.
+
+Per riprodurre l'ispezione dei byte, dalla directory protocowl-owlapi:
+python3 benchmark/revision_2026-09-30/verify_dataset_literals.py ../dataset_onto
+
+Lo script non usa il parser Java: verifica gli hash e applica direttamente la
+formula della specifica ai byte. Exit code 1 indica le differenze riprodotte.
+Il dettaglio di tutte le cinque ontologie è in benchmark/known_dataset_issues.md
+e benchmark/revision_2026-09-30/dataset_failures.json.

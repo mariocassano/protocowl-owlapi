@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.poliba.sisinflab.protocowl.CodecRobustnessTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-09-30T13:15:56.317Z" hostname="MacBook-Pro-di-Beatrice.local" time="0.029">
+  <properties/>
+  <testcase name="maximumOwlCardinalitiesSurvivePacking" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.008"/>
+  <testcase name="missingImplicitPrefixesFailBeforeWriting" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="namedOntologyWithoutDefaultPrefixSurvivesProtocowlRoundTrip" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.002"/>
+  <testcase name="namespaceCountsAndStringLengthsCannotOverflow[0](2147483648)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="namespaceCountsAndStringLengthsCannotOverflow[1](4294967296)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.0"/>
+  <testcase name="namespaceCountsAndStringLengthsCannotOverflow[2](9223372036854775807)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="overlongAndTruncatedStructuralVarintsFailExplicitly" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="pizzaReferenceExceptionDoesNotHideOtherPrefixDifferences" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.002"/>
+  <testcase name="prefixComparatorRejectsMissingExtraAndChangedBindings" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="preservesExplicitAliasesUnusedPrefixesAndLongUtf8Strings" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.005"/>
+  <testcase name="resetCannotWrapUndeclaredIndexToZero[0](2147483648)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="resetCannotWrapUndeclaredIndexToZero[1](4294967296)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.0"/>
+  <testcase name="resetCannotWrapUndeclaredIndexToZero[2](9223372036854775807)" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.0"/>
+  <testcase name="truncatedHugeStringDoesNotAllocateItsDeclaredSize" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <testcase name="unrepresentableReservedAliasFailsBeforeWriting" classname="it.poliba.sisinflab.protocowl.CodecRobustnessTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

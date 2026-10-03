@@ -1,0 +1,102 @@
+{
+  "base_git_commit": "73821444f9403e54d0848367de3712cae47a6bb0",
+  "working_tree_changes": true,
+  "files": [
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/Constants.java",
+      "sha256": "0c483ce0dd7428f5fef0791e64024f21717f9f05641c11573d296fa35adaf36d"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/Parser.java",
+      "sha256": "0883783d565ce0031013948f4876bc1dde227d2748bdb7bcffa3746b44366f5a"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLDocumentFormat.java",
+      "sha256": "d2c034bb6af3a897a023eeac6de87ce920ea25b865c811782140e9ecbb28581a"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLDocumentFormatFactory.java",
+      "sha256": "9002f5253b0bc1408a21a9ff8b354f9c7a23f5b9404f88eb65f325ed26027623"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLParser.java",
+      "sha256": "e2ff99763683aaa369b5ba2277085240aa09784cc62b2c7b2cb371503b37c3f2"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLParserFactory.java",
+      "sha256": "fd926f43aeacd555bebd4cf674de5e48ad4ca5ea470f5638ccd77b8311fab38c"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLStorer.java",
+      "sha256": "bfded0d9b51564d418bc1ff8b07f4b59039eba32c08993aff24b20911daa0655"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/ProtocOWLStorerFactory.java",
+      "sha256": "6c84ff1532bc4c83963fccd275d7a3264fad07d341988b8de716b5ae46a36d0b"
+    },
+    {
+      "path": "lib/src/main/java/it/poliba/sisinflab/protocowl/Renderer.java",
+      "sha256": "5c47dc06e96ee7950df1c0b9b725670c803f064abb71e8107faa5d1b43c618bb"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/BenchmarkResults.java",
+      "sha256": "05fe8624d7299614dd7feb8561a4b5f165d2acc75a1a04ea07ce0267459d1fd0"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/BenchmarkResultsTest.java",
+      "sha256": "d503463d8f34124d8cf26adcda2b4cc68d0fe510f20cb743c7394751a38e8427"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/BenchmarkTask.java",
+      "sha256": "6992769432dd92810e0838f3c2d02f917af06c9d453a693c22c54a9122f05359"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/CoverageAnalyzer.java",
+      "sha256": "377d3c3abe89239c98e993dc151222cdbfe592e5ff45ddbf101a3d0516daa5a5"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/DatasetFiles.java",
+      "sha256": "6e02c451a8c801a1550660dee0af95122c2dbaf2852e8b03bf177252feb94806"
+    },
+    {
+      "path": "lib/src/test/java/benchmark/DatasetPreparer.java",
+      "sha256": "4962aac390ba15d35db326751647d86c9bf42cee732dec5f55070a969d31da50"
+    },
+    {
+      "path": "lib/src/test/java/it/poliba/sisinflab/protocowl/BenchmarkComplianceTest.java",
+      "sha256": "22c4bff1dba817a8772bef7262cb3eefe404439369422f6d8d5c13119a032b58"
+    },
+    {
+      "path": "lib/src/test/java/it/poliba/sisinflab/protocowl/CodecRobustnessTest.java",
+      "sha256": "b1313133b5c7e7ffd5082b490b96c6e2162bc18e61d4a23d163f37d4f81e4fc7"
+    },
+    {
+      "path": "lib/src/test/java/it/poliba/sisinflab/protocowl/DatasetRoundTripTest.java",
+      "sha256": "25d916b15e5c38e88fd2b6afbca964ef17292c15d797ba9eac9f2aea30385f7b"
+    },
+    {
+      "path": "lib/src/test/java/it/poliba/sisinflab/protocowl/IntegerEncodingTest.java",
+      "sha256": "d2c7abcb33569356e7ed93dd5cf4ea2587492e276f50fcc627e75b92790b96fa"
+    },
+    {
+      "path": "lib/src/test/java/it/poliba/sisinflab/protocowl/ProtocOWLTest.java",
+      "sha256": "8e6c90e41e9fdc60464c320653878e457d25c9009f9140b8c25aafd81979aa87"
+    },
+    {
+      "path": "run_benchmark.sh",
+      "sha256": "4cbf84ae5f1a108889d53ff7640965dc8fc414a785a8fbbc69c60b2e3eccf12d"
+    },
+    {
+      "path": "lib/build.gradle.kts",
+      "sha256": "248f562c36ff10dd8a2d39f4632573f97cc5e23d8009bfc6dcefffeab00712e0"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "sha256": "cfbf10611f5fdd1adb68c8903949818aee1241bd9717d72d269a094a4af398e4"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "3e402c9f5eea1b468cf81ffe552757b0190d0a3ade2ee723e65b643109e9d987"
+    }
+  ]
+}

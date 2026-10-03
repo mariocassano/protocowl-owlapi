@@ -169,8 +169,8 @@ e1404a38-2d70-4173-8c02-6b6fac85cf32_DOLCELite.owl,MIS_128,3354
 e1404a38-2d70-4173-8c02-6b6fac85cf32_DOLCELite.owl,standard,3354
 efdc2a3d-b99d-4695-9d86-c000183b0c47_emapmerged.obo,MIS_128,304692
 efdc2a3d-b99d-4695-9d86-c000183b0c47_emapmerged.obo,standard,304692
-f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl,MIS_128,848318
-f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl,standard,848318
+f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl,MIS_128,842297
+f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl,standard,842297
 fee2724f-5d72-40c1-961b-394a2677c8c5_DOIDBridge.owl,MIS_128,1561193
 fee2724f-5d72-40c1-961b-394a2677c8c5_DOIDBridge.owl,standard,1561193
 ff8566a7-b5cf-4101-84fa-e7ed204b83d2_Location.owl,MIS_128,2649
@@ -185,6 +185,16 @@ kb-owl-syntax-unraveled-depth-1-km-relevant-cardinalities-triggers-constant-clas
 kb-owl-syntax-unraveled-depth-1-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn,standard,284730
 kb-owl-syntax-unraveled-depth-1-triggers-constant-classes-value-classes.ofn,MIS_128,286282
 kb-owl-syntax-unraveled-depth-1-triggers-constant-classes-value-classes.ofn,standard,286282
+kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn,MIS_128,371837
+kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn,standard,371837
+kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn,MIS_128,431905
+kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn,standard,431905
+kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn,MIS_128,377940
+kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn,standard,377940
+kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn,MIS_128,516403
+kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn,standard,516403
+kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn,MIS_128,518935
+kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn,standard,518935
 ntdo.neglected-tropical-disease-ontology.1.owl.xml,MIS_128,8658
 ntdo.neglected-tropical-disease-ontology.1.owl.xml,standard,8658
 syn.sage-bionetworks-synapse-ontology.3.owl.xml,MIS_128,415279

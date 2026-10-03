@@ -1,7 +1,8 @@
 # Modifiche alla fase benchmark e lettura della storia Git
 
-Nota: questo documento descrive i commit precedenti alle correzioni locali del
-26 settembre. Per lo stato attuale, incluso il confronto rigoroso dei prefissi,
+Nota: questo documento descrive i commit precedenti alle revisioni del
+26 e 30 settembre. Per lo stato attuale, inclusi la nuova codifica degli interi,
+i chiarimenti sul prefisso pizza e sulla parte intera dei decimali negativi,
 fare riferimento a [BENCHMARK.md](BENCHMARK.md).
 
 Questa guida descrive le correzioni rispetto al commit `06d4163` del branch

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-30T16:12:55.658Z" hostname="MacBook-Pro-di-Beatrice.local" time="0.157">
+  <properties/>
+  <testcase name="annotationsAndPreviouslyOmittedAxiomsSurvive" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.13"/>
+  <testcase name="fixedPointFractionIsStoredInReverse" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.002"/>
+  <testcase name="functionalStageDoesNotInventDeclarations" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.013"/>
+  <testcase name="integerBoundsAndLexicalFormsSurvive" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.004"/>
+  <testcase name="resetCanBeFirstFrame" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.0"/>
+  <testcase name="resetPreservesPrefixesAndAcceptsAllBitCombinations[0](0)" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.001"/>
+  <testcase name="resetPreservesPrefixesAndAcceptsAllBitCombinations[1](1)" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.0"/>
+  <testcase name="resetPreservesPrefixesAndAcceptsAllBitCombinations[2](2)" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.001"/>
+  <testcase name="resetPreservesPrefixesAndAcceptsAllBitCombinations[3](3)" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.0"/>
+  <testcase name="undeclaredIdentifierInDeclarationFailsWithParserException" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.0"/>
+  <testcase name="unsupportedAxiomFailsExplicitly" classname="it.poliba.sisinflab.protocowl.BenchmarkComplianceTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

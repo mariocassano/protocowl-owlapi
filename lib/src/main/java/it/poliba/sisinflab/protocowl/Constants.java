@@ -109,8 +109,8 @@ final class Constants {
     // --- Formati di Letterali (Format Bits) ---
     static final int LITERAL_FMT_STRING                = 0x00;
     static final int LITERAL_FMT_BOOLEAN               = 0x02;
-    static final int LITERAL_FMT_SIGNED_INT            = 0x03;
-    static final int LITERAL_FMT_UNSIGNED_INT          = 0x04;
+    static final int LITERAL_FMT_POSITIVE_INT            = 0x03;
+    static final int LITERAL_FMT_NEGATIVE_INT          = 0x04;
     static final int LITERAL_FMT_FLOAT                 = 0x05;
     static final int LITERAL_FMT_DOUBLE                = 0x06;
 }

@@ -1,0 +1,252 @@
+[
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn",
+    "variant": "standard",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn",
+    "variant": "MIS_128",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn",
+    "variant": "standard",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn",
+    "variant": "MIS_128",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn",
+    "variant": "standard",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn",
+    "variant": "MIS_128",
+    "phase": "a",
+    "different_axioms": 15,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 6
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 8
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 1
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn",
+    "variant": "standard",
+    "phase": "a",
+    "different_axioms": 20,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 7
+      },
+      {
+        "functional": "-16.7",
+        "decoded": "-17.7",
+        "occurrences_in_differing_axioms": 1
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 9
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 3
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn",
+    "variant": "MIS_128",
+    "phase": "a",
+    "different_axioms": 20,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 7
+      },
+      {
+        "functional": "-16.7",
+        "decoded": "-17.7",
+        "occurrences_in_differing_axioms": 1
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 9
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 3
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn",
+    "variant": "standard",
+    "phase": "a",
+    "different_axioms": 20,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 7
+      },
+      {
+        "functional": "-16.7",
+        "decoded": "-17.7",
+        "occurrences_in_differing_axioms": 1
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 9
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 3
+      }
+    ]
+  },
+  {
+    "ontology": "kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn",
+    "variant": "MIS_128",
+    "phase": "a",
+    "different_axioms": 20,
+    "literal_changes": [
+      {
+        "functional": "-1.0",
+        "decoded": "-2.0",
+        "occurrences_in_differing_axioms": 7
+      },
+      {
+        "functional": "-16.7",
+        "decoded": "-17.7",
+        "occurrences_in_differing_axioms": 1
+      },
+      {
+        "functional": "-2.0",
+        "decoded": "-3.0",
+        "occurrences_in_differing_axioms": 9
+      },
+      {
+        "functional": "-3.0",
+        "decoded": "-4.0",
+        "occurrences_in_differing_axioms": 3
+      }
+    ]
+  }
+]

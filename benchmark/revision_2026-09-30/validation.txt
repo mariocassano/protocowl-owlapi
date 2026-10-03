@@ -1,0 +1,67 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.0.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :lib:compileJava UP-TO-DATE
+> Task :lib:processResources NO-SOURCE
+> Task :lib:classes UP-TO-DATE
+> Task :lib:compileTestJava
+> Task :lib:processTestResources UP-TO-DATE
+> Task :lib:testClasses
+> Task :lib:test
+> Task :lib:coverageTest
+> Task :lib:datasetTest
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[186](kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn, standard, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[187](kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn, MIS_128, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[188](kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn, standard, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[189](kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn, MIS_128, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[190](kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn, standard, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[191](kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn, MIS_128, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[192](kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn, standard, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[193](kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn, MIS_128, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[194](kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn, standard, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+Gradle suite > Gradle test > it.poliba.sisinflab.protocowl.DatasetRoundTripTest > testOntologyVariantRoundTrip[195](kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn, MIS_128, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_functional.owl, /Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_protocowl.owl) FAILED
+    java.lang.AssertionError at DatasetRoundTripTest.java:75
+        Caused by: java.lang.AssertionError at DatasetRoundTripTest.java:40
+
+200 tests completed, 10 failed
+
+> Task :lib:datasetTest FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':lib:datasetTest'.
+> There were failing tests. See the report at: file:///Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/protocowl-owlapi/lib/build/reports/tests/datasetTest/index.html
+
+* Try:
+> Run with --scan to generate a Build Scan (Powered by Develocity).
+
+BUILD FAILED in 3m 12s
+6 actionable tasks: 4 executed, 2 up-to-date

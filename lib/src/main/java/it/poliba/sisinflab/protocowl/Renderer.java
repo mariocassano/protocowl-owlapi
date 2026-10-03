@@ -2,6 +2,7 @@ package it.poliba.sisinflab.protocowl;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -762,6 +763,7 @@ class Renderer {
     private void writeLiteral(OutputStream stream, OWLLiteral lit) throws IOException {
         int type;
         int format = Constants.LITERAL_FMT_STRING;
+        BigInteger integerValue = null;
 
         // Se è plain o se il datatype è xsd:string, forziamo Type 0 (Plain)
         if (lit.hasLang()) {
@@ -774,10 +776,12 @@ class Renderer {
             // Controlliamo se possiamo usare un formato compatto
             if (lit.getDatatype().isBoolean() && (lit.getLiteral().equals("true") || lit.getLiteral().equals("false"))) {
                 format = Constants.LITERAL_FMT_BOOLEAN;
-            } else if (isUnsignedInteger(lit.getDatatype()) && isParsableUnsigned(lit.getLiteral()) && Long.toString(Long.parseLong(lit.getLiteral())).equals(lit.getLiteral())) {
-                format = Constants.LITERAL_FMT_UNSIGNED_INT;
-            } else if (lit.getDatatype().isInteger() && isParsableSigned(lit.getLiteral()) && Integer.toString(Integer.parseInt(lit.getLiteral())).equals(lit.getLiteral())) {
-                format = Constants.LITERAL_FMT_SIGNED_INT;
+            } else if (isIntegerDatatype(lit.getDatatype())) {
+                integerValue = canonicalInteger(lit.getLiteral());
+                if (integerValue != null) {
+                    format = integerValue.signum() < 0
+                            ? Constants.LITERAL_FMT_NEGATIVE_INT : Constants.LITERAL_FMT_POSITIVE_INT;
+                }
             }
         }
 
@@ -790,10 +794,9 @@ class Renderer {
             writeString(stream, lit.getLiteral());
         } else if (format == Constants.LITERAL_FMT_BOOLEAN) {
             stream.write(lit.parseBoolean() ? 1 : 0);
-        } else if (format == Constants.LITERAL_FMT_SIGNED_INT) {
-            writeSVarInt(stream, Integer.parseInt(lit.getLiteral()));
-        } else if (format == Constants.LITERAL_FMT_UNSIGNED_INT) {
-            writeVarInt(stream, Long.parseLong(lit.getLiteral()));
+        } else if (format == Constants.LITERAL_FMT_POSITIVE_INT
+                || format == Constants.LITERAL_FMT_NEGATIVE_INT) {
+            writeUnsignedValue(stream, integerValue.abs());
         }
 
         // 2. Scriviamo i campi extra in base al TYPE
@@ -837,40 +840,35 @@ class Renderer {
         }
     }
 
-    /**
-     * Codifica un intero con segno usando la mappatura Zig-Zag (Sezione 3 del PDF).
-     */
-    private void writeSVarInt(OutputStream stream, int value) throws IOException {
-        // Formula: 2n se n >= 0, altrimenti -2n - 1
-        long zigzag = ((long) value << 1) ^ (value >> 31);
-        writeVarInt(stream, zigzag);
+    /** Numeric literal magnitudes are independent of structural index limits. */
+    private void writeUnsignedValue(OutputStream stream, BigInteger value) throws IOException {
+        do {
+            int bits = value.intValue() & 0x7F;
+            value = value.shiftRight(7);
+            stream.write(bits | (value.signum() == 0 ? 0 : 0x80));
+        } while (value.signum() != 0);
     }
 
-    private boolean isUnsignedInteger(OWLDatatype datatype) {
-        IRI iri = datatype.getIRI();
-        return iri.equals(OWL2Datatype.XSD_NON_NEGATIVE_INTEGER.getIRI())
-                || iri.equals(OWL2Datatype.XSD_POSITIVE_INTEGER.getIRI())
-                || iri.equals(OWL2Datatype.XSD_UNSIGNED_INT.getIRI())
-                || iri.equals(OWL2Datatype.XSD_UNSIGNED_LONG.getIRI());
+    private static final Set<IRI> INTEGER_DATATYPES = java.util.stream.Stream.of(
+            OWL2Datatype.XSD_INTEGER, OWL2Datatype.XSD_NON_NEGATIVE_INTEGER,
+            OWL2Datatype.XSD_POSITIVE_INTEGER, OWL2Datatype.XSD_NON_POSITIVE_INTEGER,
+            OWL2Datatype.XSD_NEGATIVE_INTEGER, OWL2Datatype.XSD_LONG, OWL2Datatype.XSD_INT,
+            OWL2Datatype.XSD_SHORT, OWL2Datatype.XSD_BYTE, OWL2Datatype.XSD_UNSIGNED_LONG,
+            OWL2Datatype.XSD_UNSIGNED_INT, OWL2Datatype.XSD_UNSIGNED_SHORT,
+            OWL2Datatype.XSD_UNSIGNED_BYTE).map(OWL2Datatype::getIRI)
+            .collect(java.util.stream.Collectors.toUnmodifiableSet());
+
+    private boolean isIntegerDatatype(OWLDatatype datatype) {
+        return INTEGER_DATATYPES.contains(datatype.getIRI());
     }
 
-    private boolean isParsableSigned(String val) {
-        if (val == null || val.isBlank()) return false;
+    private BigInteger canonicalInteger(String lexical) {
         try {
-            Integer.parseInt(val);
-            return true;
+            BigInteger value = new BigInteger(lexical);
+            // Preserve noncanonical lexical forms using the string format.
+            return value.toString().equals(lexical) ? value : null;
         } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    private boolean isParsableUnsigned(String val) {
-        if (val == null || val.isBlank()) return false;
-        try {
-            long l = Long.parseLong(val);
-            return l >= 0;
-        } catch (NumberFormatException e) {
-            return false;
+            return null;
         }
     }
 

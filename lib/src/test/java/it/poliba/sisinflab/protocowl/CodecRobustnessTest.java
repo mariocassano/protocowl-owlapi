@@ -117,6 +117,29 @@ public class CodecRobustnessTest {
     }
 
     @Test
+    public void pizzaReferenceExceptionDoesNotHideOtherPrefixDifferences() throws Exception {
+        var a = OWLManager.createOWLOntologyManager(); var b = OWLManager.createOWLOntologyManager();
+        var left = a.createOntology(); var right = b.createOntology();
+        var expected = new ProtocOWLDocumentFormat(); var actual = new ProtocOWLDocumentFormat();
+        String ns = "http://www.co-ode.org/ontologies/pizza/pizza.owl#";
+        expected.setPrefix(":", ns); actual.setPrefix(":", ns); expected.setPrefix("pizza:", ns);
+        a.setOntologyFormat(left, expected); b.setOntologyFormat(right, actual);
+        Assert.expectThrows(AssertionError.class, () -> ProtocOWLTest.assertEquals(left, right));
+        ProtocOWLTest.assertEqualsPizzaReference(left, right);
+        actual.setPrefix("pizza:", "urn:wrong:");
+        Assert.expectThrows(AssertionError.class, () -> ProtocOWLTest.assertEqualsPizzaReference(left, right));
+        actual.setPrefix("pizza:", ns);
+        ProtocOWLTest.assertEqualsPizzaReference(left, right);
+        actual.setPrefix("extra:", "urn:extra:");
+        Assert.expectThrows(AssertionError.class, () -> ProtocOWLTest.assertEqualsPizzaReference(left, right));
+        actual.clear(); actual.copyPrefixesFrom(expected); actual.setPrefix(":", "urn:wrong:");
+        Assert.expectThrows(AssertionError.class, () -> ProtocOWLTest.assertEqualsPizzaReference(left, right));
+        actual.clear(); actual.copyPrefixesFrom(expected);
+        right.add(b.getOWLDataFactory().getOWLDeclarationAxiom(b.getOWLDataFactory().getOWLClass(IRI.create("urn:extra"))));
+        Assert.expectThrows(AssertionError.class, () -> ProtocOWLTest.assertEqualsPizzaReference(left, right));
+    }
+
+    @Test
     public void unrepresentableReservedAliasFailsBeforeWriting() throws Exception {
         var m = OWLManager.createOWLOntologyManager(); var o = m.createOntology();
         var f = new ProtocOWLDocumentFormat();

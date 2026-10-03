@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "path": "lib/coverage_report.csv",
+      "sha256": "9659cd334fe0f1d03b1d2779a2063d216261b756116624731c4f96b539182647"
+    },
+    {
+      "path": "roundtrip_sizes.csv",
+      "sha256": "4f29abff8f13fd6de39c3df71e3355cf303cc3014730ff8a9e5ddc953bf3d145"
+    },
+    {
+      "path": "benchmark_results.csv",
+      "sha256": "6913e66dd907c9a8822c9a2cb5b7bdd571b4c56164375eafeb58ab55b968ae13"
+    },
+    {
+      "path": "benchmark_environment.txt",
+      "sha256": "9370d0e7d52ee5374399b4de10ffe1faf6065ed1100c702d81e78499a54cd1e2"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/coverageTest/TEST-benchmark.CoverageAnalyzer.xml",
+      "sha256": "7b0a640017ab770476ff04444a4021fd1569996c99d82625d46be3e2da12fda5"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/datasetTest/TEST-it.poliba.sisinflab.protocowl.DatasetRoundTripTest.xml",
+      "sha256": "a7f462cc25dac50cce6524d7867bf9a5535d8245365331f2184fd1329fc9c916"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/test/TEST-benchmark.BenchmarkResultsTest.xml",
+      "sha256": "b20af0ca6b0fd0fcf5c1ddc6929df60a656e9adbdc37afb3f206636dd10b5ec0"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/test/TEST-it.poliba.sisinflab.protocowl.BenchmarkComplianceTest.xml",
+      "sha256": "41979bdd704649d13e1e41861ccfb13afa5c78a0911ad5655c054525fd6ad8a2"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/test/TEST-it.poliba.sisinflab.protocowl.CodecRobustnessTest.xml",
+      "sha256": "5663406d40357b17b0955f6479c0bf4a618b7160d29829156db35b01fce3ae2a"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/test/TEST-it.poliba.sisinflab.protocowl.IntegerEncodingTest.xml",
+      "sha256": "c12b4f08cc4695a411c60b7c0430d4bf5d4af8faaf00dd6bbc6db926a07a8ca0"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/test-results/test/TEST-it.poliba.sisinflab.protocowl.ProtocOWLTest.xml",
+      "sha256": "9423678c4c7403c45daea20386d26838e7b56972bcafffd83cb954d2c3c89cd9"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/byte_findings.json",
+      "sha256": "e8fedfa7c580560d9376254aad70fe0038b126c8689fa1ed665b8c50cae828a7"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/script_tests.txt",
+      "sha256": "5eb2a38c8d53cf2c65832c6960539633c0ddd4c5ca6b82dda24ce40c56f36a47"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/AGGIORNAMENTI_REPORT_FLC.txt",
+      "sha256": "7f31751b5f88d8d35bc9682f0933a4d931582a4eb598ca6b020980d0884bd536"
+    },
+    {
+      "path": "benchmark/revision_2026-09-30-clarified/summary.json",
+      "sha256": "c63834df91cdcbec5ef71bf73d7b180cd8d5ead0804058d83ccdb4eecdb78d03"
+    }
+  ]
+}

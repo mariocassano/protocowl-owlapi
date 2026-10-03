@@ -1,0 +1,89 @@
+{
+  "source_base_commit": "73821444f9403e54d0848367de3712cae47a6bb0",
+  "working_tree_changes": true,
+  "tests": {
+    "test": {
+      "tests": 80,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "coverageTest": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "datasetTest": {
+      "tests": 200,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "coverage_operations": 300,
+  "coverage_successes": 300,
+  "roundtrip_size_rows": 200,
+  "benchmark_rows": 500,
+  "benchmark_status": "validated",
+  "measurements_per_combination": 1,
+  "groups": [
+    {
+      "task": "parse",
+      "format": "Functional",
+      "n": 100,
+      "median_time_ms": 155.61919999999998,
+      "mean_time_ms": 275.075009,
+      "median_mrss_kb": 135168.0,
+      "mean_mrss_kb": 165026.4
+    },
+    {
+      "task": "parse",
+      "format": "ProtocOWL",
+      "n": 100,
+      "median_time_ms": 93.92075,
+      "mean_time_ms": 184.836057,
+      "median_mrss_kb": 117224.0,
+      "mean_mrss_kb": 141972.48
+    },
+    {
+      "task": "parse",
+      "format": "ProtocOWL_128",
+      "n": 100,
+      "median_time_ms": 106.3067,
+      "mean_time_ms": 194.868054,
+      "median_mrss_kb": 129896.0,
+      "mean_mrss_kb": 154834.08
+    },
+    {
+      "task": "render",
+      "format": "Functional",
+      "n": 100,
+      "median_time_ms": 69.0258,
+      "mean_time_ms": 151.396401,
+      "median_mrss_kb": 146664.0,
+      "mean_mrss_kb": 210934.88
+    },
+    {
+      "task": "render",
+      "format": "ProtocOWL",
+      "n": 100,
+      "median_time_ms": 106.61515,
+      "mean_time_ms": 475.041219,
+      "median_mrss_kb": 153936.0,
+      "mean_mrss_kb": 219285.6
+    }
+  ],
+  "input_sizes": {
+    "Functional": 293026071,
+    "ProtocOWL": 30584816,
+    "ProtocOWL_128": 47065571
+  },
+  "standard_saving_vs_functional_total": 0.8956242497617217,
+  "mis128_overhead_vs_standard_total": 0.5388541490653402,
+  "protocowl_output_bytes_total": 31745616,
+  "script_tests": {
+    "tests": 5,
+    "failures": 0
+  }
+}

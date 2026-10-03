@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.poliba.sisinflab.protocowl.IntegerEncodingTest" tests="43" skipped="0" failures="0" errors="0" timestamp="2026-09-30T16:12:55.844Z" hostname="MacBook-Pro-di-Beatrice.local" time="0.039">
+  <properties/>
+  <testcase name="decimalFormatsStillUseZigZagAndReversedFraction" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.002"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[0](0.5, 0005)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[1](-0.5, 0105)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[2](0.0, 0000)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[3](-0.0, 0100)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[4](-1.0, 0300)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[5](-3.0, 0700)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[6](2.04, 0428)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[7](-2.04, 0528)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[8](-16.7, 2107)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="fixedPointNegativeWholeOffsetPreservesSign[9](-64.05, 810132)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="historicalFixedPointUsesExplicitLegacyRevision" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="noncanonicalIntegerLexicalFormsStayTextual" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.005"/>
+  <testcase name="previousIntegerRevisionRequiresExplicitSelection" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[0](0, integer, 3, 00)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.002"/>
+  <testcase name="readsIndependentWireExamples[1](5, integer, 3, 05)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[2](-5, integer, 4, 05)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[3](127, positiveInteger, 3, 7f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[4](128, unsignedShort, 3, 8001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[5](-128, byte, 4, 8001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[6](2147483647, int, 3, ffffffff07)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[7](-2147483648, int, 4, 8080808008)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[8](4294967295, unsignedInt, 3, ffffffff0f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[9](9223372036854775807, long, 3, ffffffffffffffff7f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[10](-9223372036854775808, long, 4, 80808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[11](18446744073709551615, unsignedLong, 3, ffffffffffffffffff01)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="readsIndependentWireExamples[12](1180591620717411303424, integer, 3, 8080808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.0"/>
+  <testcase name="readsIndependentWireExamples[13](-1180591620717411303424, integer, 4, 8080808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="truncatedIntegerMagnitudeIsRejected" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[0](0, integer, 3, 00)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[1](5, integer, 3, 05)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[2](-5, integer, 4, 05)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[3](127, positiveInteger, 3, 7f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[4](128, unsignedShort, 3, 8001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[5](-128, byte, 4, 8001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[6](2147483647, int, 3, ffffffff07)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[7](-2147483648, int, 4, 8080808008)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[8](4294967295, unsignedInt, 3, ffffffff0f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[9](9223372036854775807, long, 3, ffffffffffffffff7f)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[10](-9223372036854775808, long, 4, 80808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[11](18446744073709551615, unsignedLong, 3, ffffffffffffffffff01)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[12](1180591620717411303424, integer, 3, 8080808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <testcase name="writesExpectedTagAndMagnitude[13](-1180591620717411303424, integer, 4, 8080808080808080808001)" classname="it.poliba.sisinflab.protocowl.IntegerEncodingTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

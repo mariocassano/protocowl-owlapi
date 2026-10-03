@@ -22,7 +22,7 @@ public final class DatasetFiles {
         String configured = System.getProperty("dataset.dir", System.getenv("DATASET_DIR"));
         if (configured != null && !configured.isBlank()) return Path.of(configured).toAbsolutePath().normalize();
         Path parent = projectRoot().getParent();
-        for (String name : List.of("dataset", "dataset_onto")) {
+        for (String name : List.of("dataset_onto 2", "dataset_onto", "dataset")) {
             Path path = parent.resolve(name);
             if (Files.isDirectory(path)) return path;
         }

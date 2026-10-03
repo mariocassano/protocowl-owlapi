@@ -1,0 +1,43 @@
+{
+  "tests": {
+    "test": {
+      "tests": 69,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "coverageTest": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "datasetTest": {
+      "tests": 200,
+      "failures": 10,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "coverage_operations": 300,
+  "coverage_successes": 300,
+  "dataset_tests": 200,
+  "dataset_failures": 10,
+  "roundtrip_size_rows": 190,
+  "benchmark_rows": 0,
+  "benchmark_status": "not run: phase 2 fails on negative fixed-point literals in revised supplied binaries",
+  "unchanged_from_previous_dataset": {
+    "functional": 100,
+    "protocowl/std": 0,
+    "protocowl/MIS_128": 0
+  },
+  "changed_from_previous_dataset": {
+    "functional": 0,
+    "protocowl/std": 100,
+    "protocowl/MIS_128": 100
+  },
+  "source_base_commit": "73821444f9403e54d0848367de3712cae47a6bb0",
+  "working_tree_changes": true,
+  "interpretation_status": "superseded by professor clarification: missing negative whole compensation in decoder, not errors in updated dataset",
+  "superseded_by": "../revision_2026-09-30-clarified"
+}

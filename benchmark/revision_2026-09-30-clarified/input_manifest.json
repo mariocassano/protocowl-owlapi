@@ -1,0 +1,1535 @@
+{
+  "dataset_root": "progetto_partenza/dataset_onto",
+  "files": [
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00022.owl_functional.owl",
+      "size_bytes": 79643,
+      "sha256": "839bd80a67726593834aa87d1a7598c59123269d85094d2436c177ef7eca824c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00141.owl_functional.owl",
+      "size_bytes": 26805,
+      "sha256": "a00e83f58a53264108c1acd89c28b9aeac07c41aab168769338c2a0107e5d361"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00280.owl_functional.owl",
+      "size_bytes": 64945,
+      "sha256": "f25d65289854e609391d9196ea72c869f1665e23038307151f3b53ee8a720048"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00384.owl_functional.owl",
+      "size_bytes": 156044,
+      "sha256": "49e8256b90a476adaf6ba2dd856657603eb1acb1cde03451da37092c3ca55065"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00456.owl_functional.owl",
+      "size_bytes": 191359,
+      "sha256": "c31894bd504087b6d730072f2be3a4abdbf7975b9f37e1010387c4e699e899c8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00496.owl_functional.owl",
+      "size_bytes": 2250360,
+      "sha256": "cc7a2858368d3b3fd642751fc9fc226624517e646bcb08c827aaf22fa9986475"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00516.owl_functional.owl",
+      "size_bytes": 3771006,
+      "sha256": "f9026708b2b65a8f16c1a6a96444a84068fc664ba8c584adafced220b4276a8a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00535.owl_functional.owl",
+      "size_bytes": 2052866,
+      "sha256": "a64fe5be5aa71f09275bcea50609027e79e32c0f7890c44829f0dbdeba0df03d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00536.owl_functional.owl",
+      "size_bytes": 19057143,
+      "sha256": "7b41153d28dc609c49ae1c4f005b8dbb0b41f2d28fc52b69e06e262d725ece7a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00597.owl_functional.owl",
+      "size_bytes": 798139,
+      "sha256": "8dafea0f9ad333b71961de2f0a593c2b9185e1a0fc7363c58feb732186f137e8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/00606.owl_functional.owl",
+      "size_bytes": 192566,
+      "sha256": "daff0c67bf94ccfaf00366c1f6b6e3f1c3499556de560a7ae7053fdd62f2d659"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/04c0c4ef-e210-41a7-b86b-1f945045bc8f_kupocells.owl_functional.owl",
+      "size_bytes": 111803,
+      "sha256": "a1ed1f00e47dfee83770b0c218e4f2ecfd4e8a79790b8edcd451baccc9ff064f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/061ac8ca-5542-4610-ad64-0b21975d6fe4_enotype_xp.obo_functional.owl",
+      "size_bytes": 2892876,
+      "sha256": "bac9b984d72e0045a39ec50e685b31fdbe063c7e7041400f391b69c7424e19c2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/0ccf0454-d777-4fec-b1cc-03b5a300824d_chemtop.owl_functional.owl",
+      "size_bytes": 41966,
+      "sha256": "f83a606debf8b0c969dabbefce4efa84c094a048facf0a4423a415f881442273"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/0edc7fed-a5da-49fa-878f-1854501a1f1e_prerelease.obo_functional.owl",
+      "size_bytes": 2049956,
+      "sha256": "735ee6bc9e670c16f7cb294787e78970e1ede29d741cb6213ca64e64e030417f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/0f50cfb0-4be7-4239-8816-b5e06f63beb7_erativeOCL.owl_functional.owl",
+      "size_bytes": 173146,
+      "sha256": "1efe5f65944042971946a244cc718cfd9fb5cc9d317dded0b37a18fa5b86f636"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/19deea53-8a8c-48c0-9cde-99140ba1a5e2_tance_edit.owl_functional.owl",
+      "size_bytes": 522168,
+      "sha256": "2dcdac62ee44a05be993ee4f6c59ef39fcc8fca2e3e2fa0e264bfebe3e893ed8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/1ae83c60-e25b-4f30-afda-9a407d2da8e3_ra_anatomy.owl_functional.owl",
+      "size_bytes": 539931,
+      "sha256": "6db47356d578b36004d0d0d1731cadc399af50ac2863e70bc2b6b839f11debd0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/1b104481-2d27-43b4-86a3-98e6b2fdd413_fbdv.owl_functional.owl",
+      "size_bytes": 73551,
+      "sha256": "24369b49eeeae90bef66a112ad43daf3f90fc8ba1c7dcfbcd1b1da6c85951828"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/1bb771b6-f131-46af-9cde-4294fb600b0c_twork_v0.1.owl_functional.owl",
+      "size_bytes": 26857,
+      "sha256": "651e061b0da6e0b5ae121cb2ec0ccac4935b7ea656bdb63abd3e380660203da7"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/2445e055-6dd4-4787-ba1e-0e20739a30e4_LUMO.owl_functional.owl",
+      "size_bytes": 184159,
+      "sha256": "16729ec4effa95fa19811f9d19bc8860383b02f4c5df714c1b8bfda5d954aa51"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/2577736a-db03-46fc-9362-274e3af66718_propreo.obo_functional.owl",
+      "size_bytes": 178525,
+      "sha256": "0cf5bcd0bed7e0a02e2e5367c3fda6fdca74b9a58c837bbded2b9586ccc06c78"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/32d8a12b-5c75-4d62-a3a2-b3bc235d506d_expression.owl_functional.owl",
+      "size_bytes": 337011,
+      "sha256": "92059ff095cab510661c4c9c23dd4ea313f2ea06933996f62b8ed64609fd14c6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/32f6e531-f8f3-4bb3-a0f7-25c664c6acba_ecule_role.owl_functional.owl",
+      "size_bytes": 13550160,
+      "sha256": "3551431caad16f6d51ec58708d7db5ea3ab702beeef4bc944ad3ca55418b3781"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl_functional.owl",
+      "size_bytes": 978233,
+      "sha256": "0a13f4c2ffc9b24d78e7684d3d4f0ae66b73c0058a1c378b446b0452793c133d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/3a8b11c8-7efa-4dbb-9dfe-5acd4b18df60_rsimplegaf.obo_functional.owl",
+      "size_bytes": 12912008,
+      "sha256": "8d3c1eb7f5247c5eefde67db60067be38a67aff16bf6e811f649957536349734"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/40ffe51e-eda2-4415-9d0e-973629b32524_EHDAA_functional.owl",
+      "size_bytes": 528794,
+      "sha256": "6517a67d3bce90e4da42b5ec29f391b0774e054b58e2b20195ad4f56bdfb7335"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/419e8422-f608-478b-9ce7-f551abb20172_sgenechrom.owl_functional.owl",
+      "size_bytes": 14412754,
+      "sha256": "a5a008cd47705a40c36adba9c72dc72adb1d1f54e3047c6a4296c7daef39c6dc"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/4859c215-f75d-42bf-8520-d0caf9dde442_caro.owl_functional.owl",
+      "size_bytes": 25491,
+      "sha256": "79a923bb3cc284458cdb8ef9e313062ca66ce93f23b75c6f766ffc77cf60f0e1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/4a8a1268-458c-4f75-8a90-6e0a7c24cfe2_fyposimple.obo_functional.owl",
+      "size_bytes": 751969,
+      "sha256": "02617ece05a8fcccb5481d9ad0c26ce01860eb3ee46e0c4a576ae8f7269c3ffb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/50fc5b44-9af0-4540-866e-a19f5eb44a23__2010_base.owl_functional.owl",
+      "size_bytes": 356590,
+      "sha256": "ab623ef6acda1cac20920bc31481e62eda70477fc430fefa0c6db3ebc60f19b3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/54bd4a53-4111-403d-8d8e-010116144168_tagenomics.owl_functional.owl",
+      "size_bytes": 29872,
+      "sha256": "93a107c6ef869d5a4a862c3c7a5d4a25f82bf3dc737fdb2b53bc7479e68bdae5"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/55cf17e6-2a7b-4880-a565-d62100789957_Function_1.owl_functional.owl",
+      "size_bytes": 61065,
+      "sha256": "612957620fd3f7129bf9021f3c53b53e4e4e31d9cc36d36dfaf6f8262d600b7d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/58197550-a9dd-4328-9ea0-9f26169c8e22_NIFMolecule.owl_functional.owl",
+      "size_bytes": 3279381,
+      "sha256": "e2ad8c5955552503ba87f37740dd05e81f8be39f170a0b631fcc8b97cd54dae2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/5ce4039f-7515-4d22-b1b5-8cc98458c243_Mpeg72001.owl_functional.owl",
+      "size_bytes": 925129,
+      "sha256": "bbe97102b7c88b34dcd570e953ea7a202d5005b8ff465904db2081a6dd61f07e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/75549c56-685e-448c-afe5-03755ad3217c_go.owl_functional.owl",
+      "size_bytes": 13804733,
+      "sha256": "313c633616217e9961a68f7ea8ca16c39b12f06df8b3fc7d6405ca072856d49f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/756d4706-697f-452e-99cd-dbf32081601a__ontology.owl2_functional.owl",
+      "size_bytes": 1865952,
+      "sha256": "3de5bbcfb990e34083ccb657967a589ce150d03015204bc4b32cd11063dca56b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/77094653-1dd0-493a-9927-7e327ab26df1_phylo.owl_functional.owl",
+      "size_bytes": 127736,
+      "sha256": "f28420f773cc2112a9238f81c096795068d7d5ac57a45e943dbd81f54e1e7af4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/77af02d9-169a-4074-83f3-b4e89d13bdc5_galen.owl_functional.owl",
+      "size_bytes": 1021256,
+      "sha256": "660258c0354a6e20e6ec4a7a815fd0048bab55bbfaf100602d60fe02019225a8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/8483d657-6932-4d42-8980-3b7eb996c17c_ngineering.owl_functional.owl",
+      "size_bytes": 64602,
+      "sha256": "2b831a3a887af273284965502f2eff14dfd41b3467e49c59ce5dc2f465ede00d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/8b075aae-de78-4da8-ab82-5c5afbeab78f_leost_taxonomy_functional.owl",
+      "size_bytes": 19755663,
+      "sha256": "a7e195ed49aedcf68b6029dffea04f1935922a5b1dcd249cb5802a956fa0bcc8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/8bdbdcc6-2c79-48af-8157-66abf593a8f2_classified.owl_functional.owl",
+      "size_bytes": 446164,
+      "sha256": "872b387421bac2354b0e0257872f2e6dc1bdda182639e3f093d4227c7f1657b7"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/8ec61954-36f1-45db-afa0-09e6683b4f21_ent_xp_go.owl2_functional.owl",
+      "size_bytes": 76125,
+      "sha256": "8e196c92ed4ad9a00188ad99272991fa33f0467158cebca68fa8fd1cd1eee15f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/a14a100e-202f-4eb1-9539-b24a28b802fb_cl_import.owl_functional.owl",
+      "size_bytes": 659924,
+      "sha256": "1472c004e43133540cb55e50fc90b5ca5813c911f48f975ef83f558fef8b71fc"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/a9712c71-8004-4e17-b056-4f7a11e7d64d_ABGSegment.owl_functional.owl",
+      "size_bytes": 633369,
+      "sha256": "73d74c1ae64379308619cde9d6209282c0cd69e640abd02557e8044f11fa1830"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/afad60ce-2326-429e-81c5-ca55842c39c3_entication.owl_functional.owl",
+      "size_bytes": 237458,
+      "sha256": "898054672bb94586ee9a67bc290fda3fc7b77ef0cccaab8e71d7d00c11fe1893"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_00fec224-5de9-4f5c-bd58-6fe5903fc3a0_gilcore.owl_functional.owl",
+      "size_bytes": 34778,
+      "sha256": "03f2759ef7304557ca7ed7e29bc7064a845a97deac404573f6d0a9ca4985d082"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_015e0fd4-bede-40a3-8406-3dfc6fc6a8dd_all.rdf_functional.owl",
+      "size_bytes": 75113,
+      "sha256": "d6744e984ee1b90c623e80183dc3b5fe3fae417f6cf5d9cf67e6d9c512098118"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_071feca2-a248-4370-97da-ff1d0b83c571_logyv0.1.3.owl_functional.owl",
+      "size_bytes": 133065,
+      "sha256": "5b3ba0456d1701edcbd346865409424d9f50adda0721e0fc61a4e6f3130dc875"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_0d5857a3-e59e-4648-9efa-e40e9aa42ecc_Grounding.owl_functional.owl",
+      "size_bytes": 47004,
+      "sha256": "9f035345a716c8d60940c7ac11b0533a30b289244bdace96a12fc2def58941d4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_187f0d06-043e-4d8a-82a7-f5a2d020ec79_pmbok4.owl_functional.owl",
+      "size_bytes": 382402,
+      "sha256": "35c0a93e67bc0ce7fabcb41b6ce870e00a93a0bb7c32270a10d3142fab51a70b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_261f18de-581b-4334-9bd1-fa87028404cc__component.owl_functional.owl",
+      "size_bytes": 612153,
+      "sha256": "3778027736d49f4bf54858e8f12fb51e9bd1dcd27a2ddd0b342937ae0d980da6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_2886c605-9dfb-4cc2-9528-8b56dd528434_CMO_OWL.owl_functional.owl",
+      "size_bytes": 510969,
+      "sha256": "afc6c088efcc124f60d07d2e0dcca3ffc055b466acc830feef910cc872e45c10"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_2c12ed51-4979-4434-914a-ecea1d50d0da_udy_design.owl_functional.owl",
+      "size_bytes": 23496,
+      "sha256": "0f610b873e4fb7f1632dd65c2ff37f6e1bbe9550b3e3e6f8c24463a753d1d71a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_3b913059-e630-4275-be45-859984a1b7be_e_semantic.rdf_functional.owl",
+      "size_bytes": 61709,
+      "sha256": "1f5b6c918c0f9708d03fb6ec916197971cffe9e4dafaf9e3ed1d4461485910cd"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_4907f5f7-6fb8-49a4-8f69-33907519ca4e_bio2rdf.owl_functional.owl",
+      "size_bytes": 60432,
+      "sha256": "6d2f1144bc58b4ee38768eafe9586398984df91ac18db4550e8fcc51636d2bd3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_4e70f119-38cb-4762-aae7-b588cfa028e0_Profile.owl_functional.owl",
+      "size_bytes": 38815,
+      "sha256": "9580288e44a40358c4a0843836ee835d8625fb9f089408b810226e5f9ff6f0df"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_50c9ffca-2132-4434-afab-d4ce20cc2714_SUMOLite.owl_functional.owl",
+      "size_bytes": 623612,
+      "sha256": "268612ceea8a2275f8cd90510c3178b3b3c65a7405c0c1489c8c1a3748e40acb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_59c42aeb-6dc2-4824-a7ec-6aed305e2aa5_alModel2.0.owl_functional.owl",
+      "size_bytes": 93315,
+      "sha256": "b4f2aebb3c49d2754a1387f9da4892a2d468c4b24de0fb3843f0fc7999d4a20e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_5a31ff58-7b01-4f05-b0ee-a5993d80b7ed_NIFOrganism.owl_functional.owl",
+      "size_bytes": 289834,
+      "sha256": "d04b89286caf70996dc9bd0d8a543e9b595b63d1292dcc570f10a95aa2e4c463"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_8a0f3776-a145-498d-bff7-015edd0be169_ongkhalink.rdf_functional.owl",
+      "size_bytes": 212067,
+      "sha256": "7d42cd43b86d4d49403118f5ff29794a71dbc5038049e97b9e8c69c5f09ef721"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_d4af5918-ea4f-41f6-af2c-1aac74993011_RIMDatatype_functional.owl",
+      "size_bytes": 47138,
+      "sha256": "40f6ed7e6cdb182b9ac7d346b8720a6957e1c330c1b5ece87c6e4bcb6b12044e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_ec09fbd9-58ba-41a3-9c84-368d91118936_OBIMay2008.owl_functional.owl",
+      "size_bytes": 33036,
+      "sha256": "53d3fd4fcc41521e1e78583fc820753eefcaabeeef583a6b559a8e58e72e207a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_faa95fb1-bdbd-4f60-b9cc-fda92c198986_PaulFisher.rdf_functional.owl",
+      "size_bytes": 39158,
+      "sha256": "14c562d0d4245db74b0e8798faf17960b98e44f22526241335f8e802da20f747"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_genomic-cds-demo.owl_functional.owl",
+      "size_bytes": 15275378,
+      "sha256": "90cfc06fdc9a40f30e04798215d8b739fc396257576cc0073e08c833c0c138a0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_genomic-cds.owl_functional.owl",
+      "size_bytes": 15189993,
+      "sha256": "6d9825d2cc0aa9610dd6250feeeb0bbfed5a332192177d6a1f08646c72252b82"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_kb-owl-syntax-coreference-IDs-cardinalities-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 5576318,
+      "sha256": "011af9f308e628122e31e306981d791cb1dd5a16ab76b31c74d59f8e321faaf0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_kb-owl-syntax-unraveled-depth-1-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 5004076,
+      "sha256": "bd71d2027362c1604a4fda7e6cee06890232adf08d86b7d8917091c003ca295c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_kb-owl-syntax-unraveled-depth-3-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 2983328,
+      "sha256": "ce2d9f985987ec878983e91c862a9f0b06e53a0f7f8bec78026b1d1a9eb7e2ed"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/approximated_kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 2988011,
+      "sha256": "618bf1d67e68704b0449a2312c69e0180fe9a41450f547d93a0f03f77278f53a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/b7c19a22-c91c-4b51-894a-d8a8a3d2a7c0_cl.obo_functional.owl",
+      "size_bytes": 3339998,
+      "sha256": "53df69872138e429bb3939dc4804b2fc5a537dca4b763d85b0c4ac22971493d5"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/c0ca4e3f-ff6b-4eac-882c-183788832e5f_citygml.owl_functional.owl",
+      "size_bytes": 161539,
+      "sha256": "b328862991fa1714772c7661f1206edf26145a2a84e9068e298e387c2858c5ca"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/c2abef0f-3619-4589-860a-22821e5142ac_ntology_xp.obo_functional.owl",
+      "size_bytes": 1831491,
+      "sha256": "17b43d64e6b8949d0c93f7dd3f5da63497a4feb529c5e1aabe4b675772cfdffd"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/c343f7b1-c70e-4dbd-bef7-0d3b9aaf6fd7_prsimple.owl_functional.owl",
+      "size_bytes": 13462986,
+      "sha256": "8171f380592fd380adfe69803d607453f901cf8eb61a8bc9d6777e8ad9cd3fb2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/c93db046-8fc7-4bfc-8abe-c4ccd5090272_tivitydemo.owl_functional.owl",
+      "size_bytes": 24158,
+      "sha256": "27da913084abdf2572d06e9974cd8e734f97e3db7dc9f8f745c08612300f2963"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/c9422304-a4fb-40e4-9d0f-81bdea1cd50b_l.obo.PREVIOUS_functional.owl",
+      "size_bytes": 2142291,
+      "sha256": "0a966cc88d60a8a0be9b7314bc7b14495a1d62a5818f3c245af6b6d6e391d789"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/csso.clinical-signs-and-symptoms-ontology.4.owl.xml_functional.owl",
+      "size_bytes": 48559,
+      "sha256": "27244ac017f2cbcf3e52549921436d7d4c0077aa42bfd2fc80faa034686ff37c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/d072d130-da53-40a3-a616-59642617ccc3_M4L.owl_functional.owl",
+      "size_bytes": 91353,
+      "sha256": "c9ed056b674881adc66e5f1d7d5c388adb70ad13334617927e38c8f6b5484d9a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/d0ded12f-0a03-4c16-9784-39f0ae56e7ff_kyamk.owl_functional.owl",
+      "size_bytes": 619149,
+      "sha256": "99e3abd1bc7f841d6718f24a1ec564efd14af3090b49762caff530c9266c645e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/d118f435-8920-4e8c-81b3-fb572717cfec_NIFFunction.owl_functional.owl",
+      "size_bytes": 60948,
+      "sha256": "6b0a47e789a9eacb759b184fedb65cbf042a8c1f0f031429950a1fac6b6f02d1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/d2de1f4a-7c94-4c4c-956e-38b7a836b4ed_protlabels.obo_functional.owl",
+      "size_bytes": 2768762,
+      "sha256": "4fdbe8948910f15dc5189d7b54113ea2de3f4d50ac874bb59fb1c10b38b956b3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/d9f87343-d24d-47c7-9a74-ee066c16d5c7_lsrth.rdf_functional.owl",
+      "size_bytes": 11719,
+      "sha256": "c6a1cb2dd30668833ed73909124a7464ee503a73677131d781a6062ce8aed042"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/e0a109c2-83f0-4d25-8cdc-f8068804dbb2_rsimplegaf.owl_functional.owl",
+      "size_bytes": 12832646,
+      "sha256": "968bd2b374fc7f6bb6720b4b16219bb830490f913ac9456b48e1b5ad8f8e87d1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/e1404a38-2d70-4173-8c02-6b6fac85cf32_DOLCELite.owl_functional.owl",
+      "size_bytes": 94875,
+      "sha256": "0bcdb8ee2d10c50e6b511f7eedc6cc9d5c924d01b387ac5a61289e8ac295c082"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/efdc2a3d-b99d-4695-9d86-c000183b0c47_emapmerged.obo_functional.owl",
+      "size_bytes": 3798032,
+      "sha256": "e47cd5b19c628421864bd2dd4f1202343a5a1afbe218de2da049ff6f22898800"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl_functional.owl",
+      "size_bytes": 19945758,
+      "sha256": "6f17acef41d6c6c00bd1a4b7fc9eb32fc0806298ae7f6402616e9744b997443d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/fee2724f-5d72-40c1-961b-394a2677c8c5_DOIDBridge.owl_functional.owl",
+      "size_bytes": 7633143,
+      "sha256": "e355a65e627c7ae410d153e1986df25637920084a55f3203ddb5f6d0f42b2c49"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/ff8566a7-b5cf-4101-84fa-e7ed204b83d2_Location.owl_functional.owl",
+      "size_bytes": 34187,
+      "sha256": "0ad71c243e4aaadb5f7550df556472facae107eebefb3706761823ccd5093293"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/hp.human-phenotype-ontology.442.owl.xml_functional.owl",
+      "size_bytes": 2058632,
+      "sha256": "6fbe043a73abc61c829173b3542e6bf1785618d36e6aefe2c20937905d9a33d6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-0-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 2412600,
+      "sha256": "427469c18ed98ffb87a055d6330f9503f9d95d39d11533bb7912d4dfe0b955f5"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-0-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 2351981,
+      "sha256": "e9b715fb45d42c46585158f0491054f6afd1064239dc61a8f0ce597556e8be84"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-1-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 3583983,
+      "sha256": "20c77c5ce3dafbc0f393f455c64b936fd06d324414db0a8cabbfc0061d522558"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-1-triggers-constant-classes-value-classes.ofn_functional.owl",
+      "size_bytes": 3614761,
+      "sha256": "bcee2fc7ce11b5e1df95a7c87d5de0aa381b14a8d0042df48c1b41592d02ed49"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 5260607,
+      "sha256": "bfce73f53090e6c0bcea76faf1025ebefa98d692ac192ddf9eea65b26eb2975d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 6476163,
+      "sha256": "dc9eb8c3698acbc3fa938b89b817f9b77c937dd83bb0d61ce144ed0d50b626f9"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_functional.owl",
+      "size_bytes": 5439597,
+      "sha256": "5b133cd52c95eb2f808cf26a58c70db423bb8c3aef9c2f2c1200343fddc84f65"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_functional.owl",
+      "size_bytes": 8218610,
+      "sha256": "c84d6459c66e6d203d0fc60c082638b976210176db0e9bcf37fd57326850342b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_functional.owl",
+      "size_bytes": 8267901,
+      "sha256": "eda139100851196e08478f720d380982bc20d57f818436475e921dac78fed800"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/ntdo.neglected-tropical-disease-ontology.1.owl.xml_functional.owl",
+      "size_bytes": 151431,
+      "sha256": "2eeab60a15faf66d79a86c84a048569d7281735a2927da5b2efe690c8c849964"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/functional/syn.sage-bionetworks-synapse-ontology.3.owl.xml_functional.owl",
+      "size_bytes": 3675758,
+      "sha256": "71f60058781adbb560ddd63d1f3579890e1b65e0139590fac1aec7a3336f4fd4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00022.owl_protocowl.owl",
+      "size_bytes": 8097,
+      "sha256": "d9e7c30d7f9646f02936bb73e1bf22ed5bd56702beb2733affad7b38acc7ad57"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00141.owl_protocowl.owl",
+      "size_bytes": 1939,
+      "sha256": "5a158f22f3fb3ac4ca764c67801a873c9b1943aa7624668482fbe5570d4669f8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00280.owl_protocowl.owl",
+      "size_bytes": 8798,
+      "sha256": "e55ead1a553d0f85f5eb72eb2025efeecf62946f74027a647acf04ef73548fe0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00384.owl_protocowl.owl",
+      "size_bytes": 19314,
+      "sha256": "5f4612e144573925aa8609dc23819a8687ebd3b08e34c17bfe572f896d48665f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00456.owl_protocowl.owl",
+      "size_bytes": 35703,
+      "sha256": "046622af07e82b5f85de37f33f206fec78c8228931379bcc8e06be475cf66643"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00496.owl_protocowl.owl",
+      "size_bytes": 223931,
+      "sha256": "84fa01213a49a1e8867180719cb5257d24f72614b7883903dcfc726be3dd474d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00516.owl_protocowl.owl",
+      "size_bytes": 683540,
+      "sha256": "78f28cd80b642d16573d557785703978a6ec94cd7c3ff5541e19e5c6cefe1cbb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00535.owl_protocowl.owl",
+      "size_bytes": 315258,
+      "sha256": "cd13bfd0e56407b5c7b37a46310c106d8940d3b73dd4aa9a7aa2017293e4d211"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00536.owl_protocowl.owl",
+      "size_bytes": 3343858,
+      "sha256": "00a7549648b4c01740cde148ec445568328e6ae339f1d3b31b43acc43d3f6a9a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00597.owl_protocowl.owl",
+      "size_bytes": 147834,
+      "sha256": "8bc3b950d279b3507b841ec803467406ed5426406ed2f8fd50222f2732dce48f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/00606.owl_protocowl.owl",
+      "size_bytes": 32225,
+      "sha256": "f99618e8f14f37b05275f922c472492a4c7aa72e8184619f5ad2db7e7017bc1e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/04c0c4ef-e210-41a7-b86b-1f945045bc8f_kupocells.owl_protocowl.owl",
+      "size_bytes": 15869,
+      "sha256": "0ca802768841733822301038ed6f3adebb9ae02f977b3ef9daa72908cb75a84e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/061ac8ca-5542-4610-ad64-0b21975d6fe4_enotype_xp.obo_protocowl.owl",
+      "size_bytes": 354296,
+      "sha256": "35c9ede64310d0c67c567618263e6a08da6f60ec23da80a11db16f13a91700ed"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/0ccf0454-d777-4fec-b1cc-03b5a300824d_chemtop.owl_protocowl.owl",
+      "size_bytes": 3048,
+      "sha256": "669a03a653f673f7df4e663692e4de77c5dfda7c82a2b0a70ada779676c79512"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/0edc7fed-a5da-49fa-878f-1854501a1f1e_prerelease.obo_protocowl.owl",
+      "size_bytes": 165717,
+      "sha256": "d435fb6ae9482bc60858aabdc4f85d1777f30d5a57d24ff451035671b6d40b14"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/0f50cfb0-4be7-4239-8816-b5e06f63beb7_erativeOCL.owl_protocowl.owl",
+      "size_bytes": 28671,
+      "sha256": "1f0394ba89951146765971dd601dc29c8c7eb476ecd589b56d9e9ff98e58a3a6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/19deea53-8a8c-48c0-9cde-99140ba1a5e2_tance_edit.owl_protocowl.owl",
+      "size_bytes": 153272,
+      "sha256": "20cd4993ce76472a74a7e5d304ebeb096ef856de1db0cf9e9a5e7c640f16cbe9"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/1ae83c60-e25b-4f30-afda-9a407d2da8e3_ra_anatomy.owl_protocowl.owl",
+      "size_bytes": 85825,
+      "sha256": "1a84f4bf2556213631f4020407fe1c26365f6069fbfae61f50da618ad9a2df61"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/1b104481-2d27-43b4-86a3-98e6b2fdd413_fbdv.owl_protocowl.owl",
+      "size_bytes": 6389,
+      "sha256": "cd0a7376a2326ae8c21942c7a3be33dd7a7b77a5e018299cc19aca08e28cdded"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/1bb771b6-f131-46af-9cde-4294fb600b0c_twork_v0.1.owl_protocowl.owl",
+      "size_bytes": 2105,
+      "sha256": "cc6df1f3e261dd68b254635469fc1a382e87151fb7aa3ce66e3d3603614fd3ad"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/2445e055-6dd4-4787-ba1e-0e20739a30e4_LUMO.owl_protocowl.owl",
+      "size_bytes": 33608,
+      "sha256": "305a58345d147f172620d71e01ad8b2451cc47ae3f3101c27a2c96b63e3f2b1b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/2577736a-db03-46fc-9362-274e3af66718_propreo.obo_protocowl.owl",
+      "size_bytes": 30027,
+      "sha256": "c267657614347556f33872cd3676cd45d845621c31ab1c2896bc7d0a1b9827b0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/32d8a12b-5c75-4d62-a3a2-b3bc235d506d_expression.owl_protocowl.owl",
+      "size_bytes": 39780,
+      "sha256": "0237468d9233112719ae87caf0d317efadff70485f921af399adb1ce58f7e9c1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/32f6e531-f8f3-4bb3-a0f7-25c664c6acba_ecule_role.owl_protocowl.owl",
+      "size_bytes": 2356115,
+      "sha256": "da8b29336e9e8ffeb93027f244fe9e77f8ea7e60ad37502befe992ed3c8906e7"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl_protocowl.owl",
+      "size_bytes": 67255,
+      "sha256": "d3f5ca72f74f167d4a3c095caa4734dad922e42cb9c48858f2ae73b33b10ee16"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/3a8b11c8-7efa-4dbb-9dfe-5acd4b18df60_rsimplegaf.obo_protocowl.owl",
+      "size_bytes": 1398588,
+      "sha256": "c10d8764f6613af3e51337c1b97b965d7b0ac37bcc1145ce9277ced32b548891"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/40ffe51e-eda2-4415-9d0e-973629b32524_EHDAA_protocowl.owl",
+      "size_bytes": 79995,
+      "sha256": "fae0fe3c3ecc707020a60e6ef2f2513b9c5577733e3243dbc9bc154fb2e3b0df"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/419e8422-f608-478b-9ce7-f551abb20172_sgenechrom.owl_protocowl.owl",
+      "size_bytes": 3325298,
+      "sha256": "527d71f5ec6292efda4cfc5e27f61c22dcd98fd4e659b887a796388fed782574"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/4859c215-f75d-42bf-8520-d0caf9dde442_caro.owl_protocowl.owl",
+      "size_bytes": 2589,
+      "sha256": "d2709dcd8c21b8a9c1689da3faf1f5ed5a5ee73b9170e575778a45650515ef15"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/4a8a1268-458c-4f75-8a90-6e0a7c24cfe2_fyposimple.obo_protocowl.owl",
+      "size_bytes": 147778,
+      "sha256": "99641375d721249a24816d97c48d8175b4390fc01dcb04e43c16a8f895a48d88"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/50fc5b44-9af0-4540-866e-a19f5eb44a23__2010_base.owl_protocowl.owl",
+      "size_bytes": 71751,
+      "sha256": "85b7dcc5e0a435f3dea7c2aab8e58daf99bf89beee5bec3579927fcf7e78f4c4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/54bd4a53-4111-403d-8d8e-010116144168_tagenomics.owl_protocowl.owl",
+      "size_bytes": 4006,
+      "sha256": "772731dd0bd6a9754cb6407864b13c4bb448812d7c43f51c431948cae0d9ff0e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/55cf17e6-2a7b-4880-a565-d62100789957_Function_1.owl_protocowl.owl",
+      "size_bytes": 6542,
+      "sha256": "c642ba35f0cdc236a77472a3fc9b348ca7f121fca8e507edb78705de44187d25"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/58197550-a9dd-4328-9ea0-9f26169c8e22_NIFMolecule.owl_protocowl.owl",
+      "size_bytes": 219783,
+      "sha256": "6b26c9d18b39768314406e14ab683f06d03315c3e549f9c75dc9ce3417ebd8c7"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/5ce4039f-7515-4d22-b1b5-8cc98458c243_Mpeg72001.owl_protocowl.owl",
+      "size_bytes": 79391,
+      "sha256": "f7db3ecd9615a1a5fb6ee5a107f982a24ebc4fd730fd5cb20541abb6ba2367ca"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/75549c56-685e-448c-afe5-03755ad3217c_go.owl_protocowl.owl",
+      "size_bytes": 2126451,
+      "sha256": "068c67b49f623f8aec480038b431a69fbfae27565fea2c58c16311aa711fb8d3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/756d4706-697f-452e-99cd-dbf32081601a__ontology.owl2_protocowl.owl",
+      "size_bytes": 359863,
+      "sha256": "e6416ed6ea7d38dfed71509fcf8118d33f9ef301048d090f855445f12ab20d0b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/77094653-1dd0-493a-9927-7e327ab26df1_phylo.owl_protocowl.owl",
+      "size_bytes": 22534,
+      "sha256": "ae12e5a9ac81e64901ffe301df8a838a5485cfc692a50a0736e6c8419e5e23fb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/77af02d9-169a-4074-83f3-b4e89d13bdc5_galen.owl_protocowl.owl",
+      "size_bytes": 230874,
+      "sha256": "b2121174202f97f9386eae558ad669aac835d6796ad3fd0775c693e718f6cc3a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/8483d657-6932-4d42-8980-3b7eb996c17c_ngineering.owl_protocowl.owl",
+      "size_bytes": 7483,
+      "sha256": "e89eea93a87e6b4a2c67b7e0b6a6d718a1a863ac7e003ea0e4b0424d74b6ae5b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/8b075aae-de78-4da8-ab82-5c5afbeab78f_leost_taxonomy_protocowl.owl",
+      "size_bytes": 3844469,
+      "sha256": "8f3b6af672f9eef349f6b679e301fa9cf1bed23e318394be5ac365b52e352f77"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/8bdbdcc6-2c79-48af-8157-66abf593a8f2_classified.owl_protocowl.owl",
+      "size_bytes": 130710,
+      "sha256": "358d9ac4c647a7e08f340cbdb310e651f056a1555cfcc58e62e2186bc7c8fff3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/8ec61954-36f1-45db-afa0-09e6683b4f21_ent_xp_go.owl2_protocowl.owl",
+      "size_bytes": 13047,
+      "sha256": "214a7fbf1ea75d167dd9254e8984808c799615f9c5576290331f06f6788579f6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/a14a100e-202f-4eb1-9539-b24a28b802fb_cl_import.owl_protocowl.owl",
+      "size_bytes": 109783,
+      "sha256": "fe229a391e47355c18456bc86e5d3e714e149c3858b8213d41743f5cc34d5978"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/a9712c71-8004-4e17-b056-4f7a11e7d64d_ABGSegment.owl_protocowl.owl",
+      "size_bytes": 129985,
+      "sha256": "59847456d20c934a1dd5b8b3b692844f75782b0cf20522726f8b8ad9d19d16de"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/afad60ce-2326-429e-81c5-ca55842c39c3_entication.owl_protocowl.owl",
+      "size_bytes": 23921,
+      "sha256": "bc495e6631a6070b5e7f092ad20b56cb8a5b61a4a05e3a8787b5fe4c0a216051"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_00fec224-5de9-4f5c-bd58-6fe5903fc3a0_gilcore.owl_protocowl.owl",
+      "size_bytes": 2973,
+      "sha256": "5287905ebedc4ffa3c53e78f5afb6447a7582023749bd6e0640f03b19fadcd6e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_015e0fd4-bede-40a3-8406-3dfc6fc6a8dd_all.rdf_protocowl.owl",
+      "size_bytes": 22531,
+      "sha256": "058f3b9b36145aa7f1592b70529d25d6843247eb5bb0744bd5a83f7d4c15e920"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_071feca2-a248-4370-97da-ff1d0b83c571_logyv0.1.3.owl_protocowl.owl",
+      "size_bytes": 23338,
+      "sha256": "5c4d5cc69d666c2cd97079413eb8b491c1ce91fe6200c2a4222c202a6311ebde"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_0d5857a3-e59e-4648-9efa-e40e9aa42ecc_Grounding.owl_protocowl.owl",
+      "size_bytes": 6128,
+      "sha256": "b7a66860eb4683c5acd77e56942453c151aae22d73a22f3044d2cb1dd4e29eda"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_187f0d06-043e-4d8a-82a7-f5a2d020ec79_pmbok4.owl_protocowl.owl",
+      "size_bytes": 40919,
+      "sha256": "1da07ffc5b0e2cfc038a796fed77f5ff6f406dbc63a43cd4a47c62dea69b73e8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_261f18de-581b-4334-9bd1-fa87028404cc__component.owl_protocowl.owl",
+      "size_bytes": 98967,
+      "sha256": "9672f08e71abcd04ef5a3e55f8624085e79f6a79701f3e495a9867032b607b34"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_2886c605-9dfb-4cc2-9528-8b56dd528434_CMO_OWL.owl_protocowl.owl",
+      "size_bytes": 103555,
+      "sha256": "64e638170154778dc5c4a4cadecb81846cbf7667949add26b2e52c9749878ca0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_2c12ed51-4979-4434-914a-ecea1d50d0da_udy_design.owl_protocowl.owl",
+      "size_bytes": 1950,
+      "sha256": "63c288a32fda2d97fa9aaa50a4fa376eadb0cdd00f0a47f8461510f91de14fb1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_3b913059-e630-4275-be45-859984a1b7be_e_semantic.rdf_protocowl.owl",
+      "size_bytes": 9696,
+      "sha256": "61d861e2d0000eb0178f56c8ca54ec578757d27dc77fc790704a0d903a592cac"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_4907f5f7-6fb8-49a4-8f69-33907519ca4e_bio2rdf.owl_protocowl.owl",
+      "size_bytes": 15256,
+      "sha256": "ef98c7db39be4934fd5810aa32642c9213eb909d3969af1e0d2d63821442b5fb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_4e70f119-38cb-4762-aae7-b588cfa028e0_Profile.owl_protocowl.owl",
+      "size_bytes": 4951,
+      "sha256": "e6f791d8756e5f45ce00604d12d2ee89dc7e270c934d718d89f587ba45e3c2b2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_50c9ffca-2132-4434-afab-d4ce20cc2714_SUMOLite.owl_protocowl.owl",
+      "size_bytes": 38683,
+      "sha256": "571e95c7fa5e7e32d6a19247bcad3a850dfb54940129a4090d96967a20e8df09"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_59c42aeb-6dc2-4824-a7ec-6aed305e2aa5_alModel2.0.owl_protocowl.owl",
+      "size_bytes": 13667,
+      "sha256": "50b818f01c2134e8b3162b9212e70d2160d788f09c9e6b829b62ce0e80c0daae"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_5a31ff58-7b01-4f05-b0ee-a5993d80b7ed_NIFOrganism.owl_protocowl.owl",
+      "size_bytes": 34713,
+      "sha256": "21deed9154b5705816d20ab974cea1957471cefd5caf32a5818a93b7ab4a263b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_8a0f3776-a145-498d-bff7-015edd0be169_ongkhalink.rdf_protocowl.owl",
+      "size_bytes": 49994,
+      "sha256": "1fb8b0fa01af4edf8ddeb59e7d29d7707732d356e8ebf573cafe86663031754c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_d4af5918-ea4f-41f6-af2c-1aac74993011_RIMDatatype_protocowl.owl",
+      "size_bytes": 6013,
+      "sha256": "9a0959412b294717813c388f4d0aa038252025cb40c06f599ef86713aa4711f8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_ec09fbd9-58ba-41a3-9c84-368d91118936_OBIMay2008.owl_protocowl.owl",
+      "size_bytes": 3830,
+      "sha256": "02e17bf8bb7261a7fa02783ebb93bdd04d9ef81f069555ee1ed39c0d8cd33f09"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_faa95fb1-bdbd-4f60-b9cc-fda92c198986_PaulFisher.rdf_protocowl.owl",
+      "size_bytes": 4503,
+      "sha256": "cdce9d8cc479a427fa3b523a59b547eddee2f74d9e3c15efa74826f639b44ef1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_genomic-cds-demo.owl_protocowl.owl",
+      "size_bytes": 2227485,
+      "sha256": "fb05f9475538be0491f26bfe221d105037c0a47bb65c4746a573f65c7deeaa1a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_genomic-cds.owl_protocowl.owl",
+      "size_bytes": 2210673,
+      "sha256": "e3e8d1edfd3de7c7e1c060a7189c27925180d85720bdf211c1d0d94d43227b93"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_kb-owl-syntax-coreference-IDs-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 962858,
+      "sha256": "9690bff30f2c41782428845fa0fe4045acca590637de7dcf59c5e13db49fe6db"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_kb-owl-syntax-unraveled-depth-1-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 977230,
+      "sha256": "fd8f41e3db4405b7a57a5f3fdbe1c5d3c6d8a4ae1139f9d54bb5aa1e3c88347f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_kb-owl-syntax-unraveled-depth-3-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 542544,
+      "sha256": "5b31d65bfcc0974197c9e1dd56b7be51bcbb2aee25b93e096a15d1e228c748cb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/approximated_kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 544525,
+      "sha256": "ffd297a7472086f03655e6dc5b42970250b8cfc8ba8a9d13201de5a13fc81442"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/b7c19a22-c91c-4b51-894a-d8a8a3d2a7c0_cl.obo_protocowl.owl",
+      "size_bytes": 460873,
+      "sha256": "929bd5c30e8cd6abee77d94439e79fdc9eaf118515644650f0510d017d03e783"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/c0ca4e3f-ff6b-4eac-882c-183788832e5f_citygml.owl_protocowl.owl",
+      "size_bytes": 31831,
+      "sha256": "5687eb6bf57dee90271a133a9aded39194000bd96927be1a66f74f9301f7dae1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/c2abef0f-3619-4589-860a-22821e5142ac_ntology_xp.obo_protocowl.owl",
+      "size_bytes": 281368,
+      "sha256": "ac630ff9f738691d326780c859e45a93fb2a874cd0d9589fb2e5ecd443eab449"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/c343f7b1-c70e-4dbd-bef7-0d3b9aaf6fd7_prsimple.owl_protocowl.owl",
+      "size_bytes": 2406769,
+      "sha256": "6e3931dfef622874814544d1a916db4ebdc87bb835528acf9782d2b628f48f7a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/c93db046-8fc7-4bfc-8abe-c4ccd5090272_tivitydemo.owl_protocowl.owl",
+      "size_bytes": 1630,
+      "sha256": "f4093e8c4968441929bbbec87437408d2f6cec4935f4b9b873130d1ef8bfe552"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/c9422304-a4fb-40e4-9d0f-81bdea1cd50b_l.obo.PREVIOUS_protocowl.owl",
+      "size_bytes": 296077,
+      "sha256": "cd27cdabdf7cb06d0efdfa1f4eb3e0bcf80b067633cf4c7c54e906f98dca507c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/csso.clinical-signs-and-symptoms-ontology.4.owl.xml_protocowl.owl",
+      "size_bytes": 11006,
+      "sha256": "f9ce0b2454afdac4f7c772163c4600ca35ec7dd5c8fdc0c0dc9160a2b50d14bf"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/d072d130-da53-40a3-a616-59642617ccc3_M4L.owl_protocowl.owl",
+      "size_bytes": 23679,
+      "sha256": "24655801717703537cdeb0601c43b7d17440e6b1ca1b279b3a22c627d35d5f55"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/d0ded12f-0a03-4c16-9784-39f0ae56e7ff_kyamk.owl_protocowl.owl",
+      "size_bytes": 192138,
+      "sha256": "4a1a3d5448e3918fa22ac01f3adb53530da870f198a21a39459afb3da6706d41"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/d118f435-8920-4e8c-81b3-fb572717cfec_NIFFunction.owl_protocowl.owl",
+      "size_bytes": 6653,
+      "sha256": "076a9298c6436578d7d8fe348b7284b82fb4783e820ec375e070e1a7780182f6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/d2de1f4a-7c94-4c4c-956e-38b7a836b4ed_protlabels.obo_protocowl.owl",
+      "size_bytes": 358177,
+      "sha256": "c4be1acbeaddb9f711f926d8cddd3b1f6b993919bb088ec9bd8514ea56c94674"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/d9f87343-d24d-47c7-9a74-ee066c16d5c7_lsrth.rdf_protocowl.owl",
+      "size_bytes": 2551,
+      "sha256": "3e0ae0520f0bbe9db2d017a667ceb30b509f1cfbc0dce9779fc89c349703abb6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/e0a109c2-83f0-4d25-8cdc-f8068804dbb2_rsimplegaf.owl_protocowl.owl",
+      "size_bytes": 1565494,
+      "sha256": "3aa01d6c590038ecb5cbb5bb3f3a9d28cfd2f1ffb09c97e3523c6aefef6ec5c0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/e1404a38-2d70-4173-8c02-6b6fac85cf32_DOLCELite.owl_protocowl.owl",
+      "size_bytes": 3352,
+      "sha256": "bc16bb53c7dedb6933d9f00ed2650e62274732b2c9cfecee03507fabc81bd59a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/efdc2a3d-b99d-4695-9d86-c000183b0c47_emapmerged.obo_protocowl.owl",
+      "size_bytes": 424113,
+      "sha256": "a23283e8d130aec0735e56fdb85086bffeb8b3754771c970a7788a869915cac3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl_protocowl.owl",
+      "size_bytes": 2106426,
+      "sha256": "9e3ace692f0a9219dc67bedb6131a4bf05d0ee7faa5c4d7478d5b4661d124551"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/fee2724f-5d72-40c1-961b-394a2677c8c5_DOIDBridge.owl_protocowl.owl",
+      "size_bytes": 1348642,
+      "sha256": "da1a51775f1c747667bafb16eee668de2459247d26aac4da8f3ec7295827beca"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/ff8566a7-b5cf-4101-84fa-e7ed204b83d2_Location.owl_protocowl.owl",
+      "size_bytes": 4251,
+      "sha256": "cb34f905cf292a9804a57b666ca0e39baca46f055b07941c5829c4a6e8dc85a8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/hp.human-phenotype-ontology.442.owl.xml_protocowl.owl",
+      "size_bytes": 412597,
+      "sha256": "fba1883c9b6c04864fe6c47afd1604ae89d22510298303572ff1e557955c4b25"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-0-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 554032,
+      "sha256": "d7183be734a7db3e2e1425a669914e19211d198891bad125046550b59fdd31c6"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-0-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 538259,
+      "sha256": "4ec467130d9a5bbe185439519f29af93528b13e2dba76451feb3edf38f1c7530"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-1-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 695614,
+      "sha256": "c58786f2a3e64deb54b6bf659f641a860f11ea22a1d94cbe855f2d94fd7c9bd8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-1-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 703286,
+      "sha256": "91e11fa866b8fc03900685655479169c9efcdc2f056c804f203b4732e8d91182"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 955811,
+      "sha256": "926758a281e6475048df3b1546d98bd260fdc9ef29ae658215d397cd02b3fb65"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 1077715,
+      "sha256": "842524517fb1c69f68d163b2309493de89016d64bcd4c3b226273876e3d19ad4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 899210,
+      "sha256": "fd138512ef715bc13914fd0199bae790ae3c3a1b28462d31e1f135a4903c5448"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 1201353,
+      "sha256": "1bc1a728b0978364dc173c93b689dd2e37b85a254660cf92be6c59e873e2642d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 1212320,
+      "sha256": "5e1bfb856a7c2b7ba3c4cbdacc9a519b8714ac8201f318acd5d14e4aedc84cbd"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/ntdo.neglected-tropical-disease-ontology.1.owl.xml_protocowl.owl",
+      "size_bytes": 19293,
+      "sha256": "261d6862b67c0584a9851385db02793440cf2f3546840c5d149625ea0d13c15e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/MIS_128/syn.sage-bionetworks-synapse-ontology.3.owl.xml_protocowl.owl",
+      "size_bytes": 826754,
+      "sha256": "e4bf37f5eb0b97dd7d5a3e70cb1f0f23dac1cce0362510c935d7d377e7655860"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00022.owl_protocowl.owl",
+      "size_bytes": 3995,
+      "sha256": "65dd1b471265893dce1da1093f4e384a07e1a34aaae38aed2d925147723a9083"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00141.owl_protocowl.owl",
+      "size_bytes": 1938,
+      "sha256": "ba59a99d74c15e098deb88987d1b16a6a04c396d75cca95f039929049096e8d3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00280.owl_protocowl.owl",
+      "size_bytes": 5921,
+      "sha256": "ccf4bd0ecb0bc942d1601ec5c8e7b3581990998394d29b28fe4fc352ea53af6d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00384.owl_protocowl.owl",
+      "size_bytes": 14235,
+      "sha256": "a21a3e6e19167f3cfee3dfd184f7212810df760950c00b61e1bfd1e7ed405e41"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00456.owl_protocowl.owl",
+      "size_bytes": 26507,
+      "sha256": "6ccebb1cba15c2bccb63ac01c2e3565b4564b2561030c59fced0c3368103a2f3"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00496.owl_protocowl.owl",
+      "size_bytes": 156386,
+      "sha256": "7df8083e86ca016144ba513f4a7041bb4f64c4951515ce353cbb02bfc1e7b3b2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00516.owl_protocowl.owl",
+      "size_bytes": 652899,
+      "sha256": "ed3a3fc698a84edc8a9c8ea547367e66bb95091759d95952202d95d83ba99984"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00535.owl_protocowl.owl",
+      "size_bytes": 226262,
+      "sha256": "025e665232b7ac5cdb416af39fc4dd15492818498aa8646e8a289014bb2b7691"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00536.owl_protocowl.owl",
+      "size_bytes": 3352233,
+      "sha256": "8cb39bc9469c4312a1e7cf607f37aaf24078f5f477853bb6de026792cc63c1b0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00597.owl_protocowl.owl",
+      "size_bytes": 110431,
+      "sha256": "0f9c949d7b82cac85fb36e4c809bc933580fc49ae2a85455e222bc11c63c49fb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/00606.owl_protocowl.owl",
+      "size_bytes": 25442,
+      "sha256": "d8f59af17289c9fbcc6768ed873b4ca6727a1db91a962324377314c70e375ac8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/04c0c4ef-e210-41a7-b86b-1f945045bc8f_kupocells.owl_protocowl.owl",
+      "size_bytes": 9467,
+      "sha256": "be6006e470bac80ba286a2504b00850d632618cc5180d71065475ee6d68b74a8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/061ac8ca-5542-4610-ad64-0b21975d6fe4_enotype_xp.obo_protocowl.owl",
+      "size_bytes": 224857,
+      "sha256": "27b00a7dae8c21e2172bdf9e6a43e03220dc8a7517359874b7929f2a2caf08fb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/0ccf0454-d777-4fec-b1cc-03b5a300824d_chemtop.owl_protocowl.owl",
+      "size_bytes": 3047,
+      "sha256": "19933dec78ee2afc236af20f6e83bc15d83d58e2ce0584466f77f454f0affbe0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/0edc7fed-a5da-49fa-878f-1854501a1f1e_prerelease.obo_protocowl.owl",
+      "size_bytes": 115050,
+      "sha256": "6eecf13d166479bc8aa0d775483ca6c000eae1e5c702f6c3c2cb3d68a26c03ed"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/0f50cfb0-4be7-4239-8816-b5e06f63beb7_erativeOCL.owl_protocowl.owl",
+      "size_bytes": 11355,
+      "sha256": "c6e51bd60478f3c37fa0df83eaef542cd137a4021a9ae269766e716a3c9c00d8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/19deea53-8a8c-48c0-9cde-99140ba1a5e2_tance_edit.owl_protocowl.owl",
+      "size_bytes": 78230,
+      "sha256": "ef8440c3e4607d6a0a506d7320f6730db99d2c29426ed6c63bb1c5b1fa0efe7e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/1ae83c60-e25b-4f30-afda-9a407d2da8e3_ra_anatomy.owl_protocowl.owl",
+      "size_bytes": 68863,
+      "sha256": "65cfd8240c1d649645766941804a2b75e2ef01b2b50c049d5740f258db7cb117"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/1b104481-2d27-43b4-86a3-98e6b2fdd413_fbdv.owl_protocowl.owl",
+      "size_bytes": 4534,
+      "sha256": "42dddfc515333a3d404bf9c116341ddb6851c73c9cfa805c91157ab1cbcb49af"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/1bb771b6-f131-46af-9cde-4294fb600b0c_twork_v0.1.owl_protocowl.owl",
+      "size_bytes": 2104,
+      "sha256": "fddaeb29e8c07e2929bde224fcb4c9e74365e9cbb3bd390b05849ffe0000ea3e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/2445e055-6dd4-4787-ba1e-0e20739a30e4_LUMO.owl_protocowl.owl",
+      "size_bytes": 17450,
+      "sha256": "5ff696663bb9a35c4621045719e67a5c5d3ebfd4ad9da8e0d50abdf89bba3e64"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/2577736a-db03-46fc-9362-274e3af66718_propreo.obo_protocowl.owl",
+      "size_bytes": 15266,
+      "sha256": "fd03803cf23777248e8d17b472669c9a1b2787aae351f7af1ebead127552ae7e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/32d8a12b-5c75-4d62-a3a2-b3bc235d506d_expression.owl_protocowl.owl",
+      "size_bytes": 18307,
+      "sha256": "bb63fdb89a74c915a40037bee4537c26239b00d3e16a12e1b9b9aa14f1e8809a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/32f6e531-f8f3-4bb3-a0f7-25c664c6acba_ecule_role.owl_protocowl.owl",
+      "size_bytes": 2609607,
+      "sha256": "e2030c6b4bdbf973c258b7f89ddf6dba4ca5d12bd2f09d80e2f4e2d1e833aed8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl_protocowl.owl",
+      "size_bytes": 39710,
+      "sha256": "cc08ce3829acdefe40cd4dfcf757c4fe5881abadade05a1ba61790bf4f613634"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/3a8b11c8-7efa-4dbb-9dfe-5acd4b18df60_rsimplegaf.obo_protocowl.owl",
+      "size_bytes": 933061,
+      "sha256": "3f1e140ee47d36337e7c7412d000b180b33185629edd31d35e66ee58a102f262"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/40ffe51e-eda2-4415-9d0e-973629b32524_EHDAA_protocowl.owl",
+      "size_bytes": 53854,
+      "sha256": "f8992cbaa53e607aa0d1dfc36b2a1b1bbf54dcd9dd5f5d8b3f6681c21ad15e8e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/419e8422-f608-478b-9ce7-f551abb20172_sgenechrom.owl_protocowl.owl",
+      "size_bytes": 2145137,
+      "sha256": "af95b4867355f453f2e79371abaa9d5e0e3a79df92cc57953fbb0072953aab8e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/4859c215-f75d-42bf-8520-d0caf9dde442_caro.owl_protocowl.owl",
+      "size_bytes": 2582,
+      "sha256": "0eb5119b84df9ba5f4ffe148214f82cd2c451b688967ca283b6393d44b8db387"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/4a8a1268-458c-4f75-8a90-6e0a7c24cfe2_fyposimple.obo_protocowl.owl",
+      "size_bytes": 78761,
+      "sha256": "e535136dd630f2486e99ee8f8763b5337b06db8b25adadb2df6c7a525230546c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/50fc5b44-9af0-4540-866e-a19f5eb44a23__2010_base.owl_protocowl.owl",
+      "size_bytes": 33161,
+      "sha256": "ce1cff2e09aaf1ec2f4d4bb2a8d5c1d1762e76bb804ebc16e4c31167b5dfcfd0"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/54bd4a53-4111-403d-8d8e-010116144168_tagenomics.owl_protocowl.owl",
+      "size_bytes": 2499,
+      "sha256": "564de0345a790d98ac6ae2c208f21b065f30399a7c59182b405cdf2a674fd07b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/55cf17e6-2a7b-4880-a565-d62100789957_Function_1.owl_protocowl.owl",
+      "size_bytes": 3792,
+      "sha256": "dae1fa32de2d884aa55696dd84e892f1c0119c5e4eeaa36faf78e0e17b2c9c5a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/58197550-a9dd-4328-9ea0-9f26169c8e22_NIFMolecule.owl_protocowl.owl",
+      "size_bytes": 159666,
+      "sha256": "9cc81d41d2a6e7414d77959be62371ec3121d44db489c1338cf1ba1758848f74"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/5ce4039f-7515-4d22-b1b5-8cc98458c243_Mpeg72001.owl_protocowl.owl",
+      "size_bytes": 46023,
+      "sha256": "5ca8df913ce45a02c75251d56294c213b8aee62a8192bdb6548397e46cf82564"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/75549c56-685e-448c-afe5-03755ad3217c_go.owl_protocowl.owl",
+      "size_bytes": 1316841,
+      "sha256": "334a59088cda0cc64519bb0912fca16dd62ee4ba56863314c5b89459d0f91bca"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/756d4706-697f-452e-99cd-dbf32081601a__ontology.owl2_protocowl.owl",
+      "size_bytes": 197587,
+      "sha256": "02506f7819158c5bcbdd372ac83e764a46ce45e4a83d5d8630594d5ddac5314c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/77094653-1dd0-493a-9927-7e327ab26df1_phylo.owl_protocowl.owl",
+      "size_bytes": 12639,
+      "sha256": "72b1ce4bc38bbf5080f1d08a4b9268ccf80e3b7295228ed3f7ed7ca5d74a0050"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/77af02d9-169a-4074-83f3-b4e89d13bdc5_galen.owl_protocowl.owl",
+      "size_bytes": 103715,
+      "sha256": "9a928615f525527e688b4b3555a172ac84505f83059de03d9a8ebbe30cc811cb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/8483d657-6932-4d42-8980-3b7eb996c17c_ngineering.owl_protocowl.owl",
+      "size_bytes": 4352,
+      "sha256": "ec9b8d904f65ac446bca40519ed6e233775470e86d6368c08488e6a3dd1ddb22"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/8b075aae-de78-4da8-ab82-5c5afbeab78f_leost_taxonomy_protocowl.owl",
+      "size_bytes": 3876486,
+      "sha256": "fe9e1832284e594fe02fdf94876b5acd83d994a8d8fc4dee7e2e3fbcafe749fc"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/8bdbdcc6-2c79-48af-8157-66abf593a8f2_classified.owl_protocowl.owl",
+      "size_bytes": 63417,
+      "sha256": "131a0abdb4eee86687dab4478c6dafbdc1c0159012ecc809355a2f774ecdd547"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/8ec61954-36f1-45db-afa0-09e6683b4f21_ent_xp_go.owl2_protocowl.owl",
+      "size_bytes": 8634,
+      "sha256": "3e51960fdb9e1e883364c075892269474797462fccf19b3b69b02da6b3727170"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/a14a100e-202f-4eb1-9539-b24a28b802fb_cl_import.owl_protocowl.owl",
+      "size_bytes": 63966,
+      "sha256": "e7807395d21649be2cff7f2248b602cc493346e46609b5a0194917614fa8e021"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/a9712c71-8004-4e17-b056-4f7a11e7d64d_ABGSegment.owl_protocowl.owl",
+      "size_bytes": 53894,
+      "sha256": "d00a19898e75e6254b02873429116a676ae8338e7094154e2e9e2c3129e8e066"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/afad60ce-2326-429e-81c5-ca55842c39c3_entication.owl_protocowl.owl",
+      "size_bytes": 10700,
+      "sha256": "b1013cf351e1000492f6529d303d5843a20bebdde4405961c6597764117f13bb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_00fec224-5de9-4f5c-bd58-6fe5903fc3a0_gilcore.owl_protocowl.owl",
+      "size_bytes": 2892,
+      "sha256": "805a2f9332f35bac5f21c0e646d7e373f255a70908daf2280c1bf506efe67c01"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_015e0fd4-bede-40a3-8406-3dfc6fc6a8dd_all.rdf_protocowl.owl",
+      "size_bytes": 12161,
+      "sha256": "e44433c311564137ee85940b47ba1c67427ba9acf5146ad5470b1c978c0da04d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_071feca2-a248-4370-97da-ff1d0b83c571_logyv0.1.3.owl_protocowl.owl",
+      "size_bytes": 13579,
+      "sha256": "a657ab3055baa38e839cf9a4060d9b37b0aa9d58939a378d0dc4dcadf9e1d043"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_0d5857a3-e59e-4648-9efa-e40e9aa42ecc_Grounding.owl_protocowl.owl",
+      "size_bytes": 3827,
+      "sha256": "21dcddfcfea11a27dadf04a36fd66b8703d50c7f7faafe00c96ed1395c168a06"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_187f0d06-043e-4d8a-82a7-f5a2d020ec79_pmbok4.owl_protocowl.owl",
+      "size_bytes": 18452,
+      "sha256": "71b2281a297a35239072a871c03e7f0bd9ef2cfcf442c6910fc4074d3d50adf2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_261f18de-581b-4334-9bd1-fa87028404cc__component.owl_protocowl.owl",
+      "size_bytes": 60374,
+      "sha256": "5b9a29f97b7cd3d934f11da4c927d1ecfdb316158e0549ed2afedbba9d09475b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_2886c605-9dfb-4cc2-9528-8b56dd528434_CMO_OWL.owl_protocowl.owl",
+      "size_bytes": 72807,
+      "sha256": "0cd54c2e5435ee7e4d00f9e2ddf4552506e8d7fc3cfee7518654aedd8425e18b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_2c12ed51-4979-4434-914a-ecea1d50d0da_udy_design.owl_protocowl.owl",
+      "size_bytes": 1949,
+      "sha256": "e1305f1187edce1de404727a6ae6e2b59230280384d24d3c1cacb753de83602b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_3b913059-e630-4275-be45-859984a1b7be_e_semantic.rdf_protocowl.owl",
+      "size_bytes": 9709,
+      "sha256": "5f5b4cf39411bedc6bf415178e91607fa1ea106a7033670c4eeee3672ac19a54"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_4907f5f7-6fb8-49a4-8f69-33907519ca4e_bio2rdf.owl_protocowl.owl",
+      "size_bytes": 7900,
+      "sha256": "dd18801663bf2ce7856d3d712c34728fa5492be3a62ee27754db2c49266e6a26"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_4e70f119-38cb-4762-aae7-b588cfa028e0_Profile.owl_protocowl.owl",
+      "size_bytes": 3097,
+      "sha256": "73998efc773c077e03c13b979c760d0a5f36a5c83e1b29447d1e1c97cf0920eb"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_50c9ffca-2132-4434-afab-d4ce20cc2714_SUMOLite.owl_protocowl.owl",
+      "size_bytes": 20077,
+      "sha256": "72249d2ce0d2dd29550f9eaf4f8a9760c835382d41a3d1191ef18197bffbe5ca"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_59c42aeb-6dc2-4824-a7ec-6aed305e2aa5_alModel2.0.owl_protocowl.owl",
+      "size_bytes": 7265,
+      "sha256": "bb0e225e84af8ae8f87e7bb9a9c01f54611383a1568560e8dc818b2fa1fb5ef8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_5a31ff58-7b01-4f05-b0ee-a5993d80b7ed_NIFOrganism.owl_protocowl.owl",
+      "size_bytes": 21607,
+      "sha256": "c692e909db94ab1af4ee80e84a1b42137e59aa68ac0c75a80de7ba0d681e5785"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_8a0f3776-a145-498d-bff7-015edd0be169_ongkhalink.rdf_protocowl.owl",
+      "size_bytes": 26029,
+      "sha256": "41ebef635959e3c0f136ffbb423ce029d4387b593851e8abec1fef86425aa9e1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_d4af5918-ea4f-41f6-af2c-1aac74993011_RIMDatatype_protocowl.owl",
+      "size_bytes": 3718,
+      "sha256": "8e45271fe75ae2ab3a5f08735d489d4337814aa67049e2ddc862e256e8718b47"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_ec09fbd9-58ba-41a3-9c84-368d91118936_OBIMay2008.owl_protocowl.owl",
+      "size_bytes": 2487,
+      "sha256": "2fc1a31e84a65698552feed1f4a5152e8d2e1b5a51bd052a53ce536edcb155dd"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_faa95fb1-bdbd-4f60-b9cc-fda92c198986_PaulFisher.rdf_protocowl.owl",
+      "size_bytes": 4396,
+      "sha256": "e8a03d4165a8dc3a012bf3830d4302c83603fb3f2ce00c37a944fe0560dc9dab"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_genomic-cds-demo.owl_protocowl.owl",
+      "size_bytes": 869573,
+      "sha256": "694f1ea6444e75cdc45b0d305e25364e4809f312e1e509d8b4487e7b99663517"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_genomic-cds.owl_protocowl.owl",
+      "size_bytes": 860359,
+      "sha256": "9125ed6edece1d516b54800a0b64fbecac672d6e28876e591df4f462a4b538a1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_kb-owl-syntax-coreference-IDs-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 642773,
+      "sha256": "6d958d246ea35a6e2868c4fb72d1417ce49340e4e1f42cc6bb6ccdeb35d5e440"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_kb-owl-syntax-unraveled-depth-1-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 379365,
+      "sha256": "ef35c9ff5c76c2e13ab0a8bbb213b79d7a8f77eb00fa530996a32788e3cb237b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_kb-owl-syntax-unraveled-depth-3-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 252020,
+      "sha256": "61971a6df088e5e3ffb61a37ead0557e9e4bebaa29c73706d2505218ab39eec8"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/approximated_kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 253316,
+      "sha256": "c1cf1b73be6719f5e2117c8b3bfd8732aab1d4a35ad8918a1b75e52d11359c56"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/b7c19a22-c91c-4b51-894a-d8a8a3d2a7c0_cl.obo_protocowl.owl",
+      "size_bytes": 216279,
+      "sha256": "8ca8e831b2eed5d2b427bf61c3ace5445236dc3056e1a90ebe335f847425b078"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/c0ca4e3f-ff6b-4eac-882c-183788832e5f_citygml.owl_protocowl.owl",
+      "size_bytes": 16548,
+      "sha256": "0934f4ea51f648e39edb6a1497450e10f4897d14a45dc7cc3007b6acadf404ba"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/c2abef0f-3619-4589-860a-22821e5142ac_ntology_xp.obo_protocowl.owl",
+      "size_bytes": 172900,
+      "sha256": "2c337a1a00f2ac56d00103892ae8ca8ee0e35f51b0b9d40628ad0966cb6ff3af"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/c343f7b1-c70e-4dbd-bef7-0d3b9aaf6fd7_prsimple.owl_protocowl.owl",
+      "size_bytes": 1567386,
+      "sha256": "9d74c51bc0544545e4bc882d1b44a1ddfb9ae1abc029f6e93d224557deacda7a"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/c93db046-8fc7-4bfc-8abe-c4ccd5090272_tivitydemo.owl_protocowl.owl",
+      "size_bytes": 1629,
+      "sha256": "6bd3dae0ea930b525f31befa2c8989b4e3b521380679957acf1ffc5e49f77dd2"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/c9422304-a4fb-40e4-9d0f-81bdea1cd50b_l.obo.PREVIOUS_protocowl.owl",
+      "size_bytes": 149765,
+      "sha256": "4bd65015b25ed41e3c6b9b4d080ddc4d3de057f86a13c42dcebcb350da995e8f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/csso.clinical-signs-and-symptoms-ontology.4.owl.xml_protocowl.owl",
+      "size_bytes": 6868,
+      "sha256": "050fdaef6a32ecd43033ae1d845f5593dc2b6fc02f049a7f9f33c09e83baa683"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/d072d130-da53-40a3-a616-59642617ccc3_M4L.owl_protocowl.owl",
+      "size_bytes": 13289,
+      "sha256": "45368dabdc00a04e08768ae2b1c6d4a98c52fe0f25d0d53b53a36a9284406143"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/d0ded12f-0a03-4c16-9784-39f0ae56e7ff_kyamk.owl_protocowl.owl",
+      "size_bytes": 191729,
+      "sha256": "865b9f90d09e1824a0681064d82d221ccec2575168bd24ea050a0e74315242ef"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/d118f435-8920-4e8c-81b3-fb572717cfec_NIFFunction.owl_protocowl.owl",
+      "size_bytes": 3844,
+      "sha256": "4bb1bbf3aa4cf970c40bb6b54787b215724fef0763f19a7f1ab659e95840403c"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/d2de1f4a-7c94-4c4c-956e-38b7a836b4ed_protlabels.obo_protocowl.owl",
+      "size_bytes": 261345,
+      "sha256": "fe0d166accaf216d0efd43a16309d7c94a2ac3c1e1655c1f6c88b2bb815fb60d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/d9f87343-d24d-47c7-9a74-ee066c16d5c7_lsrth.rdf_protocowl.owl",
+      "size_bytes": 2528,
+      "sha256": "4f5f6ccbc23f03246370f4e0901e8d510827806a92b98511b0af1faada3aa337"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/e0a109c2-83f0-4d25-8cdc-f8068804dbb2_rsimplegaf.owl_protocowl.owl",
+      "size_bytes": 1003775,
+      "sha256": "a49fe118919c963cf316a01a37a64945a3b5deb574f15e3878084b3488d1044d"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/e1404a38-2d70-4173-8c02-6b6fac85cf32_DOLCELite.owl_protocowl.owl",
+      "size_bytes": 3351,
+      "sha256": "8a3f669504e78d2c4ea15c123b0814901773d4a60fbe7506021e5ff6b7d8dd37"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/efdc2a3d-b99d-4695-9d86-c000183b0c47_emapmerged.obo_protocowl.owl",
+      "size_bytes": 304756,
+      "sha256": "88e3c1fd6963c54ab0ce762f6fe002f3a328e7f97fa0ba74316be87b5a16aeac"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/f2a8ee0b-442b-4249-92b7-0299afc47da6_gina.owl_protocowl.owl",
+      "size_bytes": 842288,
+      "sha256": "42d84b58ca3ef2764ec7c36d930049639296b08e592e05242934044b92f01d00"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/fee2724f-5d72-40c1-961b-394a2677c8c5_DOIDBridge.owl_protocowl.owl",
+      "size_bytes": 1413189,
+      "sha256": "c9bc86c2c4a3d28882e9821e07e49443d4aa94c120c90000f31dfbce60f70854"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/ff8566a7-b5cf-4101-84fa-e7ed204b83d2_Location.owl_protocowl.owl",
+      "size_bytes": 2642,
+      "sha256": "3b6f499e859b3cbcef5fc90afec22c40fdf03fa20e4e75daeec2414e33ec5e0e"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/hp.human-phenotype-ontology.442.owl.xml_protocowl.owl",
+      "size_bytes": 227033,
+      "sha256": "03b970f696db98eaa97d629597cfc91b8a8fa5fd5ba6e05963215ddf1a3d9e37"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-0-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 231701,
+      "sha256": "7512eff12dce0e6ebe126e518c2dca671a0b19a7b62dcbbda2fab6f0c8861202"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-0-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 228535,
+      "sha256": "4c3c180dc8ac1b00ab0aab9353f9ab6294d1fec554d5f1c5bab9d6b50cd96f37"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-1-km-relevant-cardinalities-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 284537,
+      "sha256": "f3e442941e75b4d95755220fd83ec830015323977ede4bc5240e84ef4f3b3760"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-1-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 286535,
+      "sha256": "add91b2c7bcaef5548a7f18893b18640ff7586012ed1fbcb43177b823551d3a1"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-2-km-relevant-cardinalities-disjointness-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 371856,
+      "sha256": "fbc3c4d569e9df12a615cbb85d4761dca2e61812978bac1c957d791f4fca0fd4"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-3-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 430968,
+      "sha256": "01a955c2a9ab74004f611d43fafc610876184f55d43089c4b67d97d7a4291aae"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-3-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 377415,
+      "sha256": "38c4caf9a749494ede16812eb9d228767ac52a57e4eff9146d2e91c68f5ebe5f"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-4-disjointness-triggers-constant-classes-value-nominals.ofn_protocowl.owl",
+      "size_bytes": 515197,
+      "sha256": "d9145bc9b0f15e13cd9e9d2e8fe19146dd0cdc6b6c78709f3ca42be1bab679c7"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/kb-owl-syntax-unraveled-depth-4-km-relevant-cardinalities-disjointness-triggers-constant-classes-value-classes.ofn_protocowl.owl",
+      "size_bytes": 518386,
+      "sha256": "d811617a31a2805a86d44578283a03c45968ed365be06ccc28507830cfa57d3b"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/ntdo.neglected-tropical-disease-ontology.1.owl.xml_protocowl.owl",
+      "size_bytes": 8672,
+      "sha256": "18ca5cfbf9acfaccebcf86746cd7a22fa37126140ac6fa3ec47f3e0966f7b969"
+    },
+    {
+      "path": "progetto_partenza/dataset_onto/protocowl/std/syn.sage-bionetworks-synapse-ontology.3.owl.xml_protocowl.owl",
+      "size_bytes": 415275,
+      "sha256": "926ccf62453c4081b159445ed9db9446127d21d6760658a9320e1ee1a7b0d312"
+    },
+    {
+      "path": "ProtocOWL_Spec_v1_0.pdf",
+      "size_bytes": 276610,
+      "sha256": "c4c3fd1f59fb745ab2e4312cb96362f9da1e8e17e622136753996957a872ce08"
+    },
+    {
+      "path": "progetto_partenza/protocowl-owlapi/benchmark/metadata.csv",
+      "size_bytes": 47407,
+      "sha256": "42d43462a9beb9115a73571d6913c7737f7b33806763a5cea06c99dbc0962327"
+    },
+    {
+      "path": "progetto_partenza/istruzioni_benchmark2.txt",
+      "size_bytes": 11671,
+      "sha256": "0d66237af89bae949238866ce5e66fbd17e2f83ea944effd63e5c6cc32e81cbc"
+    },
+    {
+      "path": "progetto_partenza/protocowl-owlapi/lib/src/test/resources/home.oprt",
+      "size_bytes": 1788,
+      "sha256": "45f253d314e4a5a70e11b6440add21e440b7960563303ca10fe2808203191a64"
+    },
+    {
+      "path": "progetto_partenza/protocowl-owlapi/lib/src/test/resources/pizza.oprt",
+      "size_bytes": 16181,
+      "sha256": "aadcdd6e33bcd6e7f2112ccdb1fe77e2a8be4c91d25fe793326d53d13fb76c25"
+    },
+    {
+      "path": "progetto_partenza/protocowl-owlapi/benchmark/revision_2026-09-30-clarified/chiarimento_docente.txt",
+      "size_bytes": 1263,
+      "sha256": "c256f8c668d5bb752eb162e2e9036fa4d99ced5c197c07a2a82ec9d93538ad54"
+    }
+  ]
+}

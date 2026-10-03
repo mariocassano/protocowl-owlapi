@@ -27,6 +27,16 @@ public class ProtocOWLTest {
     private String getOutputPath(String name) { return "build/out_" + name + ".oprt"; }
 
     public static void assertEquals(OWLOntology in, OWLOntology out) {
+        assertEquals(in, out, false);
+    }
+
+    // The professor explicitly permits this missing alias in the historical
+    // pizza.oprt oracle only. Dataset and current-renderer comparisons stay exact.
+    static void assertEqualsPizzaReference(OWLOntology in, OWLOntology out) {
+        assertEquals(in, out, true);
+    }
+
+    private static void assertEquals(OWLOntology in, OWLOntology out, boolean pizzaReference) {
         var axiomsA = in.axioms().collect(Collectors.toSet());
         var axiomsB = out.axioms().collect(Collectors.toSet());
         // Avoid building a potentially enormous diff on successful comparisons.
@@ -46,7 +56,14 @@ public class ProtocOWLTest {
         // 2. Compare the actual prefix bindings; missing/default/alias entries are data.
         var inMap = in.getNonnullFormat().asPrefixOWLDocumentFormat().getPrefixName2PrefixMap();
         var outMap = out.getNonnullFormat().asPrefixOWLDocumentFormat().getPrefixName2PrefixMap();
-        Assert.assertEquals(outMap, inMap, "Prefix maps differ (actual vs original): " + diagnostic);
+        var expectedPrefixes = new java.util.HashMap<>(inMap);
+        if (pizzaReference && !outMap.containsKey("pizza:")) {
+            String namespace = "http://www.co-ode.org/ontologies/pizza/pizza.owl#";
+            Assert.assertEquals(inMap.get("pizza:"), namespace);
+            Assert.assertEquals(inMap.get(":"), namespace);
+            expectedPrefixes.remove("pizza:");
+        }
+        Assert.assertEquals(outMap, expectedPrefixes, "Prefix maps differ (actual vs original): " + diagnostic);
 
         // 3. Controllo delle Annotazioni dell'Ontologia 
         var annA = in.annotations().collect(Collectors.toSet());
@@ -119,7 +136,16 @@ public class ProtocOWLTest {
     private void executeRoundTripTest(String ontologyName) throws OWLOntologyCreationException, OWLOntologyStorageException {
         // 1. Parser Test (Confronta .owl con .oprt di riferimento)
         var func = loadOntology(getOwlPath(ontologyName), new OWLFunctionalSyntaxOWLParserFactory());
-        var oprt = loadOntology(getOprtPath(ontologyName), new ProtocOWLParserFactory());
+        // These unchanged oracles predate the revised integer tags. The version
+        // byte cannot distinguish the revisions, so select compatibility explicitly.
+        var referenceManager = OWLManager.createOWLOntologyManager();
+        var oprt = referenceManager.createOntology();
+        try (var stream = new BufferedInputStream(new FileInputStream(getOprtPath(ontologyName)))) {
+            referenceManager.setOntologyFormat(oprt,
+                    new Parser(Parser.EncodingRevision.LEGACY).parse(stream, oprt));
+        } catch (IOException e) {
+            throw new OWLOntologyCreationException(e);
+        }
         // Check our renderer even if the supplied binary has inconsistent metadata.
 
         // 2. Renderer Test (Scrive in .oprt e rilegge)
@@ -127,7 +153,8 @@ public class ProtocOWLTest {
         writeOntology(func, outPath);
         var reloadedOprt = loadOntology(outPath, new ProtocOWLParserFactory());
         assertEquals(func, reloadedOprt);
-        assertEquals(func, oprt);
+        if (ontologyName.equals("pizza")) assertEqualsPizzaReference(func, oprt);
+        else assertEquals(func, oprt);
     }
 
     @Test

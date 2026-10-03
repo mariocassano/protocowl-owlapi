@@ -1,0 +1,561 @@
+VERIFICA DELLA CODEBASE E AGGIORNAMENTI DEL REPORT FLC
+Revisione del 30 settembre 2026, successiva al chiarimento sui fixed-point decimal.
+
+ESITO PRINCIPALE
+80/80 test rapidi, 300/300 operazioni di copertura, 200/200 round-trip e cinque test dello script superati. Benchmark completo: 500 misure validate. La precedente segnalazione dei decimali negativi come errori del nuovo dataset è superata: mancava nel decoder la compensazione precisata dal docente. I file forniti non sono stati modificati.
+
+COME USARE QUESTO FILE
+La Parte A riepiloga il lavoro; la Parte B indica sezioni e testi da copiare fra INIZIO TESTO e FINE TESTO; la Parte C controlla la coerenza finale. Se avete già applicato il TXT precedente, aggiornate soprattutto 4.1, 4.5, 6.1, 6.3, 6.4, 6.9, capitoli 7 e 8 e bibliografia. La nuova sezione 7.6 contiene i risultati. La Parte B mantiene anche le modifiche necessarie a chi parte dal PDF originale. Il PDF non è stato modificato.
+
+======================================================================
+PARTE A - VERIFICA E LAVORO COMPLETATO
+======================================================================
+
+A.1 Regola dei fixed point
+La parte intera negativa viene diminuita di uno prima di essere codificata come SVarInt. La funzione Zig-Zag resta invariata. Dopo la lettura di s, se s < 0 il decoder del formato 5 costruisce '-' + abs(s + 1); altrimenti usa s. La frazione viene ricostruita invertendo le cifre. Conservare separatamente il segno permette di ottenere '-0' e quindi distinguere -0.5 da 0.5.
+Esempi: 16 01 05 -> -0.5; 16 03 00 -> -1.0; 16 07 00 -> -3.0. Benzoate e Azide non sono errori dei nuovi dati. Sono stati aggiunti dieci casi indipendenti e una regressione di compatibilità storica.
+
+A.2 Codice e materiali
+Restano le nuove codifiche degli interi (tag 3/4 e modulo unsigned VarInt), l'uso di BigInteger, le correzioni degli overflow strutturali e la conservazione rigorosa dei prefissi. Parser.EncodingRevision.LEGACY seleziona esplicitamente la convenzione numerica dei vecchi riferimenti home/pizza; il parser ordinario segue i materiali aggiornati. Il renderer continua a scrivere decimali testuali e ProtocOWL standard senza Reset.
+Il chiarimento pizza riguarda solo l'alias duplicato mancante nel riferimento storico. Il dataset e i nuovi output sono confrontati esattamente.
+Il nuovo dataset è progetto_partenza/dataset_onto, quello precedente dataset_onto_old. I 100 Functional sono invariati e tutti i 200 binari sono nuovi; i materiali non sono stati alterati durante la correzione.
+
+A.3 Esiti
+- 80/80 test rapidi: 10 ProtocOWLTest, 11 BenchmarkComplianceTest, 15 CodecRobustnessTest, 43 IntegerEncodingTest e un BenchmarkResultsTest; zero skip.
+- 300/300 operazioni di copertura riuscite, comprese 100 scritture con confronto.
+- 200/200 casi dataset completano a, b e c; zero skip. roundtrip_sizes.csv ha 200 righe con dimensioni uguali fra varianti per ogni ontologia.
+- Cinque test Python della pubblicazione superati; sono prove simulate, separate dal benchmark reale.
+- 500 misure del benchmark completate e validate; output benchmark_results.csv e benchmark_environment.txt.
+
+A.4 Riproducibilità
+JDK 24, target Java 21, Gradle wrapper 9.0.0, heap test 4 GiB. Misure in JVM separate con -Xms256m -Xmx4g, GNU time 1.9 e hardware registrato nel rapporto dell'ambiente. Le impronte degli input, dei sorgenti e dei risultati e i report XML sono in benchmark/revision_2026-09-30-clarified. La diagnosi precedente è archiviata come interpretazione superata in benchmark/revision_2026-09-30.
+Le modifiche sono locali su main, base 73821444f9403e54d0848367de3712cae47a6bb0: non è stato creato un nuovo commit né effettuato un push. I risultati storici del 20 settembre non sono stati riutilizzati come misure correnti.
+
+A.5 Limiti
+I test validano l'intero dataset e i casi sintetici, non ogni possibile stream o datatype. La regola chiarita è applicata al formato fixed point 5; non cambia la funzione SVarInt comune o l'esponente del formato 6. Add/Remove, scrittura MIS_128 e produzione dei decimali compatti non fanno parte della consegna corrente. Le misure hanno una sola osservazione per combinazione; occorrono ripetizioni per stimare la variabilità prestazionale.
+
+======================================================================
+PARTE B - MODIFICHE AL REPORT, CON TESTO PRONTO DA INCOLLARE
+======================================================================
+
+B.0 Struttura aggiornata consigliata
+
+Conservare i capitoli 1-6, aggiornandoli come segue. Aggiungere 4.9, 6.8 e 6.9.
+Inserire il capitolo 7, 'Benchmark: metodologia e risultati', se non è già presente; altrimenti aggiornarlo, aggiungendo 7.6.
+Rinumerare l'attuale capitolo 7 come capitolo 8, con 8.1 e 8.2.
+Rinumerare la Bibliografia come capitolo 9 e completarla.
+Aggiornare il sommario automaticamente dopo l'impaginazione. I riferimenti seguenti usano numero e titolo delle sezioni, perché la nuova paginazione cambierà.
+
+----------------------------------------------------------------------
+B.1 - Capitolo 1, 'Contesto e obiettivo del progetto'
+OPERAZIONE: sostituire soltanto il primo paragrafo. Conservare il successivo paragrafo sulla traduzione fra OWLAPI e byte.
+
+INIZIO TESTO
+Il progetto, sviluppato nell'ambito del corso di Formal Languages and Compilers, riguarda l'aggiornamento di un parser e di un renderer Java per ProtocOWL, un formato binario destinato allo scambio di ontologie OWL. Il lavoro comprende l'allineamento alla specifica ProtocOWL versione 1.0 [1], il supporto alle ontologie di riferimento home.owl e pizza.owl e una successiva fase di validazione su un sottoinsieme di 100 ontologie ORE 2014. Quest'ultima fase introduce la lettura della variante con maximum index size pari a 128, l'analisi di copertura, il round-trip completo attraverso OWLAPI e Functional Syntax e l'infrastruttura per confrontare tempi, memoria e dimensioni. Il report distingue le funzionalità implementate dai risultati effettivamente verificati e dai problemi ancora aperti.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.2 - Sezioni 1.1 e 1.2
+OPERAZIONE: conservare. Rimane corretta, in particolare, la distinzione fra confronto strutturale e inferenza tramite reasoner.
+
+----------------------------------------------------------------------
+B.3 - Sezione 1.3, 'Step operativi'
+OPERAZIONE: conservare i due paragrafi su home e pizza; aggiungere il seguente testo alla fine.
+
+INIZIO TESTO
+Le nuove istruzioni del professore [3] organizzano il lavoro successivo in tre fasi da svolgere in ordine. La prima verifica la copertura dei costrutti sulle 100 ontologie del dataset: per ogni ontologia si leggono entrambe le varianti ProtocOWL e si prova la serializzazione del Functional di riferimento. La seconda verifica, separatamente per ciascuna variante, il percorso ProtocOWL -> OWLAPI -> Functional -> OWLAPI -> ProtocOWL standard -> OWLAPI, confrontando ogni risultato con il Functional iniziale. La terza prevede la misura di tempi, memoria e dimensioni e la produzione di un CSV completo di 500 righe dati.
+
+La variante MIS_128 richiede il supporto al frame Reset soltanto in lettura. Il renderer continua a produrre la codifica standard, senza Reset. Le ontologie che falliscono non vengono escluse dal campione: un costrutto mancante richiede un'estensione del codec, mentre un'incoerenza dei dati deve essere documentata e risolta prima di considerare conclusa la validazione.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.4 - Capitolo 2, 'Il codice di partenza'
+OPERAZIONE: conservare la descrizione storica della base iniziale. Correggere il refuso 'test.oprt.Il' in 'test.oprt. Il'. Non trasformare le limitazioni storiche in una descrizione del codice attuale.
+
+B.5 - Sezione 2.1, 'Struttura della codebase'
+OPERAZIONE: sostituire l'intera sezione, inclusa l'affermazione secondo cui gli interventi si concentrano soltanto su quattro file.
+
+INIZIO TESTO
+Il nucleo del codec è costituito da Constants.java, Parser.java e Renderer.java. Le costanti identificano frame e tipi complessi; il parser ricostruisce l'ontologia e gestisce Reset; il renderer raccoglie i riferimenti e serializza metadati e assiomi nella codifica standard. Le classi di integrazione con OWLAPI espongono parser, storer e document format.
+
+ProtocOWLTest mantiene i riferimenti storici home e pizza e il confronto condiviso fra ontologie. BenchmarkComplianceTest verifica costrutti, annotazioni e Reset; CodecRobustnessTest contiene 15 casi su overflow, cardinalità e prefissi. IntegerEncodingTest aggiunge 43 casi per la specifica aggiornata: esempi binari indipendenti per lettura e scrittura degli interi, compatibilità storica esplicita, decimali, troncamento e forme lessicali. DatasetRoundTripTest enumera le 200 coppie ontologia/variante e verifica il percorso a/b/c.
+
+Nel package benchmark, DatasetFiles centralizza l'elenco delle 100 ontologie e i percorsi; CoverageAnalyzer produce il rapporto di copertura; BenchmarkTask esegue una singola misura; BenchmarkResults valida il CSV finale. run_benchmark.sh coordina prerequisiti, misure in JVM separate e registrazione dell'ambiente. Il file lib/build.gradle.kts separa test rapidi, coverage e dataset.
+
+Le risorse home e pizza restano immutate. La pipeline corrente usa il nuovo dataset e non usa DatasetPreparer per filtrare o rigenerare il campione. I manifest delle impronte SHA-256 in benchmark/revision_2026-09-30-clarified identificano i materiali e i sorgenti verificati.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.6 - Capitolo 3, 'Aggiornamento delle costanti'
+OPERAZIONE: conservare i primi due paragrafi e la frase sull'IRI versionato; sostituire la parte conclusiva che comincia con 'Le costanti aggiunte comprendono...' con il testo seguente.
+
+INIZIO TESTO
+L'estensione per il dataset utilizza anche i tag delle restrizioni sulle data property, delle cardinalità sui dati e dei data range. Sono disponibili i codici dei formati numerici fixed point ed E-notation, decodificati dal parser, e i frame AnnotationPropertyDomain e AnnotationPropertyRange, rispettivamente 0x31 e 0x32.
+
+La specifica aggiornata [1] modifica il significato dei formati interi. Il tag 3, identificato da LITERAL_FMT_POSITIVE_INT, contiene un unsigned VarInt per un valore non negativo, incluso zero. Il tag 4, LITERAL_FMT_NEGATIVE_INT, contiene un unsigned VarInt per il valore assoluto di un intero negativo. Il segno dipende dal tag, non dal datatype. Le precedenti costanti SIGNED_INT e UNSIGNED_INT sono state sostituite.
+
+La presenza di una costante non equivale al supporto operativo. Reset, codice 0x02, è gestito in lettura, mentre Add e Remove restano fuori dallo scope. LITERAL_FMT_FLOAT e LITERAL_FMT_DOUBLE identificano i formati di valore 5 e 6 e non sostituiscono il datatype del literal. Questi formati continuano a utilizzare SVarInt per le componenti con segno.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.7 - Capitolo 4, paragrafo introduttivo
+OPERAZIONE: sostituire il breve testo introduttivo.
+
+INIZIO TESTO
+Le modifiche al parser riguardano lo stream, i metadati, i costrutti necessari alle ontologie di riferimento e le estensioni per il dataset ORE. La lettura ordinaria segue la specifica aggiornata, compresa la nuova codifica degli interi. La compatibilità con i vecchi riferimenti è distinta dal percorso usato per il nuovo dataset.
+FINE TESTO
+
+B.8 - Sezione 4.1, 'Struttura dello stream e frame'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Il parser legge il byte di versione e procede sequenzialmente sui frame. Per ogni header estrae il tipo con la maschera 0x3F e i due utility bit con uno spostamento di sei posizioni. Nella codifica corrente il frame End interrompe la lettura; rimane ammessa anche la terminazione alla fine dello stream. I tipi non riconosciuti producono un errore esplicito.
+
+Tutti i 200 binari della distribuzione aggiornata iniziano con versione 1 e frame di dichiarazione dei namespace 0x04. La vecchia distribuzione iniziava invece con 0x2A. Nel codice resta il percorso di compatibilità con la precedente tabella dei frame, ma non è il percorso usato per validare il nuovo dataset.
+
+La revisione della codifica degli interi non cambia il byte di versione, che resta 1. Non è quindi possibile distinguere in generale le due convenzioni numeriche da quel byte o dalla sola tabella dei frame. Il parser ordinario usa la nuova convenzione; i test dei binari storici home.oprt e pizza.oprt selezionano esplicitamente EncodingRevision.LEGACY. La modalità storica mantiene anche la precedente lettura diretta delle parti intere fixed point. La modalità corrente applica il chiarimento del docente sui valori negativi, descritto nella sezione 4.5. Il renderer produce soltanto la codifica corrente.
+
+Nei frame di assioma correnti, il primo utility bit segnala le annotazioni, lette prima del contenuto dell'assioma. Nella sottoproprietà oggetto il secondo bit distingue la catena dalla forma semplice. La separazione consente di conservare anche le annotazioni delle catene di proprietà.
+FINE TESTO
+
+B.9 - Sezione 4.2, 'Metadati'
+OPERAZIONE: conservare. La descrizione di ontology IRI, version IRI, imports e annotazioni dell'ontologia rimane pertinente.
+
+B.10 - Sezione 4.3, 'Namespace e prefissi'
+OPERAZIONE: sostituire l'intera sezione, eliminando la descrizione dell'euristica che ricostruiva pizza:.
+
+INIZIO TESTO
+La gestione dei namespace mantiene i cinque indici riservati e adatta i nomi dei prefissi alle convenzioni OWLAPI. Gli alias dei namespace non riservati vengono conservati se dichiarati nello stream. Il parser non deduce alias dal percorso del namespace: una forma come /pizza/pizza.owl# non autorizza a inventare il prefisso pizza:.
+
+Le tabelle di decodifica sono distinte dalla mappa dei prefissi del documento. Un Reset dei namespace elimina le mappature non riservate usate dai riferimenti successivi, ma non cancella i prefissi già raccolti.
+
+Il docente ha chiarito che il suo encoder perde l'alias pizza: perché indicizza i namespace in una hash map: nell'ontologia pizza lo stesso namespace è associato sia a ':' sia a 'pizza:'. Ha autorizzato a ignorare questo caso nel task di benchmark [7]. L'eccezione è applicata soltanto al confronto con pizza.oprt; il parser non ricostruisce l'alias e il nostro renderer continua a conservarlo. I confronti del dataset restano esatti.
+FINE TESTO
+
+B.11 - Sezione 4.4, 'Annotazioni'
+OPERAZIONE: sostituire l'intera sezione, eliminando l'affermazione che il bit degli assiomi annotati non sia interpretato.
+
+INIZIO TESTO
+Il parser distingue annotazioni dell'ontologia, AnnotationAssertion e annotazioni associate agli assiomi. Un valore di annotazione può essere un IRI, un individuo anonimo o un literal. Nella codifica corrente, se il primo utility bit di un frame di assioma è impostato, viene letta la sequenza di annotazioni che precede il contenuto. L'assioma costruito viene poi arricchito con tali annotazioni. Il meccanismo comprende anche declaration e annotation assertion.
+
+Le annotazioni possono a loro volta contenere sottoannotazioni. Nella forma semplice la proprietà è codificata come identificativo aumentato di uno; nella forma annotata il tag zero introduce la sequenza delle sottoannotazioni e il successivo identificativo della proprietà non usa tale incremento. Parser e renderer sono stati corretti per distinguere le due forme. Un test sintetico verifica il round-trip di annotazioni annidate associate a più famiglie di assiomi, mantenendo distinta questa evidenza dalla verifica di interoperabilità con encoder indipendenti.
+FINE TESTO
+
+B.12 - Sezione 4.5, 'Literal'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Il parser separa il tipo del literal dal formato binario del valore: il tipo è header & 0x03 e il formato è (header >> 2) & 0x3F. Supporta stringhe, booleani, interi e decimali compatti fixed point ed E-notation. Nei literal tipizzati legge anche l'identificativo del datatype; nei literal con lingua conserva il language tag.
+
+Nella specifica aggiornata il formato 3 legge un unsigned VarInt come valore non negativo, mentre il formato 4 legge il valore assoluto e applica il segno negativo. Ad esempio, tag 4 e payload 05 ricostruiscono -5. L'accumulo numerico usa BigInteger, distinto dalla lettura limitata di indici, conteggi e lunghezze. Non viene più applicata Zig-Zag agli interi della codifica corrente.
+
+SVarInt resta necessario per la parte intera dei decimali compatti e per l'esponente del formato 6. La parte frazionaria è memorizzata con le cifre invertite: 2.04 richiede parte intera 2 e frazione 40. Per il formato fixed point 5, il docente ha precisato che, se il valore è negativo, la parte intera viene diminuita di uno prima della codifica SVarInt [7]. Dopo la lettura, un valore s negativo si ricostruisce come '-' seguito da abs(s + 1). Il segno viene conservato separatamente: s = -1 restituisce la parte testuale '-0', necessaria per distinguere -0.5 da 0.5. La funzione Zig-Zag non cambia; cambia l'interpretazione della componente intera dopo la sua decodifica. Ad esempio, i byte 16 03 00 rappresentano correttamente -1.0: SVarInt restituisce -2, poi la compensazione recupera -1. Il chiarimento è applicato al formato 5; non introduce una compensazione generale per ogni SVarInt o per l'esponente del formato 6.
+
+I test verificano le parti positive e negative, frazioni con zeri, '-0.5', '-0.0' e valori con payload su più byte. I booleani accettano soltanto i byte 0 e 1.
+
+Per i literal tipizzati in forma testuale viene conservata la stringa presente nello stream anche quando la factory OWLAPI tenderebbe a normalizzarla. Questo consente di rileggere forme come '+1' senza perderne il segno lessicale. Non permette invece di recuperare informazioni già normalizzate durante un precedente caricamento Functional.
+FINE TESTO
+
+B.13 - Sezione 4.6, 'Espressioni di classe e cardinalità'
+OPERAZIONE: conservare i paragrafi esistenti e aggiungere alla fine.
+
+INIZIO TESTO
+Per il dataset sono state aggiunte DataSomeValuesFrom, DataAllValuesFrom, DataHasValue e le cardinalità minima, massima ed esatta sulle data property. Nelle cardinalità sui dati, l'assenza del filler esplicito corrisponde al top datatype rdfs:Literal. Il supporto comprende inoltre data range nominati, intersezioni, unioni, complementi, enumerazioni di literal e restrizioni di datatype con facet. Le strutture annidate vengono decodificate ricorsivamente e i relativi riferimenti sono risolti attraverso la tabella degli identificativi.
+FINE TESTO
+
+B.14 - Sezione 4.7, 'Assiomi'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Oltre agli assiomi necessari per home e pizza, il parser gestisce DisjointUnion e SubObjectPropertyOf nella forma con catena di proprietà. Sono presenti le famiglie SubDataPropertyOf, EquivalentDataProperties, DisjointDataProperties, DataPropertyDomain, DataPropertyRange e FunctionalDataProperty, insieme a DatatypeDefinition e HasKey. Sono inoltre supportate le asserzioni negative su proprietà oggetto e dati e gli assiomi SubAnnotationPropertyOf, AnnotationPropertyDomain e AnnotationPropertyRange.
+
+Restano disponibili le disgiunzioni di classi, le proprietà oggetto equivalenti, disgiunte e inverse, domain e range, le caratteristiche Functional, InverseFunctional, Reflexive, Irreflexive, Symmetric, Asymmetric e Transitive, e le relazioni SameIndividual e DifferentIndividuals. La costruzione degli assiomi è collegata a un metodo comune che applica le eventuali annotazioni lette dal frame. L'elenco delle implementazioni non equivale a una prova esaustiva di tutte le loro combinazioni.
+FINE TESTO
+
+B.15 - Sezione 4.8, 'Gestione degli errori'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Il parser segnala esplicitamente versioni, frame, formati di literal e costrutti non supportati. I namespace e gli identificativi fuori intervallo producono OWLParserException; i test comprendono riferimenti non ridichiarati dopo Reset. Attraverso il manager OWLAPI gli errori possono essere esposti come OWLOntologyCreationException.
+
+La lettura dei VarInt strutturali è stata corretta per controllare il limite prima della conversione a int. Indici, conteggi e lunghezze non rappresentabili, codifiche oltre cinque byte e terminazioni premature vengono rifiutati esplicitamente. In particolare, il riferimento 4294967296 non viene più troncato all'indice 0. Le stringhe vengono lette progressivamente, evitando di allocare immediatamente una dimensione enorme dichiarata da un input troncato.
+
+I campi di cardinalità usano un percorso distinto a 32 bit senza segno, memorizzato in long: includono infatti sia la cardinalità sia il bit del filler. La correzione simmetrica del renderer consente il round-trip fino a Integer.MAX_VALUE per le cardinalità OWLAPI. Questi controlli risolvono i casi verificati senza rivendicare una validazione esaustiva di tutti gli stream malformati.
+FINE TESTO
+
+B.16 - Nuova sezione 4.9, 'Reset e maximum index size'
+OPERAZIONE: inserire dopo 4.8, prima del capitolo 5.
+
+INIZIO TESTO
+4.9 Reset e maximum index size
+
+La variante MIS_128 usa Reset per limitare la crescita delle tabelle di decodifica. Il parser interpreta separatamente i bit NS e ID: con NS=1 scarta i namespace non riservati; con ID=1 svuota gli identificativi; con entrambi impostati esegue entrambe le operazioni; con entrambi a zero non modifica le tabelle. Gli indici riservati dei namespace, da 0 a 4, restano disponibili. Le nuove dichiarazioni di namespace non riservati ripartono quindi da 5 e quelle degli identificativi da 0.
+
+Il Reset modifica lo stato della codifica, senza rimuovere gli assiomi già ricostruiti o i prefissi del documento. Il decoder non deve applicare autonomamente la soglia 128: deve reagire ai Reset effettivamente presenti nello stream. Dopo l'azzeramento, i riferimenti successivi devono essere nuovamente dichiarati quando necessario. La suite include i quattro valori dei bit, il Reset come primo frame e casi di riferimento invalido; i controlli sui VarInt impediscono anche che un riferimento fuori dai limiti venga trasformato in un indice valido.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.17 - Capitolo 5, paragrafo introduttivo
+OPERAZIONE: sostituire il paragrafo introduttivo.
+
+INIZIO TESTO
+Il renderer è stato esteso per serializzare il contenuto necessario al dataset oltre alle ontologie home e pizza. Il flusso inizializza i namespace riservati, raccoglie IRI e individui anonimi, assegna gli identificativi, scrive versione e dichiarazioni, emette metadati e assiomi e termina con End. Le tabelle mantengono l'ordine di inserimento. La produzione resta nella codifica standard: non vengono emessi frame Reset né file MIS_128.
+FINE TESTO
+
+B.18 - Sezione 5.1, 'Raccolta degli identificatori'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+La raccolta preventiva comprende ontology IRI e version IRI, IRI degli imports, signature dell'ontologia corrente, individui anonimi referenziati, proprietà e valori delle annotazioni e soggetti delle AnnotationAssertion. Sono visitate anche le annotazioni degli assiomi e le loro sottoannotazioni, i data range annidati, i datatype e le facet, e gli IRI presenti esclusivamente nel domain o range di una annotation property. Non viene incorporata automaticamente la signature delle ontologie importate.
+
+IRI e individui anonimi sono raccolti separatamente; gli indici vengono poi assegnati prima a tutti gli IRI e successivamente agli anonimi. L'emissione delle dichiarazioni segue lo stesso ordine, eliminando il rischio di disallineamento fra assegnazione e lettura quando le due categorie compaiono nella stessa ontologia. Sono raccolti anche gli individui anonimi usati come valori delle annotazioni.
+FINE TESTO
+
+B.19 - Sezione 5.2, 'Metadati e annotazioni'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Il frame 0x06 contiene l'IRI dell'ontologia e l'eventuale version IRI, segnalato dal primo utility bit. Gli imports sono emessi nel frame 0x07 e le annotazioni dell'ontologia nel frame 0x08. I relativi IRI e gli altri riferimenti vengono registrati prima della serializzazione.
+
+La codifica delle annotazioni supporta valori IRI, individui anonimi e literal, oltre a sottoannotazioni ricorsive. Nella forma annotata, dopo il tag zero e l'array di sottoannotazioni, la proprietà viene scritta come identificativo diretto; nella forma semplice viene usato l'offset +1. Le annotazioni associate agli assiomi sono emesse attraverso il relativo header, distinguendole dalle annotazioni dell'ontologia e dalle AnnotationAssertion.
+FINE TESTO
+
+B.20 - Sezione 5.3, 'Namespace e prefissi'
+OPERAZIONE: conservare la descrizione esistente dell'ordine, degli alias e della rimozione dei due punti; aggiungere il seguente contratto alla fine. Non affermare che tutti gli alias possibili siano rappresentabili in v1.
+
+INIZIO TESTO
+La specifica assegna implicitamente i cinque namespace riservati e vieta di emetterne dichiarazioni. Il renderer verifica la mappa prima di scrivere: un alias aggiuntivo di un namespace riservato o l'omissione di un suo prefisso implicito causano un'eccezione esplicita. Gli alias dei namespace non riservati restano supportati.
+
+Il chiarimento del docente sul riferimento pizza non richiede di perdere alias nella nostra serializzazione. Il renderer mantiene sia ':' sia 'pizza:' quando entrambi sono presenti nell'ontologia di partenza. La relativa conservazione è verificata con un confronto esatto del round-trip; soltanto il confronto con il binario storico del docente ammette l'alias mancante.
+FINE TESTO
+
+B.21 - Sezione 5.4, 'Literal'
+OPERAZIONE: sostituire l'intera sezione, soprattutto la frase secondo cui il parser non accetta i formati 5 e 6.
+
+INIZIO TESTO
+Il renderer costruisce l'header come type | (format << 2). I literal con lingua mantengono il language tag; xsd:string usa la forma plain; gli altri literal conservano il tipo typed e l'identificativo del datatype. I booleani canonici 'true' e 'false' usano un byte di valore.
+
+Per i datatype della famiglia degli interi, la codifica compatta dipende dal segno del valore: formato 3 per zero e valori positivi, formato 4 per valori negativi. In entrambi i casi viene scritto il valore assoluto come unsigned VarInt. Ad esempio, -5 produce il tag di formato 4 e il payload 05. La scrittura usa BigInteger e non è limitata a int o long; i test comprendono il minimo long, il massimo unsignedLong e valori di modulo 2^70. Il datatype originale rimane distinto dal formato di codifica e viene conservato.
+
+La selezione compatta richiede che la conversione numerica preservi esattamente la stringa del literal OWLAPI. Forme non canoniche come '01', '+1', '-0' o valori con spazi vengono scritte in forma testuale tipizzata quando ancora presenti nell'oggetto ricevuto. Non si tenta di recuperare differenze già normalizzate da un precedente caricamento OWLAPI.
+
+I decimali continuano a essere emessi come stringhe tipizzate. I formati compatti 5 e 6 sono supportati dal parser, ma non prodotti dal renderer. L'uso di BigInteger rimuove il limite fisso degli interi primitivi nella codifica numerica, senza costituire una prova esaustiva su ogni datatype XML Schema o su input di dimensione arbitraria.
+FINE TESTO
+
+B.22 - Sezione 5.5, 'Assiomi'
+OPERAZIONE: sostituire l'intera sezione; eliminare la descrizione del ciclo separato per le AnnotationAssertion.
+
+INIZIO TESTO
+Tutti gli assiomi dell'ontologia passano attraverso un dispatch esplicito comune, dopo un ordinamento della sequenza. Il renderer conserva le declaration effettivamente presenti e gestisce anche DisjointUnion, catene di proprietà, assiomi sulle data property, DatatypeDefinition, HasKey, asserzioni negative e assiomi sulle annotation property, oltre alle famiglie già necessarie per home e pizza. Le AnnotationAssertion fanno parte dello stesso percorso di serializzazione.
+
+Per ogni assioma annotato viene impostato il primo utility bit e scritta la sequenza delle annotazioni prima del payload. Nelle catene di proprietà il secondo bit è distinto da quello delle annotazioni. La conservazione riguarda anche declaration e annotation assertion annotate. Un tipo non riconosciuto genera un'eccezione esplicita invece di essere omesso, come verificato da un caso con una regola SWRL non supportata.
+FINE TESTO
+
+B.23 - Sezione 5.6, 'Espressioni di classe e cardinalità'
+OPERAZIONE: conservare il paragrafo esistente e aggiungere.
+
+INIZIO TESTO
+La serializzazione comprende anche le restrizioni e le cardinalità sulle data property, oltre ai data range nominati e complessi. Per le cardinalità sui dati il filler viene omesso soltanto quando coincide con il top datatype; rdf:PlainLiteral non viene trattato come equivalente a tale top. I data range sono scritti ricorsivamente, comprendendo combinazioni, enumerazioni di literal e restrizioni con facet. Le categorie non gestite generano un errore esplicito. Il campo cardinalità/filler viene costruito usando un intermedio long: anche la cardinalità massima del dominio int non subisce overflow nello spostamento di un bit.
+FINE TESTO
+
+B.24 - Sezione 5.7, 'Terminazione dello stream'
+OPERAZIONE: sostituire l'intera sezione. È una correzione fattuale necessaria.
+
+INIZIO TESTO
+Il renderer attuale emette un frame End esplicito dopo l'ultimo assioma. Il parser continua ad accettare anche la terminazione alla fine dello stream prevista dalla specifica. Rispetto alla versione descritta in precedenza, questa modifica aggiunge il byte di chiusura e va considerata nell'aggiornamento delle dimensioni dei file prodotti.
+FINE TESTO
+
+B.25 - Sezione 5.8, 'Gestione dei costrutti non supportati'
+OPERAZIONE: sostituire l'intera sezione, eliminando le limitazioni ora risolte.
+
+INIZIO TESTO
+Il renderer non ignora più silenziosamente i tipi di assioma che non riconosce. Il dispatch termina con una IOException esplicita per gli assiomi non supportati; errori analoghi sono presenti per espressioni di classe, data range e valori di annotazione non gestiti. Le annotazioni degli assiomi vengono ora serializzate.
+
+Questo comportamento impedisce che una scrittura apparentemente riuscita venga interpretata come prova di conservazione quando contiene un assioma non supportato. La rilettura e il confronto rimangono comunque necessari: un file sintatticamente valido può rappresentare contenuti diversi dall'originale. Per i prefissi non rappresentabili è previsto un rifiuto prima della scrittura; restano necessarie verifiche dedicate di interoperabilità.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.26 - Sezione 6.1, 'Risorse e organizzazione dei test'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Le risorse home.owl/home.oprt e pizza.owl/pizza.oprt restano i riferimenti iniziali immutati. I binari storici sono letti selezionando esplicitamente la convenzione numerica precedente. Il renderer scrive invece build/out_home.oprt e build/out_pizza.oprt nella codifica corrente, e la loro rilettura usa il parser predefinito.
+
+La suite rapida comprende 80 casi: 10 in ProtocOWLTest, 11 in BenchmarkComplianceTest, 15 in CodecRobustnessTest, 32 in IntegerEncodingTest e uno in BenchmarkResultsTest. Quest'ultimo esercita più situazioni di CSV invalido. Cinque test Python separati verificano la pubblicazione dei risultati con processi simulati, senza produrre misure prestazionali.
+
+DatasetRoundTripTest enumera 200 coppie, una per ogni ontologia e variante di input. I task Gradle test, coverageTest e datasetTest separano la regressione rapida dalla copertura e dal confronto completo sul dataset.
+FINE TESTO
+
+B.27 - Sezione 6.2, 'Criteri di confronto'
+OPERAZIONE: sostituire l'intera sezione.
+
+INIZIO TESTO
+Il confronto condiviso verifica se le ontologie sono nominate e confronta ontology IRI, version IRI, imports, mappe dei prefissi, annotazioni dell'ontologia e insieme completo degli assiomi. Le annotazioni degli assiomi fanno parte degli oggetti confrontati; declaration e annotation assertion non vengono filtrate. L'ordine degli insiemi è irrilevante.
+
+La diagnostica elenca gli assiomi presenti soltanto nell'originale e soltanto nella versione riletta. Il controllo riguarda la struttura degli oggetti OWLAPI, non l'equivalenza logica calcolata da un reasoner. Durante il caricamento viene disabilitata la rimappatura automatica degli identificativi degli individui anonimi.
+
+Nel dataset e nei round-trip del nostro renderer le mappe dei prefissi sono confrontate esattamente. Nel solo confronto con il riferimento storico pizza.oprt, in conformità al chiarimento del docente, è ammessa la mancanza di 'pizza:' se nell'originale è un alias dello stesso namespace pizza associato a ':'. Un alias associato a un namespace diverso, un altro prefisso mancante o aggiuntivo e qualsiasi differenza negli assiomi continuano a causare un fallimento. Questa eccezione non modifica l'ontologia né il decoder.
+FINE TESTO
+
+B.28 - Sezione 6.3, 'Test negativi'
+OPERAZIONE: sostituire l'intera sezione; titolo consigliato 'Test negativi e regressioni mirate'.
+
+INIZIO TESTO
+I test negativi coprono versione non supportata, frame sconosciuto, stream troncato, riferimenti non dichiarati e indici non ridichiarati dopo Reset. Sono esercitate tutte le combinazioni dei bit NS/ID, Reset come primo frame, conteggi e lunghezze fuori intervallo e codifiche strutturali oltre cinque byte. Le regressioni includono cardinalità massime, stringhe enormi troncate, conservazione dei prefissi e rifiuto anticipato di mappe non rappresentabili.
+
+Le verifiche sugli assiomi comprendono annotazioni annidate, catene di proprietà e rifiuto esplicito di SWRL. Un controllo verifica che il passaggio Functional non aggiunga declaration. Le regressioni sulla nuova codifica degli interi usano esempi binari costruiti indipendentemente: controllano sia i valori ricostruiti dal parser sia tag e payload prodotti dal renderer. Sono inclusi zero, valori positivi e negativi, limiti a 32 e 64 bit e valori oltre 64 bit.
+
+Test distinti verificano che la compatibilità numerica storica richieda una selezione esplicita, che i decimali continuino a usare SVarInt dove previsto, che le forme lessicali non canoniche restino testuali e che un payload numerico troncato sia rifiutato. La regressione sul riferimento pizza dimostra che l'eccezione autorizzata non nasconde altre differenze di prefissi o assiomi.
+
+Il validatore CSV viene esercitato con combinazioni mancanti, duplicate, vietate e dimensioni errate. I cinque test Python controllano il comportamento dello script in caso di errore e la pubblicazione solo dopo una validazione riuscita.
+
+Dieci esempi indipendenti controllano la compensazione della parte intera negativa nel formato 5, inclusi zero positivo e negativo, frazioni inferiori a uno e payload multibyte. Un caso separato conserva la lettura fixed point storica mediante la selezione esplicita della revisione. Non viene modificata la funzione SVarInt comune.
+FINE TESTO
+
+B.29 - Sezione 6.4, 'Risultati della verifica'
+OPERAZIONE: sostituire interamente i risultati dei cinque test storici con il testo seguente. Gli esiti del 6 e 14 settembre possono essere rimossi o mantenuti soltanto come nota storica separata.
+
+INIZIO TESTO
+La verifica successiva al chiarimento del docente è stata eseguita sulla revisione locale del 30 settembre 2026, basata su main 73821444f9403e54d0848367de3712cae47a6bb0. Le modifiche sono locali e non ancora registrate in un nuovo commit; source_manifest.json identifica esattamente i sorgenti verificati [4, 5]. Sono stati usati Gradle wrapper 9.0.0, JDK 24, target Java 21 e heap massimo dei test di 4 GiB.
+
+- Test rapidi: 80/80 superati, senza skip; comprendono 43 casi in IntegerEncodingTest e 15 in CodecRobustnessTest.
+- Copertura: 300/300 operazioni riuscite; tutte le 100 scritture comprendono rilettura e confronto con il Functional.
+- Dataset: 200/200 casi superati, ciascuno con fasi a, b e c, senza skip o ontologie escluse.
+- roundtrip_sizes.csv: 200 righe, con dimensioni uguali per le due varianti di ciascuna ontologia.
+- Test Python dello script: cinque superati; sono prove di pubblicazione con processi simulati, distinte dalle misure reali.
+- Benchmark: 500 misure completate e validate, con tutte le combinazioni previste e senza duplicati.
+
+Le precedenti dieci differenze sui decimali negativi non erano errori del nuovo dataset: il decoder non applicava la compensazione della parte intera negativa precisata dal docente. La correzione ricostruisce anche -0.5 conservandone il segno. I byte dei materiali forniti non sono stati modificati.
+
+I test home e pizza leggono i binari storici in modalità esplicita e verificano gli output correnti con il parser predefinito. Nel solo riferimento pizza è ammessa l'assenza dell'alias autorizzata dal docente; i confronti del dataset e del nostro round-trip rimangono esatti.
+FINE TESTO
+
+B.30 - Sezione 6.5, 'Dimensione dei file'
+OPERAZIONE: sostituire l'intera sezione e aggiornare la tabella. I nuovi valori sono stati rilevati sui file rigenerati durante questa verifica.
+
+INIZIO TESTO
+Le dimensioni rilevate durante la verifica della codifica aggiornata sono le seguenti, in byte:
+
+Ontologia | Sintassi funzionale | ProtocOWL storico di riferimento | ProtocOWL corrente prodotto
+home      | 13.836              | 1.788                           | 1.788
+pizza     | 69.789              | 16.181                          | 16.244
+
+L'output corrente riduce le dimensioni del documento Functional di circa l'87,1% per home e il 76,7% per pizza. Per pizza è maggiore del riferimento di 63 byte, circa lo 0,39%; il nostro output conserva anche l'alias pizza:. Questi valori sono uguali a quelli della verifica precedente, ma ciò non implica identità dei byte o delle convenzioni numeriche.
+
+L'uguaglianza delle dimensioni non prova l'uguaglianza del contenuto. La correttezza viene verificata rileggendo e confrontando gli oggetti OWLAPI. Le dimensioni dei 200 output del dataset sono registrate separatamente in roundtrip_sizes.csv e usate per controllare il render ProtocOWL nel benchmark.
+FINE TESTO
+
+B.31 - Sezione 6.6, 'Esecuzione della suite'
+OPERAZIONE: sostituire l'intera sezione. Nel documento finale formattare i comandi in monospace.
+
+INIZIO TESTO
+La verifica è stata eseguita tramite Gradle wrapper 9.0.0 con JDK 24 e target Java 21. I test hanno heap massimo di 4 GiB. Dalla directory protocowl-owlapi, configurare il percorso assoluto del nuovo dataset e quindi eseguire:
+
+export DATASET_DIR="/Users/beatriceapollo/Downloads/protocowl-java/progetto_partenza/dataset_onto"
+bash ./gradlew --no-daemon :lib:test
+bash ./gradlew --no-daemon :lib:coverageTest
+bash ./gradlew --no-daemon :lib:datasetTest
+python3 benchmark/test_run_benchmark.py
+
+Il percorso mostrato è quello della macchina di verifica e va adattato su altre macchine. La cartella aggiornata, inizialmente denominata 'dataset_onto 2', è ora 'dataset_onto'; il vecchio dataset resta in 'dataset_onto_old'. La nuova distribuzione non contiene metadata.csv: viene riutilizzato benchmark/metadata.csv, il cui elenco coincide con tutte le 100 ontologie ricevute. METADATA_FILE e la proprietà Gradle metadataFile consentono un percorso alternativo.
+
+I report HTML Gradle sono in lib/build/reports/tests/test, coverageTest e datasetTest. Le evidenze dell'esecuzione corrente sono conservate anche in benchmark/revision_2026-09-30-clarified. I log della revisione precedente restano storici e non sostituiscono questa nuova esecuzione.
+FINE TESTO
+
+B.32 - Sezione 6.7, 'Copertura dei test'
+OPERAZIONE: sostituire l'intera sezione. Eliminare le affermazioni ormai obsolete sulla mancanza del confronto imports e dei test di identificatore non dichiarato.
+
+INIZIO TESTO
+La suite confronta ora anche gli imports e contiene casi di identificativo non dichiarato. Le regressioni sintetiche verificano inoltre assiomi annotati, annotazioni annidate e costrutti che non erano esercitati dai soli esempi home e pizza. L'analisi di copertura dimostra che tutte le operazioni previste sui 100 input vengono tentate, senza ridurre il campione in funzione dell'esito.
+
+Occorre distinguere copertura operativa, conservazione del contenuto e completezza del protocollo. Una lettura riuscita non dimostra che il contenuto coincida con il Functional, e un round-trip fra parser e renderer della stessa implementazione non dimostra ogni caso di interoperabilità. Il confronto rigoroso dei prefissi e i controlli sui VarInt strutturali sono ora presenti e verificati dalle nuove regressioni. Rimangono da estendere i controlli su altri casi limite e sull'interoperabilità. Non si rivendica una verifica esaustiva dell'intera specifica né di tutte le combinazioni OWL.
+FINE TESTO
+
+B.33 - Nuova sezione 6.8, 'Analisi di copertura sul dataset'
+OPERAZIONE: inserire dopo 6.7.
+
+INIZIO TESTO
+6.8 Analisi di copertura sul dataset
+
+CoverageAnalyzer usa lo stesso manifest impiegato nei test di round-trip e nel benchmark. Per ogni ontologia esegue tre operazioni: parsing del binario standard, parsing del binario MIS_128 e serializzazione del Functional con il renderer standard. Quest'ultima operazione comprende anche la rilettura dell'output e il confronto con l'ontologia caricata dal Functional.
+
+Il rapporto lib/coverage_report.csv contiene le colonne Ontology, Input, Operazione, Esito, Costrutto e Messaggio. Gli errori vengono raggruppati per categoria di costrutto per facilitare la diagnosi; un errore determina il fallimento del controllo, senza eliminare l'ontologia dal dataset. La verifica corrente registra 300 operazioni riuscite. Le due operazioni di parsing non confrontano da sole il contenuto con il Functional: tale responsabilità appartiene alla fase successiva.
+FINE TESTO
+
+B.34 - Nuova sezione 6.9, 'Round-trip completo e conservazione strutturale'
+OPERAZIONE: inserire dopo 6.8.
+
+INIZIO TESTO
+6.9 Round-trip completo e conservazione strutturale
+
+DatasetRoundTripTest associa a ogni ontologia due casi indipendenti, uno per standard e uno per MIS_128. Nella fase a carica il binario e lo confronta con il Functional autorevole. Nella fase b serializza in Functional l'ontologia ottenuta in a, la rilegge e ripete il confronto. Nella fase c serializza il risultato in ProtocOWL standard, lo rilegge e lo confronta nuovamente con l'originale. La produzione ProtocOWL è sempre senza Reset.
+
+Il renderer Functional è configurato con aggiunta automatica delle declaration disabilitata e mappa dei prefissi esplicita. Gli identificativi degli individui anonimi vengono preservati. Non vengono rimossi assiomi, annotazioni o prefissi per far passare i confronti del dataset.
+
+Gli errori riportano ontologia, variante, fase e differenze fra gli assiomi. Tutti i 200 casi della distribuzione aggiornata completano a, b e c. roundtrip_sizes.csv contiene 200 righe con colonne Ontology, InputVariant e OutputSizeBytes. Le dimensioni coincidono fra le due varianti di ogni ontologia e il render ProtocOWL nel benchmark è coerente con queste misure.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.35 - Capitolo 7, 'Benchmark: metodologia e risultati'
+OPERAZIONE: inserire integralmente dopo il capitolo 6. Se il capitolo 7 è già presente, sostituirlo e aggiungere 7.6 con i risultati reali della campagna.
+
+INIZIO TESTO
+Sezione 7
+Benchmark: metodologia e risultati
+
+7.1 Dataset e revisione dei materiali
+
+Il campione comprende 100 ontologie ORE 2014, ciascuna in Functional Syntax, ProtocOWL standard e ProtocOWL MIS_128. Il Functional resta il riferimento per il contenuto. La nuova distribuzione è stata fornita dal docente dopo una correzione dell'encoder, insieme alla specifica aggiornata [1, 6, 7].
+
+Il confronto delle distribuzioni conferma che tutti i 100 Functional sono invariati e tutti i 200 binari sono cambiati. I nuovi binari usano la tabella corrente dei frame e iniziano con versione 1 e dichiarazione namespace 0x04. La codifica degli interi è stata adeguata al nuovo significato dei tag 3 e 4; i decimali 5 e 6 continuano a usare SVarInt per le componenti con segno.
+
+Nell'ambiente locale il nuovo dataset si trova in dataset_onto, inizialmente denominata 'dataset_onto 2', mentre il precedente è conservato in dataset_onto_old. Il nuovo archivio non contiene metadata.csv: viene riutilizzato benchmark/metadata.csv, il cui elenco coincide con tutte le 100 ontologie ricevute. DatasetFiles usa questo stesso elenco per copertura, round-trip e benchmark. Nessuna ontologia è selezionata in base al risultato del test.
+
+Le impronte SHA-256 di tutti i 300 input, della specifica, delle istruzioni, del manifest e dei riferimenti storici sono raccolte in benchmark/revision_2026-09-30-clarified/input_manifest.json. source_manifest.json, nella stessa directory, identifica i sorgenti verificati.
+
+Le combinazioni previste restano parse e render per Functional, parse e render per ProtocOWL e soltanto parse per ProtocOWL_128: 500 righe dati complessive. Una richiesta di render MIS_128 termina con errore esplicito.
+
+7.2 Misura di tempo e memoria
+
+run_benchmark.sh esegue prima i test rapidi, la copertura e i round-trip. Solo dopo il loro completamento avvia le misure, ciascuna in una JVM separata sotto GNU time con opzione -v. BenchmarkTask usa System.nanoTime per misurare l'operazione richiesta. Nel parsing l'inizializzazione del manager precede il timer; nel rendering caricamento dell'ontologia, scelta del formato e preparazione precedono la misura di serializzazione sul file temporaneo. Il tempo include il lavoro di ingresso/uscita interno all'operazione misurata.
+
+L'MRSS fornito da GNU time è il massimo resident set size dell'intero processo Java, espresso in KB: comprende JVM, strutture OWLAPI e preparazione. Non misura soltanto l'heap del codec o la dimensione delle tabelle degli identificativi. La separazione fra tempi interni e memoria dell'intero processo deve essere mantenuta nell'interpretazione dei risultati.
+
+Lo script attuale produce una misura per ciascuna tripla task/formato/ontologia, senza una campagna esplicita di warm-up e ripetizioni statistiche. Le future conclusioni dovranno quindi tenere conto di caricamento delle classi, JIT, cache e variabilità del sistema. MIS_128 limita le mappature della codifica, ma non garantisce di per sé un MRSS inferiore per l'intero processo OWLAPI.
+
+7.3 CSV e validazione delle metriche
+
+Il file finale previsto è benchmark_results.csv e contiene l'intestazione:
+
+Task,Format,Ontology,TimeMs,InputSizeBytes,OutputSizeBytes,MRSS_KB,CompressionRatioVsProtocOWL,SpaceSavingVsProtocOWL
+
+TimeMs è il tempo dell'operazione; InputSizeBytes è la dimensione del file di input nel formato considerato; OutputSizeBytes è zero nel parsing e misura il file prodotto nel rendering. Le metriche dimensionali usano sempre come riferimento il binario standard della stessa ontologia:
+
+CompressionRatioVsProtocOWL = size(formato) / size(ProtocOWL standard)
+SpaceSavingVsProtocOWL = [size(formato) - size(ProtocOWL standard)] / size(formato)
+
+Queste formule usano i file di input del dataset anche per le righe render, non la dimensione dell'output appena prodotto. Per ProtocOWL standard il rapporto vale 1 e il risparmio vale 0. Il risparmio indica la riduzione ottenibile usando lo standard rispetto al formato della riga; un valore negativo significa che il file del formato considerato è più piccolo dello standard.
+
+BenchmarkResults controlla il numero di righe, tutte le combinazioni attese, l'assenza di duplicati e di render MIS_128, la validità delle metriche numeriche e le dimensioni degli input. Confronta inoltre OutputSizeBytes del render ProtocOWL con la dimensione registrata nella fase c per la variante standard. Le combinazioni mancanti o le incoerenze producono un errore, invece di essere trattate come dati da scartare.
+
+7.4 Ambiente ed esecuzione della campagna
+
+La campagna è stata eseguita il 30 settembre 2026 con Gradle wrapper 9.0.0, JDK 24, target Java 21 e GNU time 1.9 compilato localmente. L'ambiente registrato è:
+
+- Hardware: Mac15,6; CPU Apple M3 Pro; 12 CPU logiche; RAM 18 GiB.
+- Sistema operativo: Darwin MacBook-Pro-di-Beatrice.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:16:36 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6030 arm64.
+- Java: java version "24.0.1" 2025-04-15; Java(TM) SE Runtime Environment (build 24.0.1+9-30); Java HotSpot(TM) 64-Bit Server VM (build 24.0.1+9-30, mixed mode, sharing).
+- Opzioni JVM delle misure: -Xms256m -Xmx4g.
+- Heap massimo dei test preliminari: 4 GiB.
+- Base Git: 73821444f9403e54d0848367de3712cae47a6bb0, con modifiche locali identificate da source_manifest.json.
+
+È stato usato il nuovo dataset senza modificarne i file. Lo script ha eseguito i prerequisiti e poi 500 JVM separate, pubblicando benchmark_results.csv e benchmark_environment.txt soltanto dopo la validazione finale. Il file dell'ambiente contiene anche il manifest dei percorsi. GNU time converte ru_maxrss da byte a KB su macOS.
+
+Il comando della campagna, dalla directory protocowl-owlapi, è bash ./run_benchmark.sh, con DATASET_DIR sul nuovo dataset, METADATA_FILE sul manifest incluso, TIME_CMD sul GNU time locale e BENCH_JAVA_OPTS='-Xms256m -Xmx4g'. I percorsi completi sono registrati nel rapporto dell'ambiente. Le misure storiche rimangono separate in benchmark/historical/2026-09-20.
+
+7.5 Chiarimenti sui materiali e validazione finale
+
+La nuova distribuzione corregge le precedenti differenze sulle frazioni positive. La successiva osservazione di valori come -1.0 letti come -2.0 ha richiesto un chiarimento del docente: nel formato fixed point, la parte intera negativa viene diminuita di uno prima della codifica SVarInt per poter distinguere anche -0.5 da 0.5 [7]. Il decoder ora compensa questo spostamento e conserva il segno separatamente.
+
+I byte 16 03 00 di Benzoate sono quindi corretti: 03 decodifica in SVarInt come -2, ma la componente del decimal si ricostruisce come -1. Il valore finale è -1.0, uguale al Functional. La precedente diagnosi di un errore nei nuovi binari è superata. La verifica indipendente dei byte e tutti i 200 round-trip confermano l'interpretazione chiarita, senza correzioni dei dati o esclusioni.
+
+Il caso pizza è gestito separatamente secondo l'autorizzazione del docente: solo il confronto col riferimento storico ammette l'alias duplicato mancante. Gli altri confronti restano esatti. Tutti i prerequisiti sono superati e il benchmark contiene le 500 righe previste, senza combinazioni mancanti, duplicate o render MIS_128. Le dimensioni di input corrispondono ai file e quelle di output ProtocOWL coincidono con la fase 2.
+
+7.6 Risultati della campagna
+
+La tabella riporta le mediane sulle 100 ontologie per ogni combinazione. Ciascuna ontologia ha una sola misura per combinazione: la mediana descrive la distribuzione del campione, non la dispersione di esecuzioni ripetute della stessa ontologia.
+
+Task | Formato | N | Tempo mediano (ms) | MRSS mediano (KB)
+parse | Functional | 100 | 155.619 | 135168
+parse | ProtocOWL | 100 | 93.921 | 117224
+parse | ProtocOWL_128 | 100 | 106.307 | 129896
+render | Functional | 100 | 69.026 | 146664
+render | ProtocOWL | 100 | 106.615 | 153936
+
+Le dimensioni complessive degli input, contando una volta ciascuna ontologia, sono: Functional 293,026,071 byte, ProtocOWL standard 30,584,816 byte e MIS_128 47,065,571 byte. Sui totali, lo standard riduce lo spazio rispetto al Functional del 89.56%; MIS_128 occupa il 53.89% in più dello standard. Questi rapporti aggregati sono calcolati sui totali e non sono la media dei rapporti per ontologia del CSV.
+
+Tempi e MRSS vanno interpretati insieme al metodo: JVM separata, una misura per combinazione, nessun warm-up dedicato e preparazione del render esclusa dal tempo ma inclusa nella memoria del processo. I risultati descrivono questa campagna su questa macchina; non dimostrano un vantaggio universale né che le sole tabelle del codec determinino l'MRSS. Il CSV completo consente confronti per singola ontologia.
+
+FINE TESTO
+
+----------------------------------------------------------------------
+B.36 - Capitolo 7 attuale -> nuovo capitolo 8, 'Conclusioni e sviluppi futuri'
+OPERAZIONE: rinumerare e sostituire tutti i paragrafi introduttivi prima di 'Difficoltà riscontrate'. Eliminare il riepilogo dei cinque test e le affermazioni storiche sull'integrazione in main come descrizione dello stato attuale.
+
+INIZIO TESTO
+Sezione 8
+Conclusioni e sviluppi futuri
+
+Il progetto comprende Reset in lettura, le famiglie di assiomi e i data range necessari al dataset, annotazioni annidate e un confronto strutturale completo. Il renderer standard conserva i prefissi rappresentabili, segnala i costrutti non supportati e termina con End.
+
+L'adeguamento alla specifica aggiornata introduce interi con modulo unsigned VarInt e segno nel tag, gestiti con BigInteger. Il chiarimento del docente sui fixed point ha permesso di completare la decodifica delle parti intere negative senza perdere il segno dei valori compresi fra -1 e 0. La lettura storica è selezionata esplicitamente per i vecchi riferimenti.
+
+Sono superati tutti gli 80 test rapidi, le 300 operazioni di copertura, i 200 round-trip e i cinque test dello script. La campagna completa produce 500 misure validate, con ambiente e sorgenti identificati. Nessuna ontologia è stata esclusa e i dati forniti non sono stati modificati.
+
+Le precedenti differenze nei nuovi binari erano dovute all'interpretazione incompleta della componente negativa fixed point, ora corretta secondo il chiarimento ricevuto. La validazione funzionale è distinta dall'analisi prestazionale: i risultati della campagna corrente sono disponibili, ma la singola misura per combinazione non sostituisce un'analisi statistica con ripetizioni.
+FINE TESTO
+
+B.37 - Sezione 7.1 attuale -> 8.1, 'Difficoltà riscontrate'
+OPERAZIONE: conservare i paragrafi storici ancora validi e aggiungere i seguenti. Il precedente 'Infine, i test...' può diventare 'Anche i test...' per non introdurre una falsa conclusione prima delle aggiunte.
+
+INIZIO TESTO
+L'estensione al dataset ha richiesto il confronto dell'intera catena a/b/c: il numero di assiomi o la semplice rileggibilità non bastano a dimostrare la conservazione. Il passaggio Functional richiede inoltre la disabilitazione delle declaration automatiche e il controllo esplicito dei prefissi.
+
+Il Reset impone di separare le tabelle di decodifica dai metadati: azzerare gli indici non deve cancellare prefissi o assiomi già ricostruiti. Per gli assiomi annotati e le catene di proprietà sono stati distinti utility bit con funzioni diverse.
+
+I confronti della distribuzione precedente avevano evidenziato differenze nei decimali. L'ispezione dei byte ha permesso di distinguere un errore del decoder da un valore già codificato in modo errato. Il docente ha successivamente fornito binari corretti e una specifica aggiornata; la validazione è stata ripetuta sull'intero campione.
+
+La nuova codifica degli interi modifica il significato dei tag senza cambiare il byte di versione. È stato quindi necessario selezionare esplicitamente la compatibilità dei vecchi riferimenti, evitando euristiche basate sui valori. La verifica del renderer ha inoltre evidenziato la necessità di distinguere la forma lessicale presente nell'oggetto OWLAPI da quella già normalizzata al caricamento.
+
+Il caso pizza ha mostrato la differenza fra conservare un alias e ricostruirlo per convenzione. Il chiarimento del docente consente un'eccezione precisa nel confronto del riferimento storico; non giustifica l'aggiunta di prefissi nel parser o la perdita di alias nel nostro renderer.
+
+Il successivo chiarimento sui fixed point ha mostrato che leggere correttamente SVarInt non basta: occorre applicare anche la convenzione della componente intera negativa. La precedente attribuzione di tali differenze al nuovo dataset è stata quindi rivista. Conservare il segno separatamente dal valore numerico è necessario per ricostruire -0.5.
+FINE TESTO
+
+B.38 - Sezione 7.2 attuale -> 8.2, 'Sviluppi futuri'
+OPERAZIONE: sostituire l'intera sezione. Non lasciare fra le funzionalità future quelle implementate: Reset in lettura, data range, data restriction, assiomi elencati, annotazioni degli assiomi, offset delle annotazioni annidate, ordine degli anonimi, lettura dei decimali, confronto imports, errore sugli assiomi sconosciuti e infrastruttura del benchmark.
+
+INIZIO TESTO
+Le attività successive riguardano ulteriori input malformati, combinazioni degli utility bit, riferimenti di tipo errato, limiti di risorse e interoperabilità con encoder indipendenti. I test coprono il dataset completo e i controesempi noti, senza costituire una prova universale su ogni stream o combinazione OWL.
+
+Rimangono possibili estensioni, non richieste dal benchmark corrente: Add e Remove e produzione dei formati decimali compatti 5 e 6. La scrittura MIS_128 resta fuori dallo scope. Gli alias aggiuntivi dei namespace riservati richiederebbero un chiarimento o un'estensione della specifica; attualmente vengono rifiutati prima della scrittura. Le compatibilità storiche devono restare distinte dalla codifica corrente.
+
+Il benchmark completo è stato eseguito. Ripetizioni, misure di dispersione, warm-up controllato e confronti su altre macchine potranno rafforzare l'analisi prestazionale oltre la singola campagna prescritta.
+FINE TESTO
+
+----------------------------------------------------------------------
+B.39 - Bibliografia, da rinumerare come capitolo 9
+OPERAZIONE: completare la sezione. Nel PDF fornito la pagina finale mostra soltanto il titolo 'Bibliografia' e '[1]', senza una voce bibliografica completa. Il testo contiene anche un richiamo [5], attualmente privo di una voce identificabile. Non aggiungere fonti o risultati non consultati.
+
+INIZIO TESTO
+9. Bibliografia e materiali di riferimento
+
+[1] Ivano Bilenchi, Valerio Di Ceglie, ProtocOWL Specification, versione 1.0 aggiornata, file ProtocOWL_Spec_v1_0.pdf fornito dal docente; impronta SHA-256 in benchmark/revision_2026-09-30-clarified/input_manifest.json.
+
+[2] Istruzioni iniziali del progetto: allineamento alla specifica e supporto a home.owl e pizza.owl, file istruzioni.txt.
+
+[3] ProtocOWL - Istruzioni (fase benchmark), file istruzioni_benchmark2.txt fornito dal docente.
+
+[4] Codebase protocowl-owlapi, revisione locale del 30 settembre 2026 su base main 73821444f9403e54d0848367de3712cae47a6bb0. I file esatti verificati sono identificati da source_manifest.json in benchmark/revision_2026-09-30-clarified; le modifiche non sono ancora un nuovo commit.
+
+[5] Artefatti della verifica del 30 settembre 2026: report Gradle, lib/coverage_report.csv, roundtrip_sizes.csv, manifest e diagnostica in benchmark/revision_2026-09-30-clarified. Campagna completa in benchmark_results.csv, ambiente in benchmark_environment.txt e riepilogo in summary.json.
+
+[6] Distribuzione aggiornata delle 100 ontologie ORE 2014, rappresentazioni Functional, ProtocOWL standard e MIS_128, con elenco benchmark/metadata.csv. Le impronte dei 300 input sono conservate in input_manifest.json.
+
+[7] Comunicazione del docente fornita agli autori insieme ai materiali aggiornati: correzione dell'encoder, revisione della codifica degli interi, chiarimento sull'alias pizza: e successiva spiegazione della compensazione della parte intera negativa nei fixed-point decimal.
+FINE TESTO
+
+Nota per gli autori: includere gli artefatti citati in [5] nel materiale consegnato, oppure sostituire il riferimento con un percorso/accesso effettivamente disponibile al docente. I numeri bibliografici proposti sono coerenti con i nuovi testi; controllare eventuali ulteriori richiami nel documento sorgente.
+
+======================================================================
+PARTE C - CONTROLLO FINALE PRIMA DELLA CONSEGNA
+======================================================================
+
+1. Rimuovere le affermazioni correnti su decimali negativi errati nel nuovo dataset, dieci fallimenti, 190/200 casi e benchmark bloccato. La precedente interpretazione è superata dal chiarimento del docente; i dati nuovi non sono stati corretti da noi.
+2. Descrivere in 4.5 la compensazione successiva a SVarInt e la conservazione del segno di -0.5. Non presentarla come una modifica della formula Zig-Zag né della codifica degli interi con tag 3/4.
+3. Usare i conteggi correnti: 80 test rapidi, inclusi 43 in IntegerEncodingTest e 15 di robustezza; 300 operazioni di copertura; 200 round-trip; cinque test Python simulati; 500 misure reali validate.
+4. Aggiornare il capitolo 7 con ambiente, risultati e limitazione a una misura per combinazione. Distinguere la mediana sulle 100 ontologie dalle ripetizioni sulla stessa ontologia; MRSS riguarda tutto il processo Java.
+5. Mantenere circoscritta al riferimento storico l'eccezione pizza. I confronti del dataset e dei nuovi output restano esatti.
+6. Aggiornare sommario, rinvii, conclusioni e bibliografia. La sezione 7.6 è nuova; non duplicare il capitolo benchmark se già presente.
+7. Consegnare i CSV, il rapporto dell'ambiente, i manifest e le evidenze citate. Una copia identica di questo TXT è nel repository in benchmark/revision_2026-09-30-clarified/AGGIORNAMENTI_REPORT_FLC.txt.
+8. Le modifiche sono locali e non sono state committate o pubblicate. Dopo il vostro commit, aggiornare il riferimento Git nella bibliografia; source_manifest.json identifica comunque i file effettivamente misurati.

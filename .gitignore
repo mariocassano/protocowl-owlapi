@@ -33,11 +33,10 @@ out/
 *.swp
 *.swo
 *~
-*.bin
-*.lock
-*.probe
+# Cache Python
+__pycache__/
+*.py[cod]
 
-# Local Dataset (not pushed to remote)
-dataset_onto/
-**/dataset_onto/
-
+# File temporanei del benchmark, prima della validazione
+/benchmark_results.csv.*
+/benchmark_environment.txt.*

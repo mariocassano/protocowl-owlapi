@@ -1,0 +1,18 @@
+Chiarimento fornito dal docente e riportato dagli autori nella conversazione:
+
+"Nella codifica dei fixed-point decimal quando il valore è negativo, la parte intera viene codificata come (value - 1). Questa logica è utile per distinguere lo zero positivo da quello negativo (e.g. -0.5 e 0.5).
+In fase di decodifica, quindi, per decodificare il valore di una parte intera negativa è sufficiente sommare 1 e anteporre il segno meno.
+Vi confermiamo che la parte intera dei fixed-point decimal viene ancora codificata come signed varint."
+
+Applicazione nel decoder del formato 5 corrente:
+1. leggere la parte intera codificata con SVarInt, senza modificare Zig-Zag;
+2. se il valore letto s è negativo, costruire "-" + abs(s + 1);
+3. altrimenti usare s;
+4. aggiungere il punto e le cifre della frazione invertita.
+
+La stringa del segno viene conservata separatamente, così s=-1 restituisce
+una parte intera testuale "-0" e consente di ricostruire -0.5.
+La precedente diagnosi dei byte 16 03 00 come errore del dataset è superata:
+SVarInt restituisce -2, la compensazione restituisce -1, e il literal è -1.0.
+La regola è applicata al fixed point (formato 5); l'esponente del formato 6
+resta un normale SVarInt. La scrittura corrente dei decimali resta testuale.

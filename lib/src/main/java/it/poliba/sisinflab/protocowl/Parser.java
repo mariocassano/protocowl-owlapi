@@ -21,6 +21,17 @@ class Parser {
     private final List<OWLObject> identifiers = new ArrayList<>();
     private boolean isLegacyDialect = false;
 
+    // Both specification revisions use version byte 1: never infer integer
+    // encoding from the frame layout or from the numeric value.
+    enum EncodingRevision { CURRENT, LEGACY }
+    private final EncodingRevision encodingRevision;
+
+    Parser() { this(EncodingRevision.CURRENT); }
+
+    Parser(EncodingRevision encodingRevision) {
+        this.encodingRevision = java.util.Objects.requireNonNull(encodingRevision);
+    }
+
     /**
      * Punto di ingresso del parser.
      * Decodifica lo stream ProtocOWL e popola l'ontologia fornita.
@@ -1055,18 +1066,27 @@ private OWLLiteral parseLiteral(InputStream stream) throws IOException {
                 }
                 valueStr = (b == 1) ? "true" : "false";
                 break;
-            case Constants.LITERAL_FMT_SIGNED_INT:
-                BigInteger sVal = readSignedValue(stream);
+            case Constants.LITERAL_FMT_POSITIVE_INT:
+                BigInteger sVal = encodingRevision == EncodingRevision.LEGACY
+                        ? readSignedValue(stream) : readUnsignedValue(stream);
                 valueStr = String.valueOf(sVal);
                 break;
-            case Constants.LITERAL_FMT_UNSIGNED_INT:
+            case Constants.LITERAL_FMT_NEGATIVE_INT:
                 BigInteger uVal = readUnsignedValue(stream);
-                valueStr = String.valueOf(uVal);
+                valueStr = (encodingRevision == EncodingRevision.LEGACY
+                        ? uVal : uVal.negate()).toString();
                 break;
             case Constants.LITERAL_FMT_FLOAT:
                 BigInteger intPart = readSignedValue(stream);
                 BigInteger fracPart = readUnsignedValue(stream);
-                valueStr = intPart + "." + new StringBuilder(fracPart.toString()).reverse();
+                // Current encoder shifts negative whole parts down by one before
+                // SVarInt: -0.x -> -1, -1.x -> -2, etc. Keep the sign when
+                // restoring zero; BigInteger alone cannot represent negative zero.
+                String whole = intPart.toString();
+                if (encodingRevision == EncodingRevision.CURRENT && intPart.signum() < 0) {
+                    whole = "-" + intPart.add(BigInteger.ONE).abs();
+                }
+                valueStr = whole + "." + new StringBuilder(fracPart.toString()).reverse();
                 break;
             case Constants.LITERAL_FMT_DOUBLE:
                 BigInteger dIntPart = readSignedValue(stream);
@@ -1089,14 +1109,20 @@ private OWLLiteral parseLiteral(InputStream stream) throws IOException {
                 int datatypeId = readVarInt(stream);
                 OWLObject dtObj = getIdentifier(datatypeId);
                 OWLDatatype datatype = dataFactory.getOWLDatatype((IRI) dtObj);
-                return dataFactory.getOWLLiteral(valueStr, datatype);
+                OWLLiteral literal = dataFactory.getOWLLiteral(valueStr, datatype);
+                // OWLAPI can normalize e.g. "+1" to "1". The textual wire
+                // format carries the lexical form explicitly and must preserve it.
+                if (format == Constants.LITERAL_FMT_STRING && !literal.getLiteral().equals(valueStr)) {
+                    return new uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplNoCompression(valueStr, "", datatype);
+                }
+                return literal;
             case 3:
                 // Type 3: letterale tipizzato con datatype implicito inferito direttamente dal formato di codifica
                 switch (format) {
                     case Constants.LITERAL_FMT_BOOLEAN:
                         return dataFactory.getOWLLiteral(valueStr, org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_BOOLEAN);
-                    case Constants.LITERAL_FMT_SIGNED_INT:
-                    case Constants.LITERAL_FMT_UNSIGNED_INT:
+                    case Constants.LITERAL_FMT_POSITIVE_INT:
+                    case Constants.LITERAL_FMT_NEGATIVE_INT:
                         return dataFactory.getOWLLiteral(valueStr, org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_INTEGER);
                     case Constants.LITERAL_FMT_FLOAT:
                         return dataFactory.getOWLLiteral(valueStr, org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_FLOAT);
