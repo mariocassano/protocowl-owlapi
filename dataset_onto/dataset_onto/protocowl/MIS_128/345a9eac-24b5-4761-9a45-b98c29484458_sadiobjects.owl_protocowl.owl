@@ -1,0 +1,723 @@
+*owlapi:ontology:†file:/media/nico/Seagate%20Expansion%20Drive/phd_data/data/2013.05.12_unduplicated_filtered_snapshot/semantic/byteunique/owlxmlunique/»file:/media/nico/Seagate%20Expansion%20Drive/phd_data/data/2013.05.12_unduplicated_filtered_snapshot/semantic/byteunique/owlxmlunique/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl#Ãfile:/media/nico/Seagate%20Expansion%20Drive/phd_data/data/2013.05.12_unduplicated_filtered_snapshot/semantic/byteunique/owlxmlunique/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl#hasMcpd:Ãfile:/media/nico/Seagate%20Expansion%20Drive/phd_data/data/2013.05.12_unduplicated_filtered_snapshot/semantic/byteunique/owlxmlunique/345a9eac-24b5-4761-9a45-b98c29484458_sadiobjects.owl#hasMgis:kğont0AlleleAminoAcidSequenceAnnotated_InteractorAnnotationHitsAntigenicAnnotation
+ArrayFloatArrayIntegerArrayStringAuthorBLOCKAnnotationBasicGFF3SequenceFeatureBasicGFFSequenceFeatureBriefTaxonConceptByoDynTargetCladeColorCommentedObjectCoordinatesCpGAnnotationDNASequenceDataBaseENSEMBLHomologElementFloatElementImage_EncodedElementIntegerElementStringElementXYDataEmageAnnotationEmailEquick_tandem_tableEquicktandemAnnotationEvidenceFASTAFASTA-Report
+FASTA_TextFamilyBLOCKAnnotationFeatureAASequenceFeatureAnnotationFieldFirstEpithetGCP_CommunicationDetailGCP_ConstraintGCP_EntityRelationshipGCP_GeoPointGCP_IdentifierGCP_MapFeatureGCP_MapPositionGCP_OntologyTermGCP_OrganizationGCP_SimpleFeatureGCP_SimpleIdentifierGCP_SimpleLocation	GCP_ValueGI_FunctionGI_GeneGappedDNASequenceGatheringSiteGeneExpressionAnnotationGeneExpressionTest_TextGeneIdGenericSequenceGenusGraphPoint1DGraphPoint2DGraphPoint3DGraphSeries1DGraphSeries2DGraphSeries3DHitPositionIdentificationImage_EncodedInfraspecificEpithetInterProMotifAnnotation
+Interactor	LabelDataLatitudeDecimalLocalityLocusLongitudeDecimalLutefiskAnnotatedAASequenceLutefiskAnnotationMSEicPdfUrlMSPeak	MSPeakRelMSRawCdfUrlMapPositionMappedLocusMatrixString
+Matrix_rowMicroArrayData_TextMolWeightAnnotationMotifAnnotationMotifMatrixNewick_TextNucleotideSequenceObjectOligoHitOligoQualityThresholdsOligoTargetSpecificityOrganismPDB-EnrichedPDB-TextPasswordPattern
+PlotReportPositionProbIDAnnotatedAASequenceProbIDAnnotationProbMolWeightAnnotationProbeIdProgramQueryRecordRecordBasisRestrictAnnotationRulesSCOPLayerNodeScoredMotifAnnotationSequence_alignment_reportSigcleaveAnnotationSignature_cleave_tableSpatialDatumStockholm_TextStructureBoundariesStructureDomainStructureFragment
+SubElementTargetCondition	TaxonNameTaxonRelationshipTransmembraneAnnotationTransmembrane_tableTropgene_locusURLWeightedObjectb64_encoded_gifclustal-aln-formatted-textiHOPTextFragmentiHOPevidenceiHOPsentence
+iHOPsymbolmulti_key_value_pairsimple_key_value_pair
+snp_alleleswissprot-flatfiletableRowtext-formatted	text-htmltext_formattedABISequenceChromatogramABI_EncodedACEDBAce_TextAglycaResidueAlignedDNASeqsAlignedDNASequencesAlignedDotBracketFastaAlignedSequences	AlignmentAlignmentMLAlleleAlleleAssociationAmigoAminoAcidSequenceAnnotatedAASequenceAnnotatedNASequenceAnnotatedStructureAnnotatedTableAnnotated_EC_NumberAnnotated_FunCatAnnotated_GO_Term"Annotated_GO_Term_With_ProbabilityAnnotated_InteractionAnnotated_InteractorAnnotated_KO_TermAnnotated_MapMan_Bin
+AnnotationAnnotationHitsAntigenicAnnotatedAASequenceAntigenicAnnotationAntigenicReportArray
+ArrayFloatArrayImage_EncodedArrayIntegerArrayStringArrayXYDataAttributableObjectAuthorAvailableMaterialBL2GAnnotationBLAST-Report
+BLAST-Text	BLAST_XMLBLOCKAnnotationBacMapGeneCardBacMapSpeciesCard
+BasicCloneBasicGFF3MultiFeatureBasicGFF3SequenceFeatureBasicGFFSequenceFeatureBioDomBlastJobBlastXP-TextBlatJobBlocksAnnotatedAASequenceBooleanQueryStringBoundingBoxBriefOccurrenceRecordBriefTaxonConceptByoDynInputByoDynOEDParameterByoDynTarget
+CATHDomainCDNALibrary
+CGView-xmlCMLSpectUrlCODATA
+Cap3ReportCathDomainDescription_XMLChargeChart1DChart2DChart3DChinookServiceObjectChromatogram_EncodedCladeClustalw_Evaluated_TextClustalw_Text
+ClusteringCodcmpReport_Text	CodingSNPCodonAdaptationIndexCodonUsageTableExtended_textCodonUsageTable_TextColiCardCommentedAASequenceCommentedDNASequenceCommentedNASequenceCommentedObjectCommentedRNASequenceCommentedWeightedObjectCompartmentPredictionCompseq_Text
+ComputadorConsensus_Sequence_TextCoordinatesCpGAnnotatedNASequenceCpGAnnotation	CpGReportDASGFF	DCCP_TextDDBJ_AccessionDDBJ_flat_fileDGPI_reportDIGDescriptionDNASequenceDNASequenceWithGFFFeatures	DSSP_TextDTA_TextDecypher_TextDeletionPredictionDescribedLink
+DescriptorDifferentialExpressionTestDifferentialExpressionTest-TextDigestReportDiseaseModelDistance_MatrixDistance_matrix_textDnaSequenceHolderDotBracketFastaDrugCard
+Dummy_dataEBI_WUBlast_XML	EC_NumberEMBL	EMBL_TextENSEMBLHomologENSEMBLHomologyEdgeElementElementContainerElementFloatElementImage_EncodedElementIntegerElementStringElementXYDataEmageAnnotationEmageReportEmailAddressEmowseAnnotatedAASequenceEnzymatic_TextEquick_tandem_repeatEquick_tandem_tableEquicktandemAnnotatedNASequenceEquicktandemAnnotationEquicktandemReportEvocDIGDescriptionEvocIDExpiredEntryExtractDataFASTAFASTA-ReportFASTA_AAFASTA_AA_multiFASTA_Base_QualityFASTA_Base_Quality_multiFASTA_NAFASTA_NA_multi
+FASTA_Text	FASTA_pep
+FSOLV_Text	FSSP_TextFamilyBLOCKAnnotationFastaConsensiFromGroupFastaConsensiFromGroup2
+FatiGO-XMLFeatureAASequenceFeatureAnnotatedAASequenceFeatureAnnotationFeaturesFirstEpithetFooBarFrequenciesFriendFunCUT_Annotation_XMLFunCatGBGCGGCG8GCP_AccessionGCP_AdministrativeDivisionGCP_AuthorityGCP_BiblioReferenceGCP_BiologicalSample	GCP_CladeGCP_CommunicationDetailGCP_ConstraintGCP_ContactGCP_ContactingDetailGCP_ContactingDetailsGCP_ContentGCP_CorrelatedLinkageMapSetGCP_CorrelatedMapFeatureSetGCP_CorrelatedMapSetGCP_DetectedVariant
+GCP_EffectGCP_EmbeddedMap
+GCP_EntityGCP_EntityRelationshipGCP_Evidence
+GCP_FactorGCP_FeatureGCP_FeatureSetGCP_GeneProductGCP_GenomicFeatureGCP_GenomicFeatureAssay#GCP_GenomicFeatureDetectionProtocolGCP_GenomicFeatureDetectorGCP_GenomicFeatureVariantGCP_GenomicMapStudyGCP_GenotypeStudyGCP_GeoLinearFeatureGCP_GeoPointGCP_GeoPositionGCP_GermplasmGCP_GermplasmCollectionGCP_GermplasmNeighbourhoodGCP_GermplasmSetGCP_GermplasmStudyGCP_HoldingInstituteGCP_IdentifierGCP_IdentifierSetGCP_IndexingGCP_LaboratoryGermplasmStudyGCP_LegalEntityGCP_LocationGCP_LocusSequenceGCP_MaintenanceNeighbourhoodGCP_ManagementNeighbourhoodGCP_MapGCP_MapDistributionGCP_MapFeatureGCP_MapIntervalGCP_MapPointGCP_MapPositionGCP_MolecularPhylogenyGCP_MolecularVariantGCP_MolecularVariantSetGCP_MultipleSequenceAlignmentGCP_NameSpaceGCP_OntologyGCP_OntologyTermGCP_OrganizationGCP_Passport
+GCP_PersonGCP_PhenotypeGCP_PolygonGCP_ProteinGCP_ProtocolGCP_RNAComplexGCP_RelatedAccessionsGCP_RelativeMapPositionGCP_SimpleCitationGCP_SimpleCladeGCP_SimpleFeature#GCP_SimpleFeatureWithSearchOperatorGCP_SimpleIdentifierGCP_SimpleLocationGCP_SimpleSequence	GCP_Study	GCP_Taxon	GCP_ValueGCP_ValueSetGCP_VariateGFFGFF1GFF2GFF2_5GFF3GIFFormatImage
+GI_ClusterGI_ClusterAssignmentGI_FunctionGI_GeneGOGraphGOTermGO_TermGappedDNASequenceGatheringSiteGazInput	GazOutputGenBank_TextGeneAccessionListGeneExpressionAnnotationGeneExpressionReportGeneExpressionTest_TextGeneIdGeneInfoGenePositionGeneSwingerObjectGenericFeature
+GenericSNPGenericSequenceGeneticElement
+GeneticMapGenotypeGetzJobGlycanScoreGlycoCT_condencedGlycoCT_xmlGlycoSequenceGlycomicsObjectGlydeIIGraphPoint1DGraphPoint2DGraphPoint3DGraphSeries1DGraphSeries2DGraphSeries3DGraphSeriesBaseHAMAP_Family
+HBond_PairHFormat-textHMMPfam_ReportHMMSearch_ReportHMM_Text	HSSP_TextHitPositionIGIMGA_AccessionIRFGCDemo_PIDListISS_Annotation_XMLIUPACIdentificationImageImage_Encoded	Image_PNGInfraspecificEpithet
+IntAct_XML InterProMotifAnnotatedAASequenceInterProMotifAnnotationInterProScanResultInterProScanResult_RawInteractionInteractionMethodInteraction_With_Evidence
+InteractorInvertedComplementRepeatInvertedRepeatJPEGFormatImage
+JackkniferJackknifernonKCFKO_TermLINUCS	LabelDataLabeledExtractDataLatitudeDecimalLegoo_PrimerSearch_ReportLink	List-Text	List_TextLocalityLocusLongitudeDecimalLutefiskAnnotatedAASequenceLutefiskAnnotationLutefiskReportLutefisk_TextMEGA	MEME_TextMGIS_ACCESSION
+MGIS_QueryMGIS_id
+MSCmlspectMSCmlspectUrlMSEicPdfUrlMSFMSPeak
+MSPeakList	MSPeakRelMSPeakRelListMSRawCdfUrlMSRawCdfUrlSetMSXcmsTestOutputM_GIS
+MapMan_BinMapPositionMappedFeatureMappedLocusMappingSequenceMatchingPatternMatrixMatrixFloatMatrixIntegerMatrixString
+Matrix_rowMeasuredBioMaterialDataMegaMergerReportMeta_Alignment_Text
+MetaboCard
+MetaboliteMetwareExperimentIdMicroArrayData-TextMicroArrayData_TextMolWeightAnnotationMolWeightsAnnotatedAASequenceMolWeightsArrayMoleculeMotifAnnotatedAASequenceMotifAnnotationMotifMatrixNCBI_BLAST_TextNCBI_Blast_DatabaseNCBI_Blast_XMLNCBI_Blast_XML_GifNCBI_Blast_XML_Gif_MapNCut_Clusters
+NCut_InputNCut_MatrixNDB-TextNamedSpliceVariantNewick_Text
+Nexus_TextNexusnonNj_TreeNucleotideSequenceOMIM
+OSE_objectOccurrenceRecordOligoHitOligoQualityClassThresholdsOligoQualityRecordOligoQualityThresholdsOligoRecordOligoTargetSpecificityOligoTargetsOntology_TermOrderedMatrixOrganismOrganism_NameOrganismsLongNameOrganismsShortNamePDB-EnrichedPDB-TextPDB-formatted-text	PDBLigandPDB_EnrichedPDFPDGJOB	PESTMotifPHD_TextPIR	PMUT_TextPNGFormatImagePPSearchReportPSIBLAST_TextPSea-text-formatted	Pair_TextPatmatdbReportPatmatmotifsReportPatternPepMWValuesTablePepNovoReportPepcoil_TextPepinfoReportPepstats_TextPhenotypeDescriptionPhylip_TextPlasMapperTextMap
+PlotReportPositionPotentialTaxonPredictedSNPPredictionModel-XMLPredotar_result
+PrimerPairProbIDAnnotatedAASequenceProbIDAnnotationProbIDReportProbMolWeightAnnotation!ProbMolWeightsAnnotatedAASequenceProbeExpressionDataProcheckReportProdomMotifProfitOutputProjectPropertySequencePrositeDoc_TextPrositeMotifProteinChargeTableProteinTablePubMed-MEDLINEPublicationQueryQueryStringRNACardRNAMLRNASequenceRNAStructAlignmentMLRNAStructMLRecordRecordBasisRefSeq_TextRegexRemapOutputRenciAminoAcidSequenceRenciNucleotideSequenceRenciSequenceRestrictAnnotatedNASequenceRestrictAnnotationRestrictReportRules
+SCOPDomainSCOPLayerNodeSIAM_Annotation_XMLSMILESSNPListSample
+SampleDataSchematikonMotifIDSchematikonMotifSupportSchematikonSegmentAttributesSchematikonSegmentIDSchematikonStructureAnnotationSchematikonVorocodeNameScoreScoredMotifAnnotatedAASequenceScoredMotifAnnotationScored_acronym_stringSeqDescriptionSequenceChromatogramSequenceComplexitySequenceDescription_TextSequenceFeatureTable
+SequenceMLSequence_alignment_reportShiftYPredictionReportShowORF-TextSigcleaveAnnotatedAASequenceSigcleaveAnnotationSigcleaveReportSignature_cleave_motifSignature_cleave_tableSimpleAnnotatedGIFImageSimpleAnnotatedJPEGImageSixPackOutputSourceSpatialDatumSpecimenUnitSputnik-ReportStadenStockholm_TextStrideOutputStriderStructureBoundariesStructureDomainStructureFragmentStructure_Alignment_reportStudy
+SubElementSwissProt_TextTESTTFscan_TextTargetConditionTargetP_result	TaxonNameTaxonRelationshipTaxonScientificNameTaxonTCSTestakTrait_DetailsTranscriptionUnit TransmembraneAnnotatedAASequenceTransmembraneAnnotationTransmembraneReportTransmembrane_fragmentsTransmembrane_tableTreeTreeConTreeDet_Annotation_XMLTropGENE_ALLELE_FREQUENCYTropGENE_Distance_MatrixTropGENE_Diversity_Matrix!TropGENE_Diversity_Matrix_DiploidTropgene_accessionTropgene_locusTyped_ImageUserVirtualPrimerPairVirtualSequenceWU_BLAST_TextWebFormatImageWeightedAminoAcidSequencesWeightedList-TextWeightedObjectWildcard_QueryXCMSSetSerializedUrlXYData_TextZip_Encoded
+abwur_testaccession-codealignment_in_fasta_formatallele_freqamirna	amirna_gib64_Encoded_PNGb64_Encoded_Postscriptb64_encoded_PDBb64_encoded_gifb64_encoded_jpegb64_encoded_svgzclustal-aln-formatted-textclustal-msf-formatted-textcodon_usage_tablegenbank-flatfilegenegeneSNPgene_ref	genomeSNP
+glycoImageglycoPNGglycoSVGiANT-xmliANT_BLAST_TextiANT_entry-xmliANT_entry_db-xmliANT_entry_features-xmliANT_feature-xmliHOPLabelledTextFragmentiHOPMeSHevidenceiHOPTextFragmentiHOPabstractiHOPabstract-XMLiHOPactionVerbiHOPchemicalCompoundiHOPdefinitionListiHOPdefinitionList-XMLiHOPevidenceiHOPfoundSymbolsiHOPinteractionListiHOPinteractionList-XMLiHOPrelatedInfoiHOPrelatedSymbols-XMLiHOPsentence
+iHOPsymboliHOPsymbolInfo-XMLiHOPunknownEvidenceinteraction_partner
+mmCIF-Text
+mmCIF_Textmulti_key_value_pairmulti_slide_expression_valuesmyTreensSNPnsSNP_genomicnsSNP_proteinphylogenetic_distance_matrixphylogenetic_treeprodom-flatfileprotein_composition_tablepsiblast_input_alignmentsequence_alignmentsequence_alignment_msfsimple_key_value_pair
+snp_allelesnp_genotypeswissprot-flatfiletabletableRowtestouttext-base64text-formatted	text-html
+text-plaintext-uuencodedtext-xmltext_formatted	text_html
+text_plaintext_postscripttext_xmltigr-xmlxdom-flatfilezPDBhashasA_seqhasAccessionhasAccessionshasAcquisitionSourcehasAdministrativeDivisionshasAffiliationhasAlignmenthasAlignmentshasAliphatic	hasAllele
+hasAllele1
+hasAllele2hasAllelicvariantshasAminoAcidSequencehasAmirna_id	hasAnglenhasAnnotatedSequencehasAnnotationhasAnnotationHitshasAnnotationshasArchitecture
+hasAreaMaphasAromatichasArray	hasAssayshasAtom	hasAuthorhasAuthority
+hasAuthorshasB_seqhasBasicGFF3SequenceFeaturehasBiologicalProcesseshasBiologicalStatus	hasBlockshasBodyhasBoundaryhasCellhasCellularCompartments
+hasChargedhasChi1-Chi2hasCitationshasCladehasClasshasClassificationCodeshasClinicalSynopsishasClosestSeqhasCollectionshasColumn9_tag_valuehasCombhasCommunicationModeshasComponentshasConditionhasConsensushasConsensusMaphasConstraintshasContactingDetails
+hasContent
+hasContexthasContributorshasCoordinateshasCorehasCorrelatedMaphasCorrelatedMapFeatureshasCorrelatedMaps
+hasCountryhasCropNamehasCrossreferences
+hasCuratorhasDatahasDataRangehasDatabasehasDeNovoPeptidehasDescriptionhasDetectedMethodshasDetectedVariantshasDetectorhasDevelopmentalStagehasDimension1hasDistorted_geometry_plotshasDistributionhasDummy_FASTA_Text
+hasEffects
+hasElementhasElementshasElevationhasEmageAnnotationhasEmail"hasEnclosingAdministrativeDivisionhasEndPositionhasEvidencehasEvidenceCodehasFASTA-Report
+hasFactorshasFasta
+hasFeaturehasFeatureshasFieldhasFirstEpithet	hasFormathasFoundingGermplasmhasGIDshasGatheringSitehasGeneExpressionAnnotationhasGene_symbolhasGeneexpressiontesthasGenericSequence	hasGenomehasGenomicFeaturehasGenomicFeatureVariantshasGenushasGeoReferencehasGeographicalDatumhasGeographicalProjectionhasGermplasmhasGermplasmCollectionhasGi_clusterhasGi_function
+hasGi_genehasGly_and_Pro_RamachandranhasGrowthConditions	hasHeaderhasHitGraphhasHit_position
+hasHomologhasHomologous_SuperfamilyhasHomologshasHydropathy_KDhasHydropathy_OHMhasIdentificationhasIdentifiershasIndexhasIndexingshasInfraspecificEpithet hasIntellectualPropertyPortfoliohasInteractionTypeshasInteractorAhasInteractorBhasInvestigatorshasItemhasJurisdictionhasLabelhasLanguagehasLatitudehasLatitudeDecimalhasLeft	hasLevelshasLibrarianhasLinearFeaturehasLinkageMapshasLocalityhasLocushasLongitudehasLongitudeDecimalhasLowerhasLutefiskPeptidehasMSEicPdfUrl	hasMSPeakhasMSPeakRel&hasMain-chain_bond_angle_distributions'hasMain-chain_bond_length_distributionshasMain-chain_parametershasMaphasMapFeaturehasMapFeatureshasMapPositionhasMappedGermplasmhasMappedLocus
+hasMarkers	hasMatrixhasMatrix_rowhasMaturePeptidehasMetaDatahasMicroarraydatahasMolecularFunctionshasMolecularVariantshasMulti_key_value_pairhasNASCArraysWebURLhasNamehasNbhasNegativehasNew	hasNewickhasNon-polar	hasObjecthasObservationUnitshasOligo_hithasOligo_target_specificityhasOrganismhasOrganismParthasOrthologGenehasOwnerhasPanel_lsidhasParametershasParticipanthasPassporthasPassword
+hasPatternhasPeptideSequenceshasPolarhasPoshasPositionhasPositivehasPrimaryCitationhasPrimary_hitshasProbIDPeptide
+hasProbeid
+hasProgram
+hasProjecthasProtocolhasPublisherhasQueryhasRMS_distances_from_planarityhasRNASequenceshasRamachandran	hasRecordhasRecordBasishasRelatedAccessionshasRelationshiphasRelationships	hasReporthasResidue_propertieshasRighthasRoothasRowhasRules
+hasSampleshasSecondary_hits	hasSecstrhasSegmentshasSentencehasSentencePiecehasSequencehasSequence1hasSequence2hasSequence3hasSequenceshasSide-chain_parametershasSimpleLocationhasSmallhasSnp_lsidhasSourceGermplasmhasSourceMaphasSpatialDatum
+hasSpectrahasStartPositionhasStereochemical_parameters	hasStockshasStorageLocations	hasStrandhasString_componenthasStructureDomainshasStructureFragments
+hasStudieshasSubElementhasSubjectHeadingOntologyhasSupportingEvidence	hasSymbolhasSynonymshasTag	hasTargethasTaxonhasTaxonFromhasTaxonIdentifiedhasTaxonRank
+hasTaxonTohasTexthasTinyhasTopologyhasTranscriptomehasTransmembraneFragmenthasTreatmentshasTreehasTropgene_bananahasTypehasUnithasUnitshasUpperhasValue	hasValueshasVariateshasVerticeshasWeightedObject	has3primehas3primerev
+has3strand	has5primehas5primerev
+has5strandhasAhasAChasA_end
+hasA_starthasAa_change	hasAa_pos	hasAa_ref	hasAa_varhasAbiotic_stress_DroughthasAbiotic_stress_FloodinghasAbiotic_stress_HightemphasAbiotic_stress_LowtemphasAbiotic_stress_ManganesetoxhasAbiotic_stress_MineraldefhasAbiotic_stress_SoilacidityhasAbiotic_stress_WindshasAbstracthasAcceptedhasAccessPageUrlhasAccordingTohasAccuracy_ratiohasAcquisitionDate
+hasAcronymhasAdditionalInformation
+hasAddresshasAffectationhasAltitudehasAnswerServicehasApplicationhasArgument
+hasAuthURIhasAuthorListhasAutorhasBLOCK_EvaluehasB_end
+hasB_starthasBase_refhasBase_varhasBasisOfRecordhasBayScorehasBiotic_stress_BlacksighasBiotic_stress_Fusarium hasBiotic_stress_Pratylenchuscof!hasBiotic_stress_PratylenchusgoodhasBiotic_stress_RadopholushasBiotic_stress_YellowsighasBiotic_stress_cosmopoliteshasBiotic_stress_pseudomonashasBlast_reporthasCChasCOV
+hasC_scorehasCaihasCanonicalName
+hasCaptionhasCase_insensitivehasChainhasChain_IDhasCharacterization_Bunch_Shape*hasCharacterization_Development_Of_SuckershasCharacterization_Dwarfism'hasCharacterization_Fruit_General_Shape hasCharacterization_Fruit_LengthhasCharacterization_Fruit_Shape!hasCharacterization_Male_Bud_Type,hasCharacterization_Mature_Fruit_Peel_Colour$hasCharacterization_Number_Of_Fruits%hasCharacterization_Number_Of_Suckers;hasCharacterization_Presence_Of_Seeds_With_Source_Of_Pollen%hasCharacterization_Pseudostem_Height+hasCharacterization_Pulp_Colour_At_Maturity!hasCharacterization_Pulp_In_Fruit#hasCharacterization_Rachis_PositionhasCharacterization_Rachis_Type	hasChargehasChargeStatehasChecksumhasChromosomehasCllhasCmlSpecthasCodehasCodon_PoshasCodon_poshasCodon_refhasCodon_varhasCombined_EvaluehasComentary
+hasCommenthasCommentshasCommunicationDetailshasCompartmenthasComplexityhasComponenthasConfidencehasConstraintDefinitionhasContiguous_stretchhasContributorhasCoordinatesTexthasCounthasCountryCodehasCpGhasCreationTimehasCreation_datehasCterminalMasshasCterminalTagMasshasCysResMasshasDhasDBhasDEPST_percentagehasDSSPhasDataThresholdhasDatehasDefinitionhasDestructionTimehasDetailed_descriptionhasDiameterhasDimension1_axis_labelhasDimension2hasDimension2_axis_labelhasDimension3hasDimension3_axis_labelhasDirectionhasDoc	hasDomain
+hasDomainshasDotall_mode	hasDvalue
+hasE-valuehasER_ScorehasEditorhistoryhasEnd
+hasEnd_row	hasEnergyhasEnzyme_namehasEvidence_codehasExactMatchhasExperimentIdhasExpressionLevelhasExpressionNoteshasExpressionPatternhasExpression_intensity_valuehasExtNumberhasExtThresholdhasFileBasenamehasFirst_primer
+hasFitnesshasFivePrimer
+hasFormulahasFragIonTolerancehasFragmentNumberhasFramehasFree_energyhasFrequencyhasFromhasGapshasGeneNamehasGeneSymbolhasGenotypehasGermplasm_namehasGidhasGroupCodhasHhasHistogramhasHithasHitcounthasHitshasHydrophobicity_indexhasIDhasIHOPpmidhasIdhasIdNumberhasIdadehasIdentifiabilityCriteriahasIdentificationDatehasIdentifierhasImageDatahasImagedatahasInputStringhasInsert_codehasInstitutionCode	hasIntScrhasIntegrationMethodhasIntensityhasInterPro_Match_AccessionhasInterPro_Match_DescriptionhasIonOffsethasIonsResiduehasIonsWindowhasIsPartOfHolderCoreCollectionhasIsPooledhasJmolScript
+hasJournalhasJournalImpacthasKeyhasKeywordshasKillServicehasKillcodehasKind
+hasLatLong	hasLegend	hasLengthhasLiteral_modehasLocalityTexthasLocationhasLoop_144hasMIT_ScorehasMWhasMWTolerance
+hasM_scorehasMagazinehasMatch_AccessionhasMatch_EndhasMatch_NamehasMatch_StarthasMatchedIons
+hasMatcheshasMaxDistancehasMax_score_poshasMaxrepeathasMeanSignal	hasMeshId	hasMethodhasMimeTypehasMimeTyptehasMirna_longhasMirna_patternhasMismatcheshasMobyXMLData-inputhasModelFormat	hasModelohasMolWeighthasMoleculehasMotifhasMultiline_modehasMutationshasMwhasMzhasNASCArraysExperimentNamehasNASCsubmitter
+hasNameRefhasNexushasNomehasNterminalMasshasNterminalTagMasshasNumAtomshasNumResidueshasNumSequenceshasNum_blockshasNum_studies	hasNumberhasOEDResolution
+hasO_scorehasOccurrencehasOntologyhasOperatorhasOptimal_energyhasOrientationhasOriginalQuantityhasOther_Score	hasPDB_IDhasPROMOTIF_beta-turnhasPROMOTIF_gamma-turn	hasPValue
+hasPartnerhasPeakWidthhasPercent_identityhasPercentaje
+hasPevzScrhasPhasehasPhenotypehasPlast_ScorehasPlot_titlehasPostalCodehasPosteriorProbhasPrchasProbability
+hasProcesshasProjectDescriptionhasProjectNamehasProteinOrNucleotidehasProtein_namehasPublicationKeyhasQtdeProcessadores
+hasQuality	hasRadiushasRankhasRatio
+hasRawdatahasReducinghasRefhasReferencehasRegex	hasRelInthasRemainingQuantityhasRepetitions
+hasResiduehasResolutionhasResourceIdhasRestriction_site	hasResulthasResultUnitshasRetentiontimehasRolehasRow_positionhasRunningTypehasS100hasS35hasS60hasS95hasSEQhasSTR	hasSTRIDE
+hasS_score	hasSamplehasSampleId
+hasScaleidhasScientifichasScientificNamehasScorehasSecond_primer
+hasSeealsohasSensitivityParametershasSentenceNumberhasSeqhasSeqDB
+hasSeqHitshasSeqidhasSequenceNamehasSequenceStringhasSequenceTaghasSequence_IdhasSequence_namehasShortlabelhasSizehasSlideNumberhasSnp	hasSource
+hasSpecieshasStandardDeviationhasStarthasStart_rowhasStarting_amino_acid_positionhasStatistics	hasStatushasStop	hasStrainhasStreetAddress	hasStringhasStudy_deschasStudy_idhasStudy_namehasSubjectHeadingshasSubsequence
+hasSummary
+hasSupport
+hasSurname
+hasSynonymhasTargetSequencehasTargetSpecieshasTarget_seqhasTaxIDhasTaxonCanonical
+hasTaxonIdhasTaxonNamehasTermhasThreePrimerhasThresholdhasTime
+hasTimeouthasTimestamphasTimestephasTitle
+hasTmethidhasTohasTotalHitshasTrait_abbrhasTrait_deschasTrait_idhasTrait_namehasTransmembraneNumberhasTruncatedListhasURLhasUniqueSupporthasUnixTimestamphasUrlhasUuidhasValidityhasValueString	hasVerbIdhasVernacularName
+hasVersionhasVorocodeName	hasWeight	hasX-corrhasXcmsTopDiffTsvUrl	hasXtitlehasYear	hasYtitle	hasZScoreCOLLCODEORIGCTYSPECIES	SECTION,          	 
+                        ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~  €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º »¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€		‚	ƒ	„	…	†	‡	ˆ	‰	Š	‹	Œ					‘	’	“	”	•	–	—	˜	™	š	›	œ			Ÿ	 	¡	¢	£	¤	¥	¦	§	¨	©	ª	«	¬	­	®	¯	°	±	²	³	´	µ	¶	·	¸	¹	º	»	¼	½	¾	¿	À	Á	Â	Ã	Ä	Å	Æ	Ç	È	É	Ê	Ë	Ì	Í	Î	Ï	Ğ	Ñ	Ò	Ó	Ô	Õ	Ö	×	Ø	Ù	Ú	Û	Ü	İ	Ş	ß	à	á	â	ã	ä	å	æ	ç	è	é	ê	ë	ì	í	î	ï	ğ	ñ	ò	ó	ô	õ	ö	÷	ø	ù	ú	û	ü	ı	ş	ÿ	€
+
+‚
+ƒ
+„
+…
+†
+‡
+ˆ
+‰
+Š
+‹
+Œ
+
+
+
+
+‘
+’
+“
+”
+•
+–
+—
+˜
+™
+š
+›
+œ
+
+
+Ÿ
+ 
+¡
+¢
+£
+¤
+¥
+¦
+§
+¨
+©
+ª
+«
+¬
+­
+®
+¯
+°
+±
+²
+³
+´
+µ
+¶
+·
+¸
+¹
+º
+»
+¼
+½
+¾
+¿
+À
+Á
+Â
+Ã
+Ä
+Å
+Æ
+Ç
+È
+É
+Ê
+Ë
+Ì
+Í
+Î
+Ï
+Ğ
+Ñ
+Ò
+Ó
+Ô
+Õ
+Ö
+×
+Ø
+Ù
+Ú
+Û
+Ü
+İ
+Ş
+ß
+à
+á
+â
+ã
+ä
+å
+æ
+ç
+è
+é
+ê
+ë
+ì
+í
+î
+ï
+ğ
+ñ
+ò
+ó
+ô
+õ
+ö
+÷
+ø
+ù
+ú
+û
+ü
+ı
+ş
+ÿ
+€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîï§³¨ó©ÀªÅ«×¬¯­¯®¸°À±ÛµÎ¶ş·€¸Ü¹¼º¥»Ù¼¾½¼ÀÁ¢Ä¶ÅÂÆÄÈÇÉÇÊÇËÇÌÇĞÂÑ¸ÒÀÓÉÔÂÕÀÖÀÛÄİÒß¶àäÄéÄëÀìÀíÉõÀö¸øÀùÍûÀüÀıÀşµÿ’€Ê‚’ƒ…À‡À‰·ŠÂ‹‰ŒÉÅÅÅÁ’Ê“’”Å•Å–À˜‡›Àœ¶©ŸÀ¡À¢À£À¤Ä¦À§Å­«®«¯«°«±«²ïµ¶¶Å¹·ºÂ»¹¼‘¾×¿­ÀÀÁ¸ÂÀÃÂÄÀÅÄÆÀÇÆÈÀÉÅÊÅËÅÏÄĞ¶Ñ¶ÒÂÕÚØÉÚÀÛÀÜÀİŞ«ß™à¦á€âïã¨äªåæ¨ç†è¨éëëì–î‘ï†ñªòóó¨ô¨õïö‘÷ïø¢ùïúìûüü‰ıÿşÿÿ”€ïª‚ƒƒï„­…œ†ª‡ª‰„Šï‹ŒÊ‚ï”‘ó’”“””¯•â–ï—¨˜é™†š™›ïœŠôŠŸó ı¡õ¢à£õ¤¥”¦¨§†¨ª©¨«‘¬¨­ï®â¯¨°ª±ó²À³²´²µ²¶²·ğ¼É¿’ÃÅÄÂÅïÇÀÉÈÎîÓ×ÔÖÕÖÖ×ØÖÚÙÛÚÜßİßŞßâÀå‡æÀç£èÀëÉìÖî¿òÄó¶ô°öÀûÊığşÀÿÀ€Ö‚Ö„­†ÀˆÀ‰Å¶ÂÅ‘À’À™°œÇÇ¤Ì¦Ê§í©¨ª¨«¨®À¯Å°À±¸³À´ÅµÂ¶¶·È¹¶ºÂ»Å¼Ñ¾Ä¿¾À¿ÁÅÂÀÃÀÄÅÆÀÇÀÈÀÊÎĞÒÖ¨Ø×ÙÀÚÀÜÅİÀßÜãÅäÀåÅæğç¹èÒéÀêÀë¯ì¯îÅïğÅòÅô¸õÀöÉøØùÍúÄû„ı¶şÂ€µ¶…À‡ÎˆÅŠ¹‹ÀŒÀÀ‘Ä’Ê“Û”Û—Å™Àšœ›œ·ÂŸ¡Ì£Ä§­¨«¯¶°º³¿µÅ¶À·Û¸À¹ÀºÀ»¶¼Â½»ÀÁ‚ÂÀÆÀÇÀÈ¸ÊÀËÂÍËÑÅÒÀÓÀÕ„ÜÈİ¶ŞÂßİâÀãÀäÉåÀçÀëïïÑğîñµòÀöÀøÂùÂú°ş¿ÿ¿€¿¿‚¿ƒ¿„À…À†Å‡ÀŠˆŒ×ŒŒÄ‘’“”•—–—˜—™Äš—›—œ¢Ä— ¢¡Ä¢Ä£Ä¤—¥¦Ä©ÅªÅ­À±Å²Å³À´Åµ°¶Å·¶»À¿ÂÀÂÁÀÃÂÄÀÅÇÆÇÈÇÉÇÊÄËÀÌ¿« ı
+
+ï¬ ¥¥I® 
+™™3³ ã
+¬ß´ Î
+ˆ
+¸ ¸¹¸¹­¹ ¶£
+¶“	¼ Ï	ã	ñ
+¾ ‡qÄqÅÆ‡Ä
+Å
+Æ¿ €€qÂ °ß	Ã ö	
+ÒÄ ÑÑÅ ›¶
+Æ 
+ĞĞÈ (
+É ‘)‘
+Ê *
+Ë +
+Ì ‘,‘
+ì
+ĞèêÎ À
+ïÏ İôĞ 
+Ï
+¶Ô Şşó	× ¥p
+¥ï‹
+¢
+Ø ÜÜÙ 
+íŸí
+¶
+Ïß	é
+›£­°Ú íŸí
+¶ó	º
+é
+ÿ
+›­°µÜ „&›2Œ€
+„
+›
+ŒŞ „&›2
+„
+›ß ÑÑ5á Î`×]›`Ò]
+Î
+×
+›
+Òâ À	†ÆÇã î’	
+ö
+ä ’
+Á
+ÌÏå ÁÁ‰
+Ã×
+æ Ìúç Ò"×è"îº"¢É"¢
+Ò
+×
+è
+î
+º
+ï
+ÉØ	õ
+…‘­ê 
+ï†
+İî 
+†§	„ï ½S½
+†Ñ	Ğğ ½T½
+†Ñ	Ó	Ğñ ½U½
+†Ñ	Ó	Õ	Ğò 
+ï
+Ï¨
+À
+ã÷ êkóo
+ê
+óù áâãä°	±	ú ¨‘	„ 	·	­
+Ø
+•† ÷
+Â
+ˆ Í]Ö`°‹
+Í
+Ö
+°¾	‰ ÑÑ$Š 
+¥Á	ç
+û
+›‹ 
+ĞĞ“ œœ— á{ú{
+á
+ú¶š ¦Lêk
+¦
+êœ 
+ĞĞ 
+ÊÊi  ¦%§%¨%
+¦
+§
+¨£ 
+4¨ 
+†
+«
+ï
+¶
+Ïß	®°© »'»
+†ª ä
+Ö	¬ —1»»
+—­ 
+
+Ó® ÓX
+Ó
+¯ 
+
+Ó° 
+
+Ó± 
+
+Ó² 
+†¹	æ	ç	è	ø	ù	³ ““-µ 
+ïñ€
+›· ½/½ö	
+·
+ËÒ¸ ¿	ß	›ª°¹ ÑÑ0º ¿	›ª» 
+ĞĞÌ ßß
+†
+¶Ş²	Ô
+Í ›ıÌ	ı	ó
+Î ›ıÌ	ı	ó
+Ğ 
+œœÑ ÑÑ7Ò 
+†
+—
+Ï†
+ş
+´Ó œœ × Î
+ˆ
+İ €D–D
+€
+–™
+Ş 
+şş?ß üD
+üÚà ÚDöCøD DÁqËDéCDÚöøÁ
+ 
+Ë
+é
+á ŠDúD
+Š
+úå 
+ÃÃBæ ÂDï:Âï·í
+ç ÉDÉõ¶	è 
+ààqé 
+óóDê ûDáDá
+ûë üDıDüıì 
+‰‰Dí šDöDšöî 
+¯¯Dï ÑDæDˆD˜<ºD¿DÏDÑæ˜º¿
+ˆ
+Ïğ ÏDõDÏDÏõ
+Ïñ D˜D
+
+˜›ò 
+ÏÏ;ó ½DĞDÔF½Ô
+Ğô Cõ İDãDëDİãëö ªªD÷ ‰DD
+‰
+ø ÖÖDù ÖDˆDÖˆú 
+©©Dû ÒDãDÒ
+ãü 
+ååDı ÖÖ=ş ’FÌFÑDÕF
+’
+Ì
+Ñ
+Õÿ ­D®D
+­
+®€ ÁDŞDÿDÃDµDÂDÏDŞÃµ
+Á
+ÿ
+Â
+Ïò üD´D´
+ü‚ °D®D®
+°ƒ ¯¯D„ ¯DµDÌDµÌ
+¯… ììD† ã
+†‡ ¿¿Dˆ 
+ÙDéDĞD¼Dé
+Ù
+Ğ
+¼Ÿ
+¼‰ 
+ŸŸDŠ õõD‹ «E
+«Â	Î	 ¡¡D àDÑDà
+Ñ D‘ 
+ßßD’ –F²F
+–
+²• ÄD¥D¥
+Ä– 
+÷÷D— ììD˜ ©©D™ ğğ>š 
+œœA 
+¿¿D¡ ƒƒD¢ şşC£ ’’D¤ ÀÀD¥ â@—D
+â
+—¦ üÌ	­§ 
+ÍÍC¨ ÏD
+Ïà« •D¬?
+•
+¬­ 
+DšDÇDDÕDšÇÕ
+® 
+ÅÅD¯ ô;‚qÀqô
+‚
+À° ÔÔF± 
+ƒƒ;¸ ç ²G³Hç²³¹ ¥q±qùu
+¥
+±
+ùğ
+º Ù
+
+†» ïq¾q
+ï
+¾½ 
+¿
+ïÁ´	Í	Ú
+¾ ÉÍ	À ù#Ó^
+ù
+ÓÁ ä	
+
+Å 
+†¹	æ	ç	è	ø	ù	Æ ¤¤KÉ ûM†{¥pû
+Ï
+†
+¥Ê °ß	Ë î—
+î	¸
+Ê
+Ë
+«¯Ì 
+œß	°Í †{
+†¶Ï 
+†
+ï
+¶
+Ï°µĞ ähä¥
+Ñ ˆ–¬Ò 8
+Ü ‹‹Pİ ‹‹QŞ ‹‹Rß 
+½½!à Äš†¢
+Ä
+†á İÇ	ş	ã ÅŒ
+Å
+¶
+©Ù	ä ÅŒ
+Å
+¶
+©Ù	ÿ	³ç ¶q
+¶«	ê 
+¢¢qí Ä’ÄŠ
+ï ü
+»
+ó ÑÑZô 
+—È	´õ ©	Ì	Ü	”
+•
+¥
+¯
+°
+±
+²
+º
+§÷ ÿ[ÿˆ‰ø Í	©Éû ÷	´
+›ü ¾pÛp
+¾
+Ûßàÿ€	ƒ 
+ï
+†„ 
+ÊÊ\‹ ÇÇ ÑÑb Ø
+Ø‘
+è
+ï
+ø
+ú
+æ ÎaÎ¨	Ä	Å	Æ	Ë	ê	ë	ñ	÷	–
+—
+˜
+«
+¬
+Ï
+Ğ
+å
+¦“ åæçèéêëì…	†	‡	ˆ	‰	Š	‹	Œ	ìíîï” "åæçèéêëì…	†	‡	ˆ	‰	Š	‹	Œ	—	˜	™	š	›	œ			Ÿ	 	¡	¢	£	¤	¥	¦	ìí– ¬	å	—— å	—İ˜ 
+ïå	İš “
+É
+Š› ÚÚdœ É
+ ÛÛe 
+ïå	—İŸ ±±f  ÙcÙ
+ïŞç¡ 
+Ì
+Õ÷£ ª	ß	°¤ ¿
+İ
+¡Â¥ Ô_âg
+Ô
+â¦ ¡¿
+§ î	‚
+¢© ÕÕ
+ª ÕÕ
+« ÕÕ
+¬ È ÈŒ­ 
+†
+ïš
+Ş
+‚¶ ÑÑl¹ ÑÑmº „
+Ş½ ´	ì	‡
+Ó
+ô
+ĞÜ¿ 
+··™À 
+ÓÓ¥É Í
+
+ÍË Ê¤ê¤Ç¤Êê
+Ø
+Ç½	Ş	œ
+Ã	Ö
+ĞÌ 
+†
+ï†
+Í 
+ş
+Ì
+Õƒ	
+šÎ 
+¸¸VÏ ‰s s
+‰
+ Ğ øøtÑ ¼	ô	¿
+æ
+Ò ÷r÷¥
+Ó ¨qÊq
+¨
+ÊÔ ””‚Õ ÉÍ	Ö ççjØ ®
+«Û †¥
+†›
+Ş 
+ï
+¿§	ğ	È
+Ñ
+ß †¥
+†›
+á øû 
+¡
+Íâ É	ƒ
+Å
+›°µë 
+ĞĞì 
+ĞĞï 
+ĞĞñ Æ6Ô6ä6ò6¼6½6ñ6ô6„6‡6¬6È6
+Æ
+Ô
+ä
+ò
+¼
+½
+ñ
+ô
+„
+‡
+¬
+Èö 
+†
+ïù÷ ª	ß	°ù 	‚	º	û ·	İ	ª
+ß
+ë
+ü 
+ïí	œı ÑÑ}ş Š
+Š„	„
+³
+î
+ëÿ ÎÎ|€ …
+…ğ
+ ÑÑ~‚ ñ‘‹ñ
+‹ƒ Í¦åzŒz´zÜzİzŞzğ¦òw‘z“zšz¡¦ªz³¦
+Í
+å
+Œ
+´
+Ü
+İ
+Ş
+ğ
+ò
+‘
+“
+š
+¡
+ª
+³„ Äˆëò
+Ä
+ë
+òŞĞ	„
+Ÿ
+ù
+† ó
+ò
+‰ æn‚y…
+†
+æ
+‚
+Ş	Ì	×	„
+ Øíœ
+Ğé˜ 
+ ”	µ	Ú	¦
+Æ
+€ ÑÑ„ ×ØÚÛâ	‡Ÿ 
+ĞĞ¡ 
+èè†¦ ­	ö© Û¿ª –	
+¥
+à
+²¬ Ê	á
+â
+”¯ ÑÑ‡± ·q
+·ó›´ ¸	¥
+¤» ÑÑ‰¼ è
+è›½ 
+ĞĞ¾ ½Š½
+™ö	
+Ò¿ 
+èß	›°Ã 
+ïú	ÅÅ £J§N¾W•ƒ¾
+£
+§
+•É “’Ì ¢¢
+ïÎ ½v™¥½
+™Ï ¹º»Ğ —1
+—
+¶°µÖ Ÿ9«OÂY
+Ÿ
+«
+ÂÈ× ÃÆ
+—
+Ã
+ÆÙ ˜“˜
+ïğÌ
+™Ú ÜÙÛ Õ
+ÔÕÖ×Ü ‹‹İ ÑÑ”Ş Ë
+ËØß 
+ĞĞà ½•½ö	
+Òá ß	ò	°½é ÎÎ–ê ÇÇqì ”.x
+”
+í ï	µ
+¿
+¡Êñ Ë×˜Ë
+×ó ƒ
+†ô à	û	±õ 
+ï†
+İ÷ ü
+¼
+û ½¡ıq­q½
+ı
+­õ	ü 
+Ìq
+Ìá	©
+½
+¾
+Ç
+Ü
+›Äı ÌqíŸí
+Ìá	©
+½
+¾
+Ç
+Ü
+›´Äˆ 
+†
+ï¾‰ 	…{
+…áâãä°	±	¶‹ …{
+…	‚	º	¶• ÀÀq˜ Ø£Ø£Ì	®
+Ğš á
+èŸ ¾¾Ù¢ £¾£
+¾¤ ¤›¤Ì	…
+
+Ÿ¥ ¹œ¹
+†Á§ œœ ¨ ä
+Ö	« 
+Ó® 
+Ç
+¶âä¯	¯ 
+Ç
+¶®	° äâ¸ 
+
+Ó¹ 
+½½%º È¡É¡
+È
+É¼ £½ ââq¾ Û	ü	˜Ñ

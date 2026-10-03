@@ -1,0 +1,93 @@
+*owlapi:ontology:#http://cui.unige.ch/isi/ontologies/+http://cui.unige.ch/isi/ontologies/citygml#3http://cui.unige.ch/isi/ontologies/citygml#bikeway/5http://cui.unige.ch/isi/ontologies/citygml#bridleway/4http://cui.unige.ch/isi/ontologies/citygml#footpath/3http://cui.unige.ch/isi/ontologies/citygml#freeway/?http://cui.unige.ch/isi/ontologies/citygml#freeway_interchange/5http://cui.unige.ch/isi/ontologies/citygml#funicular/3http://cui.unige.ch/isi/ontologies/citygml#highway/4http://cui.unige.ch/isi/ontologies/citygml#ski-lift/1http://cui.unige.ch/isi/ontologies/citygml#urban/'http://cui.unige.ch/isi/ontologies/gml#xs:kŒont0AbstractCityObjectTypeAbstractSiteTypeAddressPropertyType"ImplicitRepresentationPropertyTypeMimeTypeTypeTransformationMatrix2x2TypecitygmldoubleBetween0and1integerBetween0and4AbstractAppearanceTypeAbstractBoundarySurfaceTypeAbstractBuildingTypeAbstractCityObjectTypeAbstractGenericAttributeTypeAbstractOpeningTypeAbstractReliefComponentTypeAbstractSiteTypeAbstractSurfaceDataType#AbstractTextureParameterizationTypeAbstractTextureType AbstractTransportationObjectTypeAbstractVegetationObjectType AbstractWaterBoundarySurfaceTypeAbstractWaterObjectTypeAddressPropertyTypeAddressTypeAppearancePropertyTypeAppearanceType AuxiliaryTrafficAreaFunctionType AuxiliaryTrafficAreaPropertyTypeAuxiliaryTrafficAreaTypeBoundarySurfacePropertyType!BoundedByWaterSurfacePropertyTypeBreaklineReliefTypeBuildingClassTypeBuildingFunctionTypeBuildingFurnitureClassTypeBuildingFurnitureFunctionTypeBuildingFurnitureTypeBuildingFurnitureUsageTypeBuildingInstallationClassType BuildingInstallationFunctionType BuildingInstallationPropertyTypeBuildingInstallationTypeBuildingInstallationUsageTypeBuildingPartPropertyTypeBuildingPartTypeBuildingTypeBuildingUsageTypeCeilingSurfaceTypeCityFurnitureClassTypeCityFurnitureFunctionTypeCityFurnitureTypeCityModelTypeCityObjectGroupMemberTypeCityObjectGroupParentTypeCityObjectGroupTypeClosureSurfaceTypeColorColorPlusOpacityDateAttributeTypeDoorTypeDoubleAttributeTypeExternalReferenceTypeFloorSurfaceTypeGeneralizationRelationTypeGenericCityObjectTypeGeoreferencedTextureTypeGroundSurfaceTypeImplicitGeometryType"ImplicitRepresentationPropertyTypeIntAttributeType IntBuildingInstallationClassType#IntBuildingInstallationFunctionType#IntBuildingInstallationPropertyTypeIntBuildingInstallationType IntBuildingInstallationUsageTypeInteriorFurniturePropertyTypeInteriorRoomPropertyTypeInteriorWallSurfaceTypeLandUseClassTypeLandUseFunctionTypeLandUseTypeLandUseUsageTypeMassPointReliefTypeMaterialTypeMimeTypeTypeOpeningPropertyTypeParameterizedTextureTypePlantClassTypePlantCoverClassTypePlantCoverFunctionTypePlantCoverTypePlantFunctionTypeRailwayTypeRasterReliefTypeReliefComponentPropertyTypeReliefFeatureTypeRoadTypeRoofSurfaceTypeRoofTypeTypeRoomClassTypeRoomFunctionTypeRoomTypeRoomUsageTypeSimpleTextureTypeSolitaryVegetationObjectTypeSpeciesType
+SquareTypeStringAttributeTypeSurfaceDataPropertyTypeTINReliefTypeTexCoordGenTypeTexCoordListTypeTextureAssociationTypeTextureTypeTypeTexturedSurfaceType	TrackTypeTrafficAreaFunctionTypeTrafficAreaPropertyTypeTrafficAreaTypeTrafficAreaUsageTypeTrafficSurfaceMaterialTypeTransformationMatrix4x4TypeTransportationComplexFunction!TransportationComplexFunctionTypeTransportationComplexTypeTransportationComplexUsageTypeUriAttributeTypeWallSurfaceTypeWaterBodyClassTypeWaterBodyFunctionTypeWaterBodyTypeWaterBodyUsageTypeWaterClosureSurfaceTypeWaterGroundSurfaceTypeWaterLevelTypeWaterSurfaceType
+WindowTypeWrapModeTypeX3DMaterialTypeagricultural_roadairportairport_apronairport_heliportairport_runwayairport_runway_markingairport_taxiwayapronbankbarrier
+bus_lay_bycanal	car_ferrycar_park	chairliftcity_railwaycombined_foot_cyclepath	crosswalk	cyclepathdead-end_roaddistrict_roadditchdrainagedrivewaydriving_laneembankment_dike	escalatorferryfiltering_lane
+flower_tubfootpathgliding_airfield
+green_areagreen_spacesgridPropertyTypeharborhard_shoulderheliporthiking_trailinland_navigation_waterway_0inland_navigation_waterway_Iinland_navigation_waterway_IIinland_navigation_waterway_IIIinland_navigation_waterway_IVinland_navigation_waterway_Vinland_navigation_waterway_VIinland_navigation_waterway_VIIinternational_airportjunction	kerbstone	land_roadlanding_placelanding_stagelanelane__both_directionlane_one_directionlay_bymagnetic_levitation_trainmain_agricultural_roadmain_through-roadmaritime_navigationmarketplacemiddle_lanemotorwaymotorway_emergency_lanemotorway_entrymotorway_exitmountain_railwaynavigable_lakenavigable_rivernoise_guard_barnoise_protectionnoise_protection_wallothersoverhead_wire_trolleyparking_areaparking_bayparking_lay_bypedestrian_zoneplacepleasure_craft_harbourpower-wheelprivate_arearailrail_road_combinedrail_transportrailroad_embankmentrailway_stationrailway_track
+recreationregional_airportroadroad_markingroad_marking_crosswalkroad_marking_directionroad_marking_laneroad_marking_otherroad_marking_restrictedroad_marking_stoprunwayservice_areasoft_shouldersquarestairsstationstopsubwaysuspension_railwaytaxiwaytinPropertyTypetowpathtraffic_islandtrain_ferrytrain_platformtramunknownwaterway_I_orderxalAddressPropertyType
+cycle-pathfootway	
+bridlepath
+footwaymotorway_highway_junctionmountain_railwaynational_primary_roadski_tow_lift
+city_trainAbstractFeatureCollectionTypeAbstractFeatureTypeAbstractGMLTypeFeaturePropertyTypeGeometricComplexPropertyTypeGeometryPropertyType
+LengthTypeMeasureOrNullListTypeMultiCurvePropertyTypeMultiPointPropertyTypeMultiSolidPropertyTypeMultiSurfacePropertyTypeOrientableSurfaceTypePointPropertyTypePolygonPropertyTypeSolidPropertyTypeSurfacePropertyType
+doubleListanyType_CityObject'_GenericApplicationPropertyOfCityObject_SiteAddress
+AppearanceAuxiliaryTrafficAreaBreaklineReliefBuildingBuildingFurnitureBuildingInstallationBuildingPartCeilingSurfaceCityFurniture	CityModelCityObjectGroupClosureSurfaceDoor	ElevationFloorSurfaceGenericCityObjectGeoreferencedTextureGroundSurfaceImplicitGeometryIntBuildingInstallationInteriorWallSurfaceLandUseMassPointReliefMaterialParameterizedTexture
+PlantCoverRailwayRasterReliefReliefFeatureRoadRoofSurfaceRoomSimpleTextureSolitaryVegetationObjectSquare	TINReliefTexCoordGenTexCoordListTexturedSurfaceTrackTrafficAreaTransportationComplexWallSurface	WaterBodyWaterClosureSurfaceWaterGroundSurfaceWaterSurfaceWindowX3DMaterial_AbstractBuilding_Appearance_BoundarySurface_CityObject-_GenericApplicationPropertyOfAbstractBuilding$_GenericApplicationPropertyOfAddress'_GenericApplicationPropertyOfAppearance1_GenericApplicationPropertyOfAuxiliaryTrafficArea,_GenericApplicationPropertyOfBoundarySurface,_GenericApplicationPropertyOfBreaklineRelief%_GenericApplicationPropertyOfBuilding._GenericApplicationPropertyOfBuildingFurniture1_GenericApplicationPropertyOfBuildingInstallation)_GenericApplicationPropertyOfBuildingPart+_GenericApplicationPropertyOfCeilingSurface*_GenericApplicationPropertyOfCityFurniture&_GenericApplicationPropertyOfCityModel'_GenericApplicationPropertyOfCityObject,_GenericApplicationPropertyOfCityObjectGroup+_GenericApplicationPropertyOfClosureSurface!_GenericApplicationPropertyOfDoor)_GenericApplicationPropertyOfFloorSurface1_GenericApplicationPropertyOfGeoreferencedTexture*_GenericApplicationPropertyOfGroundSurface4_GenericApplicationPropertyOfIntBuildingInstallation0_GenericApplicationPropertyOfInteriorWallSurface$_GenericApplicationPropertyOfLandUse,_GenericApplicationPropertyOfMassPointRelief$_GenericApplicationPropertyOfOpening1_GenericApplicationPropertyOfParameterizedTexture'_GenericApplicationPropertyOfPlantCover$_GenericApplicationPropertyOfRailway)_GenericApplicationPropertyOfRasterRelief,_GenericApplicationPropertyOfReliefComponent*_GenericApplicationPropertyOfReliefFeature!_GenericApplicationPropertyOfRoad(_GenericApplicationPropertyOfRoofSurface!_GenericApplicationPropertyOfRoom!_GenericApplicationPropertyOfSite5_GenericApplicationPropertyOfSolitaryVegetationObject#_GenericApplicationPropertyOfSquare(_GenericApplicationPropertyOfSurfaceData(_GenericApplicationPropertyOfTexCoordGen)_GenericApplicationPropertyOfTexCoordList$_GenericApplicationPropertyOfTexture4_GenericApplicationPropertyOfTextureParameterization&_GenericApplicationPropertyOfTinRelief"_GenericApplicationPropertyOfTrack(_GenericApplicationPropertyOfTrafficArea2_GenericApplicationPropertyOfTransportationComplex1_GenericApplicationPropertyOfTransportationObject-_GenericApplicationPropertyOfVegetationObject(_GenericApplicationPropertyOfWallSurface&_GenericApplicationPropertyOfWaterBody1_GenericApplicationPropertyOfWaterBoundarySurface0_GenericApplicationPropertyOfWaterClosureSurface/_GenericApplicationPropertyOfWaterGroundSurface(_GenericApplicationPropertyOfWaterObject)_GenericApplicationPropertyOfWaterSurface#_GenericApplicationPropertyOfWindow(_GenericApplicationPropertyOfX3DMaterial_Opening_ReliefComponent_Site_SurfaceData_Texture_TextureParameterization_TransportationObject_VegetationObject_WaterBoundarySurface_WaterObject_genericAttributeaddressambientIntensity
+appearanceappearanceMemberauxiliaryTrafficAreaaverageHeightborderColor	boundedBy
+breaklinescityObjectMemberclassconsistsOfBuildingPartcrownDiameterdateAttributediffuseColordoubleAttributeemissiveColorextentexternalReferencefunctiongeneralizesTogeometrygridgroupMemberheightintAttributeinteriorBuildingInstallationinteriorFurnitureinteriorRoomlodlod0Geometrylod0ImplicitRepresentationlod0MultiCurvelod0MultiSurfacelod0Networklod0TerrainIntersectionlod1Geometrylod1ImplicitRepresentationlod1MultiCurvelod1MultiSolidlod1MultiSurface	lod1Solidlod1TerrainIntersectionlod2Geometrylod2ImplicitRepresentationlod2MultiCurvelod2MultiSolidlod2MultiSurface	lod2Solidlod2Surfacelod2TerrainIntersectionlod3Geometrylod3ImplicitRepresentationlod3MultiCurvelod3MultiSolidlod3MultiSurface	lod3Solidlod3Surfacelod3TerrainIntersectionlod4Geometrylod4ImplicitRepresentationlod4MultiCurvelod4MultiSurface	lod4Solidlod4Surfacelod4TerrainIntersectionmeasuredHeightmimeType
+multiPointopeningorientationouterBuildingInstallationparentreferencePointrelativeGMLGeometryreliefComponentreliefPointsridgeOrValleyLinesroofTyperoomInstallation	shininessspeciesspecularColorstoreyHeightsAboveGroundstoreyHeightsBelowGroundstringAttributesurfaceDataMembersurfaceMaterialtargettextureCoordinatestextureTypetintrafficAreatransformationMatrixtransparencytrunkDiameteruriAttributeusage
+waterLevelworldToTexturewrapMode
+xalAddressOrientableSurfaceRectifiedGridCoverageTriangulatedSurface_Feature_FeatureCollection_GML_ObjectfeatureMember,          	 
+                        ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~  €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ  ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹¡ß±ÎªÖªİªäiÛ±Ÿ¦1©4ª?²5¹\»`ÇªÈ®É§Ì§ÎªÏ®Ñ§Ô§Öª×®Ù§Ü§İªŞ®à§á¥æ<ívò¦ó¦€B è±±Q³S  ó± Öª İª!!¼!ø±!°­!¼""ı±# #€±$¡$„±%#%ƒ±%¥M%â%ù…%ƒ&&‰±''Š±((±(Ğ¯(Ø¯(ß¯))±*¥+*¥++ +„”+Ü±+ã¨+„”,¢,¦-,¦-- -İ±-õ€/§0/§00&0Ş±0².0Îª0Öª0İª0öŒ1Ù1Ù2œ(2œ(3!3à±3§§3ì§88â±8©68²78Ú¤8Û8€9<«=<«===ã±=©:=²;=Ê¤=Ò¤=Ú¤=€>?¬@?¬@@@ä±AAá±CCå±FFæ±F©DF²EFÃ¤FÄFÉ§FÊ¤FËFÑ§FÒ¤FÓFÙ§FÚ¤FÛFà§GŸGç±JJé±J´¤J¶HJçIKKê±NO Oë±OŸPRRì±TT½¤T¾TÂ§TÃ¤TÄTÉ§TÊ¤TËTÑ§TÒ¤TÓTÙ§TÚ¤TÛTà§U%Uí±UåUè¬VVî±W¡Wè¬WâhWè¬Wé¤WüX¸WX¸WY\¹]\¹]]]ï±]©Z]²[]Ú¤]€^_ª8_ª8`Åy`Åyaağ±ddñ±d©bd²cdÀªdÇªdÎªdÖªdİªd€ef!fë¨fò±fë¨gg g­Lg¯LgïgñLgıi” i” j%jô±j÷„n'nõ±n¤¥n©ln²mnÆ©nÇªnÍ©nÎªnÕ©nÖªnİªppö±q!qµÁq÷±qµÁr•!r•!ss¼sêrsù±s¼sêrttú±uuû±yyü±y¦1y©wy²xyº_yİªyŞ®yî\y€z{{ø°{ø°{ù…|'|ş±|©k|«¥|²o|·¥|Ã¤|Ä|Ê¤|Ë|Ò¤|Ó|Ú¤|Û|ğ}|ş¥~~ÿ±€—#!úŒ…±úŒ‚$‚‚‚±‚‚ƒ$ƒøƒ‚±ƒø„™$†«†¡,†¡,‡‡†±‰ÎŠ‰ÎŠŠ&Š‡±Š²ˆŠÎªŠÖªŠİªŠöŒŠ€‹&ˆ±£/²Á£ÇªÎªÖªİªû‰€‘’““‹±–)–Œ±–¦2–©”–²•–¿§–Àª–Å§–Çª–È®–Ï®–×®–Ş®–€—˜(˜±™(™±›(›‘±›šœ œ’±#“± ­L¯LïñLıŸ ¡ˆ¢ˆ£ˆ¤ˆ¥ˆ¦§.¨ˆ©ˆª«¬ˆ­®¯ˆ°ˆ±ˆ²³´.µ.µˆ¶·ˆ¸.¹ˆº»ˆ¼.½ˆ¾¿.ÀˆÁ†Á†ÂÃ.ÄÅÆÇÈÉÊËÌÍÎÏĞ.ÑÒÓÔÕÖ×.ØÙÚÛÜİ.Şˆßˆàˆáˆâãäå.æ.ç.è.èéˆêë.ìˆíîïğñˆòˆòóˆôõ.ö÷øˆùúûˆüˆıˆşˆÿˆ€ˆˆ‚ƒ„.…ˆ†ˆ‡ˆ‰Š‹Œ‡Œ‡..ˆ‘’ˆ“•–—˜™š›œ
+¥ˆ
+§š
+¨•
+©×
+ª¢
+«¢
+¬×
+­Ù
+®¢
+¯‰
+°¢
+±Ù
+²”
+³‹
+´Ù
+µ¢
+¶˜
+·Ù
+¸Š
+¹¢
+ºÙ
+»¢
+¼•
+½Ø
+¾˜
+¿›
+ÀÏ
+Á•
+Â¢
+ÃÏ
+ÄÙ
+Å¢
+ÆØ
+Ç›
+ÈÏ
+É•
+Ê™
+Ë™
+Ì…
+ÍÏ
+Îš
+Ïš
+ĞÙ
+Ñ
+Òœ
+Óœ
+Ôœ
+Õ”
+Ö—
+×¤
+ØŠ
+Ù¢
+Úˆ
+”¢
+•¢
+–Ú
+—ˆ
+˜—
+™Š
+š¢
+›¢
+œ¢
+¢
+£
+¡£
+¢Œ
+¨Œ
+¬
+®
+¸
+ô
+ÿ¥+§0¨3©Aª8«=¬@­C®F¯G°J±K²O³¥´RµT¶U·V¸W¹]ºa»d¼f½g¾j¿nÀpÁqÂsÃtÄuÅyÆ{Ç|È~ÉÊ‚ËƒÌ†Í‡ÎŠÏĞ“Ñ–Ò˜Ó™Ô›ÕœÖ×ØÙÚ” •!–"—#˜%™$š&›'œ()¡,¢,¨¢¬N®P¸Yôÿ’

@@ -1,0 +1,109 @@
+*owlapi:ontology:Ohttp://neurolog.unice.fr/ontoneurolog/v3.0/core-ontology-programs-software.owl#@http://neurolog.unice.fr/ontoneurolog/v3.0/dolce-particular.owl#Jhttp://neurolog.unice.fr/ontoneurolog/v3.0/medical-dataset-expression.owl#Ohttp://neurolog.unice.fr/ontoneurolog/v3.0/ontoneurolog-extension-of-dolce.owl#k¶ont0BMP-expressionBMP-file
+BMP-formatDICOM-zip-file	EGEE-gridGIF-expressionGIF-file
+GIF-formatIMA-expressionIMA-file
+IMA-formatIMG-expressionIMG-file
+IMG-formatJPEG-expression	JPEG-fileJPEG-formatPDF-expressionPDF-file
+PDF-formatRAR-expressionRAR-file
+RAR-formatURI
+URI-formatURL
+URL-format	WSDL-fileWSDL-languageXML-expressionXML-file
+XML-formatZIP-expressionZIP-file
+ZIP-formatarchive-filearchive-formatarchive-format-expressionbinary-document-filebinary-filecluster+collection-of-computer-language-expressionscollection-of-computerscommand-expressioncommand-languagecompilable-programcompilercompiling-a-programcomposite-expressioncomputercomputer-language-expressioncomputer-under-linuxcomputer-under-windowscomputing-gridcomputing-grid-middlewareconnected-computerdata-description-language$data-description-language-expressiondata-manipulation-language%data-manipulation-language-expressiondata-processingdata-storingdeveloping-softwaredevice-file	directorydistributed-platformdocument-description-language(document-description-language-expression!domain-specific-computer-language,domain-specific-computer-language-expressionexecutable-programexecuting-a-programexecution-platformfilegeneral-image-filegeneral-image-formatglite
+glite-gridglobus-toolkitgridgrid-middlewarehigh-level-computer-language%image-description-language-expression
+image-fileimage-formatintermediate-codeintermediate-languageinternetinterpretable-programinterpreterinterpreting-a-programintranetlexemelibrarylinuxlow-level-computer-languagemachine-languagemarkup-filemarkup-languagemarkup-language-expressionmedical-image-filemedical-image-format
+middlewarenetworkoperating-systemphysical-platformplatformprogramprogramming-languageprogramming-language-expressionquery-expressionquery-languageregular-file$resource-location-description-format/resource-location-description-format-expressionrunning-a-programrunning-a-softwarerunning-a-web-servicesoftwaresource-codespecial-filestderrstdinstdoutstorage-gridstorage-grid-middlewarestorage-platformstoring-programsstream-filesymbolic-link	text-fileunixunix-file-addressunix-file-addressing-formatvirtual-machinewindowswindows-file-addresswindows-file-addressing-formatword-expression	word-fileword-formatabstractabstract-qualityabstract-regionaccomplishmentachievementamount-of-matterarbitrary-sumatomdependent-placeenduranteternal-regioneventfeaturemental-objectnon-physical-endurantnon-physical-object
+particular	perdurantphysical-endurantphysical-objectphysical-qualityphysical-regionprocessqualequalityregionrelevant-partsocial-objectspace-regionspatial-locationstatestativetemporal-locationtemporal-qualitytemporal-regiontemporary-regiontime-intervalCT-image-storage-SOP-classDICOM-SOP-classDICOM-SOP-class-expressionDICOM-expression
+DICOM-fileDICOM-formatDICOM-identifierGIS-expression
+GIS-formatGIS-header-fileINRIMAGE-expressionINRIMAGE-fileINRIMAGE-formatMR-image-storage-SOP-class!MR-spectroscopy-storage-SOP-classNIFTI-header-fileNII-fileNIfTI-expressionNIfTI-formatNM-image-storage-SOP-classPET-image-storage-SOP-classanalyze-7.5-expressionanalyze-SPM-expressionanalyze-expressionanalyze-formatanalyze-header-file1deformable-spatial-registration-storage-SOP-class#enhanced-CT-image-storage-SOP-class#enhanced-MR-image-storage-SOP-class$enhanced-PET-image-storage-SOP-classmedical-image-expressionsegmentation-storage-SOP-class&spatial-registration-storage-SOP-class	acronym	action	action-role		addressee	affected	agent	
+agent-role	agentive	agentive-physical-object	agentive-social-object	animal-construction	announcement	
+announcing	artefact	article	artificial-object	asking	author	authorization	authorizing	axiom	beneficiary	binary-number	
+birth-date	capacity	capacity-to-enable-action	cardinal	centre-of-interest	cognitive-agentive	
+collection	
+collective	comment	
+commenting	common-noun	communicating	communicational-object	complaining		complaint	complex-number	computer-language	concentration	concept	conceptual-action	conceptualization	
+consequent	contributor	data	date	defining	
+definition	deliberate-action	deliberate-producing	demand	
+describing	description	designational-object	determinant		discourse	discourse-act	distal-intention	
+enunciatee	
+enunciator	even-integer	exacting	exactingness	experiencer	experimental-artefact	
+expression	formal-expression	formal-language	function	functional-copied-entity	functional-entity	generic-concept	gestual-discourse		happening	happening-consequent	imaginary-number	individual-concept	information		informing	inscription	
+instrument	instrument-role	integer		intention	intentional-action	intentional-movement	irrational-number	language	lexical-item	linguistic-expression	logical-expression	logical-language	logical-operator	manufactured-object	manufacturer	manufacturing	member	message	model	model-acronym	
+model-name	motor-intention	name	natural-language	natural-object	negative-integer	negative-real-number	non-agentive-physical-object	non-agentive-social-object	non-negative-integer	non-negative-real-number	non-physical-action	non-physical-artefact	non-targeted-object	noun	number	odd-integer	order	ordering	owner	owning	physical-action	positive-integer	positive-real-number	prime-number		producing	producing-consequent	proposition	protocol	proximal-intention	publication		publisher	
+publishing	rational-number	real-number	rendering-account-of	report	representational-object	request	
+requesting	result	running-an-artefact	scalar-quale	scientific-article	scientific-publication	scientific-publisher	serial-number	social-agent	social-artefact	society	subject		substrate	successful-action	successfully-manufacturing	successfully-producing	
+supervisor	support	symbolic-action	technical-artefact	technical-report	term	text	textual-discourse	theme	tool	unit-of-measure	version-number	volumecan-be-accessed-oncan-be-processed-withis-compilable-byis-connected-to-duringis-executable-byis-installed-on-atis-interpretable-byis-located-byis-running-on-atis-the-compression-ofis-well-formed-formula-oflocatesruns-atconstitutes-duringhas-for-atomic-parthas-for-atomic-part-duringhas-for-boundaryhas-for-boundary-duringhas-for-constant-parthas-for-constant-participanthas-for-constituent-duringhas-for-hosthas-for-lifehas-for-parthas-for-part-duringhas-for-participant-duringhas-for-proper-parthas-for-proper-part-duringhas-for-qualehas-for-quale-duringhas-for-qualityhas-for-quality-locationhas-for-quality-location-duringhas-for-spatial-quale-duringhas-for-temporal-qualehas-for-temporary-participant"has-for-total-constant-participant has-for-total-participant-during#has-for-total-temporary-participantis-a-boundary-ofis-a-boundary-of-duringis-a-constant-part-ofis-a-part-ofis-a-part-of-duringis-a-proper-part-ofis-a-proper-part-of-duringis-a-quality-ofis-a-spatial-part-ofis-a-spatial-quale-of-duringis-a-temporal-part-ofis-a-temporal-quale-of"is-a-total-constant-participant-in#is-a-total-temporary-participant-inis-an-atomic-part-ofis-an-atomic-part-of-duringis-an-equivalent-quale-asis-atomic-during)is-constantly-specifically-constituted-byis-present-atis-present-in-atis-the-host-ofis-the-life-ofis-the-maximal-participant-of&is-the-maximal-physical-participant-ofis-the-quale-ofis-the-quale-of-duringis-the-quality-location-of!is-the-quality-location-of-duringoverlaps-with-duringparticipates-constantly-inparticipates-in-duringparticipates-temporary-inparticipates-totally-in-duringproper-partproper-part-ofhas-for-DICOM-identifieris-the-DICOM-identifier-of	
+affects-at	allows-to-carry-out	bears-at	carries-out-at	classifies-at	comments	complies-with	conceives-at	controls-at	defines		describes	enables-to-fulfil	expresses-at	formally-orders		generates	has-for-addressee-at	has-for-agent-at	has-for-author	has-for-beneficiary-at	has-for-cardinal	has-for-consequence-at	has-for-contributor	has-for-data-at	has-for-date	has-for-end-date	has-for-function	has-for-instrument-at	has-for-magnitude	has-for-manufacturer	has-for-member-during	has-for-model-acronym	has-for-model-name	has-for-name	has-for-owner	has-for-proper-function	has-for-publication-date	has-for-result-at	has-for-serial-number	has-for-start-date	has-for-subject-at	has-for-substrate-at	has-for-theme-at	has-for-unit	has-for-version-number	intentionally-participates-at	is-a-beneficiary-of-at	is-a-consequence-of-at	is-a-data-of-at	is-a-result-of-at	is-a-theme-of-at	is-a-version-number-of	is-a-well-formed-formula-of	is-affected-by-at	is-agent-of-at	is-an-addressee-of-at	is-an-instrument-of-at	is-author-of	is-borne-by-at	is-capable-to-perform	is-carried-out-by-at	is-commented-by	is-conceived-by-at	is-contributor-of	is-controlled-by-at	is-defined-by	is-described-by	is-empowered-to-perform	is-equal-to	is-expressed-by-at	is-extensionally-equivalent-to	is-generated-by	is-greater-than	is-greater-than-or-equal-to	is-inscribed-on-at	is-interested-in	is-less-than	is-less-than-or-equal-to	is-member-of-during	is-ordered-by	is-owner-of	is-physically-realized-by-at	is-published-by	is-publisher-of	is-realized-by	is-realized-by-at	is-referenced-by-at	is-referred-to-by	is-rendered-account-by	is-subject-of-at	is-substrate-of-at	is-supervised-by-at	is-the-cardinal-of	is-the-name-of	is-used-by-at	is-well-formed-formula-of		models-at	orders	physically-realizes-at	realizes	realizes-at	references-at		refers-to	renders-account-of	supervises-at	supports-at	uses-atThing,          	 
+                        ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~  €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ı ş ÿ €  ‚ ƒ „ … † ‡ ˆ ‰ Š ‹ Œ     ‘ ’ “ ” • – — ˜ ™ š › œ   Ÿ   ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ ­ ® ¯ ° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ğ Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü İ Ş ß à á â ã ä å æ ç è é ê ë ì í î ï ğ ñ ò ó ô õ ö ÷ ø ù ú û ü ışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´dÿ\¯]3_dÿ\¯]dÿ\¯]dÿ\¯] d ÿ"!\!¯ "]#U#ÿ%$8$¯#%T&7&ÿ('5'¯&(6)„)ÿ**ƒ+)+ÿ,,*-0.1/u/ÿ10s0¯/1t272ÿ4353¯246595ˆ[5
+¯76J7K7ÿ6898¯U9[:S;‚;éD;éD<‚<éC=W=ÿ>>V?}@ˆ@ÍAANA„Aâ?Aæ@BDBšDCZC{CC†‘D©Dÿ>ECFCGZGaHbICI‚yJŒKDKÿJLŒMDMÿLNæNÜZONPäQŠRŠSyS|TJUKUÿTVLWMWÿVX}Y…Z|[¶[†„[
+¢R\e]f^H^_G_`H`aSbxcŒdKdÿfe9e¯dfJg}gÿhhqh~iyj}kˆkÍll…l–YlâjmynDn¦o;oòoÍPp•qŒrqr~s”s¯utJuKuÿtvewfxˆy<yòzˆ{|{²|ì|ò|ÍN|†N}~LMÿ~€W€ÿV‚[ƒJ„K„ÿƒ…ô…Ü|…â}…æk†N†ô†Ü|†âˆ‡†ˆ;ˆòˆÍN‰}‰ÿcŠ[‹’Œ’’ab|†O‘O‘â}’Š“Š“
+±[”[•z–„–ÿ——ƒ˜ˆ˜ÍY™zš„šÿ››ƒœUœÿ8¯œTŸ¯Ÿ–Ÿ ·   Ÿ¡ 
+­­¡¸¡–¡¡Â ¢ª£¦£ª¤±¥¨¥—¨¦¯§«¨¯¨—¨¨¸¨¨¹Ã¨Å°©¸ª°«±«”±¬®­¨­Œ­­“­­—­­ ­ª­®­®—®¯Æ°¯°Œ°°“°°–°°À°©°°¿°¹Ã±¨±¹Ã±Œ±±“±±—±±³±ª±±¼±º»²±³·³¹Ã³³³Ÿ´³Ÿ´³
+­±´¸´–´´Â³µ¾¶¸¶´¸·¯·¹Ã·
+­¯¸Ÿ¸–¸¹«º®»´»–»»Â¼¼³¼Ÿ»½¾¾°¿À¿ÃÀ·ÀÀÀÁÀÁÀ
+­°Á¸Á–ÁÁÂÀÂ¸ÃÁÄÅÅwÅÉÉÅ
+ÊÊÆâÆ‰ÅÇâÇªÉÈvÈ®ÇÉwÉÈÅÊÍËâËªÌË
+ŸË
+ŸÍÌwÍvÍ®ËÎâÎªĞÎ
+ŸÏÏvÏ®ÎĞwÑÅÒÅÓvÓ®ÕÔvÔ®ÕÕâÕªÖÖw×ÅØÅÙÛÚÛÛâÜwİvİ®ÛŞÅßÅàÅáÅâKâªwãÅäÅåÍæ°æÜìççĞ¨èéèìè‚°é¯é€°êìêêªëçëĞêì¨ì†æí²íìîºîìï¨ïúäğ´ğÍññµò¨òüó‰óªéô¨ôúäõŸöìö„å÷È÷ÍøøŸùÁúéúìúùæûìü”ı½ı×çşış×¸ÿ ÿ
+œÚÿ
+§‚€ì‚º‚
+ßÿƒ‚ƒéì„´„Í…„Ñ¯…µ†Ù‡æˆ­ˆÍ‡‰µŠ´ŠÍ‰‹ÚŒª³Ğ¯Ö®ğ‘é‘ú°’ê’Šò“é“ûæ”À•Ÿ–È–Í•–Õ¯—æ—– —–»˜—˜ä™È™ÍõšŸ›È›Íšœˆ¨Ô°¨ØÈŸ— º¡è¡‚Ÿ¢ê¢Ÿ£¹¤õ¥™¥Í¤¦ì¦¦Î½§±¨®¨ò¨ğ¨š¾¨Ø©¨©ÿªª¾««Ğş¬­¬î«­¯­å«®¯°°±‘±ú°²Ú³´È´ÍµµŸ¶²¶ò¶ğ¶•ƒ¶­¶¯¨·¯·ƒ°¸ç¸Ğ·¹ìº°»æ»–è¼æ¼–Ì½í¾‚¾ˆ¿ÀÀ¨ÀšÎÁ¨ÁÿÂÂªÃÁÄòÄü€Ä
+èÅÅêÅìÅöÅÆÆ˜Ç¨Ç™‚ÈæÈÍŸÈÉæÉ«¯ÊÍËÍÌºÍÙÍ¨¯Î¾Ï¨Ğ¹ĞÑÑíÒ²ÓºÔ¹ÔÕÕíÖæ×®×òØåÙœÙ¿Ú¶Û¹Ü™ÜÍİİõŞ¦ŞÎßß½àæà–¼áÔáââÕã¹äæå‘åİöåúäæçÉèºéˆéï”éêêêêëë„ìííÚîµï´ïÍîğ­ñ™ñÍòòõó‘óİöóüæôæô
+Ìòõ¶õçÚõöŒöóöª÷÷é÷øøêùÍúîû¬û…üîıı¤æşş¥ªÿ—ÿğó€Æ€ÿ€˜ÿ‚ê‚³ªƒ±ƒ´¶„Ö…ò…­†ï†²¯‡À‡ØˆÀˆØæ‰‰ˆŠéŠŠıæ‹²‹òŒŸÙşò³$-%'3>CSJLYlcq¢£§¹©Âª¾¬ºµ½ÄÑÄÒÄ×ÄØÄŞÄßÄàÄáÄãÄäÅÉÅÌÅĞÅÖÅÜÆÇÆËÆÎÆÕÆÛÇËÇÎÇÕÇÛÈÍÈÏÈÓÈÔÈİÉÌÉĞÉÖÉÜËÎËÕËÛÌĞÌÖÌÜÍÏÍÓÍÔÍİÎÕÎÛÏÓÏÔÏİĞÖĞÜÑÒÑ×ÑØÑŞÑßÑàÑáÑãÑäÒ×ÒØÒŞÒßÒàÒáÒãÒäÓÔÓİÔİÕÛÖÜ×Ø×Ş×ß×à×á×ã×äØŞØßØàØáØãØäÙÚŞßŞàŞáŞãŞäßàßáßãßäàáàãàäáãáäãäæ°ôÏùÃæ„©ÀªÎ±å×‹‡ˆ¥­±"*—›Ÿ¨°·! ³À
+€
+‚™
+ƒ€
+…€
+‡„
+Êì
+Ë¨
+Ì˜
+ÎÔ
+ÏÔ
+Ğ°
+Ñ±
+ÔÅ
+Õ±
+Ö±
+Ù¬
+ÛÌ
+Ü‡
+ŞÌ
+ß
+àÌ
+âÌ
+ã
+æ˜
+êì
+ëì
+îå
+ğà
+ñì
+óµ
+ô‡
+õÌ
+øÅ
+ù€
+ú€
+û€
+üú
+ı€
+ÿš
+€Å
+Ï
+‚€
+ƒÅ
+…‹
+‡‹
+ˆ¢
+‹˜
+Œ¢
+¢
+£¢
+¤©
+¥Ï
+¦Ü
+§­
+«°
+²±
+³†ŠŒ“´µ¦§‘¨’Ä”»¼•–©—ª˜Å™«š¬›¿œÀ­ÁŸÂ ¯¡±¢Æ£²¤Ç¥³ËÊ€ÌÎ…Ï‡ˆÑ‰ÓÔ‹ŒÕÖØÿÙ’Ú‚ÛÜ„İùŞß§úàáŠûâƒæé™ì¨í›üğ¤ó¥ôıõş÷—“˜”•´¬šœ­ ¯¡°¢±£²³¦©µÿ}€}?‚CƒX„}…j†[‡}ˆ5Š„‹Z‘¨’°”«—¨˜°À¢°£°¤°¥°¨¨ª¨®°°°¶¶·¨»²¼°½¨¾±ÁÁÃ¨Å¯Ç¯ÊÅËÊÌ°Í­Î¨Ï¨ĞÑ„ÒæÔ¨Õ–Ö›×ıØ¨ÙªÚæÛæÜæİåŞæß‚à°áòâæã°ä°å­æ°çõèÄé‚êÄëÄì¯í¨î¬ïéğæñÄò°óæôªõ°öõ÷òøìùìú¯û¯ü¯ışÿ¨€¯ì‚ìƒ¯„ö…½†ì‡ª‰Š’‹°ìÚ‘‚’æ“Ú”Ú•¶–ì—Ú˜Ú™¨š¨›Şœéê ¨¡¯¢¯¤¥¨¦æ§ÿ¨Í©«É¬¾­¶¯¶°ğ±ğ²ï³ì´±µæÿyC‚y„Z†„ˆ[‹}‘¨’¯”²—¨˜¯Á¢¯£¯¤¯¥¯¨¨ª¨®°°°¶¶·Ã»«¼¯½°¾°ÁÀÃ¨Å°Ç°ÊÊËÅÌ¯ÍæÎ½ÏªĞ¯ÒçÔ°×çØÙ©ÚæÛìÜìİöŞìßÿà¯á’â¯ã”ä”å«æ¯çÚèÅé¨êÊëËìÍíŞî«ï”ğ¯ñùò”óô¨õöŒ÷ø°ùæú°ûæüæı°şòÿª€°æ‚æƒ°„å…¨†æ‡¨ˆ„‰ìŠò‹¨Œ–›æÚ¨‘‚’æ“Ú”Ú•±–—Ú˜Ú™‚š¾›¨œ¶êé ¶¡ğ¢ğ£ï¤æ¥ª¦ì§‚¨¯©æ«¯¬¨­¯¨°¯±¯³æ´¶µ
